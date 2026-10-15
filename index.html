@@ -3,269 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emily Taylor | RE/MAX Hallmark Eastern Realty</title>
+    <title>Emily Taylor | Premium Real Estate Editorial & Local Advisor</title>
+    <meta name="description" content="Sophisticated real estate services by Emily Taylor. Serving Peterborough, Peterborough County, Durham Region, and the GTA. A luxury, thoughtful approach to moving.">
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Montserrat:wght@300;400;500;600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
+        /* Quiet Luxury Color Palette & System Variables */
         :root {
-            --primary: #003DA5; 
-            --accent: #E11B22;  
-            --text: #333333;
-            --light-bg: #F8F9FA;
-            --white: #FFFFFF;
+            --ivory: #FDFBF7;
+            --cream: #F9F6F0;
+            --stone: #EFECE6;
+            --taupe: #9E9484;
+            --greige: #6E675F;
+            --charcoal: #222222;
+            --muted-line: rgba(34, 34, 34, 0.12);
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
+        /* Base Typography Reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--ivory);
         }
 
         body {
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        nav {
+        /* Custom Editorial Typography Classes */
+        h1, h2, h3, h4, .serif-display {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--charcoal);
+        }
+
+        .script-accent {
+            font-family: 'Mrs Saint Delafield', cursive;
+            font-size: 42px;
+            color: var(--taupe);
+            display: inline-block;
+        }
+
+        p, .sans-body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+        }
+
+        .jost-utility {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Single-Page-App Views State Router */
+        .page-view {
+            display: none;
+            animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        /* Default active state home router */
+        #home-view {
+            display: block;
+        }
+
+        /* Active view targeting via CSS hashes */
+        :target {
+            display: block !important;
+        }
+        :target ~ #home-view {
+            display: none !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Layout Architecture & Structural Containers */
+        .section-container {
+            padding: 120px 8%;
+            border-bottom: 1px solid var(--muted-line);
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Minimal Layout Fine Lines & Outlines */
+        .editorial-line {
+            width: 100%;
+            height: 1px;
+            background-color: var(--muted-line);
+            margin: 40px 0;
+        }
+
+        /* Strict Neutral Proportional Image Placeholders */
+        .placeholder-image {
+            background-color: var(--stone);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(34, 34, 34, 0.05);
+        }
+        
+        .placeholder-image::before {
+            content: '[ Architectural Photography Placeholder ]';
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--greige);
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .placeholder-portrait::before {
+            content: '[ Portrait Placeholder ]';
+        }
+
+        /* Premium Buttons & Call-to-Actions */
+        .cta-button {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: var(--charcoal);
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--charcoal);
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+        }
+
+        .cta-secondary {
+            background-color: transparent;
+            color: var(--charcoal);
+            border-bottom: 1px solid var(--charcoal);
+            padding: 8px 0;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .cta-secondary:hover {
+            color: var(--taupe);
+            border-bottom-color: var(--taupe);
+        }
+
+        /* Refined Global Menu Bar */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--muted-line);
+            z-index: 1000;
+            padding: 24px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--primary);
-            letter-spacing: 0.5px;
+        .brand-logo {
+            text-decoration: none;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal);
         }
 
-        .logo span {
-            color: var(--accent);
+        .brand-logo span {
             font-weight: 300;
+            color: var(--taupe);
         }
 
-        .nav-links {
+        .nav-menu {
+            display: flex;
             list-style: none;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.78rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-menu a:hover {
+            color: var(--taupe);
+        }
+
+        .nav-menu .active-listing-nav {
+            color: var(--charcoal);
+            font-weight: 500;
+            border-bottom: 1px dashed var(--taupe);
+            padding-bottom: 2px;
+        }
+
+        /* Mobile Hamburger Drawers */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-toggle span {
+            width: 26px;
+            height: 1px;
+            background-color: var(--charcoal);
+            transition: var(--transition-smooth);
+        }
+
+        /* Asymmetric Editorial Hero Elements */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+            min-height: calc(85vh - 85px);
+        }
+
+        .hero-title-box h1 {
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero-title-box p {
+            max-width: 500px;
+            color: var(--greige);
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            transition: color 0.3s;
+        .hero-img-box .placeholder-image {
+            aspect-ratio: 4 / 5;
+            width: 100%;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
+        /* Minimal Intro Layout Split */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: flex-start;
         }
 
-        .btn-listings {
-            background-color: var(--primary);
-            color: var(--white) !important;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 600 !important;
-            transition: background 0.3s !important;
+        .intro-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            line-height: 1.2;
         }
 
-        .btn-listings:hover {
-            background-color: var(--accent);
+        .intro-body {
+            max-width: 700px;
         }
 
-        .hero {
-            background: linear-gradient(rgba(0, 61, 165, 0.65), rgba(0, 61, 165, 0.65)), 
-                        url('https://unsplash.com') no-repeat center center/cover;
-            height: 70vh;
+        .intro-body p {
+            font-size: 1.2rem;
+            color: var(--greige);
+            margin-bottom: 30px;
+        }
+
+        /* Dual Column Buy/Sell Layout Modules */
+        .services-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--muted-line);
+        }
+
+        .service-column {
+            padding: 80px 10%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
+            justify-content: space-between;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .service-column:first-child {
+            border-right: 1px solid var(--muted-line);
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .hero-btn {
-            background-color: var(--accent);
-            color: var(--white);
-            text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background 0.3s;
-        }
-
-        .hero-btn:hover {
-            transform: scale(1.05);
-            background-color: #be1319;
-        }
-
-        .about-section {
-            padding: 80px 8%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
+        .service-column h3 {
             font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 25px;
         }
 
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 1.1rem;
+        .service-column p {
+            color: var(--greige);
+            margin-bottom: 40px;
         }
 
-        .valuation-section {
-            padding: 80px 8%;
-            background: var(--light-bg);
-            text-align: center;
-            border-top: 1px solid #EEE;
+        .service-column .placeholder-image {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            margin-bottom: 35px;
         }
 
-        .valuation-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .valuation-content h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .valuation-content p {
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .valuation-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .valuation-form input {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #DDD;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .valuation-form button {
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 15px 25px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .valuation-form button:hover {
-            background-color: var(--accent);
-        }
-
-        footer {
-            background: #111;
-            color: #888;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #BBB;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .about-section { flex-direction: column; text-align: center; }
-            .valuation-form { flex-direction: column; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">Emily Taylor <span>| RE/MAX</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#valuation">Home Valuation</a></li>
-            <li><a href="https://remaxhallmarkeastern.com" target="_blank" class="btn-listings">View All Listings</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <h1>Your Dream Home Awaits</h1>
-        <p>Professional real estate guidance backed by local market expertise.</p>
-        <a href="https://remaxhallmarkeastern.com" target="_blank" class="hero-btn">Browse Active Properties</a>
-    </section>
-
-    <section class="about-section" id="about">
-        <div class="about-text">
-            <h2>Guiding You Home</h2>
-            <p>Welcome! I'm dedicated to helping clients navigate the local real estate market with ease, transparency, and top-tier professionalism. Whether you are buying your very first starter home or looking to command top dollar for your current property, my ultimate goal is protecting your investments.</p>
-            <p>As part of the RE/MAX Hallmark Eastern team, I have access to cutting-edge historical pricing data and comprehensive marketing pipelines designed to give you a strategic advantage.</p>
-        </div>
-    </section>
-
-    <section class="valuation-section" id="valuation">
-        <div class="valuation-content">
-            <h2>What Is Your Home Worth?</h2>
-            <p>Curious about local shifting market conditions? Get a detailed, localized home value valuation assessment overview delivered straight to you.</p>
-            <form class="valuation-form" onsubmit="event.preventDefault(); alert('Thank you! A valuation request has been submitted.');">
-                <input type="text" placeholder="Enter your property address..." required>
-                <button type="submit">Get Evaluation</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Emily Taylor. Independently Owned and Operated Member of RE/MAX Hallmark Eastern Realty, Brokerage.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">
-            <a href="https://remaxhallmarkeastern.com" target="_blank">Visit Full RE/MAX Portal</a>
-        </p>
-    </footer>
-
-</body>
-</html>
-
+        /* Featured Property Structural Section */
+        .property-grid {
