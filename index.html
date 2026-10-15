@@ -3,132 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Emily Taylor | Premium Real Estate Editorial</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Montserrat:wght@300;400;500&family=Mrs+Saint+Delafield&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
-        :root { --ivory: #FDFBF7; --cream: #F9F6F0; --stone: #EFECE6; --taupe: #9E9484; --greige: #6E675F; --charcoal: #222222; --muted: rgba(34,34,34,0.12); }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--charcoal); background-color: var(--ivory); line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Bodoni Moda', serif; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
-        .script-accent { font-family: 'Mrs Saint Delafield', cursive; font-size: 42px; color: var(--taupe); }
-        .page-view { display: none; }
-        #home-view { display: block; }
-        .section-container { padding: 100px 8%; border-bottom: 1px solid var(--muted); max-width: 1600px; margin: 0 auto; }
-        .placeholder-image { background-color: var(--stone); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(34,34,34,0.05); color: var(--greige); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .placeholder-image::before { content: '[ Architectural Photography Placeholder ]'; }
-        .cta-button { display: inline-block; padding: 16px 36px; background-color: var(--charcoal); color: var(--ivory); text-decoration: none; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.22em; border: 1px solid var(--charcoal); cursor: pointer; }
-        .cta-button:hover { background-color: transparent; color: var(--charcoal); }
-        .cta-secondary { background-color: transparent; color: var(--charcoal); border-bottom: 1px solid var(--charcoal); padding: 8px 0; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.22em; text-decoration: none; }
-        header { position: sticky; top: 0; background: rgba(253,251,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--muted); z-index: 1000; padding: 24px 8%; display: flex; justify-content: space-between; align-items: center; }
-        .brand-logo { text-decoration: none; font-size: 1.6rem; color: var(--charcoal); text-transform: uppercase; cursor: pointer; }
-        .nav-menu { display: flex; list-style: none; align-items: center; gap: 24px; }
-        .nav-menu a { text-decoration: none; color: var(--charcoal); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; }
-        .active-listing-nav { font-weight: 500; border-bottom: 1px dashed var(--taupe); padding-bottom: 2px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .workflow-timeline { margin-top: 40px; border-left: 1px solid var(--muted); padding-left: 30px; display: flex; flex-direction: column; gap: 40px; }
-        .contact-form { display: flex; flex-direction: column; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; gap: 5px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .form-group input, .form-group select, .form-group textarea { background: var(--cream); border: none; border-bottom: 1px solid var(--taupe); padding: 12px; font-family: 'Montserrat', sans-serif; }
-        footer { background: var(--charcoal); color: var(--stone); padding: 60px 8% 30px 8%; font-size: 0.85rem; text-align: center; }
-        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .nav-menu { display: none; } }
-    </style>
-</head>
-<body>
+        :root {
+            --ivory: #FDFBF7;
+            --cream: #F9F6F0;
+            --stone: #EFECE6;
+            --taupe: #9E9484;
+            --greige: #6E675F;
+            --charcoal: #222222;
+            --muted: rgba(34, 34, 34, 0.12);
+        }
 
-    <header>
-        <a class="brand-logo" onclick="routeToView('home-view')">Emily Taylor.</a>
-        <ul class="nav-menu">
-            <li><a onclick="routeToView('home-view')">Home</a></li>
-            <li><a onclick="routeToView('buy-view')">Buy</a></li>
-            <li><a onclick="routeToView('sell-view')">Sell</a></li>
-            <li><a href="https://remaxhallmarkeastern.com?utm_source=chatgpt.com" target="_blank" class="active-listing-nav">View All Listings</a></li>
-            <li><a onclick="routeToView('about-view')">About</a></li>
-            <li><a onclick="routeToView('areas-view')">Areas</a></li>
-            <li><a onclick="routeToView('resources-view')">Resources</a></li>
-            <li><a onclick="routeToView('contact-view')">Contact</a></li>
-        </ul>
-    </header>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- HOME VIEW -->
-    <div id="home-view" class="page-view">
-        <section class="section-container">
-            <div class="grid-2">
-                <div>
-                    <span class="script-accent">Boutique Experience</span>
-                    <h1 style="font-size: 3rem; line-height: 1.1; margin: 15px 0 30px 0;">Real Estate,<br>Thoughtfully<br>Represented.</h1>
-                    <p style="margin-bottom: 40px; color: var(--greige);">Providing intentional representation strategies throughout Peterborough, Peterborough County, Durham Region, and the GTA.</p>
-                    <div style="display:flex; gap:30px; align-items:center;">
-                        <a class="cta-button" onclick="routeToView('contact-view')">Book Consultation</a>
-                        <a href="https://remaxhallmarkeastern.com?utm_source=chatgpt.com" target="_blank" class="cta-secondary">View All Listings</a>
-                    </div>
-                </div>
-                <div class="placeholder-image" style="aspect-ratio:4/5;"></div>
-            </div>
-        </section>
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <section class="section-container">
-            <h2 style="text-align:center; margin-bottom: 40px;">Featured Properties</h2>
-            <div class="grid-2">
-                <div><div class="placeholder-image"></div><p style="margin-top:15px; font-weight:500;">PETERBOROUGH ASSET</p></div>
-                <div><div class="placeholder-image"></div><p style="margin-top:15px; font-weight:500;">DURHAM RESIDENTIAL</p></div>
-            </div>
-            <div style="text-align:center; margin-top:40px;">
-                <a href="https://remaxhallmarkeastern.com?utm_source=chatgpt.com" target="_blank" class="cta-button">View All Listings</a>
-            </div>
-        </section>
-    </div>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    <!-- BUY VIEW -->
-    <div id="buy-view" class="page-view">
-        <section class="section-container">
-            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Strategic Home Acquisition</h1>
-            <p style="margin-bottom: 40px; color:var(--greige);">Our systematic 9-stage transactional blueprint designed to carefully protect buyer assets.</p>
-            <div class="workflow-timeline">
-                <div><h3>01 / Initial Strategy Consultation</h3><p>Evaluating financial goals and lifestyle frameworks.</p></div>
-                <div><h3>02 / Understanding Your Goals</h3><p>Defining hyper-specific architectural and geographical criteria.</p></div>
-                <div><h3>03 / Home Search Pipeline</h3><p>Leveraging active networks and live database structures.</p></div>
-                <div><h3>04 / Property Viewings</h3><p>Analyzing fundamental property conditions cleanly.</p></div>
-                <div><h3>05 / Evaluating Homes</h3><p>Reviewing historical micro-market analytics.</p></div>
-                <div><h3>06 / Structuring Offers</h3><p>Drafting ironclad contracts to safeguard capital investments.</p></div>
-                <div><h3>07 / Advanced Negotiation</h3><p>Deploying elite transactional strategies.</p></div>
-                <div><h3>08 / Transaction Escrow</h3><p>Managing conditions, inspection timelines, and bank coordination.</p></div>
-                <div><h3>09 / Closing Day</h3><p>Managing legal document transfers seamlessly.</p></div>
-            </div>
-        </section>
-    </div>
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
 
-    <!-- SELL VIEW -->
-    <div id="sell-view" class="page-view">
-        <section class="section-container">
-            <div class="grid-2">
-                <div>
-                    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Presenting Assets with Purpose</h1>
-                    <p style="color:var(--greige); margin-bottom:30px;">We replace generic realtor marketing packages with custom architectural design showcases, data-driven pricing, and modern distribution lists to command absolute market premiums.</p>
-                    <a class="cta-button" onclick="routeToView('contact-view')">Let's Talk About Selling</a>
-                </div>
-                <div class="placeholder-image"></div>
-            </div>
-        </section>
-    </div>
+        p {
+            font-weight: 300;
+        }
 
-    <!-- ABOUT VIEW -->
-    <div id="about-view" class="page-view">
-        <section class="section-container">
-            <div class="grid-2">
-                <div class="placeholder-image" style="aspect-ratio:4/5;"></div>
-                <div>
-                    <span class="script-accent">The Personal Approach</span>
-                    <h1 style="margin: 15px 0;">Meet Emily Taylor</h1>
-                    <p style="margin-bottom:20px;">I operate on a simple principle: transitions are significant milestones, not numbers. Backed by RE/MAX Hallmark Eastern Realty, I mix high-fidelity corporate network reach with intentional boutique personal guidance.</p>
-                    <a class="cta-button" onclick="routeToView('contact-view')">Get In Touch</a>
-                </div>
-            </div>
-        </section>
-    </div>
+        /* SCRIPT ACCENT */
 
-    <!-- AREAS VIEW -->
-    <div id="areas-view" class="page-view">
-        <section class="section-container">
-            <h1 style="margin-bottom:40px;">Regional Focus & Expertise</h1>
+        .script-accent {
+            font-family: 'Mrs Saint Delafield', cursive;
+            font-size: 42px;
+            color: var(--taupe);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        /* PAGE VIEWS */
+
+        .page-view {
+            display: none;
+        }
+
+        #home-view {
+            display: block;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--muted);
+            z-index: 1000;
+            padding: 24px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            text-decoration: none;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.6rem;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.55;
+        }
+
+        .active-listing-nav {
+            font-weight: 500;
+            border-bottom: 1px dashed var(--taupe);
+            padding-bottom: 2px;
+        }
+
+        /* SECTIONS */
+
+        .section-container {
+            padding: 100px 8%;
+            border-bottom: 1px solid var(--muted);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* GRIDS */
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* IMAGE PLACEHOLDERS */
+
+        .placeholder-image {
+            background-color: var(--stone);
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(34, 34, 34, 0.05);
+            color: var(--greige);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            overflow: hidden;
+        }
+
+        .placeholder-image::before {
+            content: '[ Architectural Photography Placeholder ]';
+        }
+
+        /* BUTTONS */
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: var(--charcoal);
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            border: 1px solid var(--charcoal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+        }
+
+        .cta-secondary {
+            background-color: transparent
