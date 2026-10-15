@@ -7,9 +7,9 @@
     <meta name="description" content="Sophisticated real estate services by Emily Taylor. Serving Peterborough, Peterborough County, Durham Region, and the GTA. A luxury, thoughtful approach to moving.">
     
     <!-- Google Fonts Integration -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Montserrat:wght@300;400;500;600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Montserrat:wght@300;400;500;600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
         /* Quiet Luxury Color Palette & System Variables */
@@ -81,14 +81,6 @@
         /* Default active state home router */
         #home-view {
             display: block;
-        }
-
-        /* Active view targeting via CSS hashes */
-        :target {
-            display: block !important;
-        }
-        :target ~ #home-view {
-            display: none !important;
         }
 
         @keyframes fadeIn {
@@ -221,6 +213,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             transition: var(--transition-smooth);
+            cursor: pointer;
         }
 
         .nav-menu a:hover {
@@ -346,4 +339,14 @@
 
         /* Featured Property Structural Section */
         .property-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .property-item {
+                </script>
+</body>
 </html>
+
