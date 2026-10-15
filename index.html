@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Taylor | RE/MAX Hallmark Eastern Realty</title>
+    <style>
+        :root {
+            --primary: #003DA5; 
+            --accent: #E11B22;  
+            --text: #333333;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-listings {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+
+        .btn-listings:hover {
+            background-color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 61, 165, 0.65), rgba(0, 61, 165, 0.65)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-btn {
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: scale(1.05);
+            background-color: #be1319;
+        }
+
+        .about-section {
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .valuation-section {
+            padding: 80px 8%;
+            background: var(--light-bg);
+            text-align: center;
+            border-top: 1px solid #EEE;
+        }
+
+        .valuation-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .valuation-content h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .valuation-content p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .valuation-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .valuation-form input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .valuation-form button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .valuation-form button:hover {
+            background-color: var(--accent);
+        }
+
+        footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #BBB;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-section { flex-direction: column; text-align: center; }
+            .valuation-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Emily Taylor <span>| RE/MAX</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#valuation">Home Valuation</a></li>
+            <li><a href="https://remaxhallmarkeastern.com" target="_blank" class="btn-listings">View All Listings</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Your Dream Home Awaits</h1>
+        <p>Professional real estate guidance backed by local market expertise.</p>
+        <a href="https://remaxhallmarkeastern.com" target="_blank" class="hero-btn">Browse Active Properties</a>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-text">
+            <h2>Guiding You Home</h2>
+            <p>Welcome! I'm dedicated to helping clients navigate the local real estate market with ease, transparency, and top-tier professionalism. Whether you are buying your very first starter home or looking to command top dollar for your current property, my ultimate goal is protecting your investments.</p>
+            <p>As part of the RE/MAX Hallmark Eastern team, I have access to cutting-edge historical pricing data and comprehensive marketing pipelines designed to give you a strategic advantage.</p>
+        </div>
+    </section>
+
+    <section class="valuation-section" id="valuation">
+        <div class="valuation-content">
+            <h2>What Is Your Home Worth?</h2>
+            <p>Curious about local shifting market conditions? Get a detailed, localized home value valuation assessment overview delivered straight to you.</p>
+            <form class="valuation-form" onsubmit="event.preventDefault(); alert('Thank you! A valuation request has been submitted.');">
+                <input type="text" placeholder="Enter your property address..." required>
+                <button type="submit">Get Evaluation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Emily Taylor. Independently Owned and Operated Member of RE/MAX Hallmark Eastern Realty, Brokerage.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">
+            <a href="https://remaxhallmarkeastern.com" target="_blank">Visit Full RE/MAX Portal</a>
+        </p>
+    </footer>
+
+</body>
+</html>
 
