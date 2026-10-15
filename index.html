@@ -1,2646 +1,1898 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Emily Taylor | Real Estate</title>
-  <meta name="description" content="Emily Taylor — Toronto and Peterborough area real estate. Thoughtful representation for buying, selling, and investing across Peterborough, Durham Region, and the GTA.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Jost:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --ivory: #f7f4ee;
-      --cream: #eee9df;
-      --stone: #d8d0c3;
-      --taupe: #a89d8e;
-      --greige: #756e64;
-      --charcoal: #292725;
-      --white: #ffffff;
-      --black: #171615;
-      --line: rgba(41, 39, 37, 0.16);
-      --serif: "Bodoni Moda", Georgia, serif;
-      --sans: "Jost", Arial, sans-serif;
-      --accent: "Mrs Saint Delafield", cursive;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--ivory);
-      color: var(--charcoal);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    button,
-    a {
-      font-family: inherit;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(247, 244, 238, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      height: 92px;
-      padding: 0 45px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      font-family: var(--serif);
-      font-size: 27px;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      display: block;
-      font-family: var(--sans);
-      font-size: 8px;
-      font-weight: 500;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      margin-top: -4px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links button {
-      border: 0;
-      background: transparent;
-      color: var(--charcoal);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 500;
-      position: relative;
-      padding: 8px 0;
-    }
-
-    .nav-links button::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 2px;
-      width: 0;
-      height: 1px;
-      background: var(--charcoal);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links button:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      border: 1px solid var(--charcoal) !important;
-      padding: 11px 17px !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--charcoal) !important;
-      color: var(--white) !important;
-    }
-
-    .mobile-menu {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-    }
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    main {
-      padding-top: 92px;
-    }
-
-    .page-view {
-      display: none;
-      animation: fadeIn 0.35s ease;
-    }
-
-    .page-view.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .container {
-      width: min(1240px, calc(100% - 80px));
-      margin: 0 auto;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--greige);
-      margin-bottom: 18px;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      line-height: 1.08;
-    }
-
-    h1 {
-      font-size: clamp(55px, 7vw, 100px);
-    }
-
-    h2 {
-      font-size: clamp(42px, 5vw, 72px);
-    }
-
-    h3 {
-      font-size: 30px;
-    }
-
-    .script {
-      font-family: var(--accent);
-      font-size: 52px;
-      color: var(--greige);
-      line-height: 1;
-    }
-
-    .body-copy {
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--greige);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 25px;
-      border: 1px solid var(--charcoal);
-      background: var(--charcoal);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: transparent;
-      color: var(--charcoal);
-    }
-
-    .btn-light {
-      background: transparent;
-      color: var(--charcoal);
-    }
-
-    .btn-light:hover {
-      background: var(--charcoal);
-      color: var(--white);
-    }
-
-    .section {
-      padding: 120px 0;
-    }
-
-    /* =========================
-       HOME
-    ========================= */
-
-    .hero {
-      min-height: calc(100vh - 92px);
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(20, 18, 16, 0.76) 0%,
-          rgba(20, 18, 16, 0.48) 42%,
-          rgba(20, 18, 16, 0.08) 100%
-        ),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85")
-        center / cover;
-      color: white;
-    }
-
-    .hero-content {
-      width: min(1240px, calc(100% - 80px));
-      margin: 0 auto;
-      padding: 90px 0;
-    }
-
-    .hero .eyebrow {
-      color: rgba(255,255,255,0.72);
-    }
-
-    .hero h1 {
-      max-width: 820px;
-      margin-bottom: 30px;
-    }
-
-    .hero-text {
-      max-width: 570px;
-      color: rgba(255,255,255,0.82);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero .btn {
-      border-color: white;
-      background: white;
-      color: var(--charcoal);
-    }
-
-    .hero .btn:hover {
-      background: transparent;
-      color: white;
-    }
-
-    .hero .btn-light {
-      background: transparent;
-      color: white;
-    }
-
-    .hero .btn-light:hover {
-      background: white;
-      color: var(--charcoal);
-    }
-
-    .hero-bottom {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1240px, calc(100% - 80px));
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,0.7);
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-      background: var(--ivory);
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 100px;
-      align-items: center;
-    }
-
-    .intro-image {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .intro-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .intro-content {
-      max-width: 620px;
-    }
-
-    .intro-content h2 {
-      margin-bottom: 30px;
-    }
-
-    .intro-content .body-copy {
-      margin-bottom: 35px;
-    }
-
-    .signature {
-      font-family: var(--accent);
-      font-size: 54px;
-      margin-top: 30px;
-      color: var(--charcoal);
-    }
-
-    /* =========================
-       FEATURED
-    ========================= */
-
-    .featured {
-      background: var(--cream);
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-
-    .section-heading h2 {
-      max-width: 650px;
-    }
-
-    .section-heading-right {
-      max-width: 360px;
-    }
-
-    .properties {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .property-card {
-      background: var(--ivory);
-    }
-
-    .property-image {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .property-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
-
-    .property-card:hover .property-image img {
-      transform: scale(1.04);
-    }
-
-    .property-tag {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      padding: 7px 10px;
-      background: rgba(247,244,238,0.92);
-      font-size: 8px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .property-info {
-      padding: 22px;
-    }
-
-    .property-info h3 {
-      font-size: 26px;
-      margin-bottom: 7px;
-    }
-
-    .property-location {
-      color: var(--greige);
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-
-    .property-details {
-      display: flex;
-      gap: 18px;
-      border-top: 1px solid var(--line);
-      padding-top: 15px;
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-    }
-
-    .service {
-      padding: 40px 35px 50px;
-      border-right: 1px solid var(--line);
-    }
-
-    .service:last-child {
-      border-right: 0;
-    }
-
-    .service-number {
-      font-family: var(--serif);
-      font-size: 17px;
-      color: var(--taupe);
-      margin-bottom: 40px;
-    }
-
-    .service h3 {
-      margin-bottom: 18px;
-    }
-
-    .service p {
-      color: var(--greige);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       QUOTE
-    ========================= */
-
-    .quote {
-      background: var(--charcoal);
-      color: white;
-      text-align: center;
-    }
-
-    .quote-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .quote .eyebrow {
-      color: rgba(255,255,255,0.55);
-    }
-
-    .quote h2 {
-      font-size: clamp(42px, 5vw, 68px);
-    }
-
-    .quote .script {
-      color: var(--stone);
-      margin-top: 22px;
-    }
-
-    /* =========================
-       BUY
-    ========================= */
-
-    .page-hero {
-      padding: 125px 0 100px;
-      background: var(--cream);
-    }
-
-    .page-hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 80px;
-      align-items: end;
-    }
-
-    .page-hero h1 {
-      max-width: 800px;
-    }
-
-    .page-hero-copy {
-      color: var(--greige);
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .process {
-      background: var(--ivory);
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .process-item {
-      padding: 35px;
-      min-height: 260px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .process-number {
-      font-family: var(--serif);
-      font-size: 35px;
-      color: var(--taupe);
-      margin-bottom: 45px;
-    }
-
-    .process-item h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .process-item p {
-      font-size: 13px;
-      line-height: 1.8;
-      color: var(--greige);
-    }
-
-    /* =========================
-       SELL
-    ========================= */
-
-    .split-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 650px;
-    }
-
-    .split-image {
-      min-height: 500px;
-    }
-
-    .split-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .split-content {
-      display: flex;
-      align-items: center;
-      padding: 90px;
-      background: var(--cream);
-    }
-
-    .split-content-inner {
-      max-width: 550px;
-    }
-
-    .split-content h2 {
-      margin-bottom: 28px;
-    }
-
-    .split-content p {
-      color: var(--greige);
-      margin-bottom: 30px;
-      line-height: 1.9;
-    }
-
-    .selling-points {
-      list-style: none;
-      border-top: 1px solid var(--line);
-      margin-top: 35px;
-    }
-
-    .selling-points li {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 12px;
-      letter-spacing: 0.04em;
-    }
-
-    .selling-points li::before {
-      content: "—";
-      margin-right: 12px;
-      color: var(--taupe);
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 100px;
-      align-items: center;
-    }
-
-    .about-image {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .about-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-content h2 {
-      margin-bottom: 30px;
-    }
-
-    .about-content p {
-      color: var(--greige);
-      margin-bottom: 20px;
-      line-height: 1.9;
-    }
-
-    .about-facts {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-    }
-
-    .fact strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 400;
-    }
-
-    .fact span {
-      display: block;
-      margin-top: 3px;
-      font-size: 9px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--greige);
-    }
-
-    /* =========================
-       AREAS
-    ========================= */
-
-    .areas-intro {
-      max-width: 720px;
-      margin-bottom: 70px;
-    }
-
-    .areas-intro h2 {
-      margin-bottom: 25px;
-    }
-
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .area {
-      min-height: 260px;
-      padding: 40px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .area h3 {
-      font-size: 34px;
-    }
-
-    .area p {
-      max-width: 430px;
-      color: var(--greige);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       RESOURCES
-    ========================= */
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .resource {
-      border: 1px solid var(--line);
-      padding: 35px;
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background 0.3s ease;
-    }
-
-    .resource:hover {
-      background: var(--cream);
-    }
-
-    .resource-number {
-      font-family: var(--serif);
-      font-size: 16px;
-      color: var(--taupe);
-    }
-
-    .resource h3 {
-      font-size: 28px;
-      margin: 25px 0 15px;
-    }
-
-    .resource p {
-      color: var(--greige);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .resource-link {
-      margin-top: 25px;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-section {
-      background: var(--cream);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-    }
-
-    .contact-content h2 {
-      margin-bottom: 30px;
-    }
-
-    .contact-content > p {
-      color: var(--greige);
-      max-width: 500px;
-      line-height: 1.9;
-      margin-bottom: 40px;
-    }
-
-    .contact-details {
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-detail {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .contact-detail span {
-      display: block;
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--greige);
-      margin-bottom: 5px;
-    }
-
-    .contact-detail a,
-    .contact-detail strong {
-      font-size: 17px;
-      font-weight: 400;
-    }
-
-    .contact-form {
-      background: var(--ivory);
-      padding: 45px;
-    }
-
-    .form-group {
-      margin-bottom: 22px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      border: 1px solid var(--line);
-      background: transparent;
-      padding: 13px 12px;
-      font-family: var(--sans);
-      font-size: 14px;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--charcoal);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: var(--charcoal);
-      color: white;
-      padding: 80px 0 30px;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      gap: 60px;
-      padding-bottom: 70px;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .footer-brand {
-      max-width: 400px;
-    }
-
-    .footer-brand h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,0.55);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .footer-column h4 {
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
-    }
-
-    .footer-column a,
-    .footer-column button {
-      display: block;
-      margin-bottom: 9px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.82);
-      background: none;
-      border: 0;
-      text-align: left;
-    }
-
-    .footer-column a:hover,
-    .footer-column button:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      padding-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: rgba(255,255,255,0.4);
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 950px) {
-      .nav {
-        height: 76px;
-        padding: 0 25px;
-      }
-
-      main {
-        padding-top: 76px;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        background: var(--ivory);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .mobile-menu {
-        display: block;
-      }
-
-      .container,
-      .hero-content,
-      .hero-bottom {
-        width: min(100% - 40px, 1240px);
-      }
-
-      .hero {
-        min-height: calc(100vh - 76px);
-      }
-
-      .intro-grid,
-      .about-grid,
-      .contact-grid,
-      .page-hero-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .properties,
-      .services-grid,
-      .process-grid,
-      .resources-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .service:last-child {
-        border-bottom: 0;
-      }
-
-      .split-section {
-        grid-template-columns: 1fr;
-      }
-
-      .split-image {
-        min-height: 450px;
-      }
-
-      .split-content {
-        padding: 70px 30px;
-      }
-
-      .areas-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-heading-right {
-        margin-top: 25px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .section {
-        padding: 80px 0;
-      }
-
-      .hero-content {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      .hero-bottom {
-        display: none;
-      }
-
-      .intro-image,
-      .about-image {
-        aspect-ratio: 4 / 5;
-      }
-
-      .process-item,
-      .area,
-      .resource {
-        min-height: auto;
-      }
-
-      .contact-form {
-        padding: 25px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emily Taylor | Real Estate</title>
+
+    <meta name="description" content="Emily Taylor is a Toronto-based real estate professional serving Toronto, the GTA, Durham Region, Peterborough and Kawartha Lakes.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+            background: #f5f0e9;
+            color: #302b27;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --cream: #f5f0e9;
+            --cream-light: #faf7f2;
+            --sand: #e8ddd0;
+            --taupe: #b9aa9b;
+            --brown: #655548;
+            --dark: #302b27;
+            --soft-black: #211e1b;
+            --rose: #c7a69a;
+            --white: #ffffff;
+
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+        }
+
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 1.05;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--brown);
+        }
+
+        .body-copy {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #625a53;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            border: 1px solid var(--dark);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: var(--dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .button-dark {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .button-dark:hover {
+            background: var(--brown);
+            border-color: var(--brown);
+        }
+
+        .button-light {
+            border-color: rgba(255,255,255,0.7);
+            color: white;
+        }
+
+        .button-light:hover {
+            background: white;
+            color: var(--dark);
+            border-color: white;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(245,240,233,0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(48,43,39,0.08);
+        }
+
+        .nav {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 25px;
+            letter-spacing: -0.5px;
+            color: var(--dark);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            font-family: var(--sans);
+            display: block;
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: -3px;
+            color: var(--brown);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 29px;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose);
+        }
+
+        .nav-listings {
+            padding: 11px 17px;
+            border: 1px solid var(--dark);
+        }
+
+        .nav-listings:hover {
+            color: white !important;
+            background: var(--dark);
+        }
+
+        .mobile-toggle {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 25px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(245,240,233,0.98) 0%,
+                    rgba(245,240,233,0.90) 45%,
+                    rgba(245,240,233,0.20) 100%
+                ),
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+            max-width: 760px;
+        }
+
+        .hero-kicker {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(65px, 9vw, 128px);
+            font-weight: 500;
+            line-height: 0.9;
+            letter-spacing: -4px;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-style: italic;
+            color: var(--brown);
+        }
+
+        .hero-description {
+            max-width: 500px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #544b44;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 5%;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--brown);
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro {
+            background: var(--cream-light);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .intro-number {
+            font-family: var(--serif);
+            font-size: 130px;
+            line-height: 1;
+            color: var(--sand);
+            margin-bottom: -35px;
+        }
+
+        .intro-right {
+            max-width: 720px;
+        }
+
+        .intro-right .section-title {
+            margin-bottom: 30px;
+        }
+
+        .intro-right p {
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services {
+            background: var(--dark);
+            color: white;
+        }
+
+        .services .eyebrow {
+            color: var(--rose);
+        }
+
+        .services .section-title {
+            color: white;
+            max-width: 750px;
+        }
+
+        .services-intro {
+            margin-top: 25px;
+            max-width: 620px;
+            color: #d5ccc4;
+            font-size: 17px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 75px;
+            border-top: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .service {
+            padding: 40px 35px 45px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .service:not(:nth-child(3n+1)) {
+            padding-left: 35px;
+            border-left: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .service-number {
+            font-family: var(--serif);
+            font-size: 18px;
+            color: var(--rose);
+            margin-bottom: 25px;
+        }
+
+        .service h3 {
+            font-family: var(--serif);
+            font-size: 31px;
+            font-weight: 500;
+            margin-bottom: 17px;
+        }
+
+        .service p {
+            color: #cfc6bf;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           BUY / SELL
+        ========================================================= */
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 650px;
+        }
+
+        .split-image {
+            background:
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=90")
+                center/cover no-repeat;
+            min-height: 600px;
+        }
+
+        .split-content {
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background: var(--sand);
+        }
+
+        .split-content-inner {
+            max-width: 570px;
+        }
+
+        .split-content .section-title {
+            margin-bottom: 28px;
+        }
+
+        .split-content p {
+            margin-bottom: 30px;
+        }
+
+        .reverse .split-image {
+            order: 2;
+            background-image:
+                url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=90");
+        }
+
+        .reverse .split-content {
+            order: 1;
+            background: var(--cream-light);
+        }
+
+
+        /* =========================================================
+           PERSONAL BRAND / ABOUT
+        ========================================================= */
+
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 650px;
+            background:
+                linear-gradient(
+                    rgba(48,43,39,0.08),
+                    rgba(48,43,39,0.08)
+                ),
+                url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=90")
+                center/cover no-repeat;
+        }
+
+        .about-content .section-title {
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            max-width: 610px;
+            margin-bottom: 25px;
+        }
+
+        .signature {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 31px;
+            margin-top: 35px;
+            color: var(--brown);
+        }
+
+
+        /* =========================================================
+           AREAS
+        ========================================================= */
+
+        .areas {
+            background: var(--cream-light);
+            text-align: center;
+        }
+
+        .areas .section-title {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .areas-intro {
+            max-width: 620px;
+            margin: 25px auto 60px;
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid #d6cdc4;
+            border-left: 1px solid #d6cdc4;
+        }
+
+        .area {
+            padding: 45px 20px;
+            border-right: 1px solid #d6cdc4;
+            border-bottom: 1px solid #d6cdc4;
+            transition: all 0.3s ease;
+        }
+
+        .area:hover {
+            background: var(--sand);
+        }
+
+        .area h3 {
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 500;
+            margin-bottom: 7px;
+        }
+
+        .area p {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+
+
+        /* =========================================================
+           LISTINGS CTA
+        ========================================================= */
+
+        .listing-cta {
+            position: relative;
+            padding: 140px 0;
+            background:
+                linear-gradient(
+                    rgba(48,43,39,0.78),
+                    rgba(48,43,39,0.78)
+                ),
+                url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=90")
+                center/cover no-repeat;
+            text-align: center;
+            color: white;
+        }
+
+        .listing-cta .eyebrow {
+            color: var(--rose);
+        }
+
+        .listing-cta h2 {
+            font-family: var(--serif);
+            font-size: clamp(48px, 7vw, 90px);
+            line-height: 1;
+            font-weight: 500;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+
+        .listing-cta h2 em {
+            font-style: italic;
+        }
+
+        .listing-cta p {
+            max-width: 600px;
+            margin: 0 auto 35px;
+            color: #eee8e1;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           RESOURCES
+        ========================================================= */
+
+        .resources {
+            background: var(--sand);
+        }
+
+        .resources-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 40px;
+            margin-bottom: 65px;
+        }
+
+        .resources-header p {
+            max-width: 470px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: var(--cream-light);
+            padding: 45px 35px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .resource-card span {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--brown);
+        }
+
+        .resource-card h3 {
+            font-family: var(--serif);
+            font-size: 30px;
+            line-height: 1.15;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+
+        .resource-card p {
+            font-size: 14px;
+            color: #665d56;
+        }
+
+        .resource-arrow {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            background: var(--dark);
+            color: white;
+            padding: 130px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .contact .eyebrow {
+            color: var(--rose);
+        }
+
+        .contact h2 {
+            font-family: var(--serif);
+            font-size: clamp(55px, 7vw, 95px);
+            line-height: 0.95;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .contact h2 em {
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .contact-description {
+            max-width: 600px;
+            color: #d0c7c0;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .contact-details {
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-detail {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-detail span {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rose);
+            margin-bottom: 5px;
+        }
+
+        .contact-detail a {
+            font-family: var(--serif);
+            font-size: 23px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #211e1b;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 40px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .footer-logo {
+            font-family: var(--serif);
+            font-size: 32px;
+        }
+
+        .footer-logo span {
+            display: block;
+            font-family: var(--sans);
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #cfc7c0;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding-top: 25px;
+            font-size: 10px;
+            color: #8e8781;
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: var(--cream-light);
+                padding: 30px;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 22px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .intro-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service:not(:nth-child(3n+1)) {
+                padding-left: 0;
+                border-left: none;
+            }
+
+            .service {
+                padding: 35px 0;
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+
+            .split-image {
+                min-height: 450px;
+            }
+
+            .reverse .split-image {
+                order: 1;
+            }
+
+            .reverse .split-content {
+                order: 2;
+            }
+
+            .area-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-header {
+                display: block;
+            }
+
+            .resources-header p {
+                margin-top: 25px;
+            }
+
+            .footer-top,
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .nav {
+                height: 75px;
+            }
+
+            .nav-links {
+                top: 75px;
+            }
+
+            .hero {
+                min-height: 850px;
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(245,240,233,0.96),
+                        rgba(245,240,233,0.72)
+                    ),
+                    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85")
+                    center/cover no-repeat;
+            }
+
+            .hero-content {
+                padding-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .intro-number {
+                font-size: 90px;
+            }
+
+            .split-content {
+                padding: 70px 8%;
+            }
+
+            .split-image {
+                min-height: 400px;
+            }
+
+            .about-image {
+                min-height: 500px;
+            }
+
+            .area-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .area {
+                padding: 30px 10px;
+            }
+
+            .area h3 {
+                font-size: 21px;
+            }
+
+            .listing-cta {
+                padding: 100px 0;
+            }
+
+            .contact {
+                padding: 90px 0;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
 
-  <header>
-    <nav class="nav">
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-      <a href="#" class="logo" onclick="routeToView('home-view'); return false;">
-        Emily Taylor
-        <span>Real Estate</span>
-      </a>
+<header id="header">
 
-      <button class="mobile-menu" onclick="toggleMenu()" aria-label="Open menu">
-        ☰
-      </button>
+    <div class="container nav">
 
-      <ul class="nav-links" id="navLinks">
-
-        <li>
-          <button onclick="routeToView('home-view')">Home</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('buy-view')">Buy</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('sell-view')">Sell</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('listings-view')">Listings</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('about-view')">About</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('areas-view')">Areas</button>
-        </li>
-
-        <li>
-          <button onclick="routeToView('resources-view')">Resources</button>
-        </li>
-
-        <li>
-          <button
-            class="nav-cta"
-            onclick="routeToView('contact-view')"
-          >
-            Contact
-          </button>
-        </li>
-
-      </ul>
-
-    </nav>
-  </header>
-
-
-  <main>
-
-    <!-- =========================
-         HOME
-    ========================= -->
-
-    <section id="home-view" class="page-view active">
-
-      <div class="hero">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            Toronto · Durham Region · Peterborough
-          </div>
-
-          <h1>
-            Real Estate,<br>
-            Thoughtfully<br>
-            Represented.
-          </h1>
-
-          <p class="hero-text">
-            A refined, personal approach to buying and selling real estate —
-            with local knowledge, strategic guidance and a commitment to making
-            the experience feel effortless.
-          </p>
-
-          <div class="hero-actions">
-
-            <button
-              class="btn"
-              onclick="routeToView('listings-view')"
-            >
-              View Listings
-            </button>
-
-            <button
-              class="btn btn-light"
-              onclick="routeToView('contact-view')"
-            >
-              Let's Talk
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="hero-bottom">
-          <span>Serving Ontario</span>
-          <span>Scroll to explore</span>
-        </div>
-
-      </div>
-
-
-      <section class="section intro">
-
-        <div class="container intro-grid">
-
-          <div class="intro-image">
-            <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
-              alt="Professional real estate consultation"
-            >
-          </div>
-
-          <div class="intro-content">
-
-            <div class="eyebrow">
-              The Emily Taylor Experience
-            </div>
-
-            <h2>
-              Boutique service.<br>
-              Big-picture thinking.
-            </h2>
-
-            <p class="body-copy">
-              Real estate is more than a transaction. It's a move, a milestone,
-              a fresh start and sometimes a completely new chapter.
-            </p>
-
-            <p class="body-copy">
-              My approach combines thoughtful strategy, market knowledge and
-              genuine personal service so you can make confident decisions
-              throughout the process.
-            </p>
-
-            <button
-              class="btn"
-              onclick="routeToView('about-view')"
-            >
-              Meet Emily
-            </button>
-
-            <div class="signature">
-              Emily
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section class="section featured">
-
-        <div class="container">
-
-          <div class="section-heading">
-
-            <div>
-              <div class="eyebrow">Featured Properties</div>
-
-              <h2>
-                A few places<br>
-                worth seeing.
-              </h2>
-            </div>
-
-            <div class="section-heading-right">
-
-              <p class="body-copy">
-                Explore a selection of homes and properties across the
-                communities I serve.
-              </p>
-
-              <br>
-
-              <button
-                class="btn btn-light"
-                onclick="routeToView('listings-view')"
-              >
-                View All Listings
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <div class="properties">
-
-            <article class="property-card">
-
-              <div class="property-image">
-
-                <span class="property-tag">
-                  Featured
-                </span>
-
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Modern home exterior"
-                >
-
-              </div>
-
-              <div class="property-info">
-
-                <h3>$899,000</h3>
-
-                <div class="property-location">
-                  Peterborough, Ontario
-                </div>
-
-                <div class="property-details">
-                  <span>4 Beds</span>
-                  <span>3 Baths</span>
-                  <span>2,450 Sq Ft</span>
-                </div>
-
-              </div>
-
-            </article>
-
-
-            <article class="property-card">
-
-              <div class="property-image">
-
-                <span class="property-tag">
-                  New
-                </span>
-
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Luxury interior"
-                >
-
-              </div>
-
-              <div class="property-info">
-
-                <h3>$1,249,000</h3>
-
-                <div class="property-location">
-                  Durham Region, Ontario
-                </div>
-
-                <div class="property-details">
-                  <span>4 Beds</span>
-                  <span>4 Baths</span>
-                  <span>3,100 Sq Ft</span>
-                </div>
-
-              </div>
-
-            </article>
-
-
-            <article class="property-card">
-
-              <div class="property-image">
-
-                <span class="property-tag">
-                  Coming Soon
-                </span>
-
-                <img
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
-                  alt="Elegant home interior"
-                >
-
-              </div>
-
-              <div class="property-info">
-
-                <h3>$749,000</h3>
-
-                <div class="property-location">
-                  Kawartha Lakes, Ontario
-                </div>
-
-                <div class="property-details">
-                  <span>3 Beds</span>
-                  <span>2 Baths</span>
-                  <span>1,850 Sq Ft</span>
-                </div>
-
-              </div>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section class="section">
-
-        <div class="container">
-
-          <div class="section-heading">
-
-            <div>
-              <div class="eyebrow">How I Help</div>
-
-              <h2>
-                More than<br>
-                opening doors.
-              </h2>
-            </div>
-
-            <p class="body-copy section-heading-right">
-              Every client has a different goal. Every move deserves a
-              strategy built around it.
-            </p>
-
-          </div>
-
-
-          <div class="services-grid">
-
-            <div class="service">
-
-              <div class="service-number">01</div>
-
-              <h3>Buying</h3>
-
-              <p>
-                From the first conversation to handing over the keys,
-                I'll help you navigate the market, negotiate strategically
-                and make confident decisions.
-              </p>
-
-            </div>
-
-
-            <div class="service">
-
-              <div class="service-number">02</div>
-
-              <h3>Selling</h3>
-
-              <p>
-                Thoughtful preparation, strategic positioning and marketing
-                designed to present your home at its absolute best.
-              </p>
-
-            </div>
-
-
-            <div class="service">
-
-              <div class="service-number">03</div>
-
-              <h3>Investing</h3>
-
-              <p>
-                Whether you're building a portfolio or purchasing your first
-                investment property, we'll focus on the numbers and the
-                bigger picture.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section class="section quote">
-
-        <div class="container quote-inner">
-
-          <div class="eyebrow">
-            A Better Way To Move
-          </div>
-
-          <h2>
-            Your next chapter<br>
-            starts here.
-          </h2>
-
-          <div class="script">
-            Let's make it a good one.
-          </div>
-
-          <br><br>
-
-          <button
-            class="btn"
-            onclick="routeToView('contact-view')"
-          >
-            Start A Conversation
-          </button>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         BUY
-    ========================= -->
-
-    <section id="buy-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container page-hero-grid">
-
-          <div>
-
-            <div class="eyebrow">
-              Buying With Emily
-            </div>
-
-            <h1>
-              Find the place<br>
-              that feels like home.
-            </h1>
-
-          </div>
-
-          <p class="page-hero-copy">
-            Buying a home should feel exciting — not overwhelming. I'll
-            guide you through the entire process with clear advice,
-            honest communication and a strategy built around you.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <section class="section process">
-
-        <div class="container">
-
-          <div class="section-heading">
-
-            <div>
-              <div class="eyebrow">The Process</div>
-              <h2>From search<br>to sold.</h2>
-            </div>
-
-          </div>
-
-
-          <div class="process-grid">
-
-            <div class="process-item">
-              <div class="process-number">01</div>
-              <h3>Let's Talk</h3>
-              <p>We'll discuss your goals, timeline, lifestyle and what you're looking for.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">02</div>
-              <h3>Get Prepared</h3>
-              <p>We'll make sure your financing and buying strategy are ready before you start shopping.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">03</div>
-              <h3>Start Searching</h3>
-              <p>I'll help you identify the right properties and keep you informed about new opportunities.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">04</div>
-              <h3>See It</h3>
-              <p>We'll tour homes and assess each property with both your lifestyle and long-term goals in mind.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">05</div>
-              <h3>Make The Move</h3>
-              <p>When the right property comes along, we'll build a strong offer and negotiate strategically.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">06</div>
-              <h3>Navigate Conditions</h3>
-              <p>I'll help coordinate the next steps and keep everything moving toward closing.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">07</div>
-              <h3>Get Ready</h3>
-              <p>We'll stay on top of the final details so you're prepared for possession day.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">08</div>
-              <h3>Keys In Hand</h3>
-              <p>It's official. Your new home is yours.</p>
-            </div>
-
-            <div class="process-item">
-              <div class="process-number">09</div>
-              <h3>Beyond The Sale</h3>
-              <p>The relationship doesn't end when the keys are handed over. I'm here for what comes next.</p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <section class="section">
-
-        <div class="container" style="text-align:center;">
-
-          <div class="eyebrow">Ready When You Are</div>
-
-          <h2>
-            Let's find<br>
-            your next place.
-          </h2>
-
-          <br>
-
-          <button
-            class="btn"
-            onclick="routeToView('contact-view')"
-          >
-            Let's Talk
-
-          </button>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         SELL
-    ========================= -->
-
-    <section id="sell-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container page-hero-grid">
-
-          <div>
-
-            <div class="eyebrow">
-              Selling With Emily
-            </div>
-
-            <h1>
-              Your home deserves<br>
-              a proper introduction.
-            </h1>
-
-          </div>
-
-          <p class="page-hero-copy">
-            Selling isn't simply putting a sign in the yard. It's about
-            positioning your property, creating demand and negotiating
-            from a place of strength.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="split-section">
-
-        <div class="split-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85"
-            alt="Beautiful home interior"
-          >
-
-        </div>
-
-        <div class="split-content">
-
-          <div class="split-content-inner">
-
-            <div class="eyebrow">
-              The Strategy
-            </div>
-
-            <h2>
-              Presented<br>
-              with purpose.
-            </h2>
-
-            <p>
-              Your home's first impression matters. I'll work with you to
-              prepare, position and market your property so it stands out
-              in the right ways.
-            </p>
-
-            <ul class="selling-points">
-
-              <li>Market analysis & pricing strategy</li>
-              <li>Pre-listing preparation</li>
-              <li>Professional photography & marketing</li>
-              <li>Digital & social media exposure</li>
-              <li>Strategic showing strategy</li>
-              <li>Offer negotiation</li>
-              <li>Closing coordination</li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <section class="section">
-
-        <div class="container" style="text-align:center;">
-
-          <div class="script">
-            Thinking about selling?
-          </div>
-
-          <h2>
-            Let's talk about<br>
-            what comes next.
-          </h2>
-
-          <br>
-
-          <button
-            class="btn"
-            onclick="routeToView('contact-view')"
-          >
-            Request A Consultation
-          </button>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         LISTINGS
-    ========================= -->
-
-    <section id="listings-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            Property Search
-          </div>
-
-          <h1>
-            Find your<br>
-            next address.
-          </h1>
-
-        </div>
-
-      </div>
-
-
-      <section class="section featured">
-
-        <div class="container">
-
-          <div class="section-heading">
-
-            <div>
-              <div class="eyebrow">Featured</div>
-              <h2>Properties worth<br>taking a look at.</h2>
-            </div>
-
-            <p class="body-copy section-heading-right">
-              This page can be connected to your live MLS/property search
-              once your brokerage listing feed is ready.
-            </p>
-
-          </div>
-
-
-          <div class="properties">
-
-            <article class="property-card">
-
-              <div class="property-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
-                  alt="Luxury property"
-                >
-              </div>
-
-              <div class="property-info">
-                <h3>$1,099,000</h3>
-                <div class="property-location">Toronto, Ontario</div>
-
-                <div class="property-details">
-                  <span>3 Beds</span>
-                  <span>3 Baths</span>
-                  <span>2,100 Sq Ft</span>
-                </div>
-              </div>
-
-            </article>
-
-
-            <article class="property-card">
-
-              <div class="property-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-                  alt="Modern living room"
-                >
-              </div>
-
-              <div class="property-info">
-                <h3>$829,000</h3>
-                <div class="property-location">Whitby, Ontario</div>
-
-                <div class="property-details">
-                  <span>4 Beds</span>
-                  <span>3 Baths</span>
-                  <span>2,300 Sq Ft</span>
-                </div>
-              </div>
-
-            </article>
-
-
-            <article class="property-card">
-
-              <div class="property-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600566753051-9c2c5d1d6b0f?auto=format&fit=crop&w=1200&q=85"
-                  alt="Elegant kitchen"
-                >
-              </div>
-
-              <div class="property-info">
-                <h3>$689,000</h3>
-                <div class="property-location">Peterborough, Ontario</div>
-
-                <div class="property-details">
-                  <span>3 Beds</span>
-                  <span>2 Baths</span>
-                  <span>1,700 Sq Ft</span>
-                </div>
-              </div>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section id="about-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            About Emily
-          </div>
-
-          <h1>
-            Real estate,<br>
-            but make it personal.
-          </h1>
-
-        </div>
-
-      </div>
-
-
-      <section class="section">
-
-        <div class="container about-grid">
-
-          <div class="about-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
-              alt="Professional consultation"
-            >
-
-          </div>
-
-
-          <div class="about-content">
-
-            <div class="eyebrow">
-              A Little About Me
-            </div>
-
-            <h2>
-              Your agent should<br>
-              feel like your person.
-            </h2>
-
-            <p>
-              I'm Emily — a real estate professional who believes the best
-              client relationships are built on trust, communication and
-              actually listening.
-            </p>
-
-            <p>
-              Whether you're buying your first home, selling a property,
-              relocating or looking for your next investment, my goal is to
-              make the process feel clear, strategic and genuinely enjoyable.
-            </p>
-
-            <p>
-              I work with clients across Toronto, Durham Region, Peterborough,
-              Peterborough County and surrounding communities.
-            </p>
-
-
-            <div class="about-facts">
-
-              <div class="fact">
-                <strong>01</strong>
-                <span>Personal Service</span>
-              </div>
-
-              <div class="fact">
-                <strong>02</strong>
-                <span>Local Knowledge</span>
-              </div>
-
-              <div class="fact">
-                <strong>03</strong>
-                <span>Strategic Marketing</span>
-              </div>
-
-              <div class="fact">
-                <strong>04</strong>
-                <span>Clear Communication</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         AREAS
-    ========================= -->
-
-    <section id="areas-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            Areas Served
-          </div>
-
-          <h1>
-            Local knowledge<br>
-            matters.
-          </h1>
-
-        </div>
-
-      </div>
-
-
-      <section class="section">
-
-        <div class="container">
-
-          <div class="areas-intro">
-
-            <div class="eyebrow">
-              Where I Work
-            </div>
-
-            <h2>
-              From city streets<br>
-              to cottage country.
-            </h2>
-
-            <p class="body-copy">
-              Whether you're moving closer to the city, leaving it behind,
-              or finding something somewhere in between, I can help you
-              navigate the communities that make Ontario home.
-            </p>
-
-          </div>
-
-
-          <div class="areas-grid">
-
-            <div class="area">
-
-              <h3>Toronto</h3>
-
-              <p>
-                Urban living, neighbourhood character and everything the
-                GTA has to offer.
-              </p>
-
-            </div>
-
-
-            <div class="area">
-
-              <h3>Durham Region</h3>
-
-              <p>
-                Ajax, Pickering, Whitby, Oshawa, Clarington and surrounding
-                communities.
-              </p>
-
-            </div>
-
-
-            <div class="area">
-
-              <h3>Peterborough</h3>
-
-              <p>
-                A vibrant community surrounded by nature, culture and
-                opportunity.
-              </p>
-
-            </div>
-
-
-            <div class="area">
-
-              <h3>Kawartha Lakes</h3>
-
-              <p>
-                Space, water, lifestyle and the unique charm of cottage
-                country.
-              </p>
-
-            </div>
-
-
-            <div class="area">
-
-              <h3>Peterborough County</h3>
-
-              <p>
-                Rural properties, country homes and communities throughout
-                the surrounding county.
-              </p>
-
-            </div>
-
-
-            <div class="area">
-
-              <h3>GTA</h3>
-
-              <p>
-                Helping buyers and sellers navigate opportunities throughout
-                the Greater Toronto Area.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         RESOURCES
-    ========================= -->
-
-    <section id="resources-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            Resources
-          </div>
-
-          <h1>
-            A little help<br>
-            goes a long way.
-          </h1>
-
-        </div>
-
-      </div>
-
-
-      <section class="section">
-
-        <div class="container">
-
-          <div class="resources-grid">
-
-            <article class="resource">
-
-              <div class="resource-number">01</div>
-
-              <div>
-
-                <h3>
-                  First-Time<br>
-                  Buyer Guide
-                </h3>
-
-                <p>
-                  Everything you need to know before making your first
-                  move into home ownership.
-                </p>
-
-              </div>
-
-              <a href="#" class="resource-link">
-                Coming Soon →
-              </a>
-
-            </article>
-
-
-            <article class="resource">
-
-              <div class="resource-number">02</div>
-
-              <div>
-
-                <h3>
-                  Seller's<br>
-                  Checklist
-                </h3>
-
-                <p>
-                  A practical guide to preparing your home for market
-                  and creating a strong first impression.
-                </p>
-
-              </div>
-
-              <a href="#" class="resource-link">
-                Coming Soon →
-              </a>
-
-            </article>
-
-
-            <article class="resource">
-
-              <div class="resource-number">03</div>
-
-              <div>
-
-                <h3>
-                  Moving<br>
-                  Checklist
-                </h3>
-
-                <p>
-                  Because there are approximately one million things
-                  to remember when you're moving.
-                </p>
-
-              </div>
-
-              <a href="#" class="resource-link">
-                Coming Soon →
-              </a>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section id="contact-view" class="page-view">
-
-      <div class="page-hero">
-
-        <div class="container">
-
-          <div class="eyebrow">
-            Get In Touch
-          </div>
-
-          <h1>
-            Let's start<br>
-            a conversation.
-          </h1>
-
-        </div>
-
-      </div>
-
-
-      <section class="section contact-section">
-
-        <div class="container contact-grid">
-
-          <div class="contact-content">
-
-            <div class="eyebrow">
-              Contact Emily
-            </div>
-
-            <h2>
-              Your next move<br>
-              starts with a chat.
-            </h2>
-
-            <p>
-              Whether you're ready to buy, thinking about selling, or just
-              have questions about the market, I'd love to hear from you.
-            </p>
-
-
-            <div class="contact-details">
-
-              <div class="contact-detail">
-
-                <span>Email</span>
-
-                <a href="mailto:emily@example.com">
-                  emily@example.com
-                </a>
-
-              </div>
-
-
-              <div class="contact-detail">
-
-                <span>Phone</span>
-
-                <a href="tel:+10000000000">
-                  (000) 000-0000
-                </a>
-
-              </div>
-
-
-              <div class="contact-detail">
-
-                <span>Serving</span>
-
-                <strong>
-                  Toronto · Durham · Peterborough · GTA
-                </strong>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <form
-            class="contact-form"
-            onsubmit="submitForm(event)"
-          >
-
-            <div class="form-group">
-
-              <label for="name">
-                Name
-              </label>
-
-              <input
-                id="name"
-                type="text"
-                placeholder="Your name"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="email">
-                Email
-              </label>
-
-              <input
-                id="email"
-                type="email"
-                placeholder="Your email"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="phone">
-                Phone
-              </label>
-
-              <input
-                id="phone"
-                type="tel"
-                placeholder="Your phone number"
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="interest">
-                I'm Interested In
-              </label>
-
-              <select id="interest">
-
-                <option value="">
-                  Select one
-                </option>
-
-                <option>
-                  Buying
-                </option>
-
-                <option>
-                  Selling
-                </option>
-
-                <option>
-                  Investing
-                </option>
-
-                <option>
-                  General Question
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="message">
-                Message
-              </label>
-
-              <textarea
-                id="message"
-                placeholder="Tell me a little about what you're looking for..."
-              ></textarea>
-
-            </div>
-
-
-            <button
-              class="btn"
-              type="submit"
-            >
-              Send Message
-            </button>
-
-          </form>
-
-        </div>
-
-      </section>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-top">
-
-        <div class="footer-brand">
-
-          <h2>
+        <a href="#home" class="logo">
             Emily Taylor
-          </h2>
+            <span>Real Estate</span>
+        </a>
 
-          <p>
-            Real estate thoughtfully represented across Toronto, Durham
-            Region, Peterborough, Peterborough County and the GTA.
-          </p>
+        <nav class="nav-links" id="navLinks">
 
-        </div>
+            <a href="#home">Home</a>
+            <a href="#buy">Buy</a>
+            <a href="#sell">Sell</a>
+            <a href="#about">About</a>
+            <a href="#areas">Areas</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
 
+            <!-- DIRECT REMAX LISTING LINK -->
+            <a
+                href="https://emilytaylor.remaxhallmarkeastern.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-listings"
+            >
+                View Listings
+            </a>
 
-        <div class="footer-column">
+        </nav>
 
-          <h4>
-            Explore
-          </h4>
-
-          <button onclick="routeToView('home-view')">
-            Home
-          </button>
-
-          <button onclick="routeToView('buy-view')">
-            Buy
-          </button>
-
-          <button onclick="routeToView('sell-view')">
-            Sell
-          </button>
-
-          <button onclick="routeToView('listings-view')">
-            Listings
-          </button>
-
-          <button onclick="routeToView('about-view')">
-            About
-          </button>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Connect
-          </h4>
-
-          <button onclick="routeToView('areas-view')">
-            Areas
-          </button>
-
-          <button onclick="routeToView('resources-view')">
-            Resources
-          </button>
-
-          <button onclick="routeToView('contact-view')">
-            Contact
-          </button>
-
-          <a href="mailto:emily@example.com">
-            Email Emily
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 Emily Taylor. All rights reserved.
-        </span>
-
-        <span>
-          Toronto · Durham · Peterborough · GTA
-        </span>
-
-      </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+            ☰
+        </button>
 
     </div>
 
-  </footer>
+</header>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
 
-  <script>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-    function routeToView(viewId) {
+<main>
 
-      // Hide every page
-      const pages = document.querySelectorAll(".page-view");
+<section class="hero" id="home">
 
-      pages.forEach(function(page) {
-        page.classList.remove("active");
-      });
+    <div class="container">
 
-      // Show requested page
-      const selectedPage = document.getElementById(viewId);
+        <div class="hero-content fade-up">
 
-      if (selectedPage) {
-        selectedPage.classList.add("active");
-      }
+            <div class="hero-kicker">
+                Toronto • GTA • Durham • Peterborough
+            </div>
 
-      // Close mobile navigation
-      const nav = document.getElementById("navLinks");
+            <h1>
+                Real Estate,
+                <span>reimagined.</span>
+            </h1>
 
-      if (nav) {
-        nav.classList.remove("open");
-      }
+            <p class="hero-description">
+                A thoughtful, personal approach to buying and selling —
+                built around your goals, your lifestyle and the next chapter
+                you're creating.
+            </p>
 
-      // Scroll to top
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+            <div class="hero-buttons">
 
-    }
+                <a href="#contact" class="button button-dark">
+                    Let's Talk
+                </a>
 
+                <a
+                    href="https://emilytaylor.remaxhallmarkeastern.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button"
+                >
+                    View Listings →
+                </a>
 
-    function toggleMenu() {
+            </div>
 
-      const nav = document.getElementById("navLinks");
+        </div>
 
-      if (nav) {
-        nav.classList.toggle("open");
-      }
+    </div>
 
-    }
+    <div class="hero-scroll">
+        Scroll to explore ↓
+    </div>
 
-
-    function submitForm(event) {
-
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const phone = document.getElementById("phone").value;
-      const interest = document.getElementById("interest").value;
-      const message = document.getElementById("message").value;
-
-      const subject = encodeURIComponent(
-        "New Website Inquiry - " + interest
-      );
-
-      const body = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\nPhone: " + phone +
-        "\nInterested In: " + interest +
-        "\n\nMessage:\n" + message
-      );
-
-      window.location.href =
-        "mailto:emily@example.com?subject=" +
-        subject +
-        "&body=" +
-        body;
-
-    }
+</section>
 
 
-    // Make sure Home is visible when page loads
-    document.addEventListener("DOMContentLoaded", function() {
 
-      routeToView("home-view");
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="section intro">
+
+    <div class="container intro-grid">
+
+        <div class="fade-up">
+
+            <div class="intro-number">
+                01
+            </div>
+
+            <div class="eyebrow">
+                The Emily Taylor Approach
+            </div>
+
+        </div>
+
+
+        <div class="intro-right fade-up">
+
+            <h2 class="section-title">
+                Real estate should feel
+                <em>personal.</em>
+            </h2>
+
+            <p class="body-copy">
+                Buying or selling a home is about more than square footage,
+                numbers and paperwork. It's about where you're going,
+                how you want to live and what matters most to you.
+            </p>
+
+            <p class="body-copy">
+                Emily brings a modern, thoughtful approach to real estate,
+                combining local knowledge, clear communication and
+                genuine attention to detail from the first conversation
+                to the final signature.
+            </p>
+
+            <a href="#about" class="button">
+                Meet Emily →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="eyebrow fade-up">
+            How I Can Help
+        </div>
+
+        <h2 class="section-title fade-up">
+            More than a transaction.
+            <br>
+            <em>A relationship.</em>
+        </h2>
+
+        <p class="services-intro fade-up">
+            Whether you're making your first move, searching for your
+            forever home or preparing to sell, the experience should feel
+            clear, strategic and completely tailored to you.
+        </p>
+
+
+        <div class="service-grid">
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>Buying</h3>
+
+                <p>
+                    From your first search to handing over the keys,
+                    navigate the buying process with confidence,
+                    strategy and someone firmly in your corner.
+                </p>
+
+            </div>
+
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>Selling</h3>
+
+                <p>
+                    Thoughtful positioning, strong marketing and a
+                    strategic plan designed to help your property stand
+                    out and attract the right buyer.
+                </p>
+
+            </div>
+
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>Relocation</h3>
+
+                <p>
+                    Moving between Toronto, the GTA, Durham, Peterborough
+                    or surrounding communities? Get local insight to make
+                    your next move easier.
+                </p>
+
+            </div>
+
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>First-Time Buyers</h3>
+
+                <p>
+                    No question is too small. Get guidance through the
+                    process, from financing and showings to offers,
+                    conditions and closing.
+                </p>
+
+            </div>
+
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <h3>Market Guidance</h3>
+
+                <p>
+                    Understand what's happening in the market and how
+                    current conditions may affect your buying or selling
+                    strategy.
+                </p>
+
+            </div>
+
+
+            <div class="service fade-up">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <h3>Local Expertise</h3>
+
+                <p>
+                    From city living to small-town charm, connect with
+                    someone who understands the communities you're
+                    considering calling home.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BUY
+========================================================= -->
+
+<section class="split-section" id="buy">
+
+    <div class="split-image"></div>
+
+    <div class="split-content">
+
+        <div class="split-content-inner fade-up">
+
+            <div class="eyebrow">
+                For Buyers
+            </div>
+
+            <h2 class="section-title">
+                Find the place
+                <em>that feels right.</em>
+            </h2>
+
+            <p class="body-copy">
+                Your next home should fit more than your budget.
+                It should fit your lifestyle, your plans and the way
+                you actually want to live.
+            </p>
+
+            <p class="body-copy">
+                We'll narrow down what matters, explore the right
+                opportunities and build a strategy that makes sense
+                for you.
+            </p>
+
+            <a href="#contact" class="button">
+                Start Your Search →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SELL
+========================================================= -->
+
+<section class="split-section reverse" id="sell">
+
+    <div class="split-image"></div>
+
+    <div class="split-content">
+
+        <div class="split-content-inner fade-up">
+
+            <div class="eyebrow">
+                For Sellers
+            </div>
+
+            <h2 class="section-title">
+                Sell with
+                <em>intention.</em>
+            </h2>
+
+            <p class="body-copy">
+                Selling your home deserves more than a sign on the lawn.
+                It deserves thoughtful preparation, strategic positioning
+                and marketing that makes people stop scrolling.
+            </p>
+
+            <p class="body-copy">
+                From preparing your property for market to negotiating
+                the final offer, every detail has a purpose.
+            </p>
+
+            <a href="#contact" class="button">
+                Talk About Selling →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image fade-up"></div>
+
+
+        <div class="about-content fade-up">
+
+            <div class="eyebrow">
+                About Emily
+            </div>
+
+            <h2 class="section-title">
+                Your realtor,
+                <em>your advocate.</em>
+            </h2>
+
+            <p class="body-copy">
+                Real estate is personal — and that's exactly how Emily
+                believes it should be approached.
+            </p>
+
+            <p class="body-copy">
+                With a client-first mindset and a passion for helping
+                people find their place, Emily brings an approachable,
+                modern perspective to every transaction.
+            </p>
+
+            <p class="body-copy">
+                Whether you're navigating your first purchase, making a
+                move across the GTA or preparing to sell a home that holds
+                years of memories, the goal is simple:
+                make the process feel a little less overwhelming and
+                a lot more like you.
+            </p>
+
+            <div class="signature">
+                — Emily
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AREAS
+========================================================= -->
+
+<section class="section areas" id="areas">
+
+    <div class="container">
+
+        <div class="eyebrow fade-up">
+            Where I Work
+        </div>
+
+        <h2 class="section-title fade-up">
+            From city streets to
+            <em>country roads.</em>
+        </h2>
+
+        <p class="body-copy areas-intro fade-up">
+            Serving clients throughout Toronto, the GTA, Durham Region,
+            Peterborough, Kawartha Lakes and surrounding communities.
+        </p>
+
+
+        <div class="area-grid">
+
+            <div class="area fade-up">
+                <h3>Toronto</h3>
+                <p>GTA</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Durham</h3>
+                <p>Region</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Peterborough</h3>
+                <p>County</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Kawartha Lakes</h3>
+                <p>Region</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Whitby</h3>
+                <p>Durham</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Oshawa</h3>
+                <p>Durham</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Clarington</h3>
+                <p>Durham</p>
+            </div>
+
+            <div class="area fade-up">
+                <h3>Lakefield</h3>
+                <p>Peterborough</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REMAX LISTING CTA
+========================================================= -->
+
+<section class="listing-cta">
+
+    <div class="container">
+
+        <div class="eyebrow fade-up">
+            Looking for your next home?
+        </div>
+
+        <h2 class="fade-up">
+            Explore the latest
+            <em>listings.</em>
+        </h2>
+
+        <p class="fade-up">
+            Property searches and current MLS® listings live on Emily's
+            dedicated REMAX website.
+        </p>
+
+        <a
+            href="https://emilytaylor.remaxhallmarkeastern.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-light fade-up"
+        >
+            View All Listings →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESOURCES
+========================================================= -->
+
+<section class="section resources" id="resources">
+
+    <div class="container">
+
+        <div class="resources-header">
+
+            <div>
+
+                <div class="eyebrow fade-up">
+                    Real Estate Resources
+                </div>
+
+                <h2 class="section-title fade-up">
+                    Know before
+                    <em>you move.</em>
+                </h2>
+
+            </div>
+
+            <p class="body-copy fade-up">
+                Real estate can feel complicated. The right information
+                can make the process feel a whole lot clearer.
+            </p>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+            <article class="resource-card fade-up">
+
+                <div>
+
+                    <span>Buyers</span>
+
+                    <h3>
+                        First-time buyer guidance
+                    </h3>
+
+                    <p>
+                        Understand the steps, questions and decisions
+                        involved in purchasing your first home.
+                    </p>
+
+                </div>
+
+                <div class="resource-arrow">
+                    →
+                </div>
+
+            </article>
+
+
+            <article class="resource-card fade-up">
+
+                <div>
+
+                    <span>Sellers</span>
+
+                    <h3>
+                        Getting your home market-ready
+                    </h3>
+
+                    <p>
+                        The little details that can make a big difference
+                        before your home hits the market.
+                    </p>
+
+                </div>
+
+                <div class="resource-arrow">
+                    →
+                </div>
+
+            </article>
+
+
+            <article class="resource-card fade-up">
+
+                <div>
+
+                    <span>Market</span>
+
+                    <h3>
+                        Understanding the market
+                    </h3>
+
+                    <p>
+                        Get a better understanding of market conditions
+                        and what they mean for your next move.
+                    </p>
+
+                </div>
+
+                <div class="resource-arrow">
+                    →
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="fade-up">
+
+            <div class="eyebrow">
+                Let's Connect
+            </div>
+
+            <h2>
+                Your next chapter
+                <em>starts here.</em>
+            </h2>
+
+            <p class="contact-description">
+                Thinking about buying, selling or simply curious about
+                what's possible? Let's have a conversation — no pressure,
+                no obligation.
+            </p>
+
+            <a href="tel:4169949683" class="button button-light">
+                Call Emily →
+            </a>
+
+        </div>
+
+
+        <div class="contact-details fade-up">
+
+            <div class="contact-detail">
+
+                <span>Phone</span>
+
+                <a href="tel:4169949683">
+                    416-994-9683
+                </a>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>Serving</span>
+
+                <a href="#areas">
+                    Toronto • GTA • Durham • Peterborough
+                </a>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>Listings</span>
+
+                <a
+                    href="https://emilytaylor.remaxhallmarkeastern.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View REMAX Listings →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-logo">
+                Emily Taylor
+                <span>Real Estate</span>
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#buy">Buy</a>
+
+                <a href="#sell">Sell</a>
+
+                <a href="#about">About</a>
+
+                <a href="#areas">Areas</a>
+
+                <a href="#contact">Contact</a>
+
+                <a
+                    href="https://emilytaylor.remaxhallmarkeastern.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Listings
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © <span id="year"></span> Emily Taylor. All rights reserved.
+            </div>
+
+            <div>
+                Real Estate • Toronto • GTA • Durham • Peterborough
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* ---------------------------------------------
+       MOBILE MENU
+    --------------------------------------------- */
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileToggle.addEventListener("click", function() {
+
+        navLinks.classList.toggle("open");
+
+        if (navLinks.classList.contains("open")) {
+            mobileToggle.textContent = "✕";
+        } else {
+            mobileToggle.textContent = "☰";
+        }
 
     });
 
-  </script>
+
+    /* Close mobile menu when link clicked */
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("open");
+
+            mobileToggle.textContent = "☰";
+
+        });
+
+    });
+
+
+    /* ---------------------------------------------
+       HEADER ON SCROLL
+    --------------------------------------------- */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* ---------------------------------------------
+       SCROLL ANIMATIONS
+    --------------------------------------------- */
+
+    const observer = new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+    document.querySelectorAll(".fade-up").forEach(function(element) {
+
+        observer.observe(element);
+
+    });
+
+
+    /* ---------------------------------------------
+       CURRENT YEAR
+    --------------------------------------------- */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+</script>
+
 
 </body>
 </html>
