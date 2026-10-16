@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -30,7 +28,6 @@
       --burgundy-dark: #39090c;
       --charcoal: #242321;
       --grey: #6f6a63;
-      --taupe: #a89d8e;
       --line: rgba(36,35,33,.16);
       --white: #ffffff;
 
@@ -38,18 +35,15 @@
       --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
     }
 
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
-
 
     body {
       background: var(--cream);
@@ -59,12 +53,10 @@
       overflow-x: hidden;
     }
 
-
     img {
       display: block;
       width: 100%;
     }
-
 
     a {
       color: inherit;
@@ -72,16 +64,15 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        HEADER
-    ========================================================= */
+    ========================= */
 
     header {
       background: var(--cream);
       padding: 28px 5vw;
       border-bottom: 1px solid var(--line);
     }
-
 
     .nav {
       max-width: 1500px;
@@ -90,27 +81,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 40px;
     }
-
 
     .logo-link {
       display: flex;
       align-items: center;
       width: 190px;
-      flex-shrink: 0;
     }
-
 
     .logo-link img {
       width: 100%;
       max-height: 70px;
-
       object-fit: contain;
       object-position: left center;
     }
-
 
     nav {
       display: flex;
@@ -118,61 +103,587 @@
       gap: 30px;
     }
 
-
     nav a {
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
-
       color: var(--charcoal);
-
       transition: color .25s ease;
     }
-
 
     nav a:hover {
       color: var(--burgundy);
     }
 
-
     .mobile-menu {
       display: none;
-
       border: 0;
       background: transparent;
-
       color: var(--charcoal);
-
       font-size: 25px;
-
       cursor: pointer;
     }
 
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
+    /* =========================
+       GENERAL
+    ========================= */
 
     .eyebrow {
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .24em;
       text-transform: uppercase;
+      margin-bottom: 55px;
+    }
 
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .about-hero {
+      background: var(--burgundy);
+      color: white;
+      padding: 145px 5vw 130px;
+    }
+
+    .about-hero-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .about-hero .eyebrow {
+      color: rgba(255,255,255,.72);
+      margin-bottom: 70px;
+    }
+
+    .about-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(70px, 9vw, 140px);
+      font-weight: 400;
+      line-height: .84;
+      letter-spacing: -.06em;
+      max-width: 1050px;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 140px 5vw;
+      background: var(--cream);
+    }
+
+    .intro-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 110px;
+    }
+
+    .intro-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    .intro-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(48px, 6vw, 88px);
+      font-weight: 400;
+      line-height: .92;
+      letter-spacing: -.05em;
       margin-bottom: 60px;
     }
 
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--serif);
-      font-weight: 400;
+    .intro-copy p {
+      max-width: 760px;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 28px;
     }
 
+
+    /* =========================
+       WHO EMILY SERVES
+    ========================= */
+
+    .specialties {
+      background: var(--burgundy);
+      color: white;
+      padding: 140px 5vw;
+    }
+
+    .specialties-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .specialties-heading {
+      margin-bottom: 100px;
+    }
+
+    .specialties-heading .eyebrow {
+      color: rgba(255,255,255,.68);
+      margin-bottom: 65px;
+    }
+
+    .specialties-heading h2 {
+      font-family: var(--serif);
+      font-size: clamp(65px, 8vw, 125px);
+      font-weight: 400;
+      line-height: .86;
+      letter-spacing: -.06em;
+      max-width: 1000px;
+    }
+
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+
+      border-top: 1px solid rgba(255,255,255,.2);
+      border-left: 1px solid rgba(255,255,255,.2);
+    }
+
+    .specialty-card {
+      padding: 60px 50px 65px;
+
+      border-right: 1px solid rgba(255,255,255,.2);
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+
+    .specialty-card .eyebrow {
+      color: rgba(255,255,255,.65);
+      margin-bottom: 45px;
+    }
+
+    .specialty-card h3 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 4vw, 60px);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.04em;
+      margin-bottom: 35px;
+    }
+
+    .specialty-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.78);
+    }
+
+    .specialty-list {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .specialty-list li {
+      font-family: var(--serif);
+      font-size: 25px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+
+    /* =========================
+       RELATIONSHIP & RESULTS
+    ========================= */
+
+    .story {
+      padding: 140px 5vw;
+      background: var(--cream-light);
+    }
+
+    .story-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .story-image {
+      width: 100%;
+      height: 650px;
+      object-fit: cover;
+    }
+
+    .story-copy {
+      padding-top: 10px;
+    }
+
+    .story-copy .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 70px;
+    }
+
+    .story-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(48px, 5vw, 78px);
+      font-weight: 400;
+      line-height: .92;
+      letter-spacing: -.05em;
+      margin-bottom: 55px;
+    }
+
+    .story-copy p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--grey);
+      margin-bottom: 28px;
+      max-width: 680px;
+    }
+
+
+    /* =========================
+       WHY REAL ESTATE
+    ========================= */
+
+    .why {
+      padding: 145px 5vw;
+      background: var(--cream);
+    }
+
+    .why-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .why .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 70px;
+    }
+
+    .why h2 {
+      font-family: var(--serif);
+      font-size: clamp(55px, 7vw, 105px);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.055em;
+      max-width: 1000px;
+      margin-bottom: 80px;
+    }
+
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .quote {
+      padding: 50px 45px;
+
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      font-family: var(--serif);
+      font-size: 27px;
+      line-height: 1.25;
+    }
+
+
+    /* =========================
+       HOW IT STARTED
+    ========================= */
+
+    .how-started {
+      padding: 140px 5vw;
+      background: var(--cream-light);
+    }
+
+    .how-started-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .how-started-copy {
+      padding-top: 10px;
+    }
+
+    .how-started-copy .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 70px;
+    }
+
+    .how-started-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(50px, 5.5vw, 82px);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.05em;
+      margin-bottom: 50px;
+    }
+
+    .how-started-copy p {
+      max-width: 680px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--grey);
+      margin-bottom: 25px;
+    }
+
+    .how-started-image {
+      height: 650px;
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       APPROACH
+    ========================= */
+
+    .approach {
+      background: var(--cream);
+      padding: 145px 5vw;
+    }
+
+    .approach-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .approach-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 90px;
+    }
+
+    .approach-heading .eyebrow {
+      color: var(--burgundy);
+    }
+
+    .approach-heading h2 {
+      font-family: var(--serif);
+      font-size: clamp(55px, 6vw, 90px);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.05em;
+    }
+
+    .approach-text {
+      max-width: 700px;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.9;
+      margin-top: 45px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .approach-item {
+      padding: 30px 20px;
+
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      font-family: var(--serif);
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .client-promise {
+      margin-top: 70px;
+      padding: 55px;
+
+      background: var(--burgundy);
+      color: white;
+    }
+
+    .client-promise .eyebrow {
+      color: rgba(255,255,255,.65);
+      margin-bottom: 35px;
+    }
+
+    .client-promise h3 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 4vw, 60px);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.04em;
+      margin-bottom: 45px;
+    }
+
+    .promise-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .promise-list div {
+      font-family: var(--serif);
+      font-size: 25px;
+    }
+
+
+    /* =========================
+       AWARDS
+    ========================= */
+
+    .awards {
+      background: var(--burgundy);
+      color: white;
+      padding: 145px 5vw;
+    }
+
+    .awards-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .awards .eyebrow {
+      color: rgba(255,255,255,.7);
+      margin-bottom: 70px;
+    }
+
+    .awards h2 {
+      font-family: var(--serif);
+      font-size: clamp(60px, 7vw, 110px);
+      font-weight: 400;
+      line-height: .86;
+      letter-spacing: -.055em;
+      max-width: 1000px;
+      margin-bottom: 70px;
+    }
+
+    .awards-intro {
+      max-width: 750px;
+      color: rgba(255,255,255,.78);
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 85px;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid rgba(255,255,255,.2);
+      border-left: 1px solid rgba(255,255,255,.2);
+    }
+
+    .award {
+      min-height: 190px;
+      padding: 45px 40px;
+
+      border-right: 1px solid rgba(255,255,255,.2);
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+
+    .award h3 {
+      font-family: var(--serif);
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .award p {
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       LIFE / TRAVEL
+    ========================= */
+
+    .life {
+      padding: 140px 5vw;
+      background: var(--cream);
+    }
+
+    .life-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .life-image {
+      height: 620px;
+      object-fit: cover;
+    }
+
+    .life-copy .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 70px;
+    }
+
+    .life-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(50px, 5.5vw, 82px);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.05em;
+      margin-bottom: 50px;
+    }
+
+    .life-copy p {
+      max-width: 650px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--grey);
+      margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .final-cta {
+      background: var(--cream-light);
+      padding: 130px 5vw;
+    }
+
+    .final-cta-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .final-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(55px, 7vw, 105px);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.05em;
+      max-width: 900px;
+    }
 
     .button {
       display: inline-flex;
@@ -184,23 +695,19 @@
 
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .18em;
       text-transform: uppercase;
 
       border: 1px solid var(--burgundy);
-
       transition: all .25s ease;
 
       flex-shrink: 0;
     }
 
-
     .button-burgundy {
       background: var(--burgundy);
-      color: var(--white);
+      color: white;
     }
-
 
     .button-burgundy:hover {
       background: transparent;
@@ -208,908 +715,76 @@
     }
 
 
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .about-hero {
-      background: var(--burgundy);
-      color: var(--white);
-
-      padding: 145px 5vw 135px;
-    }
-
-
-    .about-hero-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .about-hero .eyebrow {
-      color: rgba(255,255,255,.72);
-      margin-bottom: 72px;
-    }
-
-
-    .about-hero h1 {
-      max-width: 1150px;
-
-      font-size: clamp(65px, 8vw, 125px);
-
-      line-height: .87;
-      letter-spacing: -.06em;
-    }
-
-
-    .hero-accent {
-      display: block;
-
-      margin-top: 35px;
-
-      color: rgba(255,255,255,.55);
-
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .intro {
-      padding: 145px 5vw;
-      background: var(--cream);
-    }
-
-
-    .intro-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-
-      gap: 110px;
-
-      align-items: start;
-    }
-
-
-    .intro-label {
-      color: var(--burgundy);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .24em;
-      text-transform: uppercase;
-    }
-
-
-    .intro-copy h2 {
-      max-width: 900px;
-
-      font-size: clamp(55px, 6vw, 90px);
-
-      line-height: .9;
-      letter-spacing: -.055em;
-
-      margin-bottom: 65px;
-    }
-
-
-    .intro-copy p {
-      max-width: 760px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
-    }
-
-
-    .intro-highlight {
-      margin-top: 55px;
-      padding-top: 38px;
-
-      border-top: 1px solid var(--line);
-
-      color: var(--burgundy);
-
-      font-family: var(--serif);
-      font-size: 31px;
-
-      line-height: 1.25;
-    }
-
-
-    /* =========================================================
-       RELATIONSHIPS / RESULTS
-    ========================================================= */
-
-    .story {
-      padding: 145px 5vw;
-      background: var(--cream-light);
-    }
-
-
-    .story-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-
-      align-items: center;
-    }
-
-
-    .story-image {
-      width: 100%;
-      height: 650px;
-
-      object-fit: cover;
-    }
-
-
-    .story-copy {
-      padding-top: 10px;
-    }
-
-
-    .story-copy .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .story-copy h2 {
-      max-width: 700px;
-
-      font-size: clamp(50px, 5.5vw, 82px);
-
-      line-height: .9;
-      letter-spacing: -.055em;
-
-      margin-bottom: 55px;
-    }
-
-
-    .story-copy p {
-      max-width: 680px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
-    }
-
-
-    .story-stat {
-      display: flex;
-      align-items: baseline;
-      gap: 18px;
-
-      margin-top: 50px;
-      padding-top: 35px;
-
-      border-top: 1px solid var(--line);
-    }
-
-
-    .story-stat strong {
-      font-family: var(--serif);
-      font-size: 65px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-
-    .story-stat span {
-      max-width: 200px;
-
-      color: var(--grey);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       SPECIALTIES
-    ========================================================= */
-
-    .specialties {
-      background: var(--burgundy);
-      color: var(--white);
-
-      padding: 130px 5vw;
-    }
-
-
-    .specialties-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .specialties-intro {
-      max-width: 900px;
-
-      margin-bottom: 90px;
-    }
-
-
-    .specialties-intro .eyebrow {
-      color: rgba(255,255,255,.65);
-    }
-
-
-    .specialties-intro h2 {
-      font-size: clamp(55px, 7vw, 105px);
-
-      line-height: .87;
-      letter-spacing: -.055em;
-    }
-
-
-    .specialty-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      border-top: 1px solid rgba(255,255,255,.2);
-      border-left: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .specialty-card {
-      padding: 60px 50px 65px;
-
-      border-right: 1px solid rgba(255,255,255,.2);
-      border-bottom: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .specialty-card .eyebrow {
-      color: rgba(255,255,255,.65);
-      margin-bottom: 45px;
-    }
-
-
-    .specialty-card h3 {
-      font-size: clamp(40px, 4vw, 60px);
-
-      line-height: .94;
-      letter-spacing: -.045em;
-
-      margin-bottom: 35px;
-    }
-
-
-    .specialty-card p {
-      max-width: 580px;
-
-      color: rgba(255,255,255,.76);
-
-      font-size: 16px;
-      line-height: 1.8;
-
-      margin-bottom: 30px;
-    }
-
-
-    .specialty-list {
-      list-style: none;
-      margin-top: 30px;
-    }
-
-
-    .specialty-list li {
-      padding: 14px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.15);
-
-      font-family: var(--serif);
-      font-size: 25px;
-    }
-
-
-    /* =========================================================
-       WHY REAL ESTATE
-    ========================================================= */
-
-    .why {
-      padding: 150px 5vw;
-      background: var(--cream);
-    }
-
-
-    .why-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .why .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .why-heading {
-      max-width: 1050px;
-
-      font-size: clamp(55px, 7vw, 108px);
-
-      line-height: .87;
-      letter-spacing: -.055em;
-
-      margin-bottom: 85px;
-    }
-
-
-    .why-story {
-      display: grid;
-      grid-template-columns: .65fr 1.35fr;
-
-      gap: 100px;
-
-      border-top: 1px solid var(--line);
-
-      padding-top: 65px;
-    }
-
-
-    .why-side {
-      color: var(--burgundy);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-
-    .why-copy {
-      max-width: 800px;
-    }
-
-
-    .why-copy p {
-      color: var(--grey);
-
-      font-size: 18px;
-      line-height: 1.9;
-
-      margin-bottom: 30px;
-    }
-
-
-    .why-pullquote {
-      margin: 65px 0;
-
-      padding: 45px 0;
-
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      font-family: var(--serif);
-      font-size: clamp(32px, 4vw, 52px);
-
-      line-height: 1.05;
-      letter-spacing: -.035em;
-    }
-
-
-    /* =========================================================
-       HOW IT STARTED
-    ========================================================= */
-
-    .origin {
-      background: var(--cream-light);
-
-      padding: 145px 5vw;
-    }
-
-
-    .origin-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-
-      align-items: start;
-    }
-
-
-    .origin-copy .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .origin-copy h2 {
-      max-width: 750px;
-
-      font-size: clamp(55px, 6vw, 90px);
-
-      line-height: .88;
-      letter-spacing: -.055em;
-
-      margin-bottom: 60px;
-    }
-
-
-    .origin-copy p {
-      max-width: 700px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
-    }
-
-
-    .origin-image {
-      width: 100%;
-      height: 650px;
-
-      object-fit: cover;
-    }
-
-
-    .lizard-skin {
-      margin-top: 55px;
-      padding: 45px;
-
-      background: var(--burgundy);
-
-      color: var(--white);
-    }
-
-
-    .lizard-skin strong {
-      display: block;
-
-      margin-bottom: 15px;
-
-      font-family: var(--serif);
-      font-size: 38px;
-      font-weight: 400;
-    }
-
-
-    .lizard-skin p {
-      margin: 0;
-
-      color: rgba(255,255,255,.75);
-
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       APPROACH
-    ========================================================= */
-
-    .approach {
-      background: var(--cream);
-
-      padding: 150px 5vw;
-    }
-
-
-    .approach-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .approach-heading {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-
-      gap: 100px;
-
-      margin-bottom: 90px;
-    }
-
-
-    .approach-heading .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .approach-heading h2 {
-      max-width: 850px;
-
-      font-size: clamp(55px, 6.5vw, 100px);
-
-      line-height: .86;
-      letter-spacing: -.055em;
-    }
-
-
-    .approach-text {
-      max-width: 760px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-top: 50px;
-    }
-
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-
-    .approach-item {
-      padding: 32px 18px;
-
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      font-family: var(--serif);
-      font-size: 23px;
-
-      text-align: center;
-    }
-
-
-    .client-promise {
-      margin-top: 70px;
-
-      padding: 60px;
-
-      background: var(--burgundy);
-
-      color: var(--white);
-    }
-
-
-    .client-promise .eyebrow {
-      color: rgba(255,255,255,.65);
-      margin-bottom: 35px;
-    }
-
-
-    .client-promise h3 {
-      font-size: clamp(40px, 4vw, 62px);
-
-      line-height: .93;
-      letter-spacing: -.045em;
-
-      margin-bottom: 50px;
-    }
-
-
-    .promise-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 20px;
-    }
-
-
-    .promise-list div {
-      font-family: var(--serif);
-      font-size: 27px;
-    }
-
-
-    /* =========================================================
-       AWARDS
-    ========================================================= */
-
-    .awards {
-      background: var(--burgundy);
-      color: var(--white);
-
-      padding: 150px 5vw;
-    }
-
-
-    .awards-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .awards .eyebrow {
-      color: rgba(255,255,255,.7);
-    }
-
-
-    .awards h2 {
-      max-width: 1050px;
-
-      font-size: clamp(58px, 7vw, 110px);
-
-      line-height: .86;
-      letter-spacing: -.055em;
-
-      margin-bottom: 65px;
-    }
-
-
-    .awards-intro {
-      max-width: 800px;
-
-      color: rgba(255,255,255,.78);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 85px;
-    }
-
-
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      border-top: 1px solid rgba(255,255,255,.2);
-      border-left: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .award {
-      min-height: 210px;
-
-      padding: 48px 42px;
-
-      border-right: 1px solid rgba(255,255,255,.2);
-      border-bottom: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .award h3 {
-      font-size: 36px;
-
-      line-height: 1;
-
-      margin-bottom: 20px;
-    }
-
-
-    .award p {
-      color: rgba(255,255,255,.68);
-
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       LIFE / PERSONAL
-    ========================================================= */
-
-    .life {
-      padding: 145px 5vw;
-
-      background: var(--cream-light);
-    }
-
-
-    .life-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-
-      align-items: center;
-    }
-
-
-    .life-image {
-      width: 100%;
-      height: 620px;
-
-      object-fit: cover;
-    }
-
-
-    .life-copy .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .life-copy h2 {
-      max-width: 700px;
-
-      font-size: clamp(52px, 5.5vw, 85px);
-
-      line-height: .89;
-      letter-spacing: -.055em;
-
-      margin-bottom: 55px;
-    }
-
-
-    .life-copy p {
-      max-width: 650px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 25px;
-    }
-
-
-    .life-highlight {
-      margin-top: 45px;
-
-      padding-top: 35px;
-
-      border-top: 1px solid var(--line);
-
-      color: var(--burgundy);
-
-      font-family: var(--serif);
-      font-size: 29px;
-
-      line-height: 1.25;
-    }
-
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
-
-    .final-cta {
-      background: var(--cream);
-
-      padding: 135px 5vw;
-    }
-
-
-    .final-cta-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 70px;
-    }
-
-
-    .final-cta h2 {
-      max-width: 950px;
-
-      font-size: clamp(55px, 7vw, 105px);
-
-      line-height: .87;
-      letter-spacing: -.055em;
-    }
-
-
-    /* =========================================================
+    /* =========================
        FOOTER
-    ========================================================= */
+    ========================= */
 
     footer {
       background: var(--cream);
-
       color: var(--charcoal);
-
       padding: 85px 5vw 35px;
     }
-
 
     .footer-inner {
       max-width: 1500px;
       margin: 0 auto;
     }
 
-
     .footer-top {
       display: flex;
       justify-content: space-between;
-
       gap: 60px;
-
       padding-bottom: 70px;
-
       border-bottom: 1px solid var(--line);
     }
-
 
     .footer-brand img {
       width: 190px;
       max-height: 70px;
-
       object-fit: contain;
       object-position: left center;
-
       margin-bottom: 20px;
     }
 
-
     .footer-brand p {
-      color: var(--grey);
-
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .17em;
       text-transform: uppercase;
+      color: var(--grey);
     }
-
 
     .footer-nav {
       display: flex;
       gap: 30px;
-
       align-items: center;
       flex-wrap: wrap;
     }
 
-
     .footer-nav a {
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
     }
-
 
     .footer-nav a:hover {
       color: var(--burgundy);
     }
 
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-
       gap: 30px;
-
       padding-top: 27px;
-
-      color: var(--grey);
-
       font-size: 11px;
+      color: var(--grey);
     }
 
 
-    /* =========================================================
+    /* =========================
        MOBILE
-    ========================================================= */
+    ========================= */
 
     @media (max-width: 900px) {
 
@@ -1117,55 +792,46 @@
         padding: 20px 6vw;
       }
 
-
       .logo-link {
         width: 150px;
       }
-
 
       nav {
         display: none;
 
         position: absolute;
-
         top: 85px;
         left: 5vw;
         right: 5vw;
 
         padding: 25px;
-
         background: var(--burgundy);
 
         flex-direction: column;
         align-items: flex-start;
-
         gap: 20px;
 
         z-index: 30;
       }
 
-
       nav.open {
         display: flex;
       }
 
-
       nav a {
-        color: var(--white);
+        color: white;
       }
-
 
       .mobile-menu {
         display: block;
       }
 
-
       .about-hero,
       .intro,
-      .story,
       .specialties,
+      .story,
       .why,
-      .origin,
+      .how-started,
       .approach,
       .awards,
       .life,
@@ -1174,63 +840,49 @@
         padding-right: 6vw;
       }
 
-
       .about-hero {
-        padding-top: 105px;
-        padding-bottom: 105px;
+        padding-top: 100px;
+        padding-bottom: 100px;
       }
-
 
       .intro-inner,
       .story-inner,
-      .origin-inner,
+      .how-started-inner,
       .life-inner {
         grid-template-columns: 1fr;
         gap: 70px;
       }
 
-
-      .why-story {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-
       .specialty-grid,
+      .quotes,
       .awards-grid {
         grid-template-columns: 1fr;
       }
-
 
       .approach-heading {
         grid-template-columns: 1fr;
         gap: 40px;
       }
 
-
       .approach-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
 
       .promise-list {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 25px;
       }
 
-
       .final-cta-inner {
         flex-direction: column;
         align-items: flex-start;
       }
 
-
       .story-image,
-      .origin-image,
+      .how-started-image,
       .life-image {
         height: 500px;
       }
-
 
       .footer-top,
       .footer-bottom {
@@ -1238,136 +890,99 @@
         align-items: flex-start;
       }
 
-
       .footer-nav {
         margin-top: 20px;
       }
-
     }
 
 
     @media (max-width: 550px) {
 
       .about-hero h1 {
-        font-size: 57px;
+        font-size: 58px;
       }
 
+      .specialties-heading h2 {
+        font-size: 58px;
+      }
 
       .specialty-card {
         padding: 45px 30px;
       }
 
-
       .approach-grid {
         grid-template-columns: 1fr;
       }
-
 
       .client-promise {
         padding: 40px 30px;
       }
 
-
       .promise-list {
         grid-template-columns: 1fr;
       }
 
-
       .story-image,
-      .origin-image,
+      .how-started-image,
       .life-image {
         height: 400px;
       }
-
 
       .award {
         padding: 40px 30px;
       }
 
-
-      .lizard-skin {
-        padding: 35px 30px;
-      }
-
-
-      .intro-highlight {
-        font-size: 26px;
-      }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-  <!-- =========================================================
+  <!-- =========================
        HEADER
-  ========================================================= -->
+  ========================= -->
 
   <header>
 
     <div class="nav">
 
-      <a
-        href="index.html"
-        class="logo-link"
-        aria-label="Emily Taylor Real Estate"
-      >
-
+      <a href="index.html" class="logo-link">
         <img
           src="images/emily-logo.png"
           alt="Emily Taylor"
         >
-
       </a>
-
 
       <nav id="mainNav">
 
-        <a href="index.html">
-          Home
-        </a>
+        <a href="index.html">Home</a>
 
-        <a href="about.html">
-          About
-        </a>
+        <a href="about.html">About</a>
 
-        <a href="index.html#services">
-          Services
-        </a>
+        <a href="index.html#services">Services</a>
 
-        <a href="index.html#areas">
-          Areas
-        </a>
+        <a href="index.html#areas">Areas</a>
 
-        <a href="index.html#onesource">
-          OneSource
-        </a>
+        <a href="index.html#onesource">OneSource</a>
 
-        <a href="contact.html">
-          Contact
-        </a>
+        <a href="contact.html">Contact</a>
 
         <a
           href="https://emilytaylor.remaxhallmarkeastern.com"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
           View Listings
         </a>
 
       </nav>
 
-
       <button
         class="mobile-menu"
         id="menuButton"
-        aria-label="Open navigation"
-      >
+        aria-label="Open navigation">
         ☰
       </button>
 
@@ -1376,12 +991,16 @@
   </header>
 
 
+  <!-- =========================
+       MAIN
+  ========================= -->
+
   <main>
 
 
-    <!-- =======================================================
+    <!-- =========================
          HERO
-    ======================================================= -->
+    ========================= -->
 
     <section class="about-hero">
 
@@ -1391,72 +1010,53 @@
           ABOUT EMILY
         </div>
 
-
         <h1>
-          Real estate became<br>
-          more than a career.<br>
-          It became a way of life.
+          I think<br>
+          Real Estate<br>
+          chose me.
         </h1>
-
-
-        <span class="hero-accent">
-          Relationship driven. Results focused.
-        </span>
 
       </div>
 
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          INTRO
-    ======================================================= -->
+    ========================= -->
 
     <section class="intro">
 
       <div class="intro-inner">
 
-
         <div class="intro-label">
           The person behind the business
         </div>
 
-
         <div class="intro-copy">
 
           <h2>
-            Born in Peterborough.<br>
-            Shaped by experience.<br>
-            Driven by people.
+            Real estate,<br>
+            but personal.
           </h2>
 
-
           <p>
-            Born and raised in Peterborough, with many years spent in
-            Toronto, Emily brings a diverse professional background
-            together with a genuine passion for real estate, people,
-            dogs and travel.
+            Emily believes real estate should never feel like a
+            one-size-fits-all experience.
           </p>
 
-
           <p>
-            Her business is built around two things: relationships and
-            results. She has experience serving clients throughout
-            Toronto, Durham Region, Vaughan, Kawartha Lakes and
-            Peterborough.
+            She takes the time to listen, understand what matters,
+            uncover the details that others might miss, and guide
+            clients through each decision with care.
           </p>
 
-
           <p>
-            Since 2017, Emily has helped more than 100 families achieve
-            their real estate goals — and she's still counting.
+            Whether you're buying your first home, selling a family
+            property, downsizing, relocating or helping manage a
+            loved one's estate, the goal is the same: to make you
+            feel informed, supported and confident.
           </p>
-
-
-          <div class="intro-highlight">
-            “I want to be a trusted realtor — one who people can fully
-            depend on.”
-          </div>
 
         </div>
 
@@ -1465,9 +1065,103 @@
     </section>
 
 
-    <!-- =======================================================
-         RELATIONSHIPS / RESULTS
-    ======================================================= -->
+    <!-- =========================
+         WHO EMILY SERVES
+    ========================= -->
+
+    <section class="specialties">
+
+      <div class="specialties-inner">
+
+        <div class="specialties-heading">
+
+          <div class="eyebrow">
+            Who Emily Serves
+          </div>
+
+          <h2>
+            Every client has<br>
+            a different story.
+          </h2>
+
+        </div>
+
+
+        <div class="specialty-grid">
+
+
+          <!-- SPECIALTY -->
+
+          <div class="specialty-card">
+
+            <div class="eyebrow">
+              My Specialty
+            </div>
+
+            <h3>
+              The people<br>
+              I serve.
+            </h3>
+
+            <ul class="specialty-list">
+
+              <li>Seniors</li>
+
+              <li>Families</li>
+
+              <li>Executors</li>
+
+              <li>POAs</li>
+
+              <li>First-Time Home Buyers</li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- EXPERTISE -->
+
+          <div class="specialty-card">
+
+            <div class="eyebrow">
+              My Expertise
+            </div>
+
+            <h3>
+              Full-service<br>
+              representation.
+            </h3>
+
+            <p>
+              Emily's expertise includes the details that help prepare
+              a property for market and position her clients for the
+              strongest possible outcome.
+            </p>
+
+            <ul class="specialty-list">
+
+              <li>Full Service Listing Preparation</li>
+
+              <li>Staging</li>
+
+              <li>Negotiating</li>
+
+            </ul>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RELATIONSHIP & RESULTS
+    ========================= -->
 
     <section class="story">
 
@@ -1491,12 +1185,10 @@
             A Relationship & Results Based Business
           </div>
 
-
           <h2>
             Built on relationships.<br>
             Driven by results.
           </h2>
-
 
           <p>
             For Emily, becoming a realtor was never simply about
@@ -1504,236 +1196,83 @@
             her clients could genuinely depend on.
           </p>
 
-
           <p>
             She wanted to be there every step of the way — through
-            the exciting moments, the difficult decisions and all the
-            unexpected turns that can come with one of life's biggest
-            milestones.
+            the exciting moments, the difficult decisions and all
+            the unexpected turns that can come with one of life's
+            biggest milestones.
           </p>
-
 
           <p>
-            That means answering the phone when she's needed, staying
-            calm when things become complicated, and doing whatever
-            it takes to keep moving things forward.
+            Emily has experience serving clients throughout Toronto,
+            Durham, Vaughan, Kawartha Lakes and Peterborough.
           </p>
 
+          <p>
+            Since 2017, she has helped over 100 families achieve
+            their real estate goals — and counting.
+          </p>
 
-          <div class="story-stat">
-
-            <strong>
-              100+
-            </strong>
-
-            <span>
-              Families helped since 2017
-            </span>
-
-          </div>
+          <p>
+            Her business has grown through hard work, trust,
+            referrals and repeat clients. Those relationships are
+            truly at the heart of what she does.
+          </p>
 
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- =======================================================
-         SPECIALTIES
-    ======================================================= -->
-
-    <section class="specialties">
-
-      <div class="specialties-inner">
-
-
-        <div class="specialties-intro">
-
-          <div class="eyebrow">
-            Who Emily Serves
-          </div>
-
-
-          <h2>
-            Every client has<br>
-            a different story.
-          </h2>
-
-        </div>
-
-
-        <div class="specialty-grid">
-
-
-          <div class="specialty-card">
-
-            <div class="eyebrow">
-              My Specialty
-            </div>
-
-
-            <h3>
-              The people<br>
-              I serve.
-            </h3>
-
-
-            <p>
-              Emily specializes in supporting clients through some of
-              life's biggest transitions, with a particular focus on
-              people who may need additional guidance, patience and
-              care throughout the process.
-            </p>
-
-
-            <ul class="specialty-list">
-
-              <li>
-                Seniors
-              </li>
-
-              <li>
-                Families
-              </li>
-
-              <li>
-                Executors
-              </li>
-
-              <li>
-                Powers of Attorney
-              </li>
-
-              <li>
-                First-Time Home Buyers
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="specialty-card">
-
-            <div class="eyebrow">
-              My Expertise
-            </div>
-
-
-            <h3>
-              Full-service<br>
-              representation.
-            </h3>
-
-
-            <p>
-              From the first conversation through closing, Emily brings
-              a hands-on approach to preparing properties, positioning
-              them for market and negotiating on behalf of her clients.
-            </p>
-
-
-            <ul class="specialty-list">
-
-              <li>
-                Full-Service Listing Preparation
-              </li>
-
-              <li>
-                Staging
-              </li>
-
-              <li>
-                Strategic Negotiating
-              </li>
-
-            </ul>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
+    <!-- =========================
          WHY REAL ESTATE
-    ======================================================= -->
+    ========================= -->
 
     <section class="why">
 
       <div class="why-inner">
 
-
         <div class="eyebrow">
           Why Real Estate?
         </div>
 
-
-        <h2 class="why-heading">
+        <h2>
           “I think Real Estate<br>
           chose me.”
         </h2>
 
 
-        <div class="why-story">
+        <div class="quotes">
 
 
-          <div class="why-side">
-            More than a career
+          <div class="quote">
+            “I want to be a trusted realtor, one who people can fully
+            depend on. I want to be there every step of the way, during
+            one of the most important milestones of their lives.”
           </div>
 
 
-          <div class="why-copy">
-
-            <p>
-              Over the years, people have asked Emily what made her
-              choose real estate. Her answer has changed a little
-              over time, but the heart of it has always stayed the same.
-            </p>
-
-
-            <p>
-              She wanted to be a trusted realtor — someone people
-              could fully depend on during one of the most important
-              milestones of their lives. She wanted to exceed
-              expectations through hard work, tenacity and grit, while
-              helping change the way the public perceives real estate
-              professionals.
-            </p>
-
-
-            <p>
-              And somewhere along the way, she realized that she didn't
-              simply want a career. She wanted a lifestyle that allowed
-              her to be needed, challenged and involved.
-            </p>
-
-
-            <div class="why-pullquote">
-              “Truthfully, I thrive when I'm needed — when the phone
-              rings at 10 p.m., when an offer is accepted at 11:59 p.m.”
-            </div>
-
-
-            <p>
-              That's what makes real estate feel different for Emily.
-              It's personal. It's unpredictable. It's demanding. And
-              when everything comes together for a client, it's incredibly
-              rewarding.
-            </p>
-
-
-            <p>
-              What started as a career became something much bigger.
-              A mindset. A purpose. A way of showing up for people.
-            </p>
-
+          <div class="quote">
+            “I want to exceed expectations through hard work,
+            tenacity and grit.”
           </div>
+
+
+          <div class="quote">
+            “I want to be a respected realtor and change the way
+            the public perceives us.”
+          </div>
+
+
+          <div class="quote">
+            “I wanted a career that felt more like a lifestyle.
+            Truthfully, I thrive when I'm needed, when the phone rings
+            at 10pm, when an offer is accepted at 11:59pm.”
+          </div>
+
 
         </div>
 
@@ -1742,79 +1281,54 @@
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          HOW IT STARTED
-    ======================================================= -->
+    ========================= -->
 
-    <section class="origin">
+    <section class="how-started">
 
-      <div class="origin-inner">
+      <div class="how-started-inner">
 
 
-        <div class="origin-copy">
+        <div class="how-started-copy">
 
           <div class="eyebrow">
             How It Started
           </div>
-
 
           <h2>
             Built from<br>
             the ground up.
           </h2>
 
-
           <p>
-            Emily got her start in this business by door knocking in
-            -20°C weather, cold calling For Sale By Owners and
-            homeowners around active listings.
+            Emily got her start in this business from door knocking in
+            -20 weather and cold calling “for sale by owners” and
+            homeowners around listings.
           </p>
-
 
           <p>
             She listened to successful agents and jumped at every
-            opportunity to learn and grow. Every day was a new
-            opportunity to meet someone, help someone and become
-            better at what she did.
+            chance to learn and grow. She viewed each day as a new
+            opportunity to help someone.
           </p>
-
 
           <p>
-            Rejection was part of the process. Instead of letting it
-            stop her, Emily pushed through it and developed a thick
-            skin early on — something she jokingly refers to as her
-            “lizard skin.”
+            She pushed through rejection and formed a thick skin early
+            on — often referred to as her “lizard skin.”
           </p>
-
 
           <p>
-            Her business began to grow, and so did her referral base.
-            Referrals and repeat clients became the heart of the
-            business and continue to represent a large portion of
-            her business each year.
+            Her business began to grow, as did her referral base.
+            Referrals and repeat clients truly are the heart of her
+            business and represent a large portion of her business
+            each year.
           </p>
-
 
           <p>
-            Real estate also gave Emily an unshakable mindset — one
-            that continues to bring strength and gratitude to her
-            life every day.
+            Real estate caused Emily to adopt an unshakable mindset,
+            one that brings strength and gratitude to her life daily.
           </p>
-
-
-          <div class="lizard-skin">
-
-            <strong>
-              Hard work builds more than a business.
-            </strong>
-
-
-            <p>
-              It builds resilience, confidence, perspective and the
-              ability to keep showing up when it matters.
-            </p>
-
-          </div>
 
         </div>
 
@@ -1822,21 +1336,22 @@
         <div>
 
           <img
-            class="origin-image"
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=85"
-            alt="Home and real estate"
+            class="how-started-image"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
+            alt="Real estate professional"
           >
 
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          APPROACH
-    ======================================================= -->
+    ========================= -->
 
     <section class="approach">
 
@@ -1860,18 +1375,18 @@
             <h2>
               Listen.<br>
               Understand.<br>
-              Guide.
+              Serve.
             </h2>
-
 
             <p class="approach-text">
               Emily's approach is rooted in listening first, understanding
               what her clients truly need, uncovering the details that
-              matter, serving with intention, guiding through each
-              decision and empowering her clients throughout the process.
+              matter, serving with intention, guiding through each decision
+              and empowering her clients throughout the process.
             </p>
 
           </div>
+
 
         </div>
 
@@ -1907,63 +1422,50 @@
 
         <div class="client-promise">
 
-
           <div class="eyebrow">
             As My Client
           </div>
-
 
           <h3>
             You will always be...
           </h3>
 
-
           <div class="promise-list">
 
-            <div>
-              Prioritized
-            </div>
+            <div>Prioritized</div>
 
-            <div>
-              Supported
-            </div>
+            <div>Supported</div>
 
-            <div>
-              Respected
-            </div>
+            <div>Respected</div>
 
-            <div>
-              Valued
-            </div>
+            <div>Valued</div>
 
           </div>
 
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          AWARDS
-    ======================================================= -->
+    ========================= -->
 
     <section class="awards">
 
       <div class="awards-inner">
 
-
         <div class="eyebrow">
           Awards & Recognition
         </div>
-
 
         <h2>
           Built on ethics,<br>
           hard work & integrity.
         </h2>
-
 
         <p class="awards-intro">
           Emily's business has been built on ethics, hard work and
@@ -1981,10 +1483,9 @@
               Rising Star Award
             </h3>
 
-
             <p>
-              In 2018, Emily ranked as a top producer and received the
-              Rising Star Award based on productivity.
+              In 2018, Emily ranked as the top producer and was awarded
+              the Rising Star Award based on productivity.
             </p>
 
           </div>
@@ -1996,10 +1497,9 @@
               RE/MAX 100% Club
             </h3>
 
-
             <p>
-              Recognition received as part of Emily's continued
-              production and commitment to her real estate business.
+              Recognition for achievement and commitment to real estate
+              performance.
             </p>
 
           </div>
@@ -2011,10 +1511,9 @@
               RE/MAX Platinum Club
             </h3>
 
-
             <p>
-              Recognition earned through continued performance,
-              dedication and service to her clients.
+              Recognition earned through continued production and
+              dedication to her clients.
             </p>
 
           </div>
@@ -2026,10 +1525,8 @@
               RE/MAX Executive Award
             </h3>
 
-
             <p>
-              Recognition for achievement and continued performance
-              within RE/MAX.
+              Recognition for achievement within RE/MAX.
             </p>
 
           </div>
@@ -2041,9 +1538,8 @@
               RE/MAX Hall of Fame
             </h3>
 
-
             <p>
-              Received in 2024 in recognition of Emily's career
+              Award received in 2024 in recognition of Emily's career
               achievements and contribution to the industry.
             </p>
 
@@ -2053,9 +1549,8 @@
           <div class="award">
 
             <h3>
-              And Counting.
+              And Counting
             </h3>
-
 
             <p>
               Emily continues to build her business through relationships,
@@ -2072,9 +1567,9 @@
     </section>
 
 
-    <!-- =======================================================
-         BEYOND REAL ESTATE
-    ======================================================= -->
+    <!-- =========================
+         LIFE / TRAVEL
+    ========================= -->
 
     <section class="life">
 
@@ -2086,7 +1581,7 @@
           <img
             class="life-image"
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85"
-            alt="Travel and lifestyle"
+            alt="Travel"
           >
 
         </div>
@@ -2094,29 +1589,24 @@
 
         <div class="life-copy">
 
-
           <div class="eyebrow">
             Beyond Real Estate
           </div>
-
 
           <h2>
             Work hard.<br>
             Live fully.
           </h2>
 
-
           <p>
             Real estate is a huge part of Emily's life, but it isn't
             the only part.
           </p>
 
-
           <p>
-            Outside of work, she has a genuine love of travel, dogs,
-            new experiences and the people she meets along the way.
+            She loves travel, dogs, new experiences and the opportunity
+            to continue learning from the people and places around her.
           </p>
-
 
           <p>
             That balance — working hard for her clients while making
@@ -2124,42 +1614,32 @@
             more like a lifestyle to Emily.
           </p>
 
-
-          <div class="life-highlight">
-            A career built around people, places, relationships and
-            the moments that make life what it is.
-          </div>
-
-
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- =======================================================
-         FINAL CTA
-    ======================================================= -->
+    <!-- =========================
+         CTA
+    ========================= -->
 
     <section class="final-cta">
 
       <div class="final-cta-inner">
 
-
         <h2>
-          A career built on hard work.
-          A business built on relationships.
+          Ready to talk about<br>
+          what's next?
         </h2>
-
 
         <a
           href="contact.html"
-          class="button button-burgundy"
-        >
+          class="button button-burgundy">
           Contact Emily
         </a>
-
 
       </div>
 
@@ -2169,9 +1649,9 @@
   </main>
 
 
-  <!-- =========================================================
+  <!-- =========================
        FOOTER
-  ========================================================= -->
+  ========================= -->
 
   <footer>
 
@@ -2187,7 +1667,6 @@
             src="images/emily-logo.png"
             alt="Emily Taylor"
           >
-
 
           <p>
             Sales Representative
@@ -2224,6 +1703,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -2233,39 +1713,29 @@
           © 2026 Emily Taylor. All rights reserved.
         </span>
 
-
         <span>
           RE/MAX Hallmark Eastern Realty INC.
         </span>
 
       </div>
 
+
     </div>
 
   </footer>
 
 
-  <!-- =========================================================
+  <!-- =========================
        MOBILE MENU
-  ========================================================= -->
+  ========================= -->
 
   <script>
 
     const menuButton = document.getElementById("menuButton");
     const mainNav = document.getElementById("mainNav");
 
-
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener("click", function () {
       mainNav.classList.toggle("open");
-    });
-
-
-    document.querySelectorAll("#mainNav a").forEach(link => {
-
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("open");
-      });
-
     });
 
   </script>
