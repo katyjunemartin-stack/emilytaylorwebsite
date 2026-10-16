@@ -1,2097 +1,1835 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Emily Taylor | Real Estate</title>
+<title>Emily Taylor | Real Estate</title>
 
-  <meta
-    name="description"
-    content="Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC. Serving Peterborough, Kawartha Lakes, Toronto, Durham Region and surrounding communities."
-  >
+<meta name="description" content="Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC. Serving Peterborough, Toronto, Durham Region, Kawartha Lakes and surrounding communities.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
-    rel="stylesheet"
-  >
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    :root {
-      --ivory: #f7f4ee;
-      --cream: #eee9df;
-      --stone: #d8d0c3;
-      --taupe: #a89d8e;
-      --greige: #756e64;
-      --charcoal: #292725;
-      --black: #171615;
-      --white: #ffffff;
-      --burgundy: #4a0d10;
-      --burgundy-dark: #39090c;
-      --line: rgba(41, 39, 37, 0.15);
+:root {
+    --ivory: #f7f4ee;
+    --cream: #eee9df;
+    --stone: #d8d0c3;
+    --taupe: #8b8276;
+    --charcoal: #292725;
+    --burgundy: #4a0d10;
+    --white: #ffffff;
+    --line: rgba(41,39,37,.16);
 
-      --serif: "Newsreader", Georgia, serif;
-      --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
-    }
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
+}
 
+* {
+    box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+img {
+    display: block;
+    width: 100%;
+}
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    body {
-      background: var(--ivory);
-      color: var(--charcoal);
-      font-family: var(--sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
+/* =========================
+   HEADER
+========================= */
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
 
+.nav-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 105px;
+    padding: 24px 5vw 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    flex-shrink: 0;
+}
 
+.logo-name {
+    font-family: var(--serif);
+    font-size: 31px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+.logo-title {
+    margin-top: 7px;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
 
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
 
-    .container {
-      width: min(1380px, calc(100% - 9vw));
-      margin: 0 auto;
-    }
+.nav a {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity .25s ease;
+}
 
+.nav a:hover {
+    opacity: .65;
+}
 
-    /* =========================
-       HEADER
-    ========================= */
+.nav-listings {
+    border: 1px solid rgba(255,255,255,.7);
+    padding: 15px 25px;
+}
 
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,.22);
-    }
+.menu-toggle {
+    display: none;
+    border: 1px solid rgba(255,255,255,.6);
+    background: transparent;
+    color: white;
+    padding: 10px 14px;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
+/* =========================
+   SMALL SECTION LABELS
+========================= */
+
+.eyebrow {
+    margin: 0 0 24px;
+    font-family: var(--sans);
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+}
+
+.eyebrow.white {
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 820px;
+    height: 92vh;
+    max-height: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.57);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(1000px, 90%);
+    margin: 90px auto 0;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(65px, 8vw, 125px);
+    line-height: .91;
+    font-weight: 500;
+    letter-spacing: -5px;
+}
+
+.hero-life {
+    margin: 30px 0 35px;
+    font-family: var(--serif);
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1;
+    font-weight: 400;
+}
+
+.hero-copy {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.92);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    padding: 17px 28px;
+    background: white;
+    color: var(--burgundy);
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid white;
+    transition: all .25s ease;
+}
+
+.button:hover {
+    background: transparent;
+    color: white;
+}
+
+.button.burgundy {
+    background: var(--burgundy);
+    color: white;
+    border-color: var(--burgundy);
+}
+
+.button.burgundy:hover {
+    background: transparent;
+    color: var(--burgundy);
+}
+
+/* =========================
+   INTRO STRIP
+========================= */
+
+.intro-strip {
+    background: var(--burgundy);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.intro-item {
+    min-height: 135px;
+    padding: 35px 30px;
+    border-right: 1px solid rgba(255,255,255,.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-item:last-child {
+    border-right: 0;
+}
+
+.intro-number {
+    margin-bottom: 7px;
+    font-family: var(--serif);
+    font-size: 29px;
+    line-height: 1;
+}
+
+.intro-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .78;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 150px 5vw;
+    background: var(--ivory);
+}
+
+.about-grid {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 100px;
+}
+
+.about-left {
+    align-self: start;
+}
+
+.about-left h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(58px, 6.5vw, 100px);
+    line-height: .92;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.about-subtitle {
+    margin: 26px 0 45px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+}
+
+.about-photo {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    margin-top: 0;
+}
+
+.about-right {
+    padding-top: 75px;
+}
+
+.about-right h3 {
+    margin: 0 0 30px;
+    font-family: var(--serif);
+    font-size: clamp(45px, 5vw, 72px);
+    line-height: .98;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+
+.about-right p {
+    margin: 0 0 27px;
+    max-width: 680px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #6e685f;
+}
+
+.quote {
+    margin: 45px 0 35px;
+    padding: 25px 0 25px 30px;
+    border-left: 2px solid var(--burgundy);
+    font-family: var(--serif);
+    font-size: 27px;
+    line-height: 1.25;
+    color: var(--charcoal);
+}
+
+/* =========================
+   APPROACH
+========================= */
+
+.approach {
+    padding: 135px 5vw 150px;
+    background: var(--cream);
+}
+
+.approach-grid {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    gap: 100px;
+}
+
+.approach-left {
+    align-self: start;
+}
+
+.approach-left h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(65px, 7vw, 112px);
+    line-height: .88;
+    letter-spacing: -5px;
+    font-weight: 500;
+}
+
+.approach-subtitle {
+    margin: 28px 0 45px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+}
+
+.approach-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.approach-right {
+    padding-top: 15px;
+}
+
+.approach-right p {
+    margin: 0 0 30px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #6e685f;
+}
+
+.approach-list {
+    margin-top: 50px;
+    border-top: 1px solid var(--line);
+}
+
+.approach-list div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 27px;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+    padding: 135px 5vw 0;
+    background: var(--burgundy);
+    color: white;
+}
+
+.results-header {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.results-header h2 {
+    margin: 0;
+    max-width: 1050px;
+    font-family: var(--serif);
+    font-size: clamp(65px, 8vw, 125px);
+    line-height: .88;
+    letter-spacing: -5px;
+    font-weight: 500;
+}
+
+.results-grid {
+    max-width: 1350px;
+    margin: 125px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.result-card {
+    padding: 55px 50px 70px;
+    min-height: 275px;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.result-card:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,.2);
+}
+
+.result-card h3 {
+    margin: 0 0 28px;
+    font-family: var(--serif);
+    font-size: 35px;
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.result-card p {
+    margin: 0;
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.75);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    padding: 150px 5vw;
+    background: var(--ivory);
+}
+
+.services-header {
+    max-width: 1350px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+}
+
+.services-header h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(65px, 7vw, 105px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.services-header p {
+    margin: 0;
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #6e685f;
+}
+
+.services-grid {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.service-card {
+    padding: 42px 40px 50px;
+    min-height: 260px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.service-number {
+    margin-bottom: 65px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--taupe);
+}
+
+.service-card h3 {
+    margin: 0 0 17px;
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.service-card p {
+    margin: 0;
+    color: #6e685f;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* =========================
+   SPECIALTY
+========================= */
+
+.specialty {
+    padding: 145px 5vw;
+    background: var(--cream);
+}
+
+.specialty-grid {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.specialty h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(60px, 6vw, 95px);
+    line-height: .92;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.specialty-copy p {
+    margin: 0 0 28px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #6e685f;
+}
+
+.specialty-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.tag {
+    padding: 10px 15px;
+    border: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   ONESOURCE
+========================= */
+
+.onesource {
+    padding: 0;
+    background: var(--ivory);
+}
+
+.onesource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.onesource-photo {
+    min-height: 650px;
+    background-image:
+        url("https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1500&q=90");
+    background-size: cover;
+    background-position: center;
+}
+
+.onesource-content {
+    padding: 100px 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.onesource-content h2 {
+    margin: 0 0 28px;
+    font-family: var(--serif);
+    font-size: clamp(58px, 6vw, 92px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.onesource-content p {
+    margin: 0 0 25px;
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #6e685f;
+}
+
+.onesource-note {
+    margin: 15px 0 35px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+}
+
+/* =========================
+   LISTINGS
+========================= */
+
+.listings {
+    min-height: 700px;
+    padding: 140px 5vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.listings-content {
+    max-width: 850px;
+}
+
+.listings h2 {
+    margin: 0 0 30px;
+    font-family: var(--serif);
+    font-size: clamp(65px, 7vw, 110px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.listings p {
+    max-width: 650px;
+    margin: 0 0 40px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.88);
+}
+
+/* =========================
+   AREAS
+========================= */
+
+.areas {
+    padding: 145px 5vw;
+    background: var(--ivory);
+}
+
+.areas-inner {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.areas h2 {
+    margin: 0 0 75px;
+    font-family: var(--serif);
+    font-size: clamp(65px, 7vw, 105px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.area-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.area {
+    padding: 25px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 24px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+    padding: 120px 5vw;
+    background: var(--cream);
+    text-align: center;
+}
+
+.final-cta h2 {
+    margin: 0 auto 35px;
+    max-width: 950px;
+    font-family: var(--serif);
+    font-size: clamp(60px, 7vw, 105px);
+    line-height: .92;
+    letter-spacing: -4px;
+    font-weight: 500;
+}
+
+.final-cta p {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: #6e685f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 75px 5vw 40px;
+    background: #201e1c;
+    color: white;
+}
+
+.footer-grid {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 70px;
+    border-bottom: 1px solid rgba(255,255,255,.16);
+}
+
+.footer-name {
+    font-family: var(--serif);
+    font-size: 38px;
+}
+
+.footer-title {
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+.footer-heading {
+    margin-bottom: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    opacity: .75;
+}
+
+.footer-bottom {
+    max-width: 1350px;
+    margin: 25px auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 11px;
+    opacity: .5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
 
     .nav {
-      min-height: 104px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+        display: none;
     }
-
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-
-    .brand-name {
-      font-family: var(--serif);
-      font-size: 31px;
-      font-weight: 500;
-      letter-spacing: -0.04em;
-    }
-
-
-    .brand-title {
-      margin-top: 7px;
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .23em;
-      text-transform: uppercase;
-    }
-
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 35px;
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-
-    .nav-links a {
-      position: relative;
-      white-space: nowrap;
-      transition: opacity .25s ease;
-    }
-
-
-    .nav-links a:hover {
-      opacity: .65;
-    }
-
-
-    .nav-listings {
-      border: 1px solid rgba(255,255,255,.75);
-      padding: 15px 24px;
-    }
-
 
     .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      color: white;
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      position: relative;
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image:
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90");
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          rgba(0,0,0,.62),
-          rgba(0,0,0,.58)
-        );
-    }
-
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(1050px, 90%);
-      text-align: center;
-
-      /* Keeps the heading comfortably below the navigation */
-      padding-top: 145px;
-      padding-bottom: 85px;
-    }
-
-
-    .eyebrow {
-      display: block;
-      margin-bottom: 26px;
-      font-family: var(--sans);
-      font-size: 11px;
-      line-height: 1.3;
-      font-weight: 700;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-    }
-
-
-    .hero .eyebrow {
-      margin-bottom: 30px;
-      color: rgba(255,255,255,.92);
-    }
-
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(60px, 8vw, 125px);
-      font-weight: 500;
-      line-height: .88;
-      letter-spacing: -.065em;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-
-    .hero-subtitle {
-      margin-top: 38px;
-      font-family: var(--sans);
-      font-size: clamp(20px, 2.5vw, 34px);
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-
-    .hero-description {
-      max-width: 850px;
-      margin: 38px auto 0;
-      font-size: 16px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.92);
-    }
-
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 31px;
-      border: 1px solid var(--burgundy);
-      background: var(--burgundy);
-      color: white;
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      transition: all .25s ease;
-    }
-
-
-    .button:hover {
-      background: var(--burgundy-dark);
-      transform: translateY(-2px);
-    }
-
-
-    .button-light {
-      background: white;
-      color: var(--burgundy);
-      border-color: white;
-    }
-
-
-    .button-light:hover {
-      background: transparent;
-      color: white;
-      border-color: white;
-    }
-
-
-    /* =========================
-       INTRO / NUMBERS
-    ========================= */
-
-    .intro-strip {
-      background: var(--burgundy);
-      color: white;
-    }
-
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-
-    .intro-item {
-      min-height: 145px;
-      padding: 38px 28px;
-      border-right: 1px solid rgba(255,255,255,.18);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-
-    .intro-item:last-child {
-      border-right: 0;
-    }
-
-
-    .intro-number {
-      font-family: var(--serif);
-      font-size: 40px;
-      line-height: 1;
-      margin-bottom: 9px;
-    }
-
-
-    .intro-label {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      opacity: .9;
-    }
-
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    section {
-      position: relative;
-    }
-
-
-    .section-padding {
-      padding: 145px 0;
-    }
-
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
-      margin-bottom: 70px;
-    }
-
-
-    .section-header h2 {
-      font-family: var(--serif);
-      font-size: clamp(58px, 7vw, 105px);
-      font-weight: 500;
-      line-height: .91;
-      letter-spacing: -.06em;
-    }
-
-
-    .section-header p {
-      max-width: 580px;
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--greige);
-    }
-
-
-    /* =========================
-       APPROACH
-    ========================= */
-
-    .approach {
-      background: var(--ivory);
-    }
-
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 90px;
-      align-items: center;
-    }
-
-
-    .approach-title .eyebrow {
-      color: var(--burgundy);
-      margin-bottom: 28px;
-    }
-
-
-    .approach-title h2 {
-      font-family: var(--serif);
-      font-size: clamp(62px, 7.5vw, 112px);
-      line-height: .87;
-      letter-spacing: -.065em;
-      font-weight: 500;
-    }
-
-
-    .approach-copy {
-      padding-top: 20px;
-    }
-
-
-    .approach-copy p {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--greige);
-      margin-bottom: 30px;
-    }
-
-
-    .approach-list {
-      margin-top: 45px;
-      border-top: 1px solid var(--line);
-    }
-
-
-    .approach-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid var(--line);
-    }
-
-
-    .approach-row span {
-      padding: 23px 0;
-      font-family: var(--serif);
-      font-size: 25px;
-    }
-
-
-    /* =========================
-       EXPERIENCE / AWARDS
-    ========================= */
-
-    .recognition {
-      background: var(--burgundy);
-      color: white;
-      padding: 145px 0 0;
-    }
-
-
-    .recognition-top {
-      max-width: 950px;
-    }
-
-
-    .recognition .eyebrow {
-      margin-bottom: 30px;
-      color: white;
-    }
-
-
-    .recognition h2 {
-      font-family: var(--serif);
-      font-size: clamp(65px, 8vw, 125px);
-      line-height: .88;
-      letter-spacing: -.065em;
-      font-weight: 500;
-    }
-
-
-    .recognition-grid {
-      margin-top: 115px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .recognition-card {
-      padding: 55px 48px 70px;
-    }
-
-
-    .recognition-card:first-child {
-      border-right: 1px solid rgba(255,255,255,.2);
-    }
-
-
-    .recognition-card h3 {
-      font-family: var(--serif);
-      font-size: 40px;
-      line-height: 1;
-      font-weight: 500;
-      margin-bottom: 28px;
-    }
-
-
-    .recognition-card p {
-      max-width: 560px;
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.76);
-    }
-
-
-    /* =========================
-       ABOUT EMILY
-    ========================= */
-
-    .about {
-      background: var(--cream);
-    }
-
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 100px;
-      align-items: start;
-    }
-
-
-    .about-left .eyebrow {
-      color: var(--burgundy);
-      margin-bottom: 30px;
-    }
-
-
-    .about-left h2 {
-      font-family: var(--serif);
-      font-size: clamp(60px, 7vw, 105px);
-      line-height: .9;
-      letter-spacing: -.06em;
-      font-weight: 500;
-    }
-
-
-    .about-photo {
-      margin-top: 50px;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
-
-
-    .about-copy {
-      padding-top: 70px;
-    }
-
-
-    .about-copy h3 {
-      font-family: var(--serif);
-      font-size: clamp(45px, 5vw, 75px);
-      font-weight: 500;
-      line-height: .95;
-      letter-spacing: -.05em;
-      margin-bottom: 40px;
-    }
-
-
-    .about-copy p {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--greige);
-      margin-bottom: 28px;
-    }
-
-
-    .quote {
-      margin: 48px 0;
-      padding: 32px 0 32px 30px;
-      border-left: 3px solid var(--burgundy);
-      font-family: var(--serif);
-      font-size: 25px;
-      line-height: 1.35;
-      color: var(--charcoal);
-    }
-
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .services {
-      background: var(--ivory);
-    }
-
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-
-    .service-card {
-      min-height: 300px;
-      padding: 45px 40px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-
-    .service-number {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      color: var(--taupe);
-      margin-bottom: 70px;
-    }
-
-
-    .service-card h3 {
-      font-family: var(--serif);
-      font-size: 35px;
-      font-weight: 500;
-      line-height: 1;
-      margin-bottom: 22px;
-    }
-
-
-    .service-card p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--greige);
-    }
-
-
-    /* =========================
-       SRES / SENIORS
-    ========================= */
-
-    .specialty {
-      background: var(--cream);
-    }
-
-
-    .specialty-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 650px;
-    }
-
-
-    .specialty-image {
-      background-image:
-        url("https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1500&q=90");
-      background-size: cover;
-      background-position: center;
-      min-height: 600px;
-    }
-
-
-    .specialty-content {
-      padding: 100px 9%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-
-    .specialty-content .eyebrow {
-      color: var(--burgundy);
-      margin-bottom: 28px;
-    }
-
-
-    .specialty-content h2 {
-      font-family: var(--serif);
-      font-size: clamp(50px, 5vw, 80px);
-      line-height: .92;
-      letter-spacing: -.055em;
-      font-weight: 500;
-      margin-bottom: 35px;
-    }
-
-
-    .specialty-content p {
-      max-width: 560px;
-      color: var(--greige);
-      font-size: 16px;
-      line-height: 1.85;
-      margin-bottom: 22px;
-    }
-
-
-    /* =========================
-       ONESOURCE
-    ========================= */
-
-    .onesource {
-      background: var(--ivory);
-      padding: 145px 0;
-    }
-
-
-    .onesource-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 600px;
-      background: var(--burgundy);
-      color: white;
-    }
-
-
-    .onesource-image {
-      background-image:
-        url("https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1500&q=90");
-      background-size: cover;
-      background-position: center;
-      min-height: 600px;
-    }
-
-
-    .onesource-content {
-      padding: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-
-    .onesource-content .eyebrow {
-      margin-bottom: 28px;
-    }
-
-
-    .onesource-content h2 {
-      font-family: var(--serif);
-      font-size: clamp(52px, 5.5vw, 85px);
-      line-height: .92;
-      letter-spacing: -.055em;
-      font-weight: 500;
-      margin-bottom: 35px;
-    }
-
-
-    .onesource-content p {
-      max-width: 540px;
-      font-size: 16px;
-      line-height: 1.85;
-      color: rgba(255,255,255,.8);
-      margin-bottom: 30px;
-    }
-
-
-    .onesource-content .button {
-      align-self: flex-start;
-    }
-
-
-    /* =========================
-       LISTINGS
-    ========================= */
-
-    .listings {
-      position: relative;
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      background-image:
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=90");
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-
-    .listings::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,.62);
-    }
-
-
-    .listings-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-    }
-
-
-    .listings-content .eyebrow {
-      margin-bottom: 28px;
-    }
-
-
-    .listings-content h2 {
-      font-family: var(--serif);
-      font-size: clamp(60px, 8vw, 120px);
-      line-height: .88;
-      letter-spacing: -.06em;
-      font-weight: 500;
-      margin-bottom: 35px;
-    }
-
-
-    .listings-content p {
-      max-width: 620px;
-      font-size: 17px;
-      line-height: 1.8;
-      color: rgba(255,255,255,.86);
-      margin-bottom: 35px;
-    }
-
-
-    /* =========================
-       AREAS
-    ========================= */
-
-    .areas {
-      background: var(--cream);
-    }
-
-
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-
-    .area {
-      min-height: 95px;
-      padding: 28px;
-      display: flex;
-      align-items: center;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      font-family: var(--serif);
-      font-size: 24px;
-    }
-
-
-    /* =========================
-       FINAL CTA
-    ========================= */
-
-    .final-cta {
-      background: var(--burgundy);
-      color: white;
-      text-align: center;
-      padding: 145px 20px;
-    }
-
-
-    .final-cta .eyebrow {
-      margin-bottom: 28px;
-    }
-
-
-    .final-cta h2 {
-      max-width: 1000px;
-      margin: 0 auto 40px;
-      font-family: var(--serif);
-      font-size: clamp(60px, 8vw, 115px);
-      line-height: .88;
-      letter-spacing: -.065em;
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 75px 0 35px;
-    }
-
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 70px;
-      padding-bottom: 70px;
-      border-bottom: 1px solid rgba(255,255,255,.15);
-    }
-
-
-    .footer-brand .brand-name {
-      font-size: 38px;
-    }
-
-
-    .footer-brand p {
-      max-width: 400px;
-      margin-top: 25px;
-      color: rgba(255,255,255,.6);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-
-    .footer-column h4 {
-      margin-bottom: 22px;
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.55);
-    }
-
-
-    .footer-column a {
-      display: block;
-      margin-bottom: 12px;
-      font-family: var(--sans);
-      font-size: 13px;
-      color: white;
-    }
-
-
-    .footer-bottom {
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      color: rgba(255,255,255,.45);
-      font-size: 11px;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 1000px) {
-
-      .nav {
-        min-height: 90px;
-      }
-
-      .nav-links {
-        gap: 20px;
-      }
-
-      .nav-listings {
-        padding: 12px 17px;
-      }
-
-      .intro-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .intro-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .intro-item:nth-child(3),
-      .intro-item:nth-child(4) {
-        border-top: 1px solid rgba(255,255,255,.18);
-      }
-
-      .approach-grid,
-      .about-grid,
-      .specialty-grid,
-      .onesource-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .about-copy {
-        padding-top: 0;
-      }
-
-      .specialty-image,
-      .onesource-image {
-        min-height: 500px;
-      }
-
-      .recognition-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .recognition-card:first-child {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.2);
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .areas-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-
-    @media (max-width: 760px) {
-
-      .container {
-        width: min(100% - 40px, 1380px);
-      }
-
-
-      header {
-        background: rgba(0,0,0,.3);
-      }
-
-
-      .nav {
-        min-height: 80px;
-      }
-
-
-      .brand-name {
-        font-size: 27px;
-      }
-
-
-      .menu-toggle {
         display: block;
-      }
+    }
 
-
-      .nav-links {
-        display: none;
+    .nav.mobile-open {
+        display: flex;
         position: absolute;
-        top: 80px;
+        top: 100%;
         left: 0;
         width: 100%;
-        padding: 30px 25px;
+        padding: 30px;
         background: var(--burgundy);
         flex-direction: column;
         align-items: flex-start;
         gap: 22px;
-      }
-
-
-      .nav-links.active {
-        display: flex;
-      }
-
-
-      .nav-listings {
-        width: 100%;
-        text-align: center;
-      }
-
-
-      .hero {
-        min-height: 800px;
-      }
-
-
-      .hero-content {
-        padding-top: 155px;
-      }
-
-
-      .hero h1 {
-        font-size: clamp(54px, 15vw, 90px);
-      }
-
-
-      .hero-subtitle {
-        font-size: 16px;
-        line-height: 1.4;
-        letter-spacing: .15em;
-        margin-top: 30px;
-      }
-
-
-      .hero-description {
-        font-size: 14px;
-        line-height: 1.7;
-        margin-top: 30px;
-      }
-
-
-      .section-padding,
-      .onesource,
-      .final-cta {
-        padding: 95px 0;
-      }
-
-
-      .section-header {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        margin-bottom: 50px;
-      }
-
-
-      .approach-grid {
-        gap: 60px;
-      }
-
-
-      .recognition {
-        padding-top: 95px;
-      }
-
-
-      .recognition-grid {
-        margin-top: 75px;
-      }
-
-
-      .recognition-card {
-        padding: 40px 0 50px;
-      }
-
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .service-card {
-        min-height: auto;
-      }
-
-
-      .about-grid {
-        gap: 50px;
-      }
-
-
-      .about-photo {
-        margin-top: 35px;
-      }
-
-
-      .specialty-image,
-      .onesource-image {
-        min-height: 400px;
-      }
-
-
-      .specialty-content,
-      .onesource-content {
-        padding: 70px 30px;
-      }
-
-
-      .areas-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-
-      .area {
-        font-size: 20px;
-        min-height: 80px;
-        padding: 20px;
-      }
-
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-      }
     }
 
-  </style>
-</head>
+    .about-grid,
+    .approach-grid,
+    .specialty-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
 
+    .about-right {
+        padding-top: 0;
+    }
+
+    .services-header {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .onesource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .onesource-photo {
+        min-height: 500px;
+    }
+
+    .area-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .nav-inner {
+        min-height: 88px;
+        padding: 20px 24px;
+    }
+
+    .logo-name {
+        font-size: 26px;
+    }
+
+    .hero {
+        min-height: 720px;
+        height: auto;
+    }
+
+    .hero-content {
+        margin-top: 80px;
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 15vw, 75px);
+        letter-spacing: -3px;
+    }
+
+    .hero-life {
+        font-size: 43px;
+    }
+
+    .hero-copy {
+        font-size: 15px;
+    }
+
+    .intro-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .intro-item {
+        min-height: 115px;
+        padding: 25px 20px;
+    }
+
+    .about,
+    .approach,
+    .services,
+    .specialty,
+    .areas {
+        padding: 90px 24px;
+    }
+
+    .about-grid,
+    .approach-grid,
+    .specialty-grid {
+        gap: 45px;
+    }
+
+    .about-left h2,
+    .approach-left h2,
+    .results-header h2,
+    .services-header h2,
+    .specialty h2,
+    .areas h2,
+    .final-cta h2 {
+        letter-spacing: -3px;
+    }
+
+    .about-photo {
+        aspect-ratio: 4 / 5;
+    }
+
+    .approach-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .results {
+        padding: 90px 24px 0;
+    }
+
+    .results-grid {
+        margin-top: 80px;
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        padding: 40px 20px 50px;
+    }
+
+    .result-card:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    .onesource-content {
+        padding: 80px 24px;
+    }
+
+    .onesource-photo {
+        min-height: 400px;
+    }
+
+    .listings {
+        min-height: 600px;
+        padding: 100px 24px;
+    }
+
+    .area-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .area {
+        padding: 18px;
+        font-size: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
 
 <body>
 
+<!-- HEADER -->
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+<header class="site-header">
 
-  <header>
-    <div class="container">
-      <nav class="nav">
+    <div class="nav-inner">
 
-        <a href="index.html" class="brand">
-          <span class="brand-name">Emily Taylor</span>
-          <span class="brand-title">Sales Representative</span>
+        <a href="index.html" class="logo">
+            <span class="logo-name">Emily Taylor</span>
+            <span class="logo-title">Sales Representative</span>
         </a>
 
-
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">
-          Menu
+        <button class="menu-toggle" id="menuToggle">
+            MENU
         </button>
 
+        <nav class="nav" id="mainNav">
 
-        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#areas">Areas</a>
+            <a href="#onesource">OneSource</a>
+            <a href="contact.html">Contact</a>
 
-          <a href="index.html">Home</a>
+            <a
+                href="https://emilytaylor.remaxhallmarkeastern.com"
+                target="_blank"
+                rel="noopener"
+                class="nav-listings"
+            >
+                View Listings
+            </a>
 
-          <a href="#about">About</a>
+        </nav>
 
-          <a href="#services">Services</a>
-
-          <a href="#areas">Areas</a>
-
-          <a href="#onesource">OneSource</a>
-
-          <a href="contact.html">Contact</a>
-
-          <a
-            href="https://emilytaylor.remaxhallmarkeastern.com"
-            target="_blank"
-            rel="noopener"
-            class="nav-listings"
-          >
-            View Listings
-          </a>
-
-        </div>
-
-      </nav>
     </div>
-  </header>
+
+</header>
 
 
+<!-- HERO -->
 
-  <!-- =========================
-       HERO
-  ========================= -->
+<section class="hero" id="home">
 
-  <main>
-
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <span class="eyebrow">
-          Real Estate, Thoughtfully Represented
-        </span>
-
+    <div class="hero-content">
 
         <h1>
-          It’s more than an<br>
-          investment.
+            It’s more than an<br>
+            investment.
         </h1>
 
-
-        <div class="hero-subtitle">
-          It’s your life.
+        <div class="hero-life">
+            It’s your life.
         </div>
 
-
-        <p class="hero-description">
-          Buying or selling a home isn't simply a financial decision.
-          It's a life decision. Emily believes great representation starts
-          with understanding the person behind the transaction — what matters
-          to you, where you're going and what you need along the way.
+        <p class="hero-copy">
+            Buying or selling a home isn't simply a financial decision.
+            It's a life decision. Emily believes great representation starts
+            with understanding the person behind the transaction — what matters
+            to you, where you're going and what you need along the way.
         </p>
-
 
         <div class="hero-buttons">
 
-          <a href="#about" class="button button-light">
-            Meet Emily
-          </a>
-
-
-          <a
-            href="https://emilytaylor.remaxhallmarkeastern.com"
-            target="_blank"
-            rel="noopener"
-            class="button button-light"
-          >
-            View Listings
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CREDENTIAL STRIP
-    ========================= -->
-
-    <section class="intro-strip">
-
-      <div class="container">
-
-        <div class="intro-grid">
-
-          <div class="intro-item">
-            <div class="intro-number">100+</div>
-            <div class="intro-label">Families Helped</div>
-          </div>
-
-
-          <div class="intro-item">
-            <div class="intro-number">SRES®</div>
-            <div class="intro-label">Senior Real Estate Specialist</div>
-          </div>
-
-
-          <div class="intro-item">
-            <div class="intro-number">CNE</div>
-            <div class="intro-label">Certified Negotiation Expert</div>
-          </div>
-
-
-          <div class="intro-item">
-            <div class="intro-number">RE/MAX</div>
-            <div class="intro-label">Hall of Fame & Platinum Club</div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         APPROACH
-    ========================= -->
-
-    <section class="approach section-padding">
-
-      <div class="container">
-
-        <div class="approach-grid">
-
-          <div class="approach-title">
-
-            <span class="eyebrow">
-              The Emily Taylor Approach
-            </span>
-
-            <h2>
-              Representation
-            </h2>
-
-            <span
-              class="eyebrow"
-              style="margin-top:32px; margin-bottom:0;"
-            >
-              That Feels Personal.
-            </span>
-
-          </div>
-
-
-          <div class="approach-copy">
-
-            <p>
-              Emily believes real estate should never feel like a
-              one-size-fits-all experience.
-            </p>
-
-            <p>
-              She takes the time to listen, understand what matters,
-              uncover the details that others might miss, and guide
-              clients through each decision with care.
-            </p>
-
-            <p>
-              Whether you're buying your first home, selling a family
-              property, downsizing, relocating or helping manage a
-              loved one's estate, the goal is the same: to make you
-              feel informed, supported and confident.
-            </p>
-
-
-            <div class="approach-list">
-
-              <div class="approach-row">
-                <span>Listen</span>
-                <span>Understand</span>
-              </div>
-
-              <div class="approach-row">
-                <span>Serve</span>
-                <span>Guide</span>
-              </div>
-
-              <div class="approach-row">
-                <span>Empower</span>
-                <span>Protect</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         RECOGNITION
-    ========================= -->
-
-    <section class="recognition">
-
-      <div class="container">
-
-        <div class="recognition-top">
-
-          <span class="eyebrow">
-            Experience & Recognition
-          </span>
-
-          <h2>
-            Results matter.<br>
-            So does how you get<br>
-            there.
-          </h2>
-
-        </div>
-
-
-        <div class="recognition-grid">
-
-          <div class="recognition-card">
-
-            <h3>
-              RE/MAX<br>
-              Hall of Fame
-            </h3>
-
-            <p>
-              Recognized with the RE/MAX Hall of Fame Award for
-              professional achievement and commitment to real estate.
-            </p>
-
-          </div>
-
-
-          <div class="recognition-card">
-
-            <h3>
-              RE/MAX<br>
-              Platinum Club
-            </h3>
-
-            <p>
-              Recognized as a member of the RE/MAX Platinum Club,
-              reflecting strong performance and dedication to clients.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ABOUT EMILY
-    ========================= -->
-
-    <section class="about section-padding" id="about">
-
-      <div class="container">
-
-        <div class="about-grid">
-
-          <div class="about-left">
-
-            <span class="eyebrow">
-              About Emily
-            </span>
-
-
-            <h2>
-              A Career<br>
-              With Purpose.
-            </h2>
-
-
-            <img
-              class="about-photo"
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
-              alt="Professional workspace"
-            >
-
-          </div>
-
-
-          <div class="about-copy">
-
-            <h3>
-              Real estate<br>
-              chose me.
-            </h3>
-
-
-            <p>
-              Born and raised in Peterborough, with many years spent
-              in Toronto, Emily brings a diverse professional background
-              and a genuine passion for real estate, people, travel
-              and the communities she serves.
-            </p>
-
-
-            <p>
-              Her business is built around relationships, results and
-              being there when her clients need her most. From Toronto
-              and Durham Region to Vaughan, Kawartha Lakes and
-              Peterborough, Emily works to make every client feel
-              prioritized, supported, respected and valued.
-            </p>
-
-
-            <div class="quote">
-              “I want to be a trusted realtor, one who people can
-              fully depend on. I want to be there every step of the
-              way, during one of the most important milestones of
-              their lives.”
-            </div>
-
-
-            <a href="contact.html" class="button">
-              Work With Emily
+            <a href="#about" class="button">
+                Meet Emily
             </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         SERVICES
-    ========================= -->
-
-    <section class="services section-padding" id="services">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div>
-
-            <span class="eyebrow">
-              What Emily Does
-            </span>
-
-            <h2>
-              More than<br>
-              a transaction.
-            </h2>
-
-          </div>
-
-
-          <p>
-            From preparation to negotiation and everything in between,
-            Emily provides thoughtful, full-service representation
-            designed around your goals.
-          </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-          <div class="service-card">
-
-            <div class="service-number">
-              01
-            </div>
-
-            <h3>
-              Buying
-            </h3>
-
-            <p>
-              Guidance, strategy and negotiation from the first
-              conversation to the keys in your hand.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">
-              02
-            </div>
-
-            <h3>
-              Selling
-            </h3>
-
-            <p>
-              Strategic preparation, positioning, marketing and
-              negotiation designed to protect your goals.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">
-              03
-            </div>
-
-            <h3>
-              Listing Preparation
-            </h3>
-
-            <p>
-              Thoughtful preparation, presentation and staging
-              guidance before your home hits the market.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">
-              04
-            </div>
-
-            <h3>
-              Negotiation
-            </h3>
-
-            <p>
-              Experienced negotiation focused on protecting your
-              interests and moving your transaction forward.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">
-              05
-            </div>
-
-            <h3>
-              Downsizing
-            </h3>
-
-            <p>
-              Thoughtful support for clients navigating a move into
-              a new stage of life.
-            </p>
-
-          </div>
-
-
-          <div class="service-card">
-
-            <div class="service-number">
-              06
-            </div>
-
-            <h3>
-              Estates & POAs
-            </h3>
-
-            <p>
-              Guidance for families, executors and powers of attorney
-              managing an important property transition.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         SPECIALTY
-    ========================= -->
-
-    <section class="specialty">
-
-      <div class="specialty-grid">
-
-        <div class="specialty-image"></div>
-
-
-        <div class="specialty-content">
-
-          <span class="eyebrow">
-            Specialized Representation
-          </span>
-
-
-          <h2>
-            Experience for<br>
-            every stage of life.
-          </h2>
-
-
-          <p>
-            As a Seniors Real Estate Specialist (SRES®), Emily has
-            specialized education focused on the unique considerations
-            of the 50+ market.
-          </p>
-
-
-          <p>
-            She also works with families, first-time buyers, executors
-            and powers of attorney, providing thoughtful guidance
-            through significant property decisions and life transitions.
-          </p>
-
-
-          <a href="contact.html" class="button">
-            Talk With Emily
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ONESOURCE
-    ========================= -->
-
-    <section class="onesource" id="onesource">
-
-      <div class="container">
-
-        <div class="onesource-inner">
-
-          <div class="onesource-image"></div>
-
-
-          <div class="onesource-content">
-
-            <span class="eyebrow">
-              A Trusted Partnership
-            </span>
-
-
-            <h2>
-              OneSource<br>
-              Moving Solutions.
-            </h2>
-
-
-            <p>
-              A trusted partnership designed to support seniors,
-              families and clients through the moving process —
-              from planning and organization to the final details.
-            </p>
-
-
-            <p>
-              Emily works alongside OneSource Moving Solutions to
-              connect clients with additional support when a move
-              involves more than simply buying or selling a home.
-            </p>
-
 
             <a
-              href="https://onesourcemoving.ca"
-              target="_blank"
-              rel="noopener"
-              class="button button-light"
+                href="https://emilytaylor.remaxhallmarkeastern.com"
+                target="_blank"
+                rel="noopener"
+                class="button"
             >
-              Discover OneSource
+                View Listings
             </a>
 
-          </div>
-
         </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         LISTINGS
-    ========================= -->
-
-    <section class="listings">
-
-      <div class="container">
-
-        <div class="listings-content">
-
-          <span class="eyebrow">
-            Current Opportunities
-          </span>
-
-
-          <h2>
-            Find the place<br>
-            that feels like home.
-          </h2>
-
-
-          <p>
-            Explore Emily's current listings, available properties
-            and opportunities across the communities she serves.
-          </p>
-
-
-          <a
-            href="https://emilytaylor.remaxhallmarkeastern.com"
-            target="_blank"
-            rel="noopener"
-            class="button button-light"
-          >
-            View Listings
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         AREAS
-    ========================= -->
-
-    <section class="areas section-padding" id="areas">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div>
-
-            <span class="eyebrow">
-              Where Emily Works
-            </span>
-
-            <h2>
-              Rooted locally.<br>
-              Connected broadly.
-            </h2>
-
-          </div>
-
-
-          <p>
-            Serving clients throughout Peterborough, Kawartha Lakes,
-            Durham Region, Toronto, Vaughan and surrounding communities.
-          </p>
-
-        </div>
-
-
-        <div class="areas-grid">
-
-          <div class="area">Ajax</div>
-          <div class="area">Bowmanville</div>
-          <div class="area">Clarington</div>
-          <div class="area">Kawartha Lakes</div>
-
-          <div class="area">Lakefield</div>
-          <div class="area">Lindsay</div>
-          <div class="area">Mississauga</div>
-          <div class="area">Oshawa</div>
-
-          <div class="area">Peterborough</div>
-          <div class="area">Pickering</div>
-          <div class="area">Toronto</div>
-          <div class="area">Vaughan</div>
-
-          <div class="area">Whitby</div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         FINAL CTA
-    ========================= -->
-
-    <section class="final-cta">
-
-      <span class="eyebrow">
-        Your Next Move
-      </span>
-
-
-      <h2>
-        Let's talk about<br>
-        what's next.
-      </h2>
-
-
-      <a href="contact.html" class="button button-light">
-        Contact Emily
-      </a>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-
-          <div class="brand">
-
-            <span class="brand-name">
-              Emily Taylor
-            </span>
-
-            <span class="brand-title">
-              Sales Representative
-            </span>
-
-          </div>
-
-
-          <p>
-            Thoughtful real estate representation for buyers,
-            sellers, families and clients navigating their next chapter.
-          </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Explore
-          </h4>
-
-          <a href="index.html">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#areas">Areas</a>
-          <a href="#onesource">OneSource</a>
-          <a href="contact.html">Contact</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Connect
-          </h4>
-
-          <a href="tel:4169949683">
-            416-994-9683
-          </a>
-
-          <a
-            href="https://emilytaylor.remaxhallmarkeastern.com"
-            target="_blank"
-            rel="noopener"
-          >
-            View Listings
-          </a>
-
-          <a
-            href="https://onesourcemoving.ca"
-            target="_blank"
-            rel="noopener"
-          >
-            OneSource Moving Solutions
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <span>
-          © 2026 Emily Taylor. All rights reserved.
-        </span>
-
-        <span>
-          RE/MAX Hallmark Eastern Realty INC.
-        </span>
-
-      </div>
 
     </div>
 
-  </footer>
+</section>
 
 
+<!-- INTRO STRIP -->
 
-  <!-- =========================
-       MOBILE MENU
-  ========================= -->
+<section class="intro-strip">
 
-  <script>
+    <div class="intro-item">
+        <div class="intro-number">100+</div>
+        <div class="intro-label">Families Helped</div>
+    </div>
 
-    function toggleMenu() {
-      const menu = document.getElementById("navLinks");
-      menu.classList.toggle("active");
-    }
+    <div class="intro-item">
+        <div class="intro-number">SRES®</div>
+        <div class="intro-label">Senior Real Estate Specialist</div>
+    </div>
+
+    <div class="intro-item">
+        <div class="intro-number">CNE</div>
+        <div class="intro-label">Certified Negotiation Expert</div>
+    </div>
+
+    <div class="intro-item">
+        <div class="intro-number">RE/MAX</div>
+        <div class="intro-label">Hall of Fame & Platinum Club</div>
+    </div>
+
+</section>
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+<!-- ABOUT -->
 
-      link.addEventListener("click", () => {
+<section class="about" id="about">
 
-        document.getElementById("navLinks").classList.remove("active");
+    <div class="about-grid">
 
-      });
+        <div class="about-left">
 
+            <p class="eyebrow">
+                About Emily
+            </p>
+
+            <h2>
+                A career<br>
+                with purpose.
+            </h2>
+
+            <p class="about-subtitle">
+                Real estate chose me.
+            </p>
+
+            <img
+                class="about-photo"
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
+                alt="Professional real estate consultation"
+            >
+
+        </div>
+
+
+        <div class="about-right">
+
+            <h3>
+                Real estate<br>
+                chose me.
+            </h3>
+
+            <p>
+                Born and raised in Peterborough, with many years spent in Toronto,
+                Emily brings a broad perspective to real estate and a genuine
+                understanding of the communities she serves.
+            </p>
+
+            <p>
+                Her background, relationships and experience have shaped a business
+                built around people rather than transactions.
+            </p>
+
+            <p>
+                Whether you're buying your first home, selling a family property,
+                downsizing, relocating or helping manage a loved one's estate,
+                Emily believes the process should feel thoughtful, informed and
+                personal.
+            </p>
+
+            <div class="quote">
+                “I think Real Estate chose me.”
+            </div>
+
+            <a href="contact.html" class="button burgundy">
+                Work With Emily
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPROACH -->
+
+<section class="approach">
+
+    <div class="approach-grid">
+
+        <div class="approach-left">
+
+            <p class="eyebrow">
+                The Emily Taylor Approach
+            </p>
+
+            <h2>
+                Representation
+            </h2>
+
+            <p class="approach-subtitle">
+                That feels personal.
+            </p>
+
+            <img
+                class="approach-photo"
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=85"
+                alt="Modern home interior"
+            >
+
+        </div>
+
+
+        <div class="approach-right">
+
+            <p>
+                Emily believes real estate should never feel like a one-size-fits-all
+                experience.
+            </p>
+
+            <p>
+                She takes the time to listen, understand what matters, uncover the
+                details that others might miss, and guide clients through each
+                decision with care.
+            </p>
+
+            <p>
+                Whether you're buying your first home, selling a family property,
+                downsizing, relocating or helping manage a loved one's estate,
+                the goal is the same: to make you feel informed, supported and confident.
+            </p>
+
+            <div class="approach-list">
+
+                <div>
+                    <span>Listen</span>
+                    <span>Understand</span>
+                </div>
+
+                <div>
+                    <span>Serve</span>
+                    <span>Guide</span>
+                </div>
+
+                <div>
+                    <span>Empower</span>
+                    <span>Protect</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESULTS -->
+
+<section class="results">
+
+    <div class="results-header">
+
+        <p class="eyebrow white">
+            Experience & Recognition
+        </p>
+
+        <h2>
+            Experience matters.<br>
+            So does how you're<br>
+            represented.
+        </h2>
+
+    </div>
+
+
+    <div class="results-grid">
+
+        <div class="result-card">
+
+            <h3>
+                RE/MAX<br>
+                Hall of Fame
+            </h3>
+
+            <p>
+                Recognized with the RE/MAX Hall of Fame Award for professional
+                achievement and commitment to real estate.
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>
+                RE/MAX<br>
+                Platinum Club
+            </h3>
+
+            <p>
+                Recognized as a member of the RE/MAX Platinum Club, reflecting
+                strong performance and dedication to clients.
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>
+                Seniors Real Estate<br>
+                Specialist — SRES®
+            </h3>
+
+            <p>
+                Specialized education focused on the 50+ market and the unique
+                considerations that can come with downsizing, relocation,
+                aging in place and other life transitions.
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>
+                Certified Negotiation<br>
+                Expert
+            </h3>
+
+            <p>
+                Specialized negotiation training designed to strengthen strategy,
+                communication and representation throughout the transaction.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="services-header">
+
+        <div>
+
+            <p class="eyebrow">
+                What Emily Does
+            </p>
+
+            <h2>
+                More than<br>
+                a transaction.
+            </h2>
+
+        </div>
+
+        <p>
+            From preparation to negotiation and everything in between,
+            Emily provides thoughtful, full-service representation designed
+            around your goals.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card">
+
+            <div class="service-number">01</div>
+
+            <h3>Buying</h3>
+
+            <p>
+                Guidance, strategy and negotiation from the first conversation
+                to the keys in your hand.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-number">02</div>
+
+            <h3>Selling</h3>
+
+            <p>
+                Strategic preparation, positioning, marketing and negotiation
+                designed to protect your goals.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-number">03</div>
+
+            <h3>Listing Preparation</h3>
+
+            <p>
+                Thoughtful preparation, presentation and staging guidance
+                before your home hits the market.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-number">04</div>
+
+            <h3>Negotiation</h3>
+
+            <p>
+                Clear strategy and experienced representation when the
+                details matter most.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-number">05</div>
+
+            <h3>Downsizing</h3>
+
+            <p>
+                Compassionate guidance through a move into a new chapter,
+                with practical considerations along the way.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-number">06</div>
+
+            <h3>Executors & POAs</h3>
+
+            <p>
+                Support for those navigating the sale of a property on behalf
+                of a loved one or estate.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPECIALTY -->
+
+<section class="specialty">
+
+    <div class="specialty-grid">
+
+        <div>
+
+            <p class="eyebrow">
+                Specialized Representation
+            </p>
+
+            <h2>
+                Real estate<br>
+                with people<br>
+                at the centre.
+            </h2>
+
+        </div>
+
+
+        <div class="specialty-copy">
+
+            <p>
+                Emily works with a wide range of clients and specializes in
+                supporting seniors, families, executors, powers of attorney
+                and first-time buyers.
+            </p>
+
+            <p>
+                Every situation is different. Her role is to listen first,
+                understand what matters and build a plan around the person,
+                not simply the property.
+            </p>
+
+            <div class="specialty-tags">
+
+                <span class="tag">Seniors</span>
+                <span class="tag">Families</span>
+                <span class="tag">Executors</span>
+                <span class="tag">POAs</span>
+                <span class="tag">First-Time Buyers</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ONESOURCE -->
+
+<section class="onesource" id="onesource">
+
+    <div class="onesource-grid">
+
+        <div class="onesource-photo"></div>
+
+        <div class="onesource-content">
+
+            <p class="eyebrow">
+                A Trusted Partnership
+            </p>
+
+            <h2>
+                Moving can<br>
+                feel easier.
+            </h2>
+
+            <p>
+                Emily has partnered with OneSource Moving Solutions to provide
+                additional support for seniors and families navigating a move.
+            </p>
+
+            <p>
+                From planning and downsizing to packing, moving logistics,
+                organizing and settling into a new home, OneSource helps take
+                the stress out of changing your address.
+            </p>
+
+            <div class="onesource-note">
+                Seniors • Families • Move Management
+            </div>
+
+            <div>
+
+                <a
+                    href="https://onesourcemoving.ca"
+                    target="_blank"
+                    rel="noopener"
+                    class="button burgundy"
+                >
+                    Discover OneSource
+                </a>
+
+                <a
+                    href="onesource.html"
+                    class="button"
+                    style="margin-left:10px;"
+                >
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LISTINGS -->
+
+<section class="listings">
+
+    <div class="listings-content">
+
+        <p class="eyebrow white">
+            Find Your Next Chapter
+        </p>
+
+        <h2>
+            Your next move<br>
+            starts here.
+        </h2>
+
+        <p>
+            Explore Emily's current listings, market opportunities and
+            properties available throughout the communities she serves.
+        </p>
+
+        <a
+            href="https://emilytaylor.remaxhallmarkeastern.com"
+            target="_blank"
+            rel="noopener"
+            class="button"
+        >
+            View Listings
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- AREAS -->
+
+<section class="areas" id="areas">
+
+    <div class="areas-inner">
+
+        <p class="eyebrow">
+            Areas Served
+        </p>
+
+        <h2>
+            Where Emily<br>
+            works.
+        </h2>
+
+        <div class="area-list">
+
+            <div class="area">Ajax</div>
+            <div class="area">Bowmanville</div>
+            <div class="area">Clarington</div>
+            <div class="area">Kawartha Lakes</div>
+
+            <div class="area">Lakefield</div>
+            <div class="area">Lindsay</div>
+            <div class="area">Mississauga</div>
+            <div class="area">Oshawa</div>
+
+            <div class="area">Peterborough</div>
+            <div class="area">Pickering</div>
+            <div class="area">Toronto</div>
+            <div class="area">Vaughan</div>
+
+            <div class="area">Whitby</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="final-cta">
+
+    <p class="eyebrow">
+        Ready When You Are
+    </p>
+
+    <h2>
+        Let's talk about<br>
+        what's next.
+    </h2>
+
+    <p>
+        Your next move might be around the corner — or years away.
+        Either way, Emily is here to help you understand your options
+        and make the right move for you.
+    </p>
+
+    <a href="contact.html" class="button burgundy">
+        Contact Emily
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-name">
+                Emily Taylor
+            </div>
+
+            <div class="footer-title">
+                Sales Representative
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                Explore
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#areas">Areas</a>
+                <a href="#onesource">OneSource</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-heading">
+                Listings
+            </div>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://emilytaylor.remaxhallmarkeastern.com"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Current Listings
+                </a>
+
+                <a href="contact.html">
+                    Work With Emily
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Emily Taylor. All rights reserved.
+        </span>
+
+        <span>
+            RE/MAX Hallmark Eastern Realty INC.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function() {
+    mainNav.classList.toggle("mobile-open");
+});
+
+document.querySelectorAll("#mainNav a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        mainNav.classList.remove("mobile-open");
     });
+});
 
-  </script>
-
+</script>
 
 </body>
 </html>
