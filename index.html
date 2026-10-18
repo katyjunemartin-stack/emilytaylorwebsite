@@ -108,17 +108,12 @@
     }
 
 
-    /* LARGE LOGO — CORRECT SIZE + MOVED UP */
-
     .logo-link {
       display: flex;
       align-items: center;
-
       width: 220px;
       height: 220px;
-
       flex-shrink: 0;
-
       transform: translateY(-20px);
     }
 
@@ -126,38 +121,30 @@
     .logo-link img {
       width: 220px;
       height: 220px;
-
       object-fit: contain;
       object-position: center;
     }
 
 
-    /* DESKTOP MENU — MOVED UP WITH LOGO */
-
     nav {
       position: absolute;
-
       top: 70px;
       right: 0;
 
       display: flex;
       align-items: center;
-
       gap: 28px;
 
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .14em;
       text-transform: uppercase;
-
       z-index: 30;
     }
 
 
     nav a {
       color: var(--white);
-
       transition: opacity .25s ease;
     }
 
@@ -172,11 +159,9 @@
 
       border: 0;
       background: transparent;
-
       color: var(--white);
 
       font-size: 27px;
-
       cursor: pointer;
     }
 
@@ -339,8 +324,20 @@
       width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
 
-      /* THIS CREATES THE GAP UNDER THE HEADER */
       padding: 190px 0 105px;
+    }
+
+
+    .hero-kicker {
+      color: rgba(255,255,255,.85);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .28em;
+      text-transform: uppercase;
+
+      margin-bottom: 48px;
     }
 
 
@@ -404,6 +401,8 @@
       color: var(--white);
 
       font-size: clamp(64px, 8vw, 122px);
+
+      margin-bottom: 0;
     }
 
 
@@ -450,7 +449,7 @@
 
 
     /* =========================================================
-       ABOUT
+       ABOUT PREVIEW
     ========================================================= */
 
     .about {
@@ -486,6 +485,13 @@
     }
 
 
+    /*
+      PEOPLE FIRST SECTION
+
+      The heading and supporting sentence now live together
+      in the right column so they share the exact same left edge.
+    */
+
     .about-right {
       padding-top: 0;
     }
@@ -500,6 +506,8 @@
 
       line-height: .9;
       letter-spacing: -.05em;
+
+      margin: 0;
     }
 
 
@@ -1095,6 +1103,11 @@
       }
 
 
+      .hero-kicker {
+        margin-bottom: 48px;
+      }
+
+
       .hero h1 {
         font-size: clamp(53px, 14vw, 85px);
       }
@@ -1144,6 +1157,11 @@
 
       .about-right {
         padding-top: 0;
+      }
+
+
+      .about-left h2 {
+        margin-bottom: 45px;
       }
 
 
@@ -1296,33 +1314,37 @@
       </a>
 
 
-      <!-- MENU STAYS -->
-
       <nav id="mainNav">
 
         <a href="index.html">
           Home
         </a>
 
+
         <a href="about.html">
           About
         </a>
+
 
         <a href="#services">
           Services
         </a>
 
+
         <a href="#areas">
           Areas
         </a>
+
 
         <a href="#onesource">
           OneSource
         </a>
 
+
         <a href="contact.html">
           Contact
         </a>
+
 
         <a
           href="https://emilytaylor.remaxhallmarkeastern.com"
@@ -1424,11 +1446,13 @@
 
         <div class="experience-grid">
 
+
           <div class="experience-card">
 
             <h3>
               RE/MAX Hall of Fame
             </h3>
+
 
             <p>
               Recognition earned through a commitment to clients,
@@ -1444,12 +1468,14 @@
               RE/MAX Platinum Club
             </h3>
 
+
             <p>
               Recognition for performance, professionalism and
               consistent dedication to clients.
             </p>
 
           </div>
+
 
         </div>
 
@@ -1459,7 +1485,7 @@
 
 
     <!-- =======================================================
-         ABOUT
+         ABOUT PREVIEW / PEOPLE FIRST
     ======================================================= -->
 
     <section
@@ -1469,16 +1495,21 @@
 
       <div class="about-inner">
 
+
+        <!-- LEFT: CLIENT PHOTO -->
+
         <div class="about-left">
 
           <img
             class="about-photo"
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
-            alt="Professional conversation"
+            src="images/emily-client-meeting.jpg"
+            alt="Emily Taylor meeting with a client"
           >
 
         </div>
 
+
+        <!-- RIGHT: TEXT -->
 
         <div class="about-right">
 
@@ -1542,6 +1573,7 @@
 
       <div class="services-inner">
 
+
         <div class="services-heading">
 
           <div>
@@ -1565,10 +1597,12 @@
             designed around your goals.
           </p>
 
+
         </div>
 
 
         <div class="services-grid">
+
 
           <div class="service-card">
 
@@ -1629,6 +1663,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -1641,6 +1676,7 @@
     ======================================================= -->
 
     <section class="credentials">
+
 
       <div class="credential">
 
@@ -1675,6 +1711,7 @@
 
       </div>
 
+
     </section>
 
 
@@ -1697,6 +1734,7 @@
 
 
         <div class="onesource-copy">
+
 
           <div class="section-kicker">
             A THOUGHTFUL MOVING SOLUTION
@@ -1730,6 +1768,7 @@
 
           <div class="button-row">
 
+
             <a
               href="https://onesourcemoving.ca"
               target="_blank"
@@ -1747,7 +1786,9 @@
               Learn More
             </a>
 
+
           </div>
+
 
         </div>
 
@@ -1761,6 +1802,7 @@
     ======================================================= -->
 
     <section class="listings">
+
 
       <div class="listings-inner">
 
@@ -1791,6 +1833,7 @@
           View Listings
         </a>
 
+
       </div>
 
     </section>
@@ -1809,6 +1852,7 @@
 
         <div class="areas-heading">
 
+
           <div class="section-kicker">
             AREAS SERVED
           </div>
@@ -1819,24 +1863,77 @@
             wide reach.
           </h2>
 
+
         </div>
 
 
         <div class="areas-grid">
 
-          <div class="area">Ajax</div>
-          <div class="area">Bowmanville</div>
-          <div class="area">Clarington</div>
-          <div class="area">Kawartha Lakes</div>
-          <div class="area">Lakefield</div>
-          <div class="area">Lindsay</div>
-          <div class="area">Mississauga</div>
-          <div class="area">Oshawa</div>
-          <div class="area">Peterborough</div>
-          <div class="area">Pickering</div>
-          <div class="area">Toronto</div>
-          <div class="area">Vaughan</div>
-          <div class="area">Whitby</div>
+
+          <div class="area">
+            Ajax
+          </div>
+
+
+          <div class="area">
+            Bowmanville
+          </div>
+
+
+          <div class="area">
+            Clarington
+          </div>
+
+
+          <div class="area">
+            Kawartha Lakes
+          </div>
+
+
+          <div class="area">
+            Lakefield
+          </div>
+
+
+          <div class="area">
+            Lindsay
+          </div>
+
+
+          <div class="area">
+            Mississauga
+          </div>
+
+
+          <div class="area">
+            Oshawa
+          </div>
+
+
+          <div class="area">
+            Peterborough
+          </div>
+
+
+          <div class="area">
+            Pickering
+          </div>
+
+
+          <div class="area">
+            Toronto
+          </div>
+
+
+          <div class="area">
+            Vaughan
+          </div>
+
+
+          <div class="area">
+            Whitby
+          </div>
+
 
         </div>
 
@@ -1850,6 +1947,7 @@
     ======================================================= -->
 
     <section class="final-cta">
+
 
       <div class="final-cta-inner">
 
@@ -1865,6 +1963,7 @@
         >
           Contact Emily
         </a>
+
 
       </div>
 
@@ -1882,7 +1981,9 @@
 
     <div class="footer-inner">
 
+
       <div class="footer-top">
+
 
         <div class="footer-brand">
 
@@ -1901,46 +2002,58 @@
 
         <div class="footer-nav">
 
+
           <a href="index.html">
             Home
           </a>
+
 
           <a href="about.html">
             About
           </a>
 
+
           <a href="#services">
             Services
           </a>
+
 
           <a href="#areas">
             Areas
           </a>
 
+
           <a href="#onesource">
             OneSource
           </a>
+
 
           <a href="contact.html">
             Contact
           </a>
 
+
         </div>
+
 
       </div>
 
 
       <div class="footer-bottom">
 
+
         <span>
           © 2026 Emily Taylor. All rights reserved.
         </span>
+
 
         <span>
           RE/MAX Hallmark Eastern Realty INC.
         </span>
 
+
       </div>
+
 
     </div>
 
@@ -1955,6 +2068,7 @@
 
     const menuButton = document.getElementById("menuButton");
     const mainNav = document.getElementById("mainNav");
+
 
     menuButton.addEventListener("click", () => {
       mainNav.classList.toggle("open");
