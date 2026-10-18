@@ -108,16 +108,17 @@
     .logo-link {
       display: flex;
       align-items: center;
-      width: 210px;
+      width: 220px;
+      height: 220px;
       flex-shrink: 0;
     }
 
 
     .logo-link img {
-      width: 210px;
-      max-height: 70px;
+      width: 220px;
+      height: 220px;
       object-fit: contain;
-      object-position: left center;
+      object-position: center;
     }
 
 
@@ -300,7 +301,7 @@
           rgba(0,0,0,.5),
           transparent 50%
         ),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90")
+        url("images/hero-image.png")
         center center / cover no-repeat;
 
       color: var(--white);
@@ -474,6 +475,13 @@
       object-fit: cover;
     }
 
+
+    /*
+      PEOPLE FIRST SECTION
+
+      The heading and supporting sentence now live together
+      in the right column so they share the exact same left edge.
+    */
 
     .about-right {
       padding-top: 0;
