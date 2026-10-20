@@ -20,6 +20,7 @@
   >
 
   <style>
+
     :root {
       --ivory: #f7f4ee;
       --cream: #eee9df;
@@ -65,11 +66,6 @@
       text-decoration: none;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
     /* =========================================================
        HEADER
     ========================================================= */
@@ -88,7 +84,6 @@
       height: 220px;
       margin: 0 auto;
       padding: 0;
-
       position: relative;
       display: flex;
       align-items: flex-start;
@@ -116,16 +111,13 @@
       position: absolute;
       top: 70px;
       right: 0;
-
       display: flex;
       align-items: center;
       gap: 28px;
-
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
-
       z-index: 30;
     }
 
@@ -140,11 +132,9 @@
 
     .mobile-menu {
       display: none;
-
       border: 0;
       background: transparent;
       color: var(--white);
-
       font-size: 27px;
       cursor: pointer;
     }
@@ -152,22 +142,6 @@
     /* =========================================================
        GLOBAL
     ========================================================= */
-
-    .section-kicker {
-      display: block;
-
-      color: var(--burgundy);
-
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 800;
-      line-height: 1.2;
-
-      letter-spacing: .28em;
-      text-transform: uppercase;
-
-      margin-bottom: 70px;
-    }
 
     h1,
     h2,
@@ -182,23 +156,30 @@
       font-family: var(--sans);
     }
 
+    .section-kicker {
+      display: block;
+      color: var(--burgundy);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin-bottom: 70px;
+    }
+
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       min-height: 54px;
       padding: 0 28px;
-
       font-family: var(--sans);
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .18em;
       text-transform: uppercase;
-
       border: 1px solid transparent;
-
       transition:
         background .25s ease,
         color .25s ease,
@@ -234,17 +215,6 @@
       color: var(--charcoal);
     }
 
-    .button-outline {
-      border-color: var(--charcoal);
-      color: var(--charcoal);
-      background: transparent;
-    }
-
-    .button-outline:hover {
-      background: var(--charcoal);
-      color: var(--white);
-    }
-
     .button-row {
       display: flex;
       flex-wrap: wrap;
@@ -258,60 +228,64 @@
     .hero {
       position: relative;
       min-height: 860px;
-
       display: flex;
       align-items: flex-end;
-
+      overflow: hidden;
       color: var(--white);
+      background: #555;
+    }
 
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.62) 0%,
-          rgba(0,0,0,.42) 45%,
-          rgba(0,0,0,.25) 100%
-        ),
-        url("images/hero-image.png")
-        center center / cover no-repeat;
+          rgba(0,0,0,.52) 0%,
+          rgba(0,0,0,.30) 48%,
+          rgba(0,0,0,.16) 100%
+        );
     }
 
-    .hero::after {
+    .hero-overlay::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,.18),
-          transparent 30%,
+          rgba(0,0,0,.16),
+          transparent 32%,
           rgba(0,0,0,.18)
         );
-
-      pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
       z-index: 2;
-
       width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
-
       padding: 0 0 105px;
     }
 
     .hero h1 {
       max-width: 1000px;
-
-      font-size: clamp(70px, 8.5vw, 135px);
-
       color: var(--white);
-
+      font-size: clamp(70px, 8.5vw, 135px);
       line-height: .84;
       letter-spacing: -.055em;
-
       margin-bottom: 45px;
     }
 
@@ -321,12 +295,9 @@
 
     .hero-copy {
       max-width: 620px;
-
-      color: rgba(255,255,255,.88);
-
+      color: rgba(255,255,255,.90);
       font-size: 18px;
       line-height: 1.7;
-
       margin-bottom: 38px;
     }
 
@@ -346,16 +317,13 @@
 
     .experience h2 {
       max-width: 900px;
-
       font-size: clamp(55px, 7vw, 105px);
-
       margin-bottom: 90px;
     }
 
     .experience-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-
       border-top: 1px solid var(--line);
     }
 
@@ -370,24 +338,18 @@
 
     .experience-card h3 {
       font-family: var(--sans);
-
       font-size: 13px;
       font-weight: 800;
-
       line-height: 1.3;
       letter-spacing: .17em;
       text-transform: uppercase;
-
       color: var(--burgundy);
-
       margin-bottom: 20px;
     }
 
     .experience-card p {
       max-width: 500px;
-
       color: var(--greige);
-
       font-size: 16px;
       line-height: 1.7;
     }
@@ -404,10 +366,8 @@
     .about-inner {
       width: min(1500px, 100%);
       margin: 0 auto;
-
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
       gap: 100px;
       align-items: center;
     }
@@ -419,44 +379,34 @@
     .about-photo {
       width: 100%;
       aspect-ratio: 4 / 5;
-
       object-fit: cover;
       object-position: center;
     }
 
     .about-right h3 {
       font-family: var(--sans);
-
       font-size: 12px;
       font-weight: 800;
-
       letter-spacing: .24em;
       text-transform: uppercase;
-
       color: var(--burgundy);
-
       margin-bottom: 28px;
     }
 
     .about-subtitle {
       max-width: 650px;
-
       font-family: var(--serif);
       font-size: clamp(36px, 4vw, 58px);
       line-height: .98;
       letter-spacing: -.04em;
-
       margin-bottom: 45px;
     }
 
     .about-right p {
       max-width: 650px;
-
       color: var(--greige);
-
       font-size: 16px;
       line-height: 1.8;
-
       margin-bottom: 22px;
     }
 
@@ -481,7 +431,6 @@
     .services-header {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 100px;
       margin-bottom: 90px;
     }
@@ -492,11 +441,8 @@
 
     .services-intro {
       align-self: end;
-
       max-width: 580px;
-
       color: var(--greige);
-
       font-size: 17px;
       line-height: 1.75;
     }
@@ -504,29 +450,23 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
     }
 
     .service-card {
       min-height: 300px;
-
       padding: 45px;
-
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     .service-number {
       color: var(--burgundy);
-
       font-family: var(--sans);
-
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .2em;
-
       margin-bottom: 65px;
     }
 
@@ -537,7 +477,6 @@
 
     .service-card p {
       color: var(--greige);
-
       font-size: 15px;
       line-height: 1.7;
     }
@@ -549,7 +488,6 @@
     .credentials {
       background: var(--burgundy);
       color: var(--white);
-
       padding: 120px 5vw;
     }
 
@@ -568,7 +506,6 @@
 
     .credentials-header h2 {
       max-width: 850px;
-
       font-size: clamp(50px, 6vw, 92px);
       color: var(--white);
     }
@@ -576,7 +513,6 @@
     .credentials-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-
       border-top: 1px solid rgba(255,255,255,.2);
     }
 
@@ -591,23 +527,17 @@
 
     .credential h3 {
       font-family: var(--sans);
-
       font-size: 13px;
       font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
-
       color: var(--white);
-
       margin-bottom: 18px;
     }
 
     .credential p {
       max-width: 560px;
-
       color: rgba(255,255,255,.72);
-
       font-size: 15px;
       line-height: 1.7;
     }
@@ -624,10 +554,8 @@
     .onesource-inner {
       width: min(1500px, 100%);
       margin: 0 auto;
-
       display: grid;
       grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-
       gap: 100px;
       align-items: center;
     }
@@ -635,7 +563,6 @@
     .onesource-image {
       width: 100%;
       aspect-ratio: 4 / 3;
-
       object-fit: cover;
     }
 
@@ -650,12 +577,9 @@
 
     .onesource-content p {
       max-width: 620px;
-
       color: var(--greige);
-
       font-size: 17px;
       line-height: 1.75;
-
       margin-bottom: 35px;
     }
 
@@ -671,19 +595,16 @@
 
     .listings {
       position: relative;
-
       min-height: 700px;
-
       display: flex;
       align-items: flex-end;
-
       color: var(--white);
 
       background:
         linear-gradient(
           90deg,
           rgba(0,0,0,.62),
-          rgba(0,0,0,.2)
+          rgba(0,0,0,.20)
         ),
         url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=90")
         center center / cover no-repeat;
@@ -692,7 +613,6 @@
     .listings-inner {
       width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
-
       padding-bottom: 100px;
     }
 
@@ -703,22 +623,16 @@
 
     .listings h2 {
       max-width: 850px;
-
       font-size: clamp(55px, 7vw, 105px);
-
       margin-bottom: 35px;
-
       color: var(--white);
     }
 
     .listings p {
       max-width: 600px;
-
       color: rgba(255,255,255,.84);
-
       font-size: 17px;
       line-height: 1.7;
-
       margin-bottom: 35px;
     }
 
@@ -739,7 +653,6 @@
     .areas-header {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 100px;
       margin-bottom: 85px;
     }
@@ -750,11 +663,8 @@
 
     .areas-header p {
       align-self: end;
-
       max-width: 600px;
-
       color: var(--greige);
-
       font-size: 17px;
       line-height: 1.75;
     }
@@ -762,23 +672,18 @@
     .areas-list {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
     }
 
     .area {
       padding: 22px 25px;
-
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-
       font-size: 14px;
       font-weight: 700;
-
       letter-spacing: .08em;
       text-transform: uppercase;
-
       color: var(--charcoal);
     }
 
@@ -794,23 +699,18 @@
     .final-cta-inner {
       width: min(1500px, 100%);
       margin: 0 auto;
-
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-
       gap: 60px;
     }
 
     .final-cta h2 {
       max-width: 900px;
-
       color: var(--white);
-
       font-family: var(--serif);
       font-size: clamp(55px, 7vw, 105px);
       font-weight: 400;
-
       line-height: .88;
       letter-spacing: -.05em;
     }
@@ -822,7 +722,6 @@
     footer {
       background: var(--cream);
       color: var(--charcoal);
-
       padding: 85px 5vw 35px;
     }
 
@@ -834,75 +733,50 @@
     .footer-top {
       display: flex;
       justify-content: space-between;
-
       gap: 60px;
-
       padding-bottom: 70px;
-
       border-bottom: 1px solid var(--line);
     }
 
-    /*
-      The Emily logo file is square with transparent space
-      surrounding the actual logo artwork.
-
-      This wrapper lets us display the full logo at a large
-      size without cutting the artwork off.
-    */
-
     .footer-logo-crop {
       position: relative;
-
       width: 220px;
       height: 82px;
-
       overflow: hidden;
-
       margin-bottom: 20px;
     }
 
     .footer-logo-crop img {
       position: absolute;
-
       left: 0;
       top: -69px;
-
       width: 220px;
       height: 220px;
-
       max-width: none;
-
       object-fit: contain;
       object-position: center;
-
       filter: brightness(0);
     }
 
     .footer-brand p {
       color: var(--greige);
-
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .17em;
       text-transform: uppercase;
     }
 
     .footer-nav {
       display: flex;
-
       gap: 30px;
-
       align-items: center;
       flex-wrap: wrap;
     }
 
     .footer-nav a {
       color: var(--charcoal);
-
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
     }
@@ -914,13 +788,9 @@
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-
       gap: 30px;
-
       padding-top: 27px;
-
       color: var(--greige);
-
       font-size: 11px;
     }
 
@@ -953,22 +823,15 @@
 
       nav {
         display: none;
-
         position: absolute;
-
         top: 85px;
         left: 5vw;
         right: 5vw;
-
         padding: 25px;
-
         background: var(--burgundy);
-
         flex-direction: column;
         align-items: flex-start;
-
         gap: 20px;
-
         z-index: 30;
       }
 
@@ -982,7 +845,6 @@
 
       .mobile-menu {
         display: block;
-
         position: absolute;
         top: 53px;
         right: 0;
@@ -1125,12 +987,12 @@
 
     @media (max-width: 550px) {
 
-      .hero h1 {
-        font-size: 57px;
-      }
-
       .hero {
         min-height: 720px;
+      }
+
+      .hero h1 {
+        font-size: 57px;
       }
 
       .button {
@@ -1158,14 +1020,15 @@
         height: 75px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
+  <!-- =======================================================
        HEADER
-  ========================================================= -->
+  ======================================================= -->
 
   <header>
 
@@ -1238,6 +1101,15 @@
     ======================================================= -->
 
     <section class="hero">
+
+      <img
+        class="hero-image"
+        src="images/hero-image.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div class="hero-overlay"></div>
 
       <div class="hero-inner">
 
@@ -1331,7 +1203,7 @@
 
 
     <!-- =======================================================
-         ABOUT PREVIEW
+         ABOUT PREVIEW — EMILY WITH SENIORS
     ======================================================= -->
 
     <section
@@ -1343,7 +1215,6 @@
 
         <div class="about-left">
 
-          <!-- RESTORED EMILY + SENIORS PHOTO -->
           <img
             class="about-photo"
             src="images/emily-with-seniors.jpg"
@@ -1355,7 +1226,7 @@
         <div class="about-right">
 
           <h3>
-            People First.
+            PEOPLE FIRST.
           </h3>
 
           <div class="about-subtitle">
@@ -1433,7 +1304,6 @@
 
         </div>
 
-
         <div class="services-grid">
 
           <div class="service-card">
@@ -1455,7 +1325,6 @@
 
           </div>
 
-
           <div class="service-card">
 
             <div class="service-number">
@@ -1474,7 +1343,6 @@
             </p>
 
           </div>
-
 
           <div class="service-card">
 
@@ -1524,7 +1392,6 @@
 
         </div>
 
-
         <div class="credentials-grid">
 
           <div class="credential">
@@ -1540,7 +1407,6 @@
             </p>
 
           </div>
-
 
           <div class="credential">
 
@@ -1690,60 +1556,21 @@
 
         </div>
 
-
         <div class="areas-list">
 
-          <div class="area">
-            Ajax
-          </div>
-
-          <div class="area">
-            Bowmanville
-          </div>
-
-          <div class="area">
-            Clarington
-          </div>
-
-          <div class="area">
-            Kawartha Lakes
-          </div>
-
-          <div class="area">
-            Lakefield
-          </div>
-
-          <div class="area">
-            Lindsay
-          </div>
-
-          <div class="area">
-            Mississauga
-          </div>
-
-          <div class="area">
-            Oshawa
-          </div>
-
-          <div class="area">
-            Peterborough
-          </div>
-
-          <div class="area">
-            Pickering
-          </div>
-
-          <div class="area">
-            Toronto
-          </div>
-
-          <div class="area">
-            Vaughan
-          </div>
-
-          <div class="area">
-            Whitby
-          </div>
+          <div class="area">Ajax</div>
+          <div class="area">Bowmanville</div>
+          <div class="area">Clarington</div>
+          <div class="area">Kawartha Lakes</div>
+          <div class="area">Lakefield</div>
+          <div class="area">Lindsay</div>
+          <div class="area">Mississauga</div>
+          <div class="area">Oshawa</div>
+          <div class="area">Peterborough</div>
+          <div class="area">Pickering</div>
+          <div class="area">Toronto</div>
+          <div class="area">Vaughan</div>
+          <div class="area">Whitby</div>
 
         </div>
 
@@ -1779,9 +1606,9 @@
   </main>
 
 
-  <!-- =========================================================
+  <!-- =======================================================
        FOOTER
-  ========================================================= -->
+  ======================================================= -->
 
   <footer>
 
@@ -1791,7 +1618,6 @@
 
         <div class="footer-brand">
 
-          <!-- FULL LOGO — NOT CUT OFF -->
           <div class="footer-logo-crop">
 
             <img
@@ -1806,7 +1632,6 @@
           </p>
 
         </div>
-
 
         <div class="footer-nav">
 
@@ -1838,7 +1663,6 @@
 
       </div>
 
-
       <div class="footer-bottom">
 
         <span>
@@ -1856,14 +1680,17 @@
   </footer>
 
 
-  <!-- =========================================================
+  <!-- =======================================================
        MOBILE MENU
-  ========================================================= -->
+  ======================================================= -->
 
   <script>
 
-    const menuButton = document.getElementById("menuButton");
-    const mainNav = document.getElementById("mainNav");
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mainNav =
+      document.getElementById("mainNav");
 
     menuButton.addEventListener("click", () => {
       mainNav.classList.toggle("open");
