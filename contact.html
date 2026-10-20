@@ -16,14 +16,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet"
   />
 
   <style>
 
     /* =========================================================
-       ROOT
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f4ee;
+      color: #292725;
+      font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================================================
+       COLOURS / TYPE
     ========================================================= */
 
     :root {
@@ -46,41 +78,7 @@
 
 
     /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--ivory);
-      color: var(--charcoal);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-
-    /* =========================================================
        HEADER
-       SAME LOGO SIZE / SPACING AS HOME + ABOUT
     ========================================================= */
 
     header {
@@ -103,8 +101,11 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
       gap: 40px;
     }
+
+    /* SAME LOGO DIMENSIONS AS HOME / ABOUT */
 
     .logo-link {
       display: flex;
@@ -126,8 +127,14 @@
       object-position: center;
     }
 
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
     nav {
       position: absolute;
+
       top: 70px;
       right: 0;
 
@@ -138,6 +145,7 @@
 
       font-size: 11px;
       font-weight: 800;
+
       letter-spacing: .14em;
       text-transform: uppercase;
 
@@ -145,13 +153,14 @@
     }
 
     nav a {
-      color: var(--white);
       position: relative;
+      color: var(--white);
       white-space: nowrap;
     }
 
     nav a::after {
       content: "";
+
       position: absolute;
       left: 0;
       bottom: -7px;
@@ -161,52 +170,61 @@
 
       background: var(--white);
 
-      transition: width .3s ease;
+      transition: width .25s ease;
     }
 
     nav a:hover::after {
       width: 100%;
     }
 
-    nav a:last-child {
-      border: 1px solid rgba(255,255,255,.65);
-      padding: 14px 20px;
+
+    /* VIEW LISTINGS BUTTON */
+
+    .nav-listings {
+      padding: 15px 25px;
+
+      border: 1px solid rgba(255,255,255,.75);
     }
 
-    nav a:last-child::after {
+    .nav-listings::after {
       display: none;
     }
 
-    nav a:last-child:hover {
+    .nav-listings:hover {
       background: var(--white);
       color: var(--burgundy);
     }
 
 
     /* =========================================================
-       CONTACT PAGE
+       CONTACT MAIN LAYOUT
+       KEEPING THE NEW PHOTO SPACING
     ========================================================= */
 
     .contact-page {
-      padding: 300px 0 120px;
-      background: var(--ivory);
+      min-height: 100vh;
+
+      padding: 285px 0 115px;
+
+      display: flex;
+      align-items: center;
     }
 
     .contact-container {
-      width: min(1380px, calc(100% - 100px));
+      width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
     }
 
-
-    /* =========================================================
-       MAIN CONTACT AREA
-    ========================================================= */
-
-    .contact-main {
+    .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, .75fr);
-      gap: 100px;
-      align-items: start;
+
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(430px, .95fr);
+
+      gap: 85px;
+
+      align-items: center;
     }
 
 
@@ -215,47 +233,54 @@
     ========================================================= */
 
     .contact-intro {
-      max-width: 780px;
+      max-width: 760px;
     }
 
     .eyebrow {
       color: var(--greige);
-      font-size: 11px;
+
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: .28em;
+
+      letter-spacing: .24em;
       text-transform: uppercase;
     }
 
     .contact-intro h1 {
-      margin-top: 38px;
+      margin-top: 40px;
 
       font-family: var(--serif);
-      font-size: clamp(72px, 8vw, 125px);
-      line-height: .88;
-      font-weight: 400;
+
+      font-size: clamp(70px, 7.5vw, 125px);
+
+      line-height: .91;
+
+      font-weight: 500;
+
       letter-spacing: -.055em;
+
+      color: var(--charcoal);
     }
 
     .contact-intro h1 em {
       font-style: normal;
     }
 
-    .contact-script {
-      margin-top: 34px;
 
-      color: var(--burgundy);
-      font-family: var(--script);
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1;
-    }
+    /* ORIGINAL PARAGRAPH */
 
     .contact-copy {
-      max-width: 680px;
-      margin-top: 42px;
+      max-width: 720px;
+
+      margin-top: 52px;
 
       color: var(--greige);
-      font-size: 16px;
-      line-height: 1.85;
+
+      font-family: var(--sans);
+
+      font-size: 17px;
+
+      line-height: 1.8;
     }
 
 
@@ -265,28 +290,38 @@
 
     .contact-actions {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 14px;
-      margin-top: 38px;
+
+      margin-top: 42px;
     }
 
     .button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
       min-height: 56px;
+
       padding: 0 30px;
 
+      font-family: var(--sans);
+
       font-size: 10px;
+
       font-weight: 800;
+
       letter-spacing: .18em;
+
       text-transform: uppercase;
 
       transition:
-        background .3s ease,
-        color .3s ease,
-        transform .3s ease;
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
     }
 
     .button-burgundy {
@@ -295,13 +330,14 @@
     }
 
     .button-burgundy:hover {
-      background: var(--charcoal);
+      background: var(--burgundy-dark);
       transform: translateY(-2px);
     }
 
     .button-outline {
       border: 1px solid var(--charcoal);
       color: var(--charcoal);
+      background: transparent;
     }
 
     .button-outline:hover {
@@ -312,21 +348,24 @@
 
 
     /* =========================================================
-       EMILY PHOTO
+       NEW CONTACT PHOTO
     ========================================================= */
 
     .contact-photo-wrap {
       width: 100%;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .contact-photo {
       width: 100%;
-      height: 610px;
+
+      height: 650px;
 
       object-fit: cover;
       object-position: center;
 
-      background: var(--cream);
+      display: block;
     }
 
 
@@ -335,90 +374,55 @@
     ========================================================= */
 
     .details {
-      margin-top: 100px;
-
-      border-top: 1px solid var(--line);
-
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 70px;
-    }
-
-    .detail {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .detail-label {
-      color: var(--burgundy);
-
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .detail-value {
-      margin-top: 12px;
-
-      font-family: var(--serif);
-      font-size: 25px;
-      line-height: 1.4;
-    }
-
-    .detail-value.sans {
-      font-family: var(--sans);
-      font-size: 15px;
-      color: var(--greige);
-      line-height: 1.7;
-    }
-
-    .detail-value a {
-      transition: color .2s ease;
-    }
-
-    .detail-value a:hover {
-      color: var(--burgundy);
+      display: none;
     }
 
 
     /* =========================================================
-       BOTTOM BURGUNDY CTA
+       BOTTOM BURGUNDY STRIP
     ========================================================= */
 
     .contact-bottom {
-      margin-top: 120px;
-
       background: var(--burgundy);
+
       color: var(--white);
 
       padding: 65px 0;
     }
 
-    .contact-bottom-inner {
-      width: min(1380px, calc(100% - 100px));
+    .contact-bottom-container {
+      width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
+    }
 
+    .contact-bottom-inner {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      gap: 50px;
+      gap: 40px;
     }
 
     .contact-bottom h2 {
       font-family: var(--serif);
-      font-size: clamp(38px, 4vw, 58px);
-      font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.035em;
+
+      font-size: clamp(38px, 4vw, 60px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+      letter-spacing: -.04em;
     }
 
     .contact-bottom p {
       margin-top: 10px;
 
-      color: rgba(255,255,255,.68);
-      font-size: 13px;
+      color: rgba(255,255,255,.7);
+
+      font-size: 14px;
     }
 
     .button-light {
@@ -434,24 +438,26 @@
 
     /* =========================================================
        FOOTER
-       CREAM — MATCHES HOME + ABOUT
     ========================================================= */
 
     footer {
-      background: var(--cream);
+      background: var(--ivory);
+
       color: var(--charcoal);
 
       padding: 80px 0 35px;
     }
 
-    .footer-inner {
-      width: min(1380px, calc(100% - 100px));
+    .footer-container {
+      width: min(1500px, calc(100% - 100px));
       margin: 0 auto;
     }
 
     .footer-top {
       display: grid;
-      grid-template-columns: 1fr auto;
+
+      grid-template-columns: 1.2fr .8fr .8fr;
+
       gap: 70px;
 
       padding-bottom: 55px;
@@ -459,54 +465,62 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .footer-brand img {
-      width: 180px;
-      height: 180px;
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+    }
 
+    .footer-logo {
+      width: 190px;
+      height: auto;
       object-fit: contain;
-      object-position: center;
-
-      margin-left: -10px;
+      margin-bottom: 18px;
     }
 
     .footer-brand p {
-      margin-top: -15px;
+      max-width: 360px;
 
       color: var(--greige);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+
+      font-size: 13px;
+
+      line-height: 1.7;
     }
 
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      align-content: flex-start;
+    .footer-column h4 {
+      margin-bottom: 20px;
 
-      gap: 18px 30px;
+      color: var(--burgundy);
 
-      padding-top: 20px;
-    }
+      font-size: 10px;
 
-    .footer-nav a {
-      color: var(--greige);
-
-      font-size: 9px;
       font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
 
-      transition: color .2s ease;
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
     }
 
-    .footer-nav a:hover {
+    .footer-column a,
+    .footer-column p {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--greige);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    .footer-column a:hover {
       color: var(--burgundy);
     }
 
     .footer-bottom {
       display: flex;
+
       justify-content: space-between;
 
       gap: 30px;
@@ -516,14 +530,42 @@
       color: var(--greige);
 
       font-size: 10px;
+
+      line-height: 1.6;
     }
 
 
     /* =========================================================
-       MOBILE
+       MOBILE MENU
     ========================================================= */
 
-    @media (max-width: 1000px) {
+    .mobile-menu {
+      display: none;
+
+      position: absolute;
+
+      right: 0;
+      top: 70px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: var(--white);
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+      z-index: 40;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1100px) {
 
       .nav {
         width: calc(100% - 60px);
@@ -531,41 +573,35 @@
 
       nav {
         gap: 18px;
-        font-size: 9px;
+        font-size: 10px;
       }
 
       .contact-container {
         width: calc(100% - 60px);
       }
 
-      .contact-main {
-        grid-template-columns: 1fr;
-        gap: 70px;
+      .contact-grid {
+        gap: 55px;
+      }
+
+      .contact-intro h1 {
+        font-size: clamp(65px, 7vw, 100px);
       }
 
       .contact-photo {
-        height: 600px;
+        height: 590px;
       }
 
-      .details {
-        margin-top: 30px;
-      }
-
-      .contact-bottom-inner {
-        width: calc(100% - 60px);
-      }
-
-      .footer-inner {
+      .footer-container,
+      .contact-bottom-container {
         width: calc(100% - 60px);
       }
     }
 
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
 
-      header {
-        position: absolute;
-      }
+      /* HEADER */
 
       .nav {
         width: calc(100% - 40px);
@@ -589,101 +625,136 @@
         position: absolute;
 
         top: 85px;
+
         left: 5vw;
         right: 5vw;
 
         padding: 25px;
 
-        background: var(--burgundy);
-
         flex-direction: column;
+
         align-items: flex-start;
 
         gap: 18px;
 
-        border-top: 1px solid rgba(255,255,255,.2);
+        background: var(--burgundy);
       }
 
       nav.open {
         display: flex;
       }
 
-      nav a:last-child {
-        padding: 12px 18px;
+      .mobile-menu {
+        display: block;
       }
 
+
+      /* MAIN */
+
       .contact-page {
-        padding: 210px 0 90px;
+        padding: 220px 0 85px;
       }
 
       .contact-container {
         width: calc(100% - 40px);
       }
 
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .contact-intro {
+        max-width: none;
+      }
+
       .contact-intro h1 {
-        font-size: clamp(58px, 13vw, 90px);
+        font-size: clamp(60px, 12vw, 90px);
+      }
+
+      .contact-copy {
+        max-width: 650px;
+      }
+
+      .contact-photo-wrap {
+        justify-content: flex-start;
       }
 
       .contact-photo {
-        height: 520px;
+        width: 100%;
+        height: 620px;
       }
 
-      .details {
-        grid-template-columns: 1fr;
-      }
 
-      .contact-bottom {
-        margin-top: 90px;
-      }
+      /* FOOTER */
 
-      .contact-bottom-inner {
-        width: calc(100% - 40px);
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-inner {
+      .footer-container,
+      .contact-bottom-container {
         width: calc(100% - 40px);
       }
 
       .footer-top {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px;
       }
 
-      .footer-nav {
-        justify-content: flex-start;
-        padding-top: 0;
+      .footer-brand {
+        grid-column: 1 / -1;
       }
 
-      .footer-bottom {
+      .contact-bottom-inner {
         flex-direction: column;
-        gap: 10px;
+
+        align-items: flex-start;
       }
     }
 
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
+
+      .nav {
+        width: calc(100% - 28px);
+      }
+
+      .logo-link,
+      .logo-link img {
+        width: 135px;
+        height: 135px;
+      }
+
+      .mobile-menu {
+        top: 55px;
+      }
 
       .contact-page {
-        padding-top: 190px;
+        padding: 190px 0 70px;
+      }
+
+      .contact-container {
+        width: calc(100% - 28px);
       }
 
       .contact-intro h1 {
-        margin-top: 30px;
-        font-size: 53px;
-      }
+        margin-top: 28px;
 
-      .contact-script {
-        font-size: 44px;
+        font-size: clamp(53px, 15vw, 75px);
       }
 
       .contact-copy {
+        margin-top: 38px;
+
         font-size: 15px;
+
         line-height: 1.75;
       }
 
       .contact-actions {
+        margin-top: 30px;
+
         flex-direction: column;
+
         align-items: stretch;
       }
 
@@ -692,16 +763,38 @@
       }
 
       .contact-photo {
-        height: 440px;
+        height: 520px;
       }
 
-      .detail-value {
-        font-size: 21px;
+      .contact-bottom {
+        padding: 50px 0;
       }
 
-      .footer-brand img {
-        width: 150px;
-        height: 150px;
+      .contact-bottom-container {
+        width: calc(100% - 28px);
+      }
+
+      .contact-bottom h2 {
+        font-size: 40px;
+      }
+
+      .footer-container {
+        width: calc(100% - 28px);
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
       }
     }
 
@@ -719,6 +812,8 @@
 
     <div class="nav">
 
+      <!-- SAME LOGO AS HOME / ABOUT -->
+
       <a
         href="index.html"
         class="logo-link"
@@ -727,9 +822,11 @@
         <img
           src="images/emily-logo.png"
           alt="Emily Taylor"
-        >
+        />
       </a>
 
+
+      <!-- MENU -->
 
       <nav id="mainNav">
 
@@ -757,11 +854,22 @@
           href="https://emilytaylor.remaxhallmarkeastern.com"
           target="_blank"
           rel="noopener"
+          class="nav-listings"
         >
           View Listings
         </a>
 
       </nav>
+
+
+      <button
+        class="mobile-menu"
+        id="menuButton"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
     </div>
 
@@ -778,11 +886,11 @@
 
       <div class="contact-container">
 
-        <div class="contact-main">
+        <div class="contact-grid">
 
 
           <!-- =================================================
-               LEFT — MAIN CONTACT WRITING
+               LEFT — ORIGINAL CONTACT WORDING
           ================================================= -->
 
           <div class="contact-intro">
@@ -792,14 +900,9 @@
             </div>
 
             <h1>
-              Let’s talk<br>
-              about<br>
+              Let’s talk about<br>
               what’s next.
             </h1>
-
-            <div class="contact-script">
-              I’m here when you’re ready.
-            </div>
 
             <p class="contact-copy">
               Your next move might be around the corner — or years away.
@@ -831,29 +934,50 @@
 
 
           <!-- =================================================
-               RIGHT — EMILY PHOTO
+               RIGHT — NEW PHOTO
           ================================================= -->
 
           <div class="contact-photo-wrap">
 
             <img
-              class="contact-photo"
               src="images/emily-on-phone.jpg"
-              alt="Emily Taylor on the phone"
+              alt="Emily Taylor working from her phone"
+              class="contact-photo"
             />
 
           </div>
 
-
         </div>
 
+      </div>
 
-        <!-- =================================================
-             CONTACT DETAILS
-        ================================================= -->
+    </section>
 
-        <div class="details">
 
+    <!-- =======================================================
+         CONTACT DETAILS SECTION
+    ======================================================= -->
+
+    <section
+      style="
+        padding: 0 0 100px;
+        background: var(--ivory);
+      "
+    >
+
+      <div
+        class="contact-container"
+        style="
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:85px;
+          align-items:start;
+        "
+      >
+
+        <div></div>
+
+        <div class="details" style="display:block;">
 
           <div class="detail">
 
@@ -891,7 +1015,7 @@
               Brokerage
             </div>
 
-            <div class="detail-value sans">
+            <div class="detail-value">
               RE/MAX Hallmark Eastern Realty INC.
             </div>
 
@@ -921,16 +1045,13 @@
               Office Address
             </div>
 
-            <div class="detail-value sans">
-
+            <div class="detail-value">
               91 George St N, 2nd Floor<br>
               PO Box 2409<br>
               Peterborough, ON K9J 7Y8
-
             </div>
 
           </div>
-
 
         </div>
 
@@ -940,34 +1061,37 @@
 
 
     <!-- =======================================================
-         BOTTOM CTA
+         BURGUNDY CTA
     ======================================================= -->
 
     <section class="contact-bottom">
 
-      <div class="contact-bottom-inner">
+      <div class="contact-bottom-container">
 
-        <div>
+        <div class="contact-bottom-inner">
 
-          <h2>
-            Ready when you are.
-          </h2>
+          <div>
 
-          <p>
-            Let's start with a conversation.
-          </p>
+            <h2>
+              Ready when you are.
+            </h2>
+
+            <p>
+              Let's start with a conversation.
+            </p>
+
+          </div>
+
+          <a
+            href="https://emilytaylor.remaxhallmarkeastern.com/contact.php"
+            target="_blank"
+            rel="noopener"
+            class="button button-light"
+          >
+            Send a Message
+          </a>
 
         </div>
-
-
-        <a
-          href="https://emilytaylor.remaxhallmarkeastern.com/contact.php"
-          target="_blank"
-          rel="noopener"
-          class="button button-light"
-        >
-          Send a Message
-        </a>
 
       </div>
 
@@ -982,26 +1106,36 @@
 
   <footer>
 
-    <div class="footer-inner">
+    <div class="footer-container">
 
       <div class="footer-top">
 
+
+        <!-- BRAND -->
 
         <div class="footer-brand">
 
           <img
             src="images/emily-logo.png"
             alt="Emily Taylor"
-          >
+            class="footer-logo"
+          />
 
           <p>
-            Sales Representative
+            Thoughtful real estate representation for the moments
+            that matter most.
           </p>
 
         </div>
 
 
-        <div class="footer-nav">
+        <!-- EXPLORE -->
+
+        <div class="footer-column">
+
+          <h4>
+            Explore
+          </h4>
 
           <a href="index.html">
             Home
@@ -1019,10 +1153,6 @@
             Areas
           </a>
 
-          <a href="contact.html">
-            Contact
-          </a>
-
           <a
             href="https://emilytaylor.remaxhallmarkeastern.com"
             target="_blank"
@@ -1033,18 +1163,43 @@
 
         </div>
 
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+          <h4>
+            Contact
+          </h4>
+
+          <a href="tel:4169949683">
+            416-994-9683
+          </a>
+
+          <p>
+            RE/MAX Hallmark Eastern Realty INC.
+          </p>
+
+          <p>
+            91 George St N, 2nd Floor<br>
+            PO Box 2409<br>
+            Peterborough, ON K9J 7Y8
+          </p>
+
+        </div>
+
       </div>
 
 
       <div class="footer-bottom">
 
-        <span>
+        <div>
           © 2026 Emily Taylor. All rights reserved.
-        </span>
+        </div>
 
-        <span>
-          RE/MAX Hallmark Eastern Realty INC.
-        </span>
+        <div>
+          Sales Representative
+        </div>
 
       </div>
 
@@ -1054,7 +1209,7 @@
 
 
   <!-- =========================================================
-       MOBILE MENU
+       MOBILE MENU SCRIPT
   ========================================================= -->
 
   <script>
@@ -1065,7 +1220,34 @@
     if (menuButton && mainNav) {
 
       menuButton.addEventListener("click", function () {
-        mainNav.classList.toggle("open");
+
+        const isOpen = mainNav.classList.toggle("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+        menuButton.textContent = isOpen ? "×" : "☰";
+
+      });
+
+
+      mainNav.querySelectorAll("a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          mainNav.classList.remove("open");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuButton.textContent = "☰";
+
+        });
+
       });
 
     }
