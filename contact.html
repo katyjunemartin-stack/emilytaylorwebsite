@@ -11,7 +11,6 @@
     content="Contact Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC."
   />
 
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,10 +20,6 @@
   />
 
   <style>
-
-    /* =========================================================
-       ROOT
-    ========================================================= */
 
     :root {
       --ivory: #f7f4ee;
@@ -42,11 +37,6 @@
       --serif: "Newsreader", Georgia, serif;
       --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
     }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -76,11 +66,7 @@
       max-width: 100%;
     }
 
-
-    /* =========================================================
-       HEADER
-       SAME LOGO SIZE / SPACING AS HOME + ABOUT
-    ========================================================= */
+    /* HEADER */
 
     header {
       position: absolute;
@@ -96,7 +82,6 @@
       width: min(1500px, calc(100% - 100px));
       height: 220px;
       margin: 0 auto;
-      padding: 0;
       position: relative;
 
       display: flex;
@@ -182,10 +167,7 @@
       color: var(--burgundy);
     }
 
-
-    /* =========================================================
-       CONTACT PAGE
-    ========================================================= */
+    /* CONTACT PAGE */
 
     .contact-page {
       padding: 300px 0 120px;
@@ -196,12 +178,6 @@
       width: min(1380px, calc(100% - 100px));
       margin: 0 auto;
     }
-
-
-    /* =========================================================
-       MAIN CONTACT AREA
-       LANDSCAPE — TEXT LEFT / INFORMATION RIGHT
-    ========================================================= */
 
     .contact-main {
       display: grid;
@@ -215,10 +191,7 @@
       align-items: start;
     }
 
-
-    /* =========================================================
-       LEFT SIDE
-    ========================================================= */
+    /* LEFT SIDE */
 
     .contact-intro {
       max-width: 780px;
@@ -255,10 +228,7 @@
       line-height: 1.85;
     }
 
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
+    /* BUTTONS */
 
     .contact-actions {
       display: flex;
@@ -312,11 +282,7 @@
       transform: translateY(-2px);
     }
 
-
-    /* =========================================================
-       CONTACT DETAILS
-       RIGHT-HAND LANDSCAPE COLUMN
-    ========================================================= */
+    /* CONTACT DETAILS */
 
     .details {
       margin-top: 85px;
@@ -373,10 +339,138 @@
       color: var(--burgundy);
     }
 
+    /* CONTACT FORM */
 
-    /* =========================================================
-       BOTTOM BURGUNDY CTA
-    ========================================================= */
+    .contact-form-wrap {
+      margin-top: 100px;
+      padding-top: 70px;
+
+      border-top: 1px solid var(--line);
+
+      max-width: 900px;
+      scroll-margin-top: 40px;
+    }
+
+    .contact-form-wrap h2 {
+      font-family: var(--serif);
+
+      font-size: clamp(42px, 5vw, 68px);
+
+      font-weight: 400;
+      line-height: .98;
+
+      letter-spacing: -.035em;
+    }
+
+    .contact-form-intro {
+      margin-top: 18px;
+
+      color: var(--greige);
+
+      font-size: 14px;
+      line-height: 1.75;
+
+      max-width: 650px;
+    }
+
+    .contact-form {
+      margin-top: 42px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 25px 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: var(--burgundy);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .22em;
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+
+      border: 1px solid var(--line);
+
+      background: transparent;
+
+      color: var(--charcoal);
+
+      padding: 16px 17px;
+
+      font-family: var(--sans);
+      font-size: 14px;
+
+      outline: none;
+
+      transition:
+        border-color .2s ease,
+        background .2s ease;
+
+      border-radius: 0;
+    }
+
+    .form-field input,
+    .form-field select {
+      min-height: 54px;
+    }
+
+    .form-field textarea {
+      min-height: 160px;
+
+      resize: vertical;
+
+      line-height: 1.6;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--burgundy);
+
+      background: rgba(255,255,255,.35);
+    }
+
+    .form-submit {
+      margin-top: 4px;
+
+      border: 0;
+
+      cursor: pointer;
+
+      font-family: var(--sans);
+    }
+
+    .form-note {
+      margin-top: 14px;
+
+      color: var(--greige);
+
+      font-size: 11px;
+
+      line-height: 1.6;
+    }
+
+    /* BOTTOM CTA */
 
     .contact-bottom {
       margin-top: 120px;
@@ -428,11 +522,7 @@
       transform: translateY(-2px);
     }
 
-
-    /* =========================================================
-       FOOTER
-       CREAM — MATCHES HOME + ABOUT
-    ========================================================= */
+    /* FOOTER */
 
     footer {
       background: var(--cream);
@@ -523,10 +613,7 @@
       font-size: 10px;
     }
 
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
+    /* TABLET */
 
     @media (max-width: 1100px) {
 
@@ -565,10 +652,7 @@
       }
     }
 
-
-    /* =========================================================
-       MOBILE / SMALL TABLET
-    ========================================================= */
+    /* MOBILE */
 
     @media (max-width: 800px) {
 
@@ -647,6 +731,19 @@
         margin-top: 0;
       }
 
+      .contact-form-wrap {
+        margin-top: 70px;
+        padding-top: 55px;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
       .contact-bottom {
         margin-top: 90px;
       }
@@ -677,10 +774,7 @@
       }
     }
 
-
-    /* =========================================================
-       PHONE
-    ========================================================= */
+    /* PHONE */
 
     @media (max-width: 500px) {
 
@@ -720,13 +814,9 @@
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================================================
-       HEADER
-  ========================================================= -->
+  <!-- HEADER -->
 
   <header>
 
@@ -742,7 +832,6 @@
           alt="Emily Taylor"
         >
       </a>
-
 
       <nav id="mainNav">
 
@@ -785,9 +874,7 @@
   </header>
 
 
-  <!-- =========================================================
-       CONTACT PAGE
-  ========================================================= -->
+  <!-- CONTACT PAGE -->
 
   <main>
 
@@ -797,10 +884,7 @@
 
         <div class="contact-main">
 
-
-          <!-- =================================================
-               LEFT — CONTACT WRITING
-          ================================================= -->
+          <!-- LEFT -->
 
           <div class="contact-intro">
 
@@ -830,9 +914,7 @@
               </a>
 
               <a
-                href="https://emilytaylor.remaxhallmarkeastern.com/contact.php"
-                target="_blank"
-                rel="noopener"
+                href="#contact-form"
                 class="button button-outline"
               >
                 Contact Form
@@ -843,12 +925,9 @@
           </div>
 
 
-          <!-- =================================================
-               RIGHT — CONTACT INFORMATION
-          ================================================= -->
+          <!-- RIGHT -->
 
           <div class="details">
-
 
             <div class="detail">
 
@@ -924,8 +1003,193 @@
 
             </div>
 
-
           </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div
+          class="contact-form-wrap"
+          id="contact-form"
+        >
+
+          <h2>
+            Tell Emily<br>
+            what you're looking for.
+          </h2>
+
+          <p class="contact-form-intro">
+            Whether you're buying, selling, or simply exploring your options,
+            fill out the form below and Emily will be in touch.
+          </p>
+
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xqperygb"
+            method="POST"
+          >
+
+            <!-- FIRST NAME -->
+
+            <div class="form-field">
+
+              <label for="first-name">
+                First Name
+              </label>
+
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                autocomplete="given-name"
+                required
+              >
+
+            </div>
+
+
+            <!-- LAST NAME -->
+
+            <div class="form-field">
+
+              <label for="last-name">
+                Last Name
+              </label>
+
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                autocomplete="family-name"
+                required
+              >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-field">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-field">
+
+              <label for="phone">
+                Phone
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+              >
+
+            </div>
+
+
+            <!-- INTEREST -->
+
+            <div class="form-field full">
+
+              <label for="interest">
+                I'm Looking To...
+              </label>
+
+              <select
+                id="interest"
+                name="interest"
+                required
+              >
+
+                <option
+                  value=""
+                  selected
+                  disabled
+                >
+                  Select an option
+                </option>
+
+                <option value="Buy a home">
+                  Buy a home
+                </option>
+
+                <option value="Sell a home">
+                  Sell a home
+                </option>
+
+                <option value="Buy and sell">
+                  Buy and sell
+                </option>
+
+                <option value="Learn more about my options">
+                  Learn more about my options
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-field full">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell Emily a little about what you have in mind..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="form-field full">
+
+              <button
+                type="submit"
+                class="button button-burgundy form-submit"
+              >
+                Send Message
+              </button>
+
+              <p class="form-note">
+                Your information will be sent securely to Emily through the contact form.
+              </p>
+
+            </div>
+
+          </form>
 
         </div>
 
@@ -934,9 +1198,7 @@
     </section>
 
 
-    <!-- =======================================================
-         BOTTOM CTA
-    ======================================================= -->
+    <!-- BOTTOM CTA -->
 
     <section class="contact-bottom">
 
@@ -956,9 +1218,7 @@
 
 
         <a
-          href="https://emilytaylor.remaxhallmarkeastern.com/contact.php"
-          target="_blank"
-          rel="noopener"
+          href="#contact-form"
           class="button button-light"
         >
           Send a Message
@@ -971,16 +1231,13 @@
   </main>
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="footer-inner">
 
       <div class="footer-top">
-
 
         <div class="footer-brand">
 
@@ -1052,10 +1309,6 @@
   </footer>
 
 
-  <!-- =========================================================
-       MOBILE MENU
-  ========================================================= -->
-
   <script>
 
     const menuButton = document.getElementById("menuButton");
@@ -1070,7 +1323,6 @@
     }
 
   </script>
-
 
 </body>
 </html>
