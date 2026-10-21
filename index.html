@@ -8,7 +8,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -85,6 +89,7 @@
       margin: 0 auto;
       padding: 0;
       position: relative;
+
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -94,15 +99,19 @@
     .logo-link {
       display: flex;
       align-items: center;
+
       width: 220px;
       height: 220px;
+
       flex-shrink: 0;
+
       transform: translateY(-20px);
     }
 
     .logo-link img {
       width: 220px;
       height: 220px;
+
       object-fit: contain;
       object-position: center;
     }
@@ -111,13 +120,17 @@
       position: absolute;
       top: 70px;
       right: 0;
+
       display: flex;
       align-items: center;
+
       gap: 28px;
+
       font-size: 11px;
       font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
+
       z-index: 30;
     }
 
@@ -132,14 +145,19 @@
 
     .mobile-menu {
       display: none;
+
       border: 0;
       background: none;
       color: var(--white);
+
       font-size: 27px;
+
       cursor: pointer;
+
       position: absolute;
       right: 0;
       top: 35px;
+
       z-index: 40;
     }
 
@@ -150,26 +168,34 @@
 
     .hero {
       position: relative;
+
       min-height: 900px;
+
       display: flex;
       align-items: flex-end;
+
       overflow: hidden;
+
       color: var(--white);
     }
 
     .hero-image {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
       object-position: center center;
+
       z-index: 0;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to bottom,
@@ -177,24 +203,34 @@
           rgba(0,0,0,.18) 35%,
           rgba(0,0,0,.55) 100%
         );
+
       z-index: 1;
     }
 
     .hero-inner {
       position: relative;
       z-index: 2;
+
       width: min(1500px, calc(100% - 100px));
+
       margin: 0 auto;
+
       padding: 0 0 105px;
     }
 
     .hero h1 {
       max-width: 1000px;
+
       font-family: var(--serif);
+
       font-size: clamp(70px, 8vw, 125px);
+
       line-height: .88;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
+
       margin-bottom: 45px;
     }
 
@@ -204,28 +240,42 @@
 
     .hero-copy {
       max-width: 620px;
+
       font-size: 18px;
+
       line-height: 1.65;
+
       color: rgba(255,255,255,.88);
+
       margin-bottom: 35px;
     }
 
     .button-row {
       display: flex;
+
       gap: 14px;
+
       flex-wrap: wrap;
     }
 
     .button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       min-height: 52px;
+
       padding: 0 28px;
+
       font-size: 11px;
+
       font-weight: 800;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       transition: all .25s ease;
     }
 
@@ -240,6 +290,7 @@
 
     .button-outline-white {
       border: 1px solid rgba(255,255,255,.75);
+
       color: var(--white);
     }
 
@@ -260,61 +311,93 @@
 
     /* =========================================================
        EXPERIENCE + RECOGNITION
-       SECOND SECTION — BURGUNDY
+       SECOND SECTION AFTER HERO
+       BURGUNDY
     ========================================================= */
 
     .experience {
       background: var(--burgundy);
+
       color: var(--white);
+
       padding: 135px 0 125px;
     }
 
     .experience-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
     }
 
+    /*
+      IMPORTANT:
+      The small label is forced to be a full-width block.
+      The main heading comes underneath it.
+    */
+
     .section-kicker {
-  display: block;
-  width: 100%;
-  color: var(--white);
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .24em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  margin: 0 0 65px 0;
-}
+      display: block;
+
+      width: 100%;
+
+      color: var(--white);
+
+      font-family: var(--sans);
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      letter-spacing: .24em;
+
+      line-height: 1.2;
+
       text-transform: uppercase;
-      margin-bottom: 65px;
+
+      margin: 0 0 65px 0;
     }
 
     .experience h2 {
+      display: block;
+
+      width: 100%;
+
       max-width: 1050px;
+
       font-family: var(--serif);
+
       font-size: clamp(65px, 7.3vw, 116px);
+
       line-height: .88;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 105px;
+
+      margin: 0 0 105px 0;
     }
 
     .experience-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       border-top: 1px solid rgba(255,255,255,.22);
+
       border-left: 0;
     }
 
     .experience-card {
       min-height: 220px;
+
       padding: 43px 48px 45px 0;
+
       border-bottom: 1px solid rgba(255,255,255,.22);
     }
 
     .experience-card:nth-child(odd) {
       border-right: 1px solid rgba(255,255,255,.22);
+
       padding-right: 55px;
     }
 
@@ -325,25 +408,37 @@
     .experience-card:nth-child(3),
     .experience-card:nth-child(4) {
       border-bottom: 0;
+
       padding-top: 48px;
     }
 
     .experience-card h3 {
       color: var(--white);
+
       font-family: var(--sans);
+
       font-size: 15px;
+
       font-weight: 800;
+
       letter-spacing: .15em;
+
       line-height: 1.35;
+
       text-transform: uppercase;
+
       margin-bottom: 22px;
     }
 
     .experience-card p {
       max-width: 620px;
+
       color: rgba(255,255,255,.78);
+
       font-family: var(--sans);
+
       font-size: 17px;
+
       line-height: 1.65;
     }
 
@@ -354,15 +449,21 @@
 
     .about {
       background: var(--ivory);
+
       padding: 145px 0;
     }
 
     .about-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 95px;
+
       align-items: center;
     }
 
@@ -372,36 +473,59 @@
 
     .about-photo {
       width: 100%;
+
       height: 720px;
+
       object-fit: cover;
+
       object-position: center;
     }
 
     .about-right h3 {
+      display: block;
+
+      width: 100%;
+
       color: var(--burgundy);
+
       font-family: var(--sans);
-      font-size: 15px;
+
+      font-size: 14px;
+
       font-weight: 800;
+
       letter-spacing: .22em;
+
       line-height: 1.2;
+
       text-transform: uppercase;
-      margin-bottom: 30px;
+
+      margin: 0 0 30px 0;
     }
 
     .about-subtitle {
       max-width: 620px;
+
       font-family: var(--serif);
+
       font-size: clamp(42px, 4vw, 64px);
+
       line-height: .98;
+
       letter-spacing: -.035em;
+
       margin-bottom: 42px;
     }
 
     .about-right p {
       max-width: 610px;
+
       color: var(--greige);
+
       font-size: 17px;
+
       line-height: 1.75;
+
       margin-bottom: 20px;
     }
 
@@ -416,11 +540,13 @@
 
     .services {
       background: var(--cream);
+
       padding: 145px 0;
     }
 
     .services-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
     }
 
@@ -429,55 +555,84 @@
     }
 
     .services h2 {
+      display: block;
+
+      width: 100%;
+
       max-width: 850px;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 7vw, 105px);
+
       line-height: .9;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 90px;
+
+      margin: 0 0 90px 0;
     }
 
     .services-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       border-top: 1px solid var(--line);
+
       border-bottom: 1px solid var(--line);
     }
 
     .service-card {
       padding: 50px 40px 55px 0;
+
       min-height: 330px;
     }
 
     .service-card + .service-card {
       border-left: 1px solid var(--line);
+
       padding-left: 40px;
     }
 
     .service-card h3 {
       color: var(--burgundy);
+
       font-family: var(--sans);
+
       font-size: 15px;
+
       font-weight: 800;
+
       letter-spacing: .17em;
+
       text-transform: uppercase;
+
       margin-bottom: 28px;
     }
 
     .service-card h4 {
       font-family: var(--serif);
+
       font-size: 39px;
+
       line-height: 1;
+
       font-weight: 400;
+
       letter-spacing: -.025em;
+
       margin-bottom: 22px;
     }
 
     .service-card p {
       max-width: 350px;
+
       color: var(--greige);
+
       font-size: 16px;
+
       line-height: 1.7;
     }
 
@@ -488,11 +643,13 @@
 
     .credentials {
       background: var(--ivory);
+
       padding: 120px 0;
     }
 
     .credentials-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
     }
 
@@ -502,8 +659,11 @@
 
     .credentials-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       border-top: 1px solid var(--line);
+
       border-bottom: 1px solid var(--line);
     }
 
@@ -513,24 +673,35 @@
 
     .credential-card + .credential-card {
       border-left: 1px solid var(--line);
+
       padding-left: 50px;
     }
 
     .credential-card h3 {
       font-family: var(--sans);
+
       color: var(--burgundy);
+
       font-size: 15px;
+
       font-weight: 800;
+
       letter-spacing: .16em;
+
       line-height: 1.4;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
     .credential-card p {
       max-width: 570px;
+
       color: var(--greige);
+
       font-size: 16px;
+
       line-height: 1.7;
     }
 
@@ -541,43 +712,65 @@
 
     .onesource {
       background: var(--cream);
+
       padding: 145px 0;
     }
 
     .onesource-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 90px;
+
       align-items: center;
     }
 
     .onesource-image {
       width: 100%;
+
       height: 680px;
+
       object-fit: cover;
     }
 
     .onesource-copy .section-kicker {
       color: var(--burgundy);
+
       margin-bottom: 35px;
     }
 
     .onesource-copy h2 {
+      display: block;
+
+      width: 100%;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 6vw, 95px);
+
       line-height: .9;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 35px;
+
+      margin: 0 0 35px 0;
     }
 
     .onesource-copy p {
       max-width: 550px;
+
       color: var(--greige);
+
       font-size: 17px;
+
       line-height: 1.75;
+
       margin-bottom: 35px;
     }
 
@@ -588,11 +781,13 @@
 
     .areas {
       background: var(--ivory);
+
       padding: 145px 0;
     }
 
     .areas-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
     }
 
@@ -601,27 +796,44 @@
     }
 
     .areas h2 {
+      display: block;
+
+      width: 100%;
+
       max-width: 850px;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 7vw, 105px);
+
       line-height: .9;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 85px;
+
+      margin: 0 0 85px 0;
     }
 
     .areas-list {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       border-top: 1px solid var(--line);
+
       border-left: 1px solid var(--line);
     }
 
     .area {
       padding: 25px 25px;
+
       border-right: 1px solid var(--line);
+
       border-bottom: 1px solid var(--line);
+
       font-family: var(--serif);
+
       font-size: 24px;
     }
 
@@ -632,32 +844,46 @@
 
     .listings {
       position: relative;
+
       min-height: 720px;
+
       display: flex;
+
       align-items: flex-end;
+
       overflow: hidden;
+
       color: var(--white);
     }
 
     .listings-image {
       position: absolute;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
     .listings-overlay {
       position: absolute;
+
       inset: 0;
+
       background: rgba(0,0,0,.42);
     }
 
     .listings-inner {
       position: relative;
+
       z-index: 2;
+
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
+
       padding: 100px 0;
     }
 
@@ -666,13 +892,23 @@
     }
 
     .listings h2 {
+      display: block;
+
+      width: 100%;
+
       max-width: 850px;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 7vw, 105px);
+
       line-height: .9;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 45px;
+
+      margin: 0 0 45px 0;
     }
 
 
@@ -682,28 +918,42 @@
 
     .final-cta {
       background: var(--burgundy);
+
       color: var(--white);
+
       padding: 155px 0;
+
       text-align: center;
     }
 
     .final-cta-inner {
       width: min(1100px, calc(100% - 60px));
+
       margin: 0 auto;
     }
 
     .final-cta .section-kicker {
       color: rgba(255,255,255,.75);
+
       margin-bottom: 40px;
     }
 
     .final-cta h2 {
+      display: block;
+
+      width: 100%;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 7vw, 105px);
+
       line-height: .9;
+
       font-weight: 400;
+
       letter-spacing: -.045em;
-      margin-bottom: 50px;
+
+      margin: 0 0 50px 0;
     }
 
 
@@ -713,20 +963,27 @@
 
     footer {
       background: var(--cream);
+
       color: var(--charcoal);
+
       padding: 75px 0 35px;
     }
 
     .footer-inner {
       width: min(1380px, calc(100% - 100px));
+
       margin: 0 auto;
     }
 
     .footer-top {
       display: flex;
+
       justify-content: space-between;
+
       align-items: flex-start;
+
       gap: 80px;
+
       padding-bottom: 70px;
     }
 
@@ -736,43 +993,65 @@
 
     .footer-logo-crop {
       position: relative;
+
       width: 220px;
+
       height: 82px;
+
       overflow: hidden;
+
       margin-bottom: 20px;
     }
 
     .footer-logo-crop img {
       position: absolute;
+
       left: 0;
+
       top: -69px;
+
       width: 220px;
+
       height: 220px;
+
       max-width: none;
+
       object-fit: contain;
+
       filter: brightness(0);
     }
 
     .footer-brand p {
       color: var(--greige);
+
       font-size: 13px;
+
       letter-spacing: .08em;
+
       text-transform: uppercase;
     }
 
     .footer-nav {
       display: flex;
+
       flex-wrap: wrap;
+
       justify-content: flex-end;
+
       gap: 20px 30px;
+
       max-width: 650px;
     }
 
     .footer-nav a {
       font-size: 11px;
+
       font-weight: 800;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       transition: color .25s ease;
     }
 
@@ -782,12 +1061,19 @@
 
     .footer-bottom {
       border-top: 1px solid var(--line);
+
       padding-top: 25px;
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 30px;
+
       color: var(--greige);
+
       font-size: 11px;
+
       letter-spacing: .04em;
     }
 
@@ -800,31 +1086,45 @@
 
       .nav {
         width: calc(100% - 40px);
+
         height: 150px;
       }
 
       .logo-link {
         width: 150px;
+
         height: 150px;
+
         transform: none;
       }
 
       .logo-link img {
         width: 150px;
+
         height: 150px;
       }
 
       nav {
         display: none;
+
         position: absolute;
+
         top: 85px;
+
         left: 5vw;
+
         right: 5vw;
+
         padding: 25px;
+
         background: var(--burgundy);
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 20px;
+
         z-index: 30;
       }
 
@@ -841,7 +1141,9 @@
       }
 
 
-      /* HERO */
+      /* =====================================================
+         HERO
+      ===================================================== */
 
       .hero {
         min-height: 760px;
@@ -849,11 +1151,13 @@
 
       .hero-inner {
         width: calc(100% - 40px);
+
         padding-bottom: 70px;
       }
 
       .hero h1 {
         font-size: clamp(58px, 14vw, 90px);
+
         margin-bottom: 30px;
       }
 
@@ -862,7 +1166,9 @@
       }
 
 
-      /* EXPERIENCE */
+      /* =====================================================
+         EXPERIENCE
+      ===================================================== */
 
       .experience {
         padding: 90px 0;
@@ -873,14 +1179,25 @@
       }
 
       .section-kicker {
-        font-size: 12px;
+        display: block;
+
+        width: 100%;
+
+        font-size: 14px;
+
         letter-spacing: .2em;
-        margin-bottom: 45px;
+
+        margin: 0 0 45px 0;
       }
 
       .experience h2 {
+        display: block;
+
+        width: 100%;
+
         font-size: clamp(53px, 13vw, 78px);
-        margin-bottom: 65px;
+
+        margin: 0 0 65px 0;
       }
 
       .experience-grid {
@@ -892,8 +1209,11 @@
       .experience-card:nth-child(even),
       .experience-card:nth-child(3),
       .experience-card:nth-child(4) {
+
         padding: 35px 0;
+
         border-right: 0;
+
         border-bottom: 1px solid rgba(255,255,255,.22);
       }
 
@@ -906,7 +1226,9 @@
       }
 
 
-      /* ABOUT */
+      /* =====================================================
+         ABOUT
+      ===================================================== */
 
       .about {
         padding: 90px 0;
@@ -914,7 +1236,9 @@
 
       .about-inner {
         width: calc(100% - 40px);
+
         grid-template-columns: 1fr;
+
         gap: 55px;
       }
 
@@ -927,7 +1251,9 @@
       }
 
 
-      /* SERVICES */
+      /* =====================================================
+         SERVICES
+      ===================================================== */
 
       .services {
         padding: 90px 0;
@@ -939,6 +1265,7 @@
 
       .services h2 {
         font-size: 60px;
+
         margin-bottom: 60px;
       }
 
@@ -948,8 +1275,11 @@
 
       .service-card,
       .service-card + .service-card {
+
         padding: 35px 0;
+
         border-left: 0;
+
         border-bottom: 1px solid var(--line);
       }
 
@@ -958,7 +1288,9 @@
       }
 
 
-      /* CREDENTIALS */
+      /* =====================================================
+         CREDENTIALS
+      ===================================================== */
 
       .credentials {
         padding: 80px 0;
@@ -974,8 +1306,11 @@
 
       .credential-card,
       .credential-card + .credential-card {
+
         padding: 35px 0;
+
         border-left: 0;
+
         border-bottom: 1px solid var(--line);
       }
 
@@ -984,7 +1319,9 @@
       }
 
 
-      /* ONESOURCE */
+      /* =====================================================
+         ONESOURCE
+      ===================================================== */
 
       .onesource {
         padding: 90px 0;
@@ -992,7 +1329,9 @@
 
       .onesource-inner {
         width: calc(100% - 40px);
+
         grid-template-columns: 1fr;
+
         gap: 55px;
       }
 
@@ -1005,7 +1344,9 @@
       }
 
 
-      /* AREAS */
+      /* =====================================================
+         AREAS
+      ===================================================== */
 
       .areas {
         padding: 90px 0;
@@ -1017,6 +1358,7 @@
 
       .areas h2 {
         font-size: 62px;
+
         margin-bottom: 55px;
       }
 
@@ -1029,7 +1371,9 @@
       }
 
 
-      /* LISTINGS */
+      /* =====================================================
+         LISTINGS
+      ===================================================== */
 
       .listings {
         min-height: 600px;
@@ -1037,6 +1381,7 @@
 
       .listings-inner {
         width: calc(100% - 40px);
+
         padding: 75px 0;
       }
 
@@ -1045,7 +1390,9 @@
       }
 
 
-      /* CTA */
+      /* =====================================================
+         CTA
+      ===================================================== */
 
       .final-cta {
         padding: 100px 0;
@@ -1056,7 +1403,9 @@
       }
 
 
-      /* FOOTER */
+      /* =====================================================
+         FOOTER
+      ===================================================== */
 
       footer {
         padding: 60px 0 30px;
@@ -1068,7 +1417,9 @@
 
       .footer-top {
         flex-direction: column;
+
         gap: 45px;
+
         padding-bottom: 50px;
       }
 
@@ -1078,22 +1429,27 @@
 
       .footer-logo-crop {
         width: 200px;
+
         height: 75px;
       }
 
       .footer-logo-crop img {
         width: 200px;
+
         height: 200px;
+
         top: -63px;
       }
 
       .footer-nav {
         justify-content: flex-start;
+
         gap: 18px 25px;
       }
 
       .footer-bottom {
         flex-direction: column;
+
         gap: 10px;
       }
     }
@@ -1146,31 +1502,64 @@
   ======================================================== -->
 
   <header>
+
     <div class="nav">
 
       <a href="index.html" class="logo-link">
-        <img src="images/emily-logo.png" alt="Emily Taylor">
+        <img
+          src="images/emily-logo.png"
+          alt="Emily Taylor"
+        >
       </a>
 
+
       <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="#services">Services</a>
-        <a href="#areas">Areas</a>
-        <a href="#onesource">OneSource</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://emilytaylor.remaxhallmarkeastern.com"
-           target="_blank"
-           rel="noopener">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#areas">
+          Areas
+        </a>
+
+        <a href="#onesource">
+          OneSource
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a
+          href="https://emilytaylor.remaxhallmarkeastern.com"
+          target="_blank"
+          rel="noopener"
+        >
           View Listings
         </a>
+
       </nav>
 
-      <button class="mobile-menu" id="menuButton" aria-label="Open menu">
+
+      <button
+        class="mobile-menu"
+        id="menuButton"
+        aria-label="Open menu"
+      >
         ☰
       </button>
 
     </div>
+
   </header>
 
 
@@ -1189,6 +1578,7 @@
 
     <div class="hero-overlay"></div>
 
+
     <div class="hero-inner">
 
       <h1>
@@ -1196,23 +1586,30 @@
         It’s your life.
       </h1>
 
+
       <p class="hero-copy">
         Buying or selling a home is about more than the transaction.
         It’s about the people, the timing, the decisions and the life
         that comes next.
       </p>
 
+
       <div class="button-row">
 
-        <a href="#about-preview"
-           class="button button-white">
+        <a
+          href="#about-preview"
+          class="button button-white"
+        >
           Meet Emily
         </a>
 
-        <a href="https://emilytaylor.remaxhallmarkeastern.com"
-           target="_blank"
-           rel="noopener"
-           class="button button-outline-white">
+
+        <a
+          href="https://emilytaylor.remaxhallmarkeastern.com"
+          target="_blank"
+          rel="noopener"
+          class="button button-outline-white"
+        >
           View Listings
         </a>
 
@@ -1226,15 +1623,18 @@
   <!-- =======================================================
        EXPERIENCE + RECOGNITION
        SECOND SECTION AFTER HERO
+       BURGUNDY
   ======================================================== -->
 
   <section class="experience">
 
     <div class="experience-inner">
 
+
       <div class="section-kicker">
         EXPERIENCE AND RECOGNITION
       </div>
+
 
       <h2>
         Experience matters.<br>
@@ -1244,6 +1644,7 @@
 
 
       <div class="experience-grid">
+
 
         <!-- RE/MAX HALL OF FAME -->
 
@@ -1310,6 +1711,7 @@
 
         </div>
 
+
       </div>
 
     </div>
@@ -1321,9 +1723,13 @@
        ABOUT PREVIEW
   ======================================================== -->
 
-  <section class="about" id="about-preview">
+  <section
+    class="about"
+    id="about-preview"
+  >
 
     <div class="about-inner">
+
 
       <div class="about-left">
 
@@ -1338,25 +1744,30 @@
 
       <div class="about-right">
 
+
         <h3>
           PEOPLE FIRST.
         </h3>
+
 
         <div class="about-subtitle">
           Because behind every move is a person, a family,
           and a story worth understanding.
         </div>
 
+
         <p>
           Emily believes real estate should never feel like a
           one-size-fits-all experience.
         </p>
+
 
         <p>
           She takes the time to listen, understand what matters,
           uncover the details that others might miss, and guide
           clients through each decision with care.
         </p>
+
 
         <p>
           Whether you're buying your first home, selling a family
@@ -1365,14 +1776,18 @@
           informed, supported and confident.
         </p>
 
+
         <div class="about-learn-more">
 
-          <a href="about.html"
-             class="button button-burgundy">
+          <a
+            href="about.html"
+            class="button button-burgundy"
+          >
             Learn More
           </a>
 
         </div>
+
 
       </div>
 
@@ -1385,13 +1800,18 @@
        SERVICES
   ======================================================== -->
 
-  <section class="services" id="services">
+  <section
+    class="services"
+    id="services"
+  >
 
     <div class="services-inner">
+
 
       <div class="section-kicker">
         HOW EMILY HELPS
       </div>
+
 
       <h2>
         More than a transaction.
@@ -1399,6 +1819,7 @@
 
 
       <div class="services-grid">
+
 
         <div class="service-card">
 
@@ -1456,6 +1877,7 @@
 
         </div>
 
+
       </div>
 
     </div>
@@ -1471,12 +1893,14 @@
 
     <div class="credentials-inner">
 
+
       <div class="section-kicker">
         SPECIALIZED EXPERIENCE
       </div>
 
 
       <div class="credentials-grid">
+
 
         <div class="credential-card">
 
@@ -1507,6 +1931,7 @@
 
         </div>
 
+
       </div>
 
     </div>
@@ -1518,9 +1943,13 @@
        ONESOURCE
   ======================================================== -->
 
-  <section class="onesource" id="onesource">
+  <section
+    class="onesource"
+    id="onesource"
+  >
 
     <div class="onesource-inner">
+
 
       <div>
 
@@ -1535,19 +1964,23 @@
 
       <div class="onesource-copy">
 
+
         <div class="section-kicker">
           A LITTLE MORE SUPPORT
         </div>
 
+
         <h2>
           Moving made easier.
         </h2>
+
 
         <p>
           A move involves more than finding a home. OneSource provides
           trusted moving support to help make the transition easier,
           more organized and less stressful.
         </p>
+
 
         <a
           href="https://onesourcemoving.ca"
@@ -1557,6 +1990,7 @@
         >
           Discover OneSource
         </a>
+
 
       </div>
 
@@ -1569,13 +2003,18 @@
        AREAS
   ======================================================== -->
 
-  <section class="areas" id="areas">
+  <section
+    class="areas"
+    id="areas"
+  >
 
     <div class="areas-inner">
+
 
       <div class="section-kicker">
         AREAS SERVED
       </div>
+
 
       <h2>
         Local knowledge.<br>
@@ -1586,18 +2025,27 @@
       <div class="areas-list">
 
         <div class="area">Ajax</div>
+
         <div class="area">Bowmanville</div>
+
         <div class="area">Clarington</div>
+
         <div class="area">Kawartha Lakes</div>
 
         <div class="area">Lakefield</div>
+
         <div class="area">Lindsay</div>
+
         <div class="area">Mississauga</div>
+
         <div class="area">Oshawa</div>
 
         <div class="area">Peterborough</div>
+
         <div class="area">Pickering</div>
+
         <div class="area">Toronto</div>
+
         <div class="area">Vaughan</div>
 
         <div class="area">Whitby</div>
@@ -1626,14 +2074,17 @@
 
     <div class="listings-inner">
 
+
       <div class="section-kicker">
         FIND YOUR NEXT HOME
       </div>
+
 
       <h2>
         Your next chapter
         starts here.
       </h2>
+
 
       <a
         href="https://emilytaylor.remaxhallmarkeastern.com"
@@ -1643,6 +2094,7 @@
       >
         View Listings
       </a>
+
 
     </div>
 
@@ -1657,14 +2109,17 @@
 
     <div class="final-cta-inner">
 
+
       <div class="section-kicker">
         READY WHEN YOU ARE
       </div>
+
 
       <h2>
         Your next chapter deserves
         the right representation.
       </h2>
+
 
       <a
         href="contact.html"
@@ -1672,6 +2127,7 @@
       >
         Contact Emily
       </a>
+
 
     </div>
 
@@ -1686,7 +2142,9 @@
 
     <div class="footer-inner">
 
+
       <div class="footer-top">
+
 
         <div class="footer-brand">
 
@@ -1698,6 +2156,7 @@
             >
 
           </div>
+
 
           <p>
             Sales Representative
@@ -1734,6 +2193,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -1749,6 +2209,7 @@
 
       </div>
 
+
     </div>
 
   </footer>
@@ -1761,16 +2222,25 @@
   <script>
 
     const menuButton = document.getElementById("menuButton");
+
     const mainNav = document.getElementById("mainNav");
 
+
     menuButton.addEventListener("click", () => {
+
       mainNav.classList.toggle("open");
+
     });
 
+
     document.querySelectorAll("#mainNav a").forEach(link => {
+
       link.addEventListener("click", () => {
+
         mainNav.classList.remove("open");
+
       });
+
     });
 
   </script>
