@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Emily Taylor | Realtor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,11 +15,10 @@
   >
 
   <style>
-
     :root {
       --ivory: #f4f0e8;
       --cream: #eee8dc;
-      --burgundy: #5a1f2b;
+      --burgundy: #4a0d10;
       --brown: #6b5145;
       --dark: #25201e;
       --white: #ffffff;
@@ -51,7 +51,6 @@
       text-decoration: none;
     }
 
-
     /* ========================================
        HEADER
     ======================================== */
@@ -63,25 +62,20 @@
       width: 100%;
       height: 150px;
       z-index: 100;
-
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-
       padding: 0 5vw;
     }
 
     .header-logo {
       width: 220px;
       height: 220px;
-
       background-image: url("images/emily-logo.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-
       transform: translateY(-20px);
-
       flex-shrink: 0;
     }
 
@@ -100,7 +94,6 @@
       letter-spacing: 1.54px;
       text-transform: uppercase;
       color: var(--white);
-
       transition: opacity 0.25s ease;
     }
 
@@ -108,22 +101,17 @@
       opacity: 0.7;
     }
 
-
     /* ========================================
        HERO
     ======================================== */
 
     .hero {
       position: relative;
-
       min-height: 100vh;
       height: 100vh;
-
       overflow: hidden;
-
       display: flex;
       align-items: center;
-
       background:
         linear-gradient(
           90deg,
@@ -137,37 +125,28 @@
     .hero-content {
       position: relative;
       z-index: 2;
-
       width: min(900px, 88%);
-
       margin-left: 7vw;
       padding-top: 80px;
-
       color: var(--white);
     }
 
     .hero h1 {
       font-family: "Newsreader", Georgia, serif;
-
       font-size: 72px;
-      line-height: .98;
+      line-height: 0.98;
       font-weight: 400;
       letter-spacing: -3.96px;
-
       max-width: 900px;
-
       margin-bottom: 34px;
     }
 
     .hero p {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 23.25px;
       font-weight: 400;
-
       max-width: 760px;
-
       margin-bottom: 42px;
     }
 
@@ -182,20 +161,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       min-height: 56px;
-
       padding: 15px 30px;
-
       font-family: "Inter", Arial, sans-serif;
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 1.3px;
-
       text-transform: uppercase;
-
       border: 1px solid var(--white);
-
       transition: all 0.25s ease;
     }
 
@@ -219,7 +192,6 @@
       color: var(--burgundy);
     }
 
-
     /* ========================================
        GENERAL SECTION STYLES
     ======================================== */
@@ -230,35 +202,28 @@
 
     .section-kicker {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 17px;
       font-weight: 800;
-
       letter-spacing: 1.98px;
       text-transform: uppercase;
-
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .section-heading {
       font-family: "Newsreader", Georgia, serif;
-
       font-size: 72px;
-      line-height: .98;
+      line-height: 0.98;
       font-weight: 400;
-
       letter-spacing: -3.96px;
     }
 
     .section-copy {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 23.25px;
       font-weight: 400;
     }
-
 
     /* ========================================
        EXPERIENCE & RECOGNITION
@@ -266,53 +231,42 @@
 
     .experience {
       background: var(--ivory);
-
       padding: 120px 7vw;
     }
 
     .experience-intro {
       max-width: 1100px;
-
       margin-bottom: 90px;
     }
 
     .experience-grid {
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 70px 90px;
     }
 
     .award {
       border-top: 1px solid rgba(37, 32, 30, 0.35);
-
       padding-top: 25px;
     }
 
     .award h3 {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 17px;
       font-weight: 800;
-
       letter-spacing: 1.98px;
       text-transform: uppercase;
-
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .award p {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 23.25px;
       font-weight: 400;
-
       max-width: 650px;
     }
-
 
     /* ========================================
        PEOPLE FIRST
@@ -320,16 +274,13 @@
 
     .people-first {
       min-height: 100vh;
-
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       background: var(--cream);
     }
 
     .people-image {
       min-height: 700px;
-
       background:
         url("images/people-first.jpg")
         center center / cover no-repeat;
@@ -339,12 +290,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       padding: 120px 8vw;
     }
 
     .people-content .section-heading {
-      margin-bottom: 45px;
+      margin-bottom: 35px;
     }
 
     .people-content .section-copy {
@@ -353,7 +303,7 @@
     }
 
     .people-content .section-copy p {
-      margin: 0 0 28px 0;
+      margin-bottom: 28px;
     }
 
     .people-content .section-copy p:last-child {
@@ -362,10 +312,8 @@
 
     .dark-button {
       align-self: flex-start;
-
       background: var(--burgundy);
       color: var(--white);
-
       border-color: var(--burgundy);
     }
 
@@ -374,57 +322,45 @@
       color: var(--burgundy);
     }
 
-
     /* ========================================
        HOW EMILY HELPS
     ======================================== */
 
     .services {
       padding: 120px 7vw;
-
       background: var(--ivory);
     }
 
     .services-intro {
       max-width: 1100px;
-
       margin-bottom: 85px;
     }
 
     .services-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 45px;
     }
 
     .service-card {
       border-top: 1px solid rgba(37, 32, 30, 0.4);
-
       padding-top: 25px;
     }
 
     .service-card h3 {
       font-family: "Newsreader", Georgia, serif;
-
       font-size: 42px;
       line-height: 1;
       font-weight: 400;
-
-      letter-spacing: -1.5px;
-
       margin-bottom: 25px;
     }
 
     .service-card p {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 23.25px;
       font-weight: 400;
     }
-
 
     /* ========================================
        ONESOURCE
@@ -432,12 +368,9 @@
 
     .support {
       min-height: 80vh;
-
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       background: var(--burgundy);
-
       color: var(--white);
     }
 
@@ -445,7 +378,6 @@
       background:
         url("images/support.jpg")
         center center / cover no-repeat;
-
       min-height: 650px;
     }
 
@@ -453,33 +385,25 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-
       padding: 120px 8vw;
     }
 
-    /*
-      No small "A LITTLE MORE SUPPORT." kicker here.
-      The only heading is the main heading below.
-    */
-
     .support-content .section-heading {
-      margin-bottom: 45px;
+      margin-bottom: 35px;
     }
 
     .support-content .section-copy {
       max-width: 680px;
-
       margin-bottom: 40px;
     }
 
     .support-content .section-copy p {
-      margin: 0 0 28px 0;
+      margin-bottom: 28px;
     }
 
     .support-content .section-copy p:last-child {
       margin-bottom: 0;
     }
-
 
     /* ========================================
        AREAS SERVED
@@ -487,42 +411,33 @@
 
     .areas {
       padding: 120px 7vw;
-
       background: var(--cream);
     }
 
     .areas-intro {
       max-width: 1000px;
-
       margin-bottom: 80px;
     }
 
     .areas-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       border-top: 1px solid rgba(37, 32, 30, 0.4);
     }
 
     .area {
       padding: 28px 25px 28px 0;
-
       border-bottom: 1px solid rgba(37, 32, 30, 0.4);
     }
 
     .area h3 {
       font-family: "Inter", Arial, sans-serif;
-
       font-size: 20px;
       line-height: 17px;
       font-weight: 800;
-
       text-transform: uppercase;
-
       letter-spacing: 1.98px;
     }
-
 
     /* ========================================
        FINAL CTA
@@ -530,17 +445,12 @@
 
     .listing-cta {
       min-height: 75vh;
-
       background: var(--burgundy);
-
       color: var(--white);
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-align: center;
-
       padding: 120px 7vw;
     }
 
@@ -549,13 +459,12 @@
     }
 
     .listing-cta .section-kicker {
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .listing-cta .section-heading {
       margin-bottom: 45px;
     }
-
 
     /* ========================================
        RESPONSIVE
@@ -574,7 +483,7 @@
 
       .hero h1,
       .section-heading {
-        font-size: 64px;
+        font-size: 72px;
       }
 
       .hero p,
@@ -586,12 +495,10 @@
       }
     }
 
-
     @media (max-width: 900px) {
 
       .site-header {
         height: 110px;
-
         padding: 0 5vw;
       }
 
@@ -602,33 +509,28 @@
 
       .main-nav {
         gap: 13px;
-
         padding-top: 45px;
       }
 
       .main-nav a {
         font-size: 12px;
-
         letter-spacing: 0.7px;
       }
 
       .hero {
         min-height: 100svh;
-
         height: auto;
       }
 
       .hero-content {
         margin-left: 7vw;
-
         padding-top: 180px;
         padding-bottom: 100px;
       }
 
       .hero h1,
       .section-heading {
-        font-size: 58px;
-        letter-spacing: -3px;
+        font-size: 72px;
       }
 
       .hero p,
@@ -639,18 +541,12 @@
         line-height: 23.25px;
       }
 
-      .section-kicker {
-        font-size: 17px;
-        line-height: 17px;
-      }
-
       .experience {
         padding: 90px 7vw;
       }
 
       .experience-grid {
         grid-template-columns: 1fr;
-
         gap: 50px;
       }
 
@@ -666,7 +562,7 @@
 
       .people-content,
       .support-content {
-        padding: 90px 7vw;
+        padding: 100px 7vw;
       }
 
       .services {
@@ -675,7 +571,6 @@
 
       .services-grid {
         grid-template-columns: 1fr;
-
         gap: 55px;
       }
 
@@ -688,52 +583,44 @@
       }
 
       .listing-cta {
-        padding: 100px 7vw;
+        min-height: 65vh;
       }
     }
-
 
     @media (max-width: 550px) {
 
       .site-header {
         height: 90px;
-
         padding: 0 20px;
       }
 
       .header-logo {
         width: 115px;
         height: 115px;
-
         transform: translateY(-10px);
       }
 
       .main-nav {
         gap: 8px;
-
         padding-top: 35px;
       }
 
       .main-nav a {
         font-size: 9px;
-
         letter-spacing: 0.4px;
       }
 
       .hero-content {
         width: 88%;
-
         margin-left: 6vw;
-
         padding-top: 150px;
         padding-bottom: 80px;
       }
 
       .hero h1,
       .section-heading {
-        font-size: 48px;
-        line-height: .98;
-
+        font-size: 52px;
+        line-height: 0.94;
         letter-spacing: -2.5px;
       }
 
@@ -742,27 +629,22 @@
       .award p,
       .service-card p {
         font-size: 18px;
-        line-height: 22px;
+        line-height: 23.25px;
       }
 
       .section-kicker {
         font-size: 15px;
-        line-height: 17px;
-
         letter-spacing: 1.5px;
       }
 
       .hero-buttons {
         flex-direction: column;
-
         align-items: flex-start;
       }
 
       .button {
         width: auto;
-
         font-size: 12px;
-
         min-height: 50px;
       }
 
@@ -788,21 +670,15 @@
 
       .listing-cta {
         min-height: 65vh;
-
         padding: 80px 6vw;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- ========================================
-       HEADER
-  ======================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -847,17 +723,9 @@
   </header>
 
 
-
-  <!-- ========================================
-       MAIN
-  ======================================== -->
-
   <main>
 
-
-    <!-- ========================================
-         HERO
-    ======================================== -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -898,10 +766,7 @@
     </section>
 
 
-
-    <!-- ========================================
-         EXPERIENCE AND RECOGNITION
-    ======================================== -->
+    <!-- EXPERIENCE AND RECOGNITION -->
 
     <section class="experience">
 
@@ -920,7 +785,6 @@
 
 
       <div class="experience-grid">
-
 
         <div class="award">
 
@@ -979,16 +843,12 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
-
-    <!-- ========================================
-         PEOPLE FIRST
-    ======================================== -->
+    <!-- PEOPLE FIRST -->
 
     <section class="people-first">
 
@@ -1007,29 +867,27 @@
           personal.
         </h2>
 
-
         <div class="section-copy">
 
           <p>
-            Emily believes real estate should never feel like a
-            one-size-fits-all experience.
+            Emily believes real estate should never feel like a one-size-fits-all
+            experience.
           </p>
 
           <p>
-            She takes the time to listen, understand what matters,
-            uncover the details that others might miss, and guide
-            clients through each decision with care.
+            She takes the time to listen, understand what matters, uncover the
+            details that others might miss, and guide clients through each
+            decision with care.
           </p>
 
           <p>
-            Whether you're buying your first home, selling a family
-            property, downsizing, relocating or helping manage a
-            loved one's estate, the goal is the same; to make you
-            feel informed, supported and confident.
+            Whether you're buying your first home, selling a family property,
+            downsizing, relocating or helping manage a loved one's estate,
+            the goal is the same; to make you feel informed, supported and
+            confident.
           </p>
 
         </div>
-
 
         <a
           href="about.html"
@@ -1043,10 +901,7 @@
     </section>
 
 
-
-    <!-- ========================================
-         HOW EMILY HELPS
-    ======================================== -->
+    <!-- HOW EMILY HELPS -->
 
     <section
       class="services"
@@ -1068,7 +923,6 @@
 
 
       <div class="services-grid">
-
 
         <article class="service-card">
 
@@ -1113,16 +967,12 @@
 
         </article>
 
-
       </div>
 
     </section>
 
 
-
-    <!-- ========================================
-         ONESOURCE
-    ======================================== -->
+    <!-- ONESOURCE -->
 
     <section class="support">
 
@@ -1131,12 +981,10 @@
 
       <div class="support-content">
 
-
         <h2 class="section-heading">
           A little more<br>
           support.
         </h2>
-
 
         <div class="section-copy">
 
@@ -1151,7 +999,6 @@
 
         </div>
 
-
         <a
           href="https://onesourcemoving.ca"
           target="_blank"
@@ -1161,16 +1008,12 @@
           Learn More
         </a>
 
-
       </div>
 
     </section>
 
 
-
-    <!-- ========================================
-         AREAS SERVED
-    ======================================== -->
+    <!-- AREAS -->
 
     <section
       class="areas"
@@ -1193,13 +1036,11 @@
 
       <div class="areas-grid">
 
-
         <div class="area">
           <h3>
             Peterborough
           </h3>
         </div>
-
 
         <div class="area">
           <h3>
@@ -1207,13 +1048,11 @@
           </h3>
         </div>
 
-
         <div class="area">
           <h3>
             Durham Region
           </h3>
         </div>
-
 
         <div class="area">
           <h3>
@@ -1221,13 +1060,11 @@
           </h3>
         </div>
 
-
         <div class="area">
           <h3>
             Northumberland County
           </h3>
         </div>
-
 
         <div class="area">
           <h3>
@@ -1235,16 +1072,12 @@
           </h3>
         </div>
 
-
       </div>
 
     </section>
 
 
-
-    <!-- ========================================
-         FINAL CTA
-    ======================================== -->
+    <!-- FINAL CTA -->
 
     <section class="listing-cta">
 
@@ -1271,7 +1104,6 @@
       </div>
 
     </section>
-
 
   </main>
 
