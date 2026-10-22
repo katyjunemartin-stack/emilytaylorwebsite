@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Contact Emily Taylor | Real Estate</title>
 
   <meta
     name="description"
     content="Contact Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC."
-  />
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
     rel="stylesheet"
   >
 
   <style>
 
     :root {
-      --ivory: #f7f4ee;
-      --cream: #eee9df;
-      --stone: #d8d0c3;
-      --taupe: #a89d8e;
-      --greige: #756e64;
-      --charcoal: #292725;
+      --cream: #f4f0e8;
+      --cream-light: #f8f5ef;
       --burgundy: #4a0d10;
       --burgundy-dark: #39090c;
+      --charcoal: #242321;
+      --grey: #6f6a63;
+      --taupe: #a89d8e;
+      --line: rgba(36,35,33,.16);
       --white: #ffffff;
-      --black: #171615;
-      --line: rgba(41,39,37,0.15);
 
       --serif: "Newsreader", Georgia, serif;
       --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
     }
+
 
     * {
       box-sizing: border-box;
@@ -44,26 +45,24 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      background: var(--ivory);
+      background: var(--cream);
       color: var(--charcoal);
       font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
       overflow-x: hidden;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
     }
 
 
@@ -72,28 +71,31 @@
     ========================================================= */
 
     header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 20;
       background: var(--burgundy);
       color: var(--white);
+
+      width: 100%;
+
+      border-bottom: 1px solid rgba(255,255,255,.15);
     }
 
-    .nav {
+
+    .nav-inner {
       width: min(1500px, calc(100% - 100px));
-      height: 220px;
+
+      min-height: 220px;
+
       margin: 0 auto;
+
       position: relative;
 
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 40px;
     }
 
-    .logo-link {
+
+    .logo {
       display: flex;
       align-items: center;
 
@@ -105,7 +107,8 @@
       transform: translateY(-20px);
     }
 
-    .logo-link img {
+
+    .logo img {
       width: 220px;
       height: 220px;
 
@@ -113,8 +116,10 @@
       object-position: center;
     }
 
-    nav {
+
+    .nav {
       position: absolute;
+
       top: 70px;
       right: 0;
 
@@ -122,84 +127,85 @@
       align-items: center;
 
       gap: 28px;
+    }
 
-      font-size: 11px;
+
+    .nav a {
+      font-family: var(--sans);
+
+      font-size: 20px;
+      line-height: 18px;
+
       font-weight: 800;
-      letter-spacing: .14em;
+
+      letter-spacing: 1.54px;
+
       text-transform: uppercase;
 
-      z-index: 30;
-    }
-
-    nav a {
       color: var(--white);
-      position: relative;
-      white-space: nowrap;
+
+      transition: opacity .25s ease;
     }
 
-    nav a::after {
-      content: "";
-      position: absolute;
 
-      left: 0;
-      bottom: -7px;
-
-      width: 0;
-      height: 1px;
-
-      background: var(--white);
-
-      transition: width .3s ease;
+    .nav a:hover {
+      opacity: .65;
     }
 
-    nav a:hover::after {
-      width: 100%;
+
+    .nav-listings {
+      border: 1px solid rgba(255,255,255,.75);
+
+      padding: 17px 30px;
     }
 
-    nav a:last-child {
-      border: 1px solid rgba(255,255,255,.65);
-      padding: 14px 20px;
-    }
 
-    nav a:last-child::after {
+    .menu-toggle {
       display: none;
-    }
 
-    nav a:last-child:hover {
-      background: var(--white);
-      color: var(--burgundy);
+      background: transparent;
+
+      border: 1px solid rgba(255,255,255,.7);
+
+      color: var(--white);
+
+      padding: 12px 16px;
+
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
     }
 
 
     /* =========================================================
-       CONTACT PAGE
+       CONTACT HERO
     ========================================================= */
 
-    .contact-page {
-      padding: 300px 0 120px;
-      background: var(--ivory);
+    .contact-hero {
+      padding: 135px 5vw 145px;
+
+      background: var(--cream);
     }
 
-    .contact-container {
-      width: min(1380px, calc(100% - 100px));
+
+    .contact-grid {
+      max-width: 1500px;
+
       margin: 0 auto;
-    }
 
-
-    /* =========================================================
-       TOP AREA
-       LEFT = HEADING
-       RIGHT = FORM
-    ========================================================= */
-
-    .contact-main {
       display: grid;
 
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+      grid-template-columns: .95fr 1.05fr;
 
-      gap: 85px;
+      gap: 100px;
 
       align-items: start;
     }
@@ -209,54 +215,67 @@
        LEFT SIDE
     ========================================================= */
 
-    .contact-intro {
-      max-width: 780px;
+    .contact-main {
+      padding-top: 5px;
     }
+
 
     .eyebrow {
-      color: var(--greige);
+      margin: 0 0 28px;
 
-      font-size: 11px;
+      font-family: var(--sans);
+
+      font-size: 19px;
+
+      line-height: 1.2;
+
       font-weight: 800;
 
-      letter-spacing: .28em;
+      letter-spacing: 2px;
+
       text-transform: uppercase;
+
+      color: var(--burgundy);
     }
 
-    .contact-intro h1 {
-      margin-top: 38px;
+
+    .contact-main h1 {
+      margin: 0 0 65px;
+
+      max-width: 700px;
 
       font-family: var(--serif);
-      font-size: clamp(72px, 8vw, 125px);
-      line-height: .88;
-      font-weight: 400;
+
+      font-size: 112px;
+
+      line-height: .9;
+
       letter-spacing: -.055em;
+
+      font-weight: 600;
     }
 
-    .contact-copy {
-      max-width: 680px;
 
-      margin-top: 52px;
+    .contact-main-copy {
+      max-width: 720px;
 
-      color: var(--greige);
+      color: var(--grey);
 
-      font-size: 16px;
-      line-height: 1.85;
+      font-family: var(--sans);
+
+      font-size: 25px;
+
+      line-height: 1.45;
+
+      font-weight: 400;
+
+      margin-bottom: 42px;
     }
 
 
     /* =========================================================
-       CALL EMILY BUTTON
+       BUTTON
     ========================================================= */
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin-top: 38px;
-    }
 
     .button {
       display: inline-flex;
@@ -264,210 +283,214 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 56px;
+      min-height: 60px;
 
-      padding: 0 30px;
+      padding: 16px 32px;
 
-      font-size: 10px;
+      background: var(--burgundy);
+
+      color: var(--white);
+
+      border: 1px solid var(--burgundy);
+
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      line-height: 1.2;
+
       font-weight: 800;
 
-      letter-spacing: .18em;
+      letter-spacing: 1.5px;
+
       text-transform: uppercase;
 
-      transition:
-        background .3s ease,
-        color .3s ease,
-        transform .3s ease;
+      transition: all .25s ease;
+
+      cursor: pointer;
     }
 
-    .button-burgundy {
-      background: var(--burgundy);
-      color: var(--white);
-    }
 
-    .button-burgundy:hover {
-      background: var(--charcoal);
-      transform: translateY(-2px);
+    .button:hover {
+      background: transparent;
+
+      color: var(--burgundy);
     }
 
 
     /* =========================================================
-       CONTACT FORM
+       FORM
     ========================================================= */
 
-    .contact-form-wrap {
-      margin-top: 0;
-      padding-top: 0;
+    .contact-form {
       width: 100%;
     }
 
-    .contact-form {
-      margin-top: 0;
 
+    .form-row {
       display: grid;
 
       grid-template-columns: 1fr 1fr;
 
-      gap: 25px 20px;
+      gap: 22px;
+
+      margin-bottom: 25px;
     }
 
-    .form-field {
+
+    .form-group {
       display: flex;
+
       flex-direction: column;
+
+      width: 100%;
     }
 
-    .form-field.full {
-      grid-column: 1 / -1;
-    }
 
-    .form-field label {
-      color: var(--burgundy);
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: .22em;
-      text-transform: uppercase;
-
-      margin-bottom: 10px;
-    }
-
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
+    .form-group.full {
       width: 100%;
 
-      border: 1px solid var(--line);
+      margin-bottom: 25px;
+    }
 
-      background: transparent;
+
+    .form-label {
+      margin-bottom: 9px;
+
+      color: var(--burgundy);
+
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      line-height: 1.2;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      border: 1px solid rgba(36,35,33,.18);
+
+      border-radius: 0;
+
+      background: rgba(255,255,255,.12);
 
       color: var(--charcoal);
 
-      padding: 16px 17px;
-
       font-family: var(--sans);
-      font-size: 14px;
+
+      font-size: 20px;
+
+      line-height: 1.4;
+
+      font-weight: 400;
 
       outline: none;
 
       transition:
         border-color .2s ease,
         background .2s ease;
-
-      border-radius: 0;
     }
 
-    .form-field input,
-    .form-field select {
-      min-height: 54px;
+
+    input,
+    select {
+      height: 64px;
+
+      padding: 16px 18px;
     }
 
-    .form-field textarea {
-      min-height: 160px;
+
+    textarea {
+      min-height: 210px;
+
+      padding: 18px;
 
       resize: vertical;
-
-      line-height: 1.6;
     }
 
-    .form-field input:focus,
-    .form-field select:focus,
-    .form-field textarea:focus {
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9a958d;
+
+      opacity: 1;
+    }
+
+
+    input:focus,
+    select:focus,
+    textarea:focus {
       border-color: var(--burgundy);
 
       background: rgba(255,255,255,.35);
     }
 
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: var(--greige);
-      opacity: .75;
-    }
 
-    .form-submit {
-      margin-top: 4px;
-
-      border: 0;
+    select {
+      appearance: auto;
 
       cursor: pointer;
+    }
 
-      font-family: var(--sans);
 
+    .submit-button {
       width: 100%;
-    }
 
-    .form-note {
-      margin-top: 14px;
+      min-height: 65px;
 
-      color: var(--greige);
+      margin-top: 5px;
 
-      font-size: 11px;
+      border: 1px solid var(--burgundy);
 
-      line-height: 1.6;
-    }
+      background: var(--burgundy);
 
+      color: var(--white);
 
-    /* =========================================================
-       EMILY'S INFORMATION
-       UNDERNEATH THE TOP SECTION
-    ========================================================= */
-
-    .details {
-      margin-top: 90px;
-
-      border-top: 1px solid var(--line);
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      column-gap: 70px;
-
-      width: 100%;
-    }
-
-    .detail {
-      padding: 28px 0;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .detail-label {
-      color: var(--burgundy);
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .detail-value {
-      margin-top: 12px;
-
-      font-family: var(--serif);
-
-      font-size: 25px;
-
-      line-height: 1.4;
-    }
-
-    .detail-value.sans {
       font-family: var(--sans);
 
       font-size: 15px;
 
-      color: var(--greige);
+      line-height: 1.2;
 
-      line-height: 1.7;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition: all .25s ease;
     }
 
-    .detail-value a {
-      transition: color .2s ease;
-    }
 
-    .detail-value a:hover {
+    .submit-button:hover {
+      background: transparent;
+
       color: var(--burgundy);
+    }
+
+
+    .form-note {
+      margin-top: 18px;
+
+      color: var(--grey);
+
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      line-height: 1.5;
     }
 
 
@@ -476,54 +499,61 @@
     ========================================================= */
 
     .contact-bottom {
-      margin-top: 120px;
+      padding: 130px 5vw;
 
       background: var(--burgundy);
-      color: var(--white);
 
-      padding: 65px 0;
+      color: var(--white);
     }
 
+
     .contact-bottom-inner {
-      width: min(1380px, calc(100% - 100px));
+      max-width: 1500px;
+
       margin: 0 auto;
 
       display: flex;
 
       align-items: center;
+
       justify-content: space-between;
 
-      gap: 50px;
+      gap: 70px;
     }
+
 
     .contact-bottom h2 {
+      margin: 0;
+
+      max-width: 950px;
+
       font-family: var(--serif);
 
-      font-size: clamp(38px, 4vw, 58px);
+      font-size: 112px;
 
-      font-weight: 400;
+      line-height: .9;
 
-      line-height: .98;
+      letter-spacing: -.055em;
 
-      letter-spacing: -.035em;
+      font-weight: 600;
     }
 
-    .contact-bottom p {
-      margin-top: 10px;
 
-      color: rgba(255,255,255,.68);
-
-      font-size: 13px;
-    }
-
-    .button-light {
+    .button.white {
       background: var(--white);
-      color: var(--charcoal);
+
+      color: var(--burgundy);
+
+      border-color: var(--white);
     }
 
-    .button-light:hover {
-      background: var(--cream);
-      transform: translateY(-2px);
+
+    .button.white:hover {
+      background: transparent;
+
+      color: var(--white);
+
+      border-color: var(--white);
     }
 
 
@@ -533,78 +563,100 @@
 
     footer {
       background: var(--cream);
+
       color: var(--charcoal);
 
-      padding: 80px 0 35px;
+      padding: 85px 5vw 35px;
     }
 
+
     .footer-inner {
-      width: min(1380px, calc(100% - 100px));
+      max-width: 1500px;
+
       margin: 0 auto;
     }
 
+
     .footer-top {
-      display: grid;
+      display: flex;
 
-      grid-template-columns: 1fr auto;
+      justify-content: space-between;
 
-      gap: 70px;
+      gap: 60px;
 
-      padding-bottom: 55px;
+      padding-bottom: 70px;
 
       border-bottom: 1px solid var(--line);
     }
 
+
+    .footer-brand {
+      min-width: 420px;
+    }
+
+
     .footer-brand img {
-      width: 180px;
-      height: 180px;
+      width: 420px;
+
+      height: 155px;
 
       object-fit: contain;
-      object-position: center;
 
-      margin-left: -10px;
+      object-position: left center;
+
+      margin-bottom: 20px;
     }
+
 
     .footer-brand p {
-      margin-top: -15px;
+      color: var(--grey);
 
-      color: var(--greige);
+      font-family: var(--sans);
 
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 19px;
 
-      letter-spacing: .18em;
+      line-height: 1.2;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
       text-transform: uppercase;
     }
+
 
     .footer-nav {
       display: flex;
 
+      gap: 30px;
+
+      align-items: center;
+
       flex-wrap: wrap;
-
-      justify-content: flex-end;
-      align-content: flex-start;
-
-      gap: 18px 30px;
-
-      padding-top: 20px;
     }
 
-    .footer-nav a {
-      color: var(--greige);
 
-      font-size: 9px;
+    .footer-nav a {
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      line-height: 1.2;
+
       font-weight: 800;
 
-      letter-spacing: .15em;
+      letter-spacing: 1.3px;
+
       text-transform: uppercase;
 
       transition: color .2s ease;
     }
 
+
     .footer-nav a:hover {
       color: var(--burgundy);
     }
+
 
     .footer-bottom {
       display: flex;
@@ -613,243 +665,306 @@
 
       gap: 30px;
 
-      padding-top: 25px;
+      padding-top: 27px;
 
-      color: var(--greige);
+      color: var(--grey);
 
-      font-size: 10px;
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      line-height: 1.2;
+
+      font-weight: 400;
     }
 
 
     /* =========================================================
-       TABLET
+       RESPONSIVE
     ========================================================= */
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
 
-      .nav {
-        width: calc(100% - 60px);
+      .nav a {
+        font-size: 17px;
+
+        letter-spacing: 1px;
       }
 
-      nav {
-        gap: 18px;
-        font-size: 9px;
+
+      .contact-main h1,
+      .contact-bottom h2 {
+        font-size: 96px;
       }
 
-      .contact-container {
-        width: calc(100% - 60px);
+
+      .contact-main-copy {
+        font-size: 22px;
       }
 
-      .contact-main {
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-      }
-
-      .contact-intro h1 {
-        font-size: clamp(68px, 7vw, 100px);
-      }
-
-      .details {
-        margin-top: 75px;
-      }
-
-      .contact-bottom-inner {
-        width: calc(100% - 60px);
-      }
-
-      .footer-inner {
-        width: calc(100% - 60px);
-      }
     }
 
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
 
       header {
-        position: absolute;
+        min-height: 110px;
       }
+
+
+      .nav-inner {
+        min-height: 110px;
+
+        width: 100%;
+
+        padding: 0 5vw;
+      }
+
+
+      .logo {
+        width: 150px;
+
+        height: 150px;
+      }
+
+
+      .logo img {
+        width: 150px;
+
+        height: 150px;
+      }
+
 
       .nav {
-        width: calc(100% - 40px);
-        height: 150px;
-      }
-
-      .logo-link {
-        width: 150px;
-        height: 150px;
-
-        transform: none;
-      }
-
-      .logo-link img {
-        width: 150px;
-        height: 150px;
-      }
-
-      nav {
         display: none;
+      }
+
+
+      .menu-toggle {
+        display: block;
 
         position: absolute;
 
-        top: 85px;
-        left: 5vw;
         right: 5vw;
 
-        padding: 25px;
+        top: 35px;
+      }
+
+
+      .nav.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 110px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 30px 5vw;
 
         background: var(--burgundy);
 
         flex-direction: column;
+
         align-items: flex-start;
 
-        gap: 18px;
+        gap: 24px;
 
-        border-top: 1px solid rgba(255,255,255,.2);
+        z-index: 50;
       }
 
-      nav.open {
-        display: flex;
+
+      .nav.mobile-open a {
+        font-size: 15px;
       }
 
-      nav a:last-child {
-        padding: 12px 18px;
-      }
 
-      .contact-page {
-        padding: 210px 0 90px;
-      }
-
-      .contact-container {
-        width: calc(100% - 40px);
-      }
-
-      .contact-main {
-        grid-template-columns: 1fr;
-        gap: 65px;
-      }
-
-      .contact-intro h1 {
-        font-size: clamp(58px, 13vw, 90px);
-      }
-
-      .contact-copy {
-        margin-top: 42px;
-      }
-
-      .contact-form {
-        grid-template-columns: 1fr;
-      }
-
-      .form-field.full {
-        grid-column: auto;
-      }
-
-      .details {
-        margin-top: 70px;
-
+      .contact-grid {
         grid-template-columns: 1fr;
 
-        column-gap: 0;
+        gap: 80px;
       }
 
-      .contact-bottom {
-        margin-top: 90px;
+
+      .contact-main h1,
+      .contact-bottom h2 {
+        font-size: 72px;
       }
 
-      .contact-bottom-inner {
-        width: calc(100% - 40px);
 
-        flex-direction: column;
-        align-items: flex-start;
+      .contact-main-copy {
+        font-size: 20px;
       }
 
-      .footer-inner {
-        width: calc(100% - 40px);
-      }
 
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-nav {
-        justify-content: flex-start;
+      .contact-details {
         padding-top: 0;
       }
 
-      .footer-bottom {
+
+      .contact-bottom-inner {
         flex-direction: column;
-        gap: 10px;
+
+        align-items: flex-start;
       }
+
+
+      .footer-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
     }
 
 
-    /* =========================================================
-       PHONE
-    ========================================================= */
+    @media (max-width: 700px) {
 
-    @media (max-width: 500px) {
-
-      .contact-page {
-        padding-top: 190px;
+      .contact-hero {
+        padding: 90px 24px;
       }
 
-      .contact-intro h1 {
-        margin-top: 30px;
-        font-size: 53px;
+
+      .contact-main h1,
+      .contact-bottom h2 {
+        font-size: 58px;
+
+        line-height: .94;
       }
 
-      .contact-copy {
+
+      .contact-main-copy {
+        font-size: 18px;
+      }
+
+
+      .eyebrow {
         font-size: 15px;
-        line-height: 1.75;
+
+        letter-spacing: 1.5px;
       }
 
-      .contact-actions {
-        flex-direction: column;
-        align-items: stretch;
+
+      .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 25px;
       }
+
+
+      .form-label {
+        font-size: 13px;
+
+        letter-spacing: 1.7px;
+      }
+
+
+      input,
+      select,
+      textarea {
+        font-size: 18px;
+      }
+
+
+      input,
+      select {
+        height: 58px;
+      }
+
+
+      textarea {
+        min-height: 180px;
+      }
+
+
+      .contact-bottom {
+        padding: 90px 24px;
+      }
+
 
       .button {
-        width: 100%;
+        font-size: 13px;
       }
 
-      .detail-value {
-        font-size: 21px;
+
+      footer {
+        padding: 60px 24px 30px;
       }
+
+
+      .footer-brand {
+        min-width: 0;
+      }
+
 
       .footer-brand img {
-        width: 150px;
-        height: 150px;
+        width: 300px;
+
+        height: 112px;
       }
+
+
+      .footer-nav {
+        gap: 20px;
+      }
+
+
+      .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+      }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
 
   <header>
 
-    <div class="nav">
+    <div class="nav-inner">
+
 
       <a
-        aria-label="Emily Taylor Real Estate"
-        class="logo-link"
         href="index.html"
+        class="logo"
+        aria-label="Emily Taylor Real Estate"
       >
+
         <img
-          alt="Emily Taylor"
           src="images/emily-logo.png"
-        />
+          alt="Emily Taylor"
+        >
+
       </a>
 
-      <nav id="mainNav">
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+      >
+        MENU
+      </button>
+
+
+      <nav
+        class="nav"
+        id="mainNav"
+      >
 
         <a href="index.html">
           Home
@@ -876,9 +991,10 @@
         </a>
 
         <a
-          href="https://emilytaylor.remaxhallmarkeastern.com"
+          href="https://www.remaxhallmarkeastern.com"
           target="_blank"
           rel="noopener"
+          class="nav-listings"
         >
           View Listings
         </a>
@@ -890,136 +1006,143 @@
   </header>
 
 
-  <!-- CONTACT PAGE -->
+  <!-- =========================================================
+       CONTACT
+  ========================================================= -->
 
   <main>
 
-    <section class="contact-page">
 
-      <div class="contact-container">
+    <section class="contact-hero">
+
+      <div class="contact-grid">
 
 
-        <!-- TOP SECTION -->
+        <!-- LEFT -->
 
         <div class="contact-main">
 
 
-          <!-- LEFT: HEADING -->
+          <div class="eyebrow">
+            Get In Touch
+          </div>
 
-          <div class="contact-intro">
 
-            <div class="eyebrow">
-              Get In Touch
-            </div>
+          <h1>
+            Let’s talk about<br>
+            what’s next.
+          </h1>
 
-            <h1>
-              Let&rsquo;s talk
-              <br>
-              about
-              <br>
-              what&rsquo;s next.
-            </h1>
 
-            <p class="contact-copy">
-              Your next move might be around the corner &mdash; or years away.
-              Either way, Emily is here to help you understand your options
-              and make the right move for you.
-            </p>
+          <p class="contact-main-copy">
+            Your next move might be around the corner — or years away.
+            Either way, Emily is here to help you understand your options
+            and make the right move for you.
+          </p>
 
-            <div class="contact-actions">
 
-              <a
-                class="button button-burgundy"
-                href="tel:4169949683"
-              >
-                Call Emily
-              </a>
+          <div class="buttons">
 
-            </div>
+            <a
+              href="tel:4169949683"
+              class="button"
+            >
+              Call Emily
+            </a>
 
           </div>
 
 
-          <!-- RIGHT: CONTACT FORM -->
+        </div>
 
-          <div
-            class="contact-form-wrap"
-            id="contact-form"
+
+        <!-- RIGHT / FORM -->
+
+        <div class="contact-form">
+
+
+          <form
+            action="https://formspree.io/f/xqperygb"
+            method="POST"
           >
 
-            <form
-              action="https://formspree.io/f/xqperygb"
-              class="contact-form"
-              method="POST"
-            >
 
-              <!-- FIRST NAME -->
+            <div class="form-row">
 
-              <div class="form-field">
 
-                <label for="first-name">
+              <div class="form-group">
+
+                <label
+                  class="form-label"
+                  for="first-name"
+                >
                   First Name
                 </label>
 
                 <input
-                  autocomplete="given-name"
                   id="first-name"
                   name="first_name"
-                  required
                   type="text"
+                  required
                 >
 
               </div>
 
 
-              <!-- LAST NAME -->
+              <div class="form-group">
 
-              <div class="form-field">
-
-                <label for="last-name">
+                <label
+                  class="form-label"
+                  for="last-name"
+                >
                   Last Name
                 </label>
 
                 <input
-                  autocomplete="family-name"
                   id="last-name"
                   name="last_name"
-                  required
                   type="text"
+                  required
                 >
 
               </div>
 
 
-              <!-- EMAIL -->
+            </div>
 
-              <div class="form-field">
 
-                <label for="email">
+            <div class="form-row">
+
+
+              <div class="form-group">
+
+                <label
+                  class="form-label"
+                  for="email"
+                >
                   Email
                 </label>
 
                 <input
-                  autocomplete="email"
                   id="email"
                   name="email"
-                  required
                   type="email"
+                  required
                 >
 
               </div>
 
 
-              <!-- PHONE -->
+              <div class="form-group">
 
-              <div class="form-field">
-
-                <label for="phone">
+                <label
+                  class="form-label"
+                  for="phone"
+                >
                   Phone
                 </label>
 
                 <input
-                  autocomplete="tel"
                   id="phone"
                   name="phone"
                   type="tel"
@@ -1028,221 +1151,149 @@
               </div>
 
 
-              <!-- INTEREST -->
-
-              <div class="form-field full">
-
-                <label for="interest">
-                  I'm Looking To...
-                </label>
-
-                <select
-                  id="interest"
-                  name="interest"
-                  required
-                >
-
-                  <option
-                    disabled
-                    selected
-                    value=""
-                  >
-                    Select an option
-                  </option>
-
-                  <option value="Buy a home">
-                    Buy a home
-                  </option>
-
-                  <option value="Sell a home">
-                    Sell a home
-                  </option>
-
-                  <option value="Buy and sell">
-                    Buy and sell
-                  </option>
-
-                  <option value="Learn more about my options">
-                    Learn more about my options
-                  </option>
-
-                  <option value="Other">
-                    Other
-                  </option>
-
-                </select>
-
-              </div>
+            </div>
 
 
-              <!-- MESSAGE -->
+            <div class="form-group full">
 
-              <div class="form-field full">
-
-                <label for="message">
-                  Message
-                </label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell Emily a little about what you have in mind..."
-                  required
-                ></textarea>
-
-              </div>
+              <label
+                class="form-label"
+                for="looking-for"
+              >
+                I'm Looking To...
+              </label>
 
 
-              <!-- SEND BUTTON -->
+              <select
+                id="looking-for"
+                name="looking_for"
+                required
+              >
 
-              <div class="form-field full">
+                <option value="">
+                  Select an option
+                </option>
 
-                <button
-                  class="button button-burgundy form-submit"
-                  type="submit"
-                >
-                  Send Message
-                </button>
+                <option value="buying">
+                  Buy a Home
+                </option>
 
-                <p class="form-note">
-                  Your information will be sent securely to Emily through the contact form.
-                </p>
+                <option value="selling">
+                  Sell a Home
+                </option>
 
-              </div>
+                <option value="buying-and-selling">
+                  Buy & Sell
+                </option>
 
-            </form>
+                <option value="first-time-buyer">
+                  First-Time Home Buyer
+                </option>
 
-          </div>
+                <option value="downsizing">
+                  Downsizing
+                </option>
+
+                <option value="relocating">
+                  Relocating
+                </option>
+
+                <option value="estate">
+                  Estate / Executor
+                </option>
+
+                <option value="general-question">
+                  General Question
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group full">
+
+              <label
+                class="form-label"
+                for="message"
+              >
+                Message
+              </label>
+
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell Emily a little about what you have in mind..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Send Message
+            </button>
+
+
+            <p class="form-note">
+              Your information will be sent securely to Emily through the contact form.
+            </p>
+
+
+          </form>
+
 
         </div>
 
-
-        <!-- EMILY'S INFORMATION UNDERNEATH -->
-
-        <div class="details">
-
-
-          <div class="detail">
-
-            <div class="detail-label">
-              Emily Taylor
-            </div>
-
-            <div class="detail-value">
-              Sales Representative
-            </div>
-
-          </div>
-
-
-          <div class="detail">
-
-            <div class="detail-label">
-              Phone
-            </div>
-
-            <div class="detail-value">
-
-              <a href="tel:4169949683">
-                416-994-9683
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="detail">
-
-            <div class="detail-label">
-              Brokerage
-            </div>
-
-            <div class="detail-value sans">
-              RE/MAX Hallmark Eastern Realty INC.
-            </div>
-
-          </div>
-
-
-          <div class="detail">
-
-            <div class="detail-label">
-              Office
-            </div>
-
-            <div class="detail-value">
-
-              <a href="tel:7057439111">
-                705-743-9111
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="detail">
-
-            <div class="detail-label">
-              Office Address
-            </div>
-
-            <div class="detail-value sans">
-              91 George St N, 2nd Floor
-              <br>
-              PO Box 2409
-              <br>
-              Peterborough, ON K9J 7Y8
-            </div>
-
-          </div>
-
-
-        </div>
 
       </div>
 
     </section>
 
 
-    <!-- BOTTOM CTA -->
+    <!-- =========================================================
+         BOTTOM CTA
+    ========================================================= -->
 
     <section class="contact-bottom">
 
       <div class="contact-bottom-inner">
 
-        <div>
 
-          <h2>
-            Ready when you are.
-          </h2>
+        <h2>
+          Whenever you're ready,<br>
+          Emily is here.
+        </h2>
 
-          <p>
-            Let's start with a conversation.
-          </p>
-
-        </div>
 
         <a
-          class="button button-light"
-          href="#contact-form"
+          href="tel:4169949683"
+          class="button white"
         >
-          Send a Message
+          Call Emily
         </a>
+
 
       </div>
 
     </section>
 
+
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
 
   <footer>
 
     <div class="footer-inner">
+
 
       <div class="footer-top">
 
@@ -1250,8 +1301,8 @@
         <div class="footer-brand">
 
           <img
-            alt="Emily Taylor"
             src="images/emily-logo.png"
+            alt="Emily Taylor"
           >
 
           <p>
@@ -1287,15 +1338,8 @@
             Contact
           </a>
 
-          <a
-            href="https://emilytaylor.remaxhallmarkeastern.com"
-            target="_blank"
-            rel="noopener"
-          >
-            View Listings
-          </a>
-
         </div>
+
 
       </div>
 
@@ -1303,14 +1347,16 @@
       <div class="footer-bottom">
 
         <span>
-          &copy; 2026 Emily Taylor. All rights reserved.
+          © 2026 Emily Taylor. All rights reserved.
         </span>
+
 
         <span>
           RE/MAX Hallmark Eastern Realty INC.
         </span>
 
       </div>
+
 
     </div>
 
@@ -1319,20 +1365,30 @@
 
   <script>
 
-    const menuButton = document.getElementById("menuButton");
+    const menuToggle = document.getElementById("menuToggle");
     const mainNav = document.getElementById("mainNav");
 
-    if (menuButton && mainNav) {
 
-      menuButton.addEventListener("click", function () {
+    menuToggle.addEventListener("click", function () {
 
-        mainNav.classList.toggle("open");
+      mainNav.classList.toggle("mobile-open");
+
+    });
+
+
+    document.querySelectorAll("#mainNav a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        mainNav.classList.remove("mobile-open");
 
       });
 
-    }
+    });
 
   </script>
 
+
 </body>
+
 </html>
