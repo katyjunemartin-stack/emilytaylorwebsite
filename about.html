@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,6 +21,10 @@
 
   <style>
 
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
       --cream: #f4f0e8;
       --cream-light: #f8f5ef;
@@ -30,8 +32,7 @@
       --burgundy-dark: #39090c;
       --charcoal: #242321;
       --grey: #6f6a63;
-      --taupe: #a89d8e;
-      --line: rgba(36,35,33,.16);
+      --line: rgba(36, 35, 33, 0.16);
       --white: #ffffff;
 
       --serif: "Newsreader", Georgia, serif;
@@ -39,36 +40,43 @@
     }
 
 
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
-
 
     body {
       background: var(--cream);
       color: var(--charcoal);
       font-family: var(--sans);
-      line-height: 1.6;
+      line-height: 1.55;
       overflow-x: hidden;
     }
-
 
     img {
       display: block;
       width: 100%;
     }
 
-
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 400;
     }
 
 
@@ -79,83 +87,62 @@
     header {
       background: var(--cream);
       width: 100%;
-      height: 220px;
-      padding: 0;
       border-bottom: 1px solid var(--line);
     }
 
-
     .nav {
-      width: min(1500px, calc(100% - 100px));
-      height: 220px;
+      width: min(1920px, calc(100% - 160px));
+      min-height: 150px;
       margin: 0 auto;
-      padding: 0;
-      position: relative;
 
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 40px;
-    }
 
+      gap: 60px;
+    }
 
     .logo-link {
       display: flex;
       align-items: center;
-      width: 220px;
-      height: 220px;
+      width: 190px;
       flex-shrink: 0;
-      transform: translateY(-20px);
     }
-
 
     .logo-link img {
-      width: 220px;
-      height: 220px;
+      width: 190px;
+      height: 110px;
       object-fit: contain;
-      object-position: center;
     }
-
 
     nav {
-      position: absolute;
-      top: 70px;
-      right: 0;
-
       display: flex;
       align-items: center;
-      gap: 28px;
+      justify-content: flex-end;
+      gap: 34px;
     }
-
 
     nav a {
       font-size: 11px;
       font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
-
       color: var(--charcoal);
-
       transition: color .25s ease;
+      white-space: nowrap;
     }
 
-
-    nav a:hover {
+    nav a:hover,
+    nav a[aria-current="page"] {
       color: var(--burgundy);
     }
 
-
     .mobile-menu {
       display: none;
-
       border: 0;
       background: transparent;
-
       color: var(--charcoal);
-
-      font-size: 25px;
-
+      font-size: 28px;
       cursor: pointer;
     }
 
@@ -164,56 +151,17 @@
        GLOBAL
     ========================================================= */
 
+    .page-width {
+      width: min(1920px, calc(100% - 160px));
+      margin: 0 auto;
+    }
+
     .eyebrow {
       font-size: 11px;
       font-weight: 800;
-
-      letter-spacing: .24em;
+      letter-spacing: .20em;
       text-transform: uppercase;
-
-      margin-bottom: 60px;
-    }
-
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 58px;
-      padding: 0 34px;
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .18em;
-      text-transform: uppercase;
-
-      border: 1px solid var(--burgundy);
-
-      transition: all .25s ease;
-
-      flex-shrink: 0;
-    }
-
-
-    .button-burgundy {
-      background: var(--burgundy);
-      color: var(--white);
-    }
-
-
-    .button-burgundy:hover {
-      background: transparent;
-      color: var(--burgundy);
+      margin-bottom: 28px;
     }
 
 
@@ -224,45 +172,36 @@
     .about-hero {
       background: var(--burgundy);
       color: var(--white);
-
-      padding: 145px 5vw 135px;
+      padding: 105px 0 100px;
     }
 
-
     .about-hero-inner {
-      max-width: 1500px;
+      width: min(1920px, calc(100% - 160px));
       margin: 0 auto;
     }
 
-
     .about-hero .eyebrow {
-      color: rgba(255,255,255,.72);
-      margin-bottom: 72px;
+      color: rgba(255,255,255,.70);
+      margin-bottom: 34px;
     }
-
 
     .about-hero h1 {
-      max-width: 1150px;
-
-      font-size: clamp(65px, 8vw, 125px);
-
-      line-height: .87;
-      letter-spacing: -.06em;
+      max-width: 1050px;
+      font-size: clamp(60px, 6vw, 112px);
+      line-height: .84;
+      letter-spacing: -.055em;
     }
-
 
     .hero-accent {
       display: block;
+      margin-top: 30px;
 
-      margin-top: 35px;
-
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.62);
 
       font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: .16em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
       text-transform: uppercase;
     }
 
@@ -272,84 +211,74 @@
     ========================================================= */
 
     .intro {
-      padding: 145px 5vw;
       background: var(--cream);
+      padding: 100px 0;
     }
 
-
     .intro-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
 
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-
-      gap: 100px;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
 
       align-items: start;
     }
 
-
-    .intro-left {
-      width: 100%;
+    .intro-label {
+      color: var(--burgundy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
     }
-
 
     .intro-photo {
       width: 100%;
-      height: 650px;
+      height: 430px;
       object-fit: cover;
-      margin-top: 42px;
+      object-position: center;
     }
 
-
-    .intro-label {
-      color: var(--burgundy);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .24em;
-      text-transform: uppercase;
+    .intro-copy {
+      padding-top: 0;
     }
-
 
     .intro-copy h2 {
-      max-width: 900px;
+      max-width: 780px;
 
-      font-size: clamp(55px, 6vw, 90px);
-
-      line-height: .9;
+      font-size: clamp(48px, 5vw, 82px);
+      line-height: .88;
       letter-spacing: -.055em;
 
-      margin-bottom: 65px;
+      margin-bottom: 42px;
     }
-
 
     .intro-copy p {
-      max-width: 760px;
+      max-width: 700px;
 
       color: var(--grey);
+      font-size: 15px;
+      line-height: 1.55;
 
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
 
-
     .intro-highlight {
-      margin-top: 55px;
-      padding-top: 38px;
+      max-width: 700px;
+
+      margin-top: 34px;
+      padding-top: 22px;
 
       border-top: 1px solid var(--line);
 
       color: var(--burgundy);
 
       font-family: var(--serif);
-      font-size: 31px;
-
-      line-height: 1.25;
+      font-size: 25px;
+      line-height: 1.1;
     }
 
 
@@ -358,96 +287,51 @@
     ========================================================= */
 
     .story {
-      padding: 145px 5vw;
       background: var(--cream-light);
+      padding: 95px 0;
     }
 
-
     .story-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
+      gap: 80px;
 
       align-items: center;
     }
 
-
     .story-image {
       width: 100%;
-      height: 650px;
-
+      height: 500px;
       object-fit: cover;
+      object-position: center;
     }
-
-
-    .story-copy {
-      padding-top: 10px;
-    }
-
 
     .story-copy .eyebrow {
       color: var(--burgundy);
+      margin-bottom: 25px;
     }
-
 
     .story-copy h2 {
-      max-width: 700px;
+      max-width: 650px;
 
-      font-size: clamp(50px, 5.5vw, 82px);
-
-      line-height: .9;
+      font-size: clamp(46px, 5vw, 78px);
+      line-height: .88;
       letter-spacing: -.055em;
 
-      margin-bottom: 55px;
+      margin-bottom: 38px;
     }
-
 
     .story-copy p {
-      max-width: 680px;
+      max-width: 640px;
 
       color: var(--grey);
+      font-size: 15px;
+      line-height: 1.55;
 
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
-    }
-
-
-    .story-stat {
-      display: flex;
-      align-items: baseline;
-      gap: 18px;
-
-      margin-top: 50px;
-      padding-top: 35px;
-
-      border-top: 1px solid var(--line);
-    }
-
-
-    .story-stat strong {
-      font-family: var(--serif);
-      font-size: 65px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-
-    .story-stat span {
-      max-width: 200px;
-
-      color: var(--grey);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: .15em;
-      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
 
@@ -459,94 +343,81 @@
       background: var(--burgundy);
       color: var(--white);
 
-      padding: 130px 5vw;
+      padding: 90px 0 85px;
     }
 
-
     .specialties-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
     }
 
-
     .specialties-intro {
-      max-width: 900px;
-
-      margin-bottom: 90px;
+      margin-bottom: 55px;
     }
-
 
     .specialties-intro .eyebrow {
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.68);
+      margin-bottom: 18px;
     }
 
-
     .specialties-intro h2 {
-      font-size: clamp(55px, 7vw, 105px);
+      max-width: 800px;
 
+      font-size: clamp(52px, 5vw, 82px);
       line-height: .87;
       letter-spacing: -.055em;
     }
-
 
     .specialty-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      border-top: 1px solid rgba(255,255,255,.2);
-      border-left: 1px solid rgba(255,255,255,.2);
+      border-top: 1px solid rgba(255,255,255,.20);
+      border-left: 1px solid rgba(255,255,255,.20);
     }
-
 
     .specialty-card {
-      padding: 60px 50px 65px;
+      padding: 38px 40px 42px;
 
-      border-right: 1px solid rgba(255,255,255,.2);
-      border-bottom: 1px solid rgba(255,255,255,.2);
+      border-right: 1px solid rgba(255,255,255,.20);
+      border-bottom: 1px solid rgba(255,255,255,.20);
     }
-
 
     .specialty-card .eyebrow {
-      color: rgba(255,255,255,.65);
-      margin-bottom: 45px;
+      color: rgba(255,255,255,.68);
+      margin-bottom: 18px;
     }
-
 
     .specialty-card h3 {
-      font-size: clamp(40px, 4vw, 60px);
-
-      line-height: .94;
+      font-size: clamp(30px, 3vw, 48px);
+      line-height: .92;
       letter-spacing: -.045em;
 
-      margin-bottom: 35px;
+      margin-bottom: 22px;
     }
-
 
     .specialty-card p {
-      max-width: 580px;
+      max-width: 520px;
 
-      color: rgba(255,255,255,.76);
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.45;
 
-      font-size: 16px;
-      line-height: 1.8;
-
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-
 
     .specialty-list {
       list-style: none;
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
-
     .specialty-list li {
-      padding: 14px 0;
+      padding: 9px 0;
 
-      border-bottom: 1px solid rgba(255,255,255,.15);
+      border-bottom: 1px solid rgba(255,255,255,.13);
 
       font-family: var(--serif);
-      font-size: 25px;
+      font-size: 18px;
     }
 
 
@@ -555,94 +426,83 @@
     ========================================================= */
 
     .why {
-      padding: 150px 5vw;
       background: var(--cream);
+      padding: 90px 0 100px;
     }
 
-
     .why-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
     }
 
-
     .why .eyebrow {
       color: var(--burgundy);
+      margin-bottom: 18px;
     }
 
-
     .why-heading {
-      max-width: 1050px;
+      max-width: 850px;
 
-      font-size: clamp(55px, 7vw, 108px);
-
+      font-size: clamp(50px, 5vw, 82px);
       line-height: .87;
       letter-spacing: -.055em;
 
-      margin-bottom: 85px;
+      margin-bottom: 55px;
     }
-
 
     .why-story {
       display: grid;
       grid-template-columns: .65fr 1.35fr;
-
-      gap: 100px;
+      gap: 75px;
 
       border-top: 1px solid var(--line);
-
-      padding-top: 65px;
+      padding-top: 45px;
     }
-
 
     .why-side {
       color: var(--burgundy);
 
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
-
-      letter-spacing: .2em;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-
     .why-photo {
       width: 100%;
-      height: 520px;
-      margin-top: 42px;
+      height: 390px;
+
+      margin-top: 25px;
 
       object-fit: cover;
       object-position: center;
     }
 
-
     .why-copy {
-      max-width: 800px;
+      max-width: 700px;
     }
-
 
     .why-copy p {
       color: var(--grey);
 
-      font-size: 18px;
-      line-height: 1.9;
+      font-size: 15px;
+      line-height: 1.55;
 
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
 
-
     .why-pullquote {
-      margin: 65px 0;
-
-      padding: 45px 0;
+      margin: 38px 0;
+      padding: 28px 0;
 
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
 
-      font-family: var(--serif);
-      font-size: clamp(32px, 4vw, 52px);
+      color: var(--charcoal);
 
-      line-height: 1.05;
+      font-family: var(--serif);
+      font-size: clamp(25px, 3vw, 42px);
+      line-height: 1.02;
       letter-spacing: -.035em;
     }
 
@@ -653,206 +513,78 @@
 
     .origin {
       background: var(--cream-light);
-
-      padding: 145px 5vw;
+      padding: 90px 0;
     }
 
-
     .origin-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
+      gap: 75px;
 
       align-items: start;
     }
 
-
     .origin-copy .eyebrow {
       color: var(--burgundy);
+      margin-bottom: 18px;
     }
-
 
     .origin-copy h2 {
-      max-width: 750px;
+      max-width: 650px;
 
-      font-size: clamp(55px, 6vw, 90px);
-
-      line-height: .88;
+      font-size: clamp(50px, 5vw, 82px);
+      line-height: .87;
       letter-spacing: -.055em;
 
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
-
 
     .origin-copy p {
-      max-width: 700px;
+      max-width: 650px;
 
       color: var(--grey);
+      font-size: 15px;
+      line-height: 1.55;
 
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
-
 
     .origin-image {
       width: 100%;
-      height: 650px;
+      height: 440px;
 
       object-fit: cover;
+      object-position: center;
     }
-
 
     .lizard-skin {
-      margin-top: 55px;
-      padding: 45px;
+      margin-top: 30px;
+      padding: 25px 28px;
 
       background: var(--burgundy);
-
       color: var(--white);
     }
-
 
     .lizard-skin strong {
       display: block;
 
-      margin-bottom: 15px;
+      margin-bottom: 8px;
 
       font-family: var(--serif);
-      font-size: 38px;
+      font-size: 24px;
       font-weight: 400;
+      line-height: 1;
     }
-
 
     .lizard-skin p {
       margin: 0;
 
       color: rgba(255,255,255,.75);
-
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       APPROACH
-    ========================================================= */
-
-    .approach {
-      background: var(--cream);
-
-      padding: 150px 5vw;
-    }
-
-
-    .approach-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-
-
-    .approach-heading {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-
-      gap: 100px;
-
-      margin-bottom: 90px;
-    }
-
-
-    .approach-heading .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .approach-heading h2 {
-      max-width: 850px;
-
-      font-size: clamp(55px, 6.5vw, 100px);
-
-      line-height: .86;
-      letter-spacing: -.055em;
-    }
-
-
-    .approach-text {
-      max-width: 760px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-top: 50px;
-    }
-
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-
-    .approach-item {
-      padding: 32px 18px;
-
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      font-family: var(--serif);
-      font-size: 23px;
-
-      text-align: center;
-    }
-
-
-    .client-promise {
-      margin-top: 70px;
-
-      padding: 60px;
-
-      background: var(--burgundy);
-
-      color: var(--white);
-    }
-
-
-    .client-promise .eyebrow {
-      color: rgba(255,255,255,.65);
-      margin-bottom: 35px;
-    }
-
-
-    .client-promise h3 {
-      font-size: clamp(40px, 4vw, 62px);
-
-      line-height: .93;
-      letter-spacing: -.045em;
-
-      margin-bottom: 50px;
-    }
-
-
-    .promise-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 20px;
-    }
-
-
-    .promise-list div {
-      font-family: var(--serif);
-      font-size: 27px;
+      font-size: 11px;
+      line-height: 1.4;
     }
 
 
@@ -864,188 +596,71 @@
       background: var(--burgundy);
       color: var(--white);
 
-      padding: 150px 5vw;
+      padding: 90px 0 85px;
     }
 
-
     .awards-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
     }
 
-
     .awards .eyebrow {
-      color: rgba(255,255,255,.7);
+      color: rgba(255,255,255,.70);
+      margin-bottom: 18px;
     }
-
 
     .awards h2 {
-      max-width: 1050px;
+      max-width: 850px;
 
-      font-size: clamp(58px, 7vw, 110px);
-
-      line-height: .86;
+      font-size: clamp(50px, 5vw, 82px);
+      line-height: .87;
       letter-spacing: -.055em;
 
-      margin-bottom: 65px;
+      margin-bottom: 28px;
     }
-
 
     .awards-intro {
-      max-width: 800px;
+      max-width: 700px;
 
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.76);
 
-      font-size: 17px;
-      line-height: 1.9;
+      font-size: 14px;
+      line-height: 1.5;
 
-      margin-bottom: 85px;
+      margin-bottom: 45px;
     }
-
 
     .awards-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
-      border-top: 1px solid rgba(255,255,255,.2);
-      border-left: 1px solid rgba(255,255,255,.2);
+      border-top: 1px solid rgba(255,255,255,.20);
+      border-left: 1px solid rgba(255,255,255,.20);
     }
-
 
     .award {
-      min-height: 210px;
+      min-height: 150px;
 
-      padding: 48px 42px;
+      padding: 28px 28px;
 
-      border-right: 1px solid rgba(255,255,255,.2);
-      border-bottom: 1px solid rgba(255,255,255,.2);
+      border-right: 1px solid rgba(255,255,255,.20);
+      border-bottom: 1px solid rgba(255,255,255,.20);
     }
-
 
     .award h3 {
-      font-size: 36px;
-
+      font-size: 24px;
       line-height: 1;
 
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
-
 
     .award p {
+      max-width: 450px;
+
       color: rgba(255,255,255,.68);
 
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       LIFE / PERSONAL
-    ========================================================= */
-
-    .life {
-      padding: 145px 5vw;
-
-      background: var(--cream-light);
-    }
-
-
-    .life-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-
-      align-items: center;
-    }
-
-
-    .life-image {
-      width: 100%;
-      height: 620px;
-
-      object-fit: cover;
-    }
-
-
-    .life-copy .eyebrow {
-      color: var(--burgundy);
-    }
-
-
-    .life-copy h2 {
-      max-width: 700px;
-
-      font-size: clamp(52px, 5.5vw, 85px);
-
-      line-height: .89;
-      letter-spacing: -.055em;
-
-      margin-bottom: 55px;
-    }
-
-
-    .life-copy p {
-      max-width: 650px;
-
-      color: var(--grey);
-
-      font-size: 17px;
-      line-height: 1.9;
-
-      margin-bottom: 25px;
-    }
-
-
-    .life-highlight {
-      margin-top: 45px;
-
-      padding-top: 35px;
-
-      border-top: 1px solid var(--line);
-
-      color: var(--burgundy);
-
-      font-family: var(--serif);
-      font-size: 29px;
-
-      line-height: 1.25;
-    }
-
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================= */
-
-    .final-cta {
-      background: var(--cream);
-
-      padding: 135px 5vw;
-    }
-
-
-    .final-cta-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 70px;
-    }
-
-
-    .final-cta h2 {
-      max-width: 950px;
-
-      font-size: clamp(55px, 7vw, 105px);
-
-      line-height: .87;
-      letter-spacing: -.055em;
+      font-size: 11px;
+      line-height: 1.45;
     }
 
 
@@ -1055,95 +670,83 @@
 
     footer {
       background: var(--cream);
-
       color: var(--charcoal);
 
-      padding: 85px 5vw 35px;
+      padding: 55px 0 25px;
     }
-
 
     .footer-inner {
-      max-width: 1500px;
+      width: min(1550px, calc(100% - 160px));
       margin: 0 auto;
     }
-
 
     .footer-top {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
-      gap: 60px;
+      gap: 50px;
 
-      padding-bottom: 70px;
+      padding-bottom: 35px;
 
       border-bottom: 1px solid var(--line);
     }
 
-
     .footer-brand {
-      overflow: visible;
-      min-width: 420px;
+      min-width: 250px;
     }
-
 
     .footer-brand img {
-      width: 420px;
-      height: 155px;
-      max-width: none;
-      max-height: none;
+      width: 250px;
+      height: 95px;
 
-      object-fit: cover;
-      object-position: center center;
+      object-fit: contain;
+      object-position: left center;
 
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
-
 
     .footer-brand p {
       color: var(--grey);
 
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 800;
-
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
-
-
-    .footer-nav {
-      display: flex;
-      gap: 30px;
-
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-
-    .footer-nav a {
-      font-size: 11px;
-      font-weight: 800;
-
       letter-spacing: .16em;
       text-transform: uppercase;
     }
 
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+
+      transition: color .2s ease;
+    }
 
     .footer-nav a:hover {
       color: var(--burgundy);
     }
 
-
     .footer-bottom {
       display: flex;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
 
-      padding-top: 27px;
+      padding-top: 18px;
 
       color: var(--grey);
-
-      font-size: 11px;
+      font-size: 9px;
     }
 
 
@@ -1153,39 +756,40 @@
 
     @media (max-width: 900px) {
 
-      header {
-        height: 150px;
-        padding: 0 6vw;
+      .nav,
+      .page-width,
+      .about-hero-inner,
+      .intro-inner,
+      .story-inner,
+      .specialties-inner,
+      .why-inner,
+      .origin-inner,
+      .awards-inner,
+      .footer-inner {
+        width: calc(100% - 40px);
       }
-
 
       .nav {
-        width: 100%;
-        height: 150px;
+        min-height: 90px;
       }
-
 
       .logo-link {
-        width: 150px;
-        height: 150px;
-        transform: none;
+        width: 130px;
       }
-
 
       .logo-link img {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 75px;
       }
-
 
       nav {
         display: none;
 
         position: absolute;
 
-        top: 85px;
-        left: 5vw;
-        right: 5vw;
+        top: 90px;
+        left: 20px;
+        right: 20px;
 
         padding: 25px;
 
@@ -1194,189 +798,150 @@
         flex-direction: column;
         align-items: flex-start;
 
-        gap: 20px;
+        gap: 18px;
 
-        z-index: 30;
+        z-index: 100;
       }
-
 
       nav.open {
         display: flex;
       }
 
-
       nav a {
         color: var(--white);
+        font-size: 10px;
       }
-
 
       .mobile-menu {
         display: block;
       }
 
 
-      .about-hero,
+      .about-hero {
+        padding: 75px 0 70px;
+      }
+
+      .about-hero h1 {
+        font-size: clamp(48px, 13vw, 72px);
+      }
+
+
       .intro,
       .story,
       .specialties,
       .why,
       .origin,
-      .approach,
-      .awards,
-      .life,
-      .final-cta {
-        padding-left: 6vw;
-        padding-right: 6vw;
+      .awards {
+        padding-top: 65px;
+        padding-bottom: 65px;
       }
-
-
-      .about-hero {
-        padding-top: 105px;
-        padding-bottom: 105px;
-      }
-
 
       .intro-inner,
       .story-inner,
-      .origin-inner,
-      .life-inner {
+      .origin-inner {
         grid-template-columns: 1fr;
-        gap: 70px;
+        gap: 40px;
       }
 
+      .intro-photo {
+        height: 360px;
+      }
+
+      .story-image {
+        height: 400px;
+      }
+
+      .specialty-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .specialty-card {
+        padding: 30px 25px;
+      }
 
       .why-story {
         grid-template-columns: 1fr;
         gap: 35px;
       }
 
+      .why-photo {
+        height: 400px;
+      }
 
-      .specialty-grid,
       .awards-grid {
         grid-template-columns: 1fr;
       }
 
-
-      .approach-heading {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .award {
+        min-height: auto;
       }
 
-
-      .approach-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-
-      .promise-list {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 25px;
-      }
-
-
-      .final-cta-inner {
+      .footer-top {
         flex-direction: column;
         align-items: flex-start;
       }
-
-
-      .intro-photo,
-      .story-image,
-      .origin-image,
-      .life-image {
-        height: 500px;
-      }
-
-
-      .why-photo {
-        height: 500px;
-      }
-
-
-      .footer-brand {
-        min-width: 0;
-      }
-
-
-      .footer-brand img {
-        width: 300px;
-        height: 112px;
-      }
-
-
-      .footer-top,
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
 
       .footer-nav {
-        margin-top: 20px;
+        justify-content: flex-start;
       }
 
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
     }
 
 
     @media (max-width: 550px) {
 
+      .nav,
+      .page-width,
+      .about-hero-inner,
+      .intro-inner,
+      .story-inner,
+      .specialties-inner,
+      .why-inner,
+      .origin-inner,
+      .awards-inner,
+      .footer-inner {
+        width: calc(100% - 30px);
+      }
+
+      nav {
+        left: 15px;
+        right: 15px;
+      }
+
       .about-hero h1 {
-        font-size: 57px;
+        font-size: 47px;
       }
 
-
-      .specialty-card {
-        padding: 45px 30px;
+      .intro-copy h2,
+      .story-copy h2,
+      .specialties-intro h2,
+      .why-heading,
+      .origin-copy h2,
+      .awards h2 {
+        font-size: 48px;
       }
-
-
-      .approach-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .client-promise {
-        padding: 40px 30px;
-      }
-
-
-      .promise-list {
-        grid-template-columns: 1fr;
-      }
-
 
       .intro-photo,
       .story-image,
-      .origin-image,
-      .life-image,
-      .why-photo {
-        height: 400px;
+      .why-photo,
+      .origin-image {
+        height: 330px;
       }
 
-
-      .award {
-        padding: 40px 30px;
+      .footer-brand img {
+        width: 220px;
       }
-
-
-      .lizard-skin {
-        padding: 35px 30px;
-      }
-
-
-      .intro-highlight {
-        font-size: 26px;
-      }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
-
 
   <!-- =========================================================
        HEADER
@@ -1391,12 +956,10 @@
         class="logo-link"
         aria-label="Emily Taylor Real Estate"
       >
-
         <img
           src="images/emily-logo-black.png"
           alt="Emily Taylor"
         >
-
       </a>
 
 
@@ -1406,7 +969,10 @@
           Home
         </a>
 
-        <a href="about.html">
+        <a
+          href="about.html"
+          aria-current="page"
+        >
           About
         </a>
 
@@ -1423,7 +989,7 @@
         </a>
 
         <a
-          href="https://emilytaylor.remaxhallmarkeastern.com"
+          href="https://www.remaxhallmarkeastern.com"
           target="_blank"
           rel="noopener"
         >
@@ -1437,6 +1003,7 @@
         class="mobile-menu"
         id="menuButton"
         aria-label="Open navigation"
+        aria-expanded="false"
       >
         ☰
       </button>
@@ -1445,6 +1012,10 @@
 
   </header>
 
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
 
   <main>
 
@@ -1458,16 +1029,14 @@
       <div class="about-hero-inner">
 
         <div class="eyebrow">
-          ABOUT EMILY
+          About Emily
         </div>
-
 
         <h1>
           Real estate became<br>
           more than a career.<br>
           It became a way of life.
         </h1>
-
 
         <span class="hero-accent">
           Relationship driven. Results focused.
@@ -1486,13 +1055,11 @@
 
       <div class="intro-inner">
 
-
-        <div class="intro-left">
+        <div>
 
           <div class="intro-label">
             The person behind the business
           </div>
-
 
           <img
             class="intro-photo"
@@ -1511,14 +1078,12 @@
             Driven by people.
           </h2>
 
-
           <p>
             Born and raised in Peterborough, with many years spent in
             Toronto, Emily brings a diverse professional background
             together with a genuine passion for real estate, people,
             dogs and travel.
           </p>
-
 
           <p>
             Her business is built around two things: relationships and
@@ -1527,16 +1092,13 @@
             Peterborough.
           </p>
 
-
           <p>
             Since 2017, Emily has helped more than 100 families achieve
             their real estate goals — and she's still counting.
           </p>
 
-
           <div class="intro-highlight">
-            “I want to be a trusted realtor — one who people can fully
-            depend on.”
+            “I want to be a trusted Realtor — one who people can fully depend on.”
           </div>
 
         </div>
@@ -1553,7 +1115,6 @@
     <section class="story">
 
       <div class="story-inner">
-
 
         <div>
 
@@ -1572,19 +1133,16 @@
             A Relationship & Results Based Business
           </div>
 
-
           <h2>
             Built on relationships.<br>
             Driven by results.
           </h2>
 
-
           <p>
-            For Emily, becoming a realtor was never simply about
+            For Emily, becoming a Realtor was never simply about
             buying and selling houses. It was about becoming someone
             her clients could genuinely depend on.
           </p>
-
 
           <p>
             She wanted to be there every step of the way — through
@@ -1593,13 +1151,11 @@
             milestones.
           </p>
 
-
           <p>
             That means answering the phone when she's needed, staying
             calm when things become complicated, and doing whatever
             it takes to keep moving things forward.
           </p>
-
 
         </div>
 
@@ -1609,13 +1165,12 @@
 
 
     <!-- =======================================================
-         SPECIALTIES
+         WHO EMILY SERVES
     ======================================================= -->
 
     <section class="specialties">
 
       <div class="specialties-inner">
-
 
         <div class="specialties-intro">
 
@@ -1623,10 +1178,9 @@
             Who Emily Serves
           </div>
 
-
           <h2>
-            Every client has<br>
-            a different story.
+            Every client has a<br>
+            different story.
           </h2>
 
         </div>
@@ -1641,12 +1195,9 @@
               My Specialty
             </div>
 
-
             <h3>
-              The people<br>
-              I serve.
+              The people I serve.
             </h3>
-
 
             <p>
               Emily specializes in supporting clients through some of
@@ -1654,7 +1205,6 @@
               people who may need additional guidance, patience and
               care throughout the process.
             </p>
-
 
             <ul class="specialty-list">
 
@@ -1689,19 +1239,16 @@
               My Expertise
             </div>
 
-
             <h3>
               Full-service<br>
               representation.
             </h3>
-
 
             <p>
               From the first conversation through closing, Emily brings
               a hands-on approach to preparing properties, positioning
               them for market and negotiating on behalf of her clients.
             </p>
-
 
             <ul class="specialty-list">
 
@@ -1737,15 +1284,12 @@
 
       <div class="why-inner">
 
-
         <div class="eyebrow">
           Why Real Estate?
         </div>
 
-
         <h2 class="why-heading">
-          “I think Real Estate<br>
-          chose me.”
+          “I think Real Estate chose me.”
         </h2>
 
 
@@ -1775,9 +1319,8 @@
               over time, but the heart of it has always stayed the same.
             </p>
 
-
             <p>
-              She wanted to be a trusted realtor — someone people
+              She wanted to be a trusted Realtor — someone people
               could fully depend on during one of the most important
               milestones of their lives. She wanted to exceed
               expectations through hard work, tenacity and grit, while
@@ -1785,19 +1328,16 @@
               professionals.
             </p>
 
-
             <p>
               And somewhere along the way, she realized that she didn't
               simply want a career. She wanted a lifestyle that allowed
               her to be needed, challenged and involved.
             </p>
 
-
             <div class="why-pullquote">
               “Truthfully, I thrive when I'm needed — when the phone
               rings at 10 p.m., when an offer is accepted at 11:59 p.m.”
             </div>
-
 
             <p>
               That's what makes real estate feel different for Emily.
@@ -1805,7 +1345,6 @@
               when everything comes together for a client, it's incredibly
               rewarding.
             </p>
-
 
             <p>
               What started as a career became something much bigger.
@@ -1836,12 +1375,10 @@
             How It Started
           </div>
 
-
           <h2>
-            Built from<br>
+            Built from,<br>
             the ground up.
           </h2>
-
 
           <p>
             Emily got her start in this business by door knocking in
@@ -1849,14 +1386,12 @@
             homeowners around active listings.
           </p>
 
-
           <p>
             She listened to successful agents and jumped at every
             opportunity to learn and grow. Every day was a new
-            opportunity to meet someone, help someone and become
-            better at what she did.
+            opportunity to meet someone, help someone and become better
+            at what she did.
           </p>
-
 
           <p>
             Rejection was part of the process. Instead of letting it
@@ -1865,7 +1400,6 @@
             “lizard skin.”
           </p>
 
-
           <p>
             Her business began to grow, and so did her referral base.
             Referrals and repeat clients became the heart of the
@@ -1873,9 +1407,8 @@
             her business each year.
           </p>
 
-
           <p>
-            Real estate also gave Emily an unshakable mindset — one
+            Real estate also gave Emily an unshakable mindset, one
             that continues to bring strength and gratitude to her
             life every day.
           </p>
@@ -1886,7 +1419,6 @@
             <strong>
               Hard work builds more than a business.
             </strong>
-
 
             <p>
               It builds resilience, confidence, perspective and the
@@ -1902,120 +1434,9 @@
 
           <img
             class="origin-image"
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=85"
-            alt="Home and real estate"
+            src="images/welcome-mat.jpg"
+            alt="Welcome mat at a home"
           >
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         APPROACH
-    ======================================================= -->
-
-    <section class="approach">
-
-      <div class="approach-inner">
-
-
-        <div class="approach-heading">
-
-
-          <div>
-
-            <div class="eyebrow">
-              My Approach
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <h2>
-              Listen.<br>
-              Understand.<br>
-              Guide.
-            </h2>
-
-
-            <p class="approach-text">
-              Emily's approach is rooted in listening first, understanding
-              what her clients truly need, uncovering the details that
-              matter, serving with intention, guiding through each
-              decision and empowering her clients throughout the process.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="approach-grid">
-
-          <div class="approach-item">
-            Listening
-          </div>
-
-          <div class="approach-item">
-            Understanding
-          </div>
-
-          <div class="approach-item">
-            Uncovering
-          </div>
-
-          <div class="approach-item">
-            Serving
-          </div>
-
-          <div class="approach-item">
-            Guiding
-          </div>
-
-          <div class="approach-item">
-            Empowering
-          </div>
-
-        </div>
-
-
-        <div class="client-promise">
-
-
-          <div class="eyebrow">
-            As My Client
-          </div>
-
-
-          <h3>
-            You will always be...
-          </h3>
-
-
-          <div class="promise-list">
-
-            <div>
-              Prioritized
-            </div>
-
-            <div>
-              Supported
-            </div>
-
-            <div>
-              Respected
-            </div>
-
-            <div>
-              Valued
-            </div>
-
-          </div>
 
         </div>
 
@@ -2032,17 +1453,14 @@
 
       <div class="awards-inner">
 
-
         <div class="eyebrow">
           Awards & Recognition
         </div>
-
 
         <h2>
           Built on ethics,<br>
           hard work & integrity.
         </h2>
-
 
         <p class="awards-intro">
           Emily's business has been built on ethics, hard work and
@@ -2057,13 +1475,12 @@
           <div class="award">
 
             <h3>
-              Rising Star Award
+              RE/MAX Hall of Fame
             </h3>
 
-
             <p>
-              In 2018, Emily ranked as a top producer and received the
-              Rising Star Award based on productivity.
+              Received in 2024 in recognition of Emily's career
+              achievements and contribution to the industry.
             </p>
 
           </div>
@@ -2074,7 +1491,6 @@
             <h3>
               RE/MAX 100% Club
             </h3>
-
 
             <p>
               Recognition received as part of Emily's continued
@@ -2090,7 +1506,6 @@
               RE/MAX Platinum Club
             </h3>
 
-
             <p>
               Recognition earned through continued performance,
               dedication and service to her clients.
@@ -2105,7 +1520,6 @@
               RE/MAX Executive Award
             </h3>
 
-
             <p>
               Recognition for achievement and continued performance
               within RE/MAX.
@@ -2117,13 +1531,12 @@
           <div class="award">
 
             <h3>
-              RE/MAX Hall of Fame
+              Rising Star Award
             </h3>
 
-
             <p>
-              Received in 2024 in recognition of Emily's career
-              achievements and contribution to the industry.
+              In 2018, Emily ranked as a top producer and received the
+              Rising Star Award based on productivity.
             </p>
 
           </div>
@@ -2134,7 +1547,6 @@
             <h3>
               And Counting.
             </h3>
-
 
             <p>
               Emily continues to build her business through relationships,
@@ -2150,101 +1562,6 @@
 
     </section>
 
-
-    <!-- =======================================================
-         BEYOND REAL ESTATE
-    ======================================================= -->
-
-    <section class="life">
-
-      <div class="life-inner">
-
-
-        <div>
-
-          <img
-            class="life-image"
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85"
-            alt="Travel and lifestyle"
-          >
-
-        </div>
-
-
-        <div class="life-copy">
-
-
-          <div class="eyebrow">
-            Beyond Real Estate
-          </div>
-
-
-          <h2>
-            Work hard.<br>
-            Live fully.
-          </h2>
-
-
-          <p>
-            Real estate is a huge part of Emily's life, but it isn't
-            the only part.
-          </p>
-
-
-          <p>
-            Outside of work, she has a genuine love of travel, dogs,
-            new experiences and the people she meets along the way.
-          </p>
-
-
-          <p>
-            That balance — working hard for her clients while making
-            time to enjoy life — is part of what makes real estate feel
-            more like a lifestyle to Emily.
-          </p>
-
-
-          <div class="life-highlight">
-            A career built around people, places, relationships and
-            the moments that make life what it is.
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         FINAL CTA
-    ======================================================= -->
-
-    <section class="final-cta">
-
-      <div class="final-cta-inner">
-
-
-        <h2>
-          A career built on hard work.
-          A business built on relationships.
-        </h2>
-
-
-        <a
-          href="contact.html"
-          class="button button-burgundy"
-        >
-          Contact Emily
-        </a>
-
-
-      </div>
-
-    </section>
-
-
   </main>
 
 
@@ -2256,7 +1573,6 @@
 
     <div class="footer-inner">
 
-
       <div class="footer-top">
 
 
@@ -2266,7 +1582,6 @@
             src="images/emily-logo-black.png"
             alt="Emily Taylor"
           >
-
 
           <p>
             Sales Representative
@@ -2293,10 +1608,6 @@
             Areas
           </a>
 
-          <a href="index.html#onesource">
-            OneSource
-          </a>
-
           <a href="contact.html">
             Contact
           </a>
@@ -2311,7 +1622,6 @@
         <span>
           © 2026 Emily Taylor. All rights reserved.
         </span>
-
 
         <span>
           RE/MAX Hallmark Eastern Realty INC.
@@ -2333,22 +1643,34 @@
     const menuButton = document.getElementById("menuButton");
     const mainNav = document.getElementById("mainNav");
 
-
     menuButton.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
+
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
     });
 
 
     document.querySelectorAll("#mainNav a").forEach(link => {
 
       link.addEventListener("click", () => {
+
         mainNav.classList.remove("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       });
 
     });
 
   </script>
-
 
 </body>
 </html>
