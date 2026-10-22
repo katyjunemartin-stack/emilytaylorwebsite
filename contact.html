@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Contact Emily Taylor | Real Estate</title>
 
@@ -11,20 +11,15 @@
     content="Contact Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC."
   />
 
-  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <style>
-
-    /* =========================================================
-       ROOT
-    ========================================================= */
 
     :root {
       --ivory: #f7f4ee;
@@ -42,11 +37,6 @@
       --serif: "Newsreader", Georgia, serif;
       --sans: "Proxima Nova", Arial, Helvetica, sans-serif;
     }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -95,7 +85,6 @@
       width: min(1500px, calc(100% - 100px));
       height: 220px;
       margin: 0 auto;
-      padding: 0;
       position: relative;
 
       display: flex;
@@ -198,7 +187,7 @@
 
 
     /* =========================================================
-       TOP CONTACT AREA
+       TOP AREA
        LEFT = HEADING
        RIGHT = FORM
     ========================================================= */
@@ -210,7 +199,7 @@
         minmax(0, 1fr)
         minmax(0, 1fr);
 
-      gap: 90px;
+      gap: 85px;
 
       align-items: start;
     }
@@ -221,7 +210,7 @@
     ========================================================= */
 
     .contact-intro {
-      max-width: 650px;
+      max-width: 780px;
     }
 
     .eyebrow {
@@ -238,14 +227,14 @@
       margin-top: 38px;
 
       font-family: var(--serif);
-      font-size: clamp(68px, 7.5vw, 118px);
+      font-size: clamp(72px, 8vw, 125px);
       line-height: .88;
       font-weight: 400;
       letter-spacing: -.055em;
     }
 
     .contact-copy {
-      max-width: 620px;
+      max-width: 680px;
 
       margin-top: 52px;
 
@@ -257,7 +246,7 @@
 
 
     /* =========================================================
-       BUTTON
+       CALL EMILY BUTTON
     ========================================================= */
 
     .contact-actions {
@@ -307,22 +296,13 @@
     ========================================================= */
 
     .contact-form-wrap {
+      margin-top: 0;
+      padding-top: 0;
       width: 100%;
-    }
-
-    .contact-form-intro {
-      color: var(--greige);
-
-      font-size: 14px;
-      line-height: 1.7;
-
-      margin-bottom: 32px;
-
-      max-width: 550px;
     }
 
     .contact-form {
-      width: 100%;
+      margin-top: 0;
 
       display: grid;
 
@@ -383,7 +363,7 @@
     }
 
     .form-field textarea {
-      min-height: 150px;
+      min-height: 160px;
 
       resize: vertical;
 
@@ -407,30 +387,952 @@
     .form-submit {
       margin-top: 4px;
 
-      width: 100%;
-
       border: 0;
 
       cursor: pointer;
 
       font-family: var(--sans);
+
+      width: 100%;
     }
 
     .form-note {
-      margin-top: 12px;
+      margin-top: 14px;
 
       color: var(--greige);
 
-      font-size: 10px;
+      font-size: 11px;
 
       line-height: 1.6;
     }
 
 
     /* =========================================================
-       CONTACT INFORMATION
-       UNDERNEATH MAIN AREA
+       EMILY'S INFORMATION
+       UNDERNEATH THE TOP SECTION
     ========================================================= */
 
     .details {
-      margin-top:
+      margin-top: 90px;
+
+      border-top: 1px solid var(--line);
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 70px;
+
+      width: 100%;
+    }
+
+    .detail {
+      padding: 28px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-label {
+      color: var(--burgundy);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      margin-top: 12px;
+
+      font-family: var(--serif);
+
+      font-size: 25px;
+
+      line-height: 1.4;
+    }
+
+    .detail-value.sans {
+      font-family: var(--sans);
+
+      font-size: 15px;
+
+      color: var(--greige);
+
+      line-height: 1.7;
+    }
+
+    .detail-value a {
+      transition: color .2s ease;
+    }
+
+    .detail-value a:hover {
+      color: var(--burgundy);
+    }
+
+
+    /* =========================================================
+       BOTTOM CTA
+    ========================================================= */
+
+    .contact-bottom {
+      margin-top: 120px;
+
+      background: var(--burgundy);
+      color: var(--white);
+
+      padding: 65px 0;
+    }
+
+    .contact-bottom-inner {
+      width: min(1380px, calc(100% - 100px));
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 50px;
+    }
+
+    .contact-bottom h2 {
+      font-family: var(--serif);
+
+      font-size: clamp(38px, 4vw, 58px);
+
+      font-weight: 400;
+
+      line-height: .98;
+
+      letter-spacing: -.035em;
+    }
+
+    .contact-bottom p {
+      margin-top: 10px;
+
+      color: rgba(255,255,255,.68);
+
+      font-size: 13px;
+    }
+
+    .button-light {
+      background: var(--white);
+      color: var(--charcoal);
+    }
+
+    .button-light:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: var(--cream);
+      color: var(--charcoal);
+
+      padding: 80px 0 35px;
+    }
+
+    .footer-inner {
+      width: min(1380px, calc(100% - 100px));
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 70px;
+
+      padding-bottom: 55px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-brand img {
+      width: 180px;
+      height: 180px;
+
+      object-fit: contain;
+      object-position: center;
+
+      margin-left: -10px;
+    }
+
+    .footer-brand p {
+      margin-top: -15px;
+
+      color: var(--greige);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: flex-end;
+      align-content: flex-start;
+
+      gap: 18px 30px;
+
+      padding-top: 20px;
+    }
+
+    .footer-nav a {
+      color: var(--greige);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: .15em;
+      text-transform: uppercase;
+
+      transition: color .2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--burgundy);
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      padding-top: 25px;
+
+      color: var(--greige);
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .nav {
+        width: calc(100% - 60px);
+      }
+
+      nav {
+        gap: 18px;
+        font-size: 9px;
+      }
+
+      .contact-container {
+        width: calc(100% - 60px);
+      }
+
+      .contact-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-intro h1 {
+        font-size: clamp(68px, 7vw, 100px);
+      }
+
+      .details {
+        margin-top: 75px;
+      }
+
+      .contact-bottom-inner {
+        width: calc(100% - 60px);
+      }
+
+      .footer-inner {
+        width: calc(100% - 60px);
+      }
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        position: absolute;
+      }
+
+      .nav {
+        width: calc(100% - 40px);
+        height: 150px;
+      }
+
+      .logo-link {
+        width: 150px;
+        height: 150px;
+
+        transform: none;
+      }
+
+      .logo-link img {
+        width: 150px;
+        height: 150px;
+      }
+
+      nav {
+        display: none;
+
+        position: absolute;
+
+        top: 85px;
+        left: 5vw;
+        right: 5vw;
+
+        padding: 25px;
+
+        background: var(--burgundy);
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 18px;
+
+        border-top: 1px solid rgba(255,255,255,.2);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a:last-child {
+        padding: 12px 18px;
+      }
+
+      .contact-page {
+        padding: 210px 0 90px;
+      }
+
+      .contact-container {
+        width: calc(100% - 40px);
+      }
+
+      .contact-main {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .contact-intro h1 {
+        font-size: clamp(58px, 13vw, 90px);
+      }
+
+      .contact-copy {
+        margin-top: 42px;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .details {
+        margin-top: 70px;
+
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+      }
+
+      .contact-bottom {
+        margin-top: 90px;
+      }
+
+      .contact-bottom-inner {
+        width: calc(100% - 40px);
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        width: calc(100% - 40px);
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-nav {
+        justify-content: flex-start;
+        padding-top: 0;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+
+    /* =========================================================
+       PHONE
+    ========================================================= */
+
+    @media (max-width: 500px) {
+
+      .contact-page {
+        padding-top: 190px;
+      }
+
+      .contact-intro h1 {
+        margin-top: 30px;
+        font-size: 53px;
+      }
+
+      .contact-copy {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .detail-value {
+        font-size: 21px;
+      }
+
+      .footer-brand img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav">
+
+      <a
+        aria-label="Emily Taylor Real Estate"
+        class="logo-link"
+        href="index.html"
+      >
+        <img
+          alt="Emily Taylor"
+          src="images/emily-logo.png"
+        />
+      </a>
+
+      <nav id="mainNav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="index.html#services">
+          Services
+        </a>
+
+        <a href="index.html#areas">
+          Areas
+        </a>
+
+        <a href="index.html#onesource">
+          OneSource
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a
+          href="https://emilytaylor.remaxhallmarkeastern.com"
+          target="_blank"
+          rel="noopener"
+        >
+          View Listings
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- CONTACT PAGE -->
+
+  <main>
+
+    <section class="contact-page">
+
+      <div class="contact-container">
+
+
+        <!-- TOP SECTION -->
+
+        <div class="contact-main">
+
+
+          <!-- LEFT: HEADING -->
+
+          <div class="contact-intro">
+
+            <div class="eyebrow">
+              Get In Touch
+            </div>
+
+            <h1>
+              Let&rsquo;s talk
+              <br>
+              about
+              <br>
+              what&rsquo;s next.
+            </h1>
+
+            <p class="contact-copy">
+              Your next move might be around the corner &mdash; or years away.
+              Either way, Emily is here to help you understand your options
+              and make the right move for you.
+            </p>
+
+            <div class="contact-actions">
+
+              <a
+                class="button button-burgundy"
+                href="tel:4169949683"
+              >
+                Call Emily
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT: CONTACT FORM -->
+
+          <div
+            class="contact-form-wrap"
+            id="contact-form"
+          >
+
+            <form
+              action="https://formspree.io/f/xqperygb"
+              class="contact-form"
+              method="POST"
+            >
+
+              <!-- FIRST NAME -->
+
+              <div class="form-field">
+
+                <label for="first-name">
+                  First Name
+                </label>
+
+                <input
+                  autocomplete="given-name"
+                  id="first-name"
+                  name="first_name"
+                  required
+                  type="text"
+                >
+
+              </div>
+
+
+              <!-- LAST NAME -->
+
+              <div class="form-field">
+
+                <label for="last-name">
+                  Last Name
+                </label>
+
+                <input
+                  autocomplete="family-name"
+                  id="last-name"
+                  name="last_name"
+                  required
+                  type="text"
+                >
+
+              </div>
+
+
+              <!-- EMAIL -->
+
+              <div class="form-field">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  autocomplete="email"
+                  id="email"
+                  name="email"
+                  required
+                  type="email"
+                >
+
+              </div>
+
+
+              <!-- PHONE -->
+
+              <div class="form-field">
+
+                <label for="phone">
+                  Phone
+                </label>
+
+                <input
+                  autocomplete="tel"
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                >
+
+              </div>
+
+
+              <!-- INTEREST -->
+
+              <div class="form-field full">
+
+                <label for="interest">
+                  I'm Looking To...
+                </label>
+
+                <select
+                  id="interest"
+                  name="interest"
+                  required
+                >
+
+                  <option
+                    disabled
+                    selected
+                    value=""
+                  >
+                    Select an option
+                  </option>
+
+                  <option value="Buy a home">
+                    Buy a home
+                  </option>
+
+                  <option value="Sell a home">
+                    Sell a home
+                  </option>
+
+                  <option value="Buy and sell">
+                    Buy and sell
+                  </option>
+
+                  <option value="Learn more about my options">
+                    Learn more about my options
+                  </option>
+
+                  <option value="Other">
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- MESSAGE -->
+
+              <div class="form-field full">
+
+                <label for="message">
+                  Message
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell Emily a little about what you have in mind..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <!-- SEND BUTTON -->
+
+              <div class="form-field full">
+
+                <button
+                  class="button button-burgundy form-submit"
+                  type="submit"
+                >
+                  Send Message
+                </button>
+
+                <p class="form-note">
+                  Your information will be sent securely to Emily through the contact form.
+                </p>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <!-- EMILY'S INFORMATION UNDERNEATH -->
+
+        <div class="details">
+
+
+          <div class="detail">
+
+            <div class="detail-label">
+              Emily Taylor
+            </div>
+
+            <div class="detail-value">
+              Sales Representative
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-label">
+              Phone
+            </div>
+
+            <div class="detail-value">
+
+              <a href="tel:4169949683">
+                416-994-9683
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-label">
+              Brokerage
+            </div>
+
+            <div class="detail-value sans">
+              RE/MAX Hallmark Eastern Realty INC.
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-label">
+              Office
+            </div>
+
+            <div class="detail-value">
+
+              <a href="tel:7057439111">
+                705-743-9111
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="detail">
+
+            <div class="detail-label">
+              Office Address
+            </div>
+
+            <div class="detail-value sans">
+              91 George St N, 2nd Floor
+              <br>
+              PO Box 2409
+              <br>
+              Peterborough, ON K9J 7Y8
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BOTTOM CTA -->
+
+    <section class="contact-bottom">
+
+      <div class="contact-bottom-inner">
+
+        <div>
+
+          <h2>
+            Ready when you are.
+          </h2>
+
+          <p>
+            Let's start with a conversation.
+          </p>
+
+        </div>
+
+        <a
+          class="button button-light"
+          href="#contact-form"
+        >
+          Send a Message
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+          <img
+            alt="Emily Taylor"
+            src="images/emily-logo.png"
+          >
+
+          <p>
+            Sales Representative
+          </p>
+
+        </div>
+
+
+        <div class="footer-nav">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="index.html#services">
+            Services
+          </a>
+
+          <a href="index.html#areas">
+            Areas
+          </a>
+
+          <a href="index.html#onesource">
+            OneSource
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+          <a
+            href="https://emilytaylor.remaxhallmarkeastern.com"
+            target="_blank"
+            rel="noopener"
+          >
+            View Listings
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          &copy; 2026 Emily Taylor. All rights reserved.
+        </span>
+
+        <span>
+          RE/MAX Hallmark Eastern Realty INC.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const menuButton = document.getElementById("menuButton");
+    const mainNav = document.getElementById("mainNav");
+
+    if (menuButton && mainNav) {
+
+      menuButton.addEventListener("click", function () {
+
+        mainNav.classList.toggle("open");
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
