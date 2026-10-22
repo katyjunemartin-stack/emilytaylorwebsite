@@ -1,2489 +1,1402 @@
-/* 1920w light */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Emily Taylor | Real Estate</title>
+
+  <meta
+    name="description"
+    content="Emily Taylor, Sales Representative with RE/MAX Hallmark Eastern Realty INC."
+  >
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --ivory: #f5f1e9;
+      --burgundy: #500b0e;
+      --burgundy-dark: #3d0709;
+      --charcoal: #282523;
+      --muted: #756e66;
+      --white: #ffffff;
+      --line: rgba(40,37,35,.14);
+
+      --serif: "Newsreader", Georgia, serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      color: var(--white);
+    }
+
+    .nav {
+      width: min(1500px, calc(100% - 100px));
+      height: 180px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      position: relative;
+    }
+
+    .logo-link {
+      width: 185px;
+      height: 185px;
+      display: block;
+      margin-top: -10px;
+    }
 
-position: relative;
-width: 1920px;
-height: 7128px;
-overflow-y: scroll;
+    .logo-link img {
+      width: 185px;
+      height: 185px;
+      object-fit: contain;
+    }
 
-background: linear-gradient(0deg, #F7F4EE, #F7F4EE), #FFFFFF;
+    nav {
+      position: absolute;
+      top: 62px;
+      right: 0;
 
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-/* Section */
+    nav a {
+      color: white;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 150px 0px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
 
-position: absolute;
-height: 860px;
-left: 0.73px;
-right: -0.73px;
-top: 4372.5px;
+      transition: opacity .2s ease;
+    }
 
-background: #4A0D10;
+    nav a:hover {
+      opacity: .65;
+    }
 
+    .mobile-menu {
+      display: none;
 
-/* Section */
+      position: absolute;
+      top: 35px;
+      right: 0;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 130px 0px 135px;
+      background: none;
+      border: 0;
+      color: white;
 
-position: absolute;
-width: 1920px;
-height: 1097px;
-left: 0px;
-top: 1140px;
+      font-size: 25px;
+      cursor: pointer;
+    }
 
-background: #4A0D10;
 
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
 
-/* Container */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      min-height: 38px;
+      padding: 0 18px;
 
-position: absolute;
-width: 620px;
-height: 17px;
-left: 105px;
-top: 1210px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
 
+      transition: all .2s ease;
+    }
 
+    .button-light {
+      background: white;
+      color: var(--burgundy);
+    }
 
-/* EXPERIENCE AND RECOGNITION */
+    .button-light:hover {
+      background: #eee9df;
+    }
 
-width: 620px;
-height: 17px;
+    .button-burgundy {
+      background: var(--burgundy);
+      color: white;
+    }
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 17px;
-/* identical to box height, or 52% */
-display: flex;
-align-items: center;
-letter-spacing: 3.08px;
-text-transform: uppercase;
+    .button-burgundy:hover {
+      background: var(--burgundy-dark);
+    }
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
 
+    /* =========================================================
+       HERO
+    ========================================================= */
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    .hero {
+      position: relative;
 
+      min-height: 700px;
 
-/* Heading 2 */
+      display: flex;
+      align-items: flex-end;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      overflow: hidden;
+      color: white;
+    }
 
-position: absolute;
-width: 1000px;
-max-width: 1000px;
-height: 299px;
-left: 105px;
-top: 1297px;
+    .hero-image {
+      position: absolute;
+      inset: 0;
 
+      width: 100%;
+      height: 100%;
 
+      object-fit: cover;
+      object-position: center;
+    }
 
-/* Experience matters. So does how you’re represented. */
+    .hero::after {
+      content: "";
 
-width: 769px;
-height: 299px;
+      position: absolute;
+      inset: 0;
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 96px;
-line-height: 99px;
-/* or 104% */
-display: flex;
-align-items: center;
-letter-spacing: -4.86px;
+      background: rgba(0,0,0,.34);
+    }
 
-color: #FFFFFF;
-font-variation-settings: 'opsz' 108;
+    .hero-inner {
+      position: relative;
+      z-index: 2;
 
+      width: min(1500px, calc(100% - 100px));
+      margin: 0 auto;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+      padding-bottom: 65px;
+    }
 
+    .hero h1 {
+      max-width: 650px;
 
-/* HorizontalBorder */
+      font-family: var(--serif);
+      font-size: clamp(62px, 6.3vw, 100px);
+      line-height: .83;
+      font-weight: 500;
+      letter-spacing: -.055em;
 
-box-sizing: border-box;
+      margin-bottom: 28px;
+    }
 
-position: absolute;
-width: 1761px;
-height: 507px;
-left: 105px;
-top: 1639px;
+    .hero h1 em {
+      font-style: italic;
+    }
 
-border-top: 1px solid rgba(255, 255, 255, 0.22);
+    .hero-copy {
+      max-width: 530px;
 
+      font-size: 15px;
+      line-height: 1.08;
+      font-weight: 600;
 
-/* HorizontalBorder */
+      margin-bottom: 22px;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 44px 38px 88.12px 48px;
-gap: 22.84px;
+    .hero-buttons {
+      display: flex;
+      gap: 7px;
+    }
 
-position: absolute;
-height: 235px;
-min-height: 235px;
-left: 880.5px;
-right: 0px;
-top: 1px;
 
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
 
+    .experience {
+      background: var(--burgundy);
+      color: white;
 
-/* Heading 3 */
+      padding: 48px 0 45px;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+    .experience-inner {
+      width: min(1500px, calc(100% - 100px));
+      margin: 0 auto;
+    }
 
-width: 794.5px;
-height: 18px;
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
 
+      margin-bottom: 20px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    .experience h2 {
+      max-width: 650px;
 
+      font-family: var(--serif);
+      font-size: clamp(52px, 5.5vw, 82px);
+      line-height: .86;
+      font-weight: 400;
+      letter-spacing: -.045em;
 
-/* RE/MAX PLATINUM CLUB */
+      margin-bottom: 32px;
+    }
 
-width: 794.5px;
-height: 18px;
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 18px;
-/* identical to box height, or 55% */
-display: flex;
-align-items: center;
-letter-spacing: 2.24px;
-text-transform: uppercase;
+      border-top: 1px solid rgba(255,255,255,.2);
+    }
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
+    .experience-card {
+      padding: 20px 35px 18px 0;
 
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    .experience-card:nth-child(odd) {
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
 
+    .experience-card:nth-child(even) {
+      padding-left: 25px;
+    }
 
-/* Container */
+    .experience-card:nth-child(3),
+    .experience-card:nth-child(4) {
+      border-bottom: 0;
+      padding-top: 22px;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.54px;
+    .experience-card h3 {
+      max-width: 350px;
 
-width: 620px;
-max-width: 620px;
-height: 120.54px;
+      font-size: 10px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
 
+      margin-bottom: 10px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+    .experience-card p {
+      max-width: 390px;
 
+      font-size: 11px;
+      line-height: 1.1;
 
-/* Recognition for performance, professionalism and consistent dedication to clients. */
+      opacity: .75;
+    }
 
-width: 625px;
-height: 120px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 30px;
-/* or 93% */
-display: flex;
-align-items: center;
+    /* =========================================================
+       PEOPLE FIRST
+    ========================================================= */
 
-color: rgba(255, 255, 255, 0.82);
+    .people {
+      background: var(--ivory);
 
+      padding: 75px 0 65px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+    .people-inner {
+      width: min(1350px, calc(100% - 100px));
+      margin: 0 auto;
 
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 55px;
 
-/* Border */
+      align-items: center;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 44px 60px 179px 0px;
-gap: 23px;
+    .people-image {
+      width: 100%;
+      height: 455px;
 
-position: absolute;
-height: 235px;
-min-height: 235px;
-left: 0px;
-right: 880.5px;
-top: 1px;
+      object-fit: cover;
+    }
 
+    .people-copy {
+      padding-right: 30px;
+    }
 
+    .people-copy .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
 
-/* Heading 3 */
+    .people-copy h2 {
+      max-width: 620px;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 4.2vw, 62px);
+      line-height: .88;
+      font-weight: 400;
+      letter-spacing: -.04em;
 
-width: 819.5px;
-height: 18px;
+      margin-bottom: 22px;
+    }
 
+    .people-copy p {
+      max-width: 560px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+      color: var(--muted);
 
+      font-size: 14px;
+      line-height: 1.08;
 
-/* RE/MAX HALL OF FAME AWARD */
+      margin-bottom: 18px;
+    }
 
-width: 819.5px;
-height: 18px;
+    .people-copy .button {
+      margin-top: 3px;
+    }
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 18px;
-/* identical to box height, or 55% */
-display: flex;
-align-items: center;
-letter-spacing: 2.24px;
-text-transform: uppercase;
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
+    /* =========================================================
+       SERVICES
+    ========================================================= */
 
+    .services {
+      background: var(--ivory);
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+      padding: 10px 0 70px;
+    }
 
+    .services-inner {
+      width: min(1350px, calc(100% - 100px));
+      margin: 0 auto;
+    }
 
-/* Container */
+    .services .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 12px;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.69px;
+    .services h2 {
+      max-width: 650px;
 
-width: 620px;
-max-width: 620px;
-height: 61.69px;
+      font-family: var(--serif);
+      font-size: clamp(50px, 5vw, 76px);
+      line-height: .86;
+      font-weight: 400;
+      letter-spacing: -.045em;
 
+      margin-bottom: 38px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
 
+      border: 1px solid var(--line);
+    }
 
-/* Recognition earned through a commitment to clients, service and results. */
+    .service-card {
+      min-height: 145px;
 
-width: 679px;
-height: 61px;
+      padding: 18px 22px;
+    }
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 30px;
-/* or 93% */
-display: flex;
-align-items: center;
+    .service-card + .service-card {
+      border-left: 1px solid var(--line);
+    }
 
-color: rgba(255, 255, 255, 0.82);
+    .service-card h3 {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 600;
 
+      margin-bottom: 12px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+    .service-card p {
+      max-width: 280px;
 
+      color: var(--muted);
 
-/* Border */
+      font-size: 10px;
+      line-height: 1.15;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 8px 0px 0px;
 
-position: absolute;
-height: 271px;
-min-height: 235px;
-left: 0px;
-right: 880.5px;
-top: 236px;
+    /* =========================================================
+       ONESOURCE / SUPPORT
+    ========================================================= */
 
+    .support {
+      background: var(--burgundy);
+      color: white;
 
+      padding: 48px 0;
+    }
 
-/* Heading 3 */
+    .support-inner {
+      width: min(1350px, calc(100% - 100px));
+      margin: 0 auto;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 28px 0px 0px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
 
-width: 459px;
-height: 98px;
+      align-items: center;
+    }
 
+    .support-image {
+      width: 100%;
+      height: 330px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: -13px 0px;
+      object-fit: cover;
+    }
 
+    .support-copy {
+      padding-right: 50px;
+    }
 
-/* SENIORS REAL ESTATE SPECIALIST — SRES® */
+    .support-copy h2 {
+      max-width: 450px;
 
-width: 436px;
-height: 55px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 5vw, 70px);
+      line-height: .88;
+      font-weight: 400;
+      letter-spacing: -.045em;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 38px;
-/* or 117% */
-display: flex;
-align-items: center;
-letter-spacing: 2.24px;
-text-transform: uppercase;
+      margin-bottom: 25px;
+    }
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
+    .support-copy p {
+      max-width: 430px;
 
+      font-size: 12px;
+      line-height: 1.15;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+      margin-bottom: 15px;
+    }
 
+    .support-copy .button {
+      margin-top: 5px;
+    }
 
-/* Container */
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.54px;
+    /* =========================================================
+       AREAS
+    ========================================================= */
 
-width: 620px;
-max-width: 620px;
-height: 158.54px;
+    .areas {
+      background: var(--ivory);
 
+      padding: 60px 0 48px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+    .areas-inner {
+      width: min(1200px, calc(100% - 100px));
+      margin: 0 auto;
+    }
 
+    .areas .eyebrow {
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
 
-/* Specialized training focused on the unique real estate needs of seniors and the families helping them navigate important housing and life transitions. */
+    .areas h2 {
+      max-width: 600px;
 
-width: 620px;
-height: 158px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 5vw, 72px);
+      line-height: .86;
+      font-weight: 400;
+      letter-spacing: -.045em;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 30px;
-/* or 93% */
-display: flex;
-align-items: center;
+      margin-bottom: 30px;
+    }
 
-color: rgba(255, 255, 255, 0.82);
+    .areas-table {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
 
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    .area {
+      padding: 9px 10px;
 
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
-/* HorizontalBorder */
+      font-family: var(--serif);
+      font-size: 11px;
+    }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 38px 88.12px 48px;
-gap: 22.84px;
 
-position: absolute;
-height: 279px;
-min-height: 235px;
-left: 985.73px;
-right: 53.27px;
-top: 1853.5px;
+    /* =========================================================
+       LISTING IMAGE
+    ========================================================= */
 
+    .listing-hero {
+      position: relative;
 
+      min-height: 380px;
 
-/* Heading 3 */
+      display: flex;
+      align-items: center;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      overflow: hidden;
 
-width: 795px;
-height: 139px;
+      color: white;
+    }
 
+    .listing-hero img {
+      position: absolute;
+      inset: 0;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+      width: 100%;
+      height: 100%;
 
+      object-fit: cover;
+    }
 
-/* CERTIFIED NEGOTIATION EXPERT® */
+    .listing-hero::after {
+      content: "";
 
-width: 459px;
-height: 157px;
+      position: absolute;
+      inset: 0;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 42px;
-/* or 130% */
-display: flex;
-align-items: center;
-letter-spacing: 2.24px;
-text-transform: uppercase;
+      background: rgba(0,0,0,.37);
+    }
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
+    .listing-content {
+      position: relative;
+      z-index: 2;
 
+      width: min(1200px, calc(100% - 100px));
+      margin: 0 auto;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+    .listing-content .eyebrow {
+      margin-bottom: 14px;
+    }
 
+    .listing-content h2 {
+      max-width: 600px;
 
-/* Container */
+      font-family: var(--serif);
+      font-size: clamp(50px, 5vw, 74px);
+      line-height: .85;
+      font-weight: 400;
+      letter-spacing: -.045em;
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.54px;
+      margin-bottom: 25px;
+    }
 
-width: 620px;
-max-width: 620px;
-height: 111px;
 
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+    footer {
+      background: var(--burgundy);
+      color: white;
 
+      padding: 25px 0;
+    }
 
-/* A focus on strategic negotiation, communication and creating strong outcomes while keeping each client's priorities at the forefront. */
+    .footer-inner {
+      width: min(1350px, calc(100% - 100px));
+      margin: 0 auto;
 
-width: 605px;
-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 30px;
-/* or 93% */
-display: flex;
-align-items: center;
+    .footer-logo {
+      width: 150px;
+      height: 70px;
 
-color: rgba(255, 255, 255, 0.82);
+      object-fit: contain;
+    }
 
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+    .footer-contact .button {
+      min-width: 105px;
+    }
 
 
-/* PEOPLE FIRST. */
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
-position: absolute;
-width: 323px;
-height: 22px;
-left: 924.73px;
-top: 2394.5px;
+    @media (max-width: 900px) {
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 36px;
-line-height: 17px;
-/* or 47% */
-display: flex;
-align-items: center;
-letter-spacing: 3.08px;
-text-transform: uppercase;
+      .nav {
+        width: calc(100% - 40px);
+      }
 
-color: #4A0D10;
-font-variation-settings: 'slnt' 0;
+      .logo-link {
+        width: 140px;
+        height: 140px;
+      }
 
+      .logo-link img {
+        width: 140px;
+        height: 140px;
+      }
 
+      nav {
+        display: none;
 
-/* Because behind every move is a person, a family, and a story worth understanding. */
+        position: absolute;
+        top: 85px;
+        left: 0;
+        right: 0;
 
-position: absolute;
-width: 1003px;
-height: 280px;
-left: 917px;
-top: 2485px;
+        padding: 25px;
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 96px;
-line-height: 78px;
-/* or 81% */
-display: flex;
-align-items: center;
-letter-spacing: -2.17px;
+        background: var(--burgundy);
 
-color: #292725;
-font-variation-settings: 'opsz' 62;
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
+      nav.open {
+        display: flex;
+      }
 
+      .mobile-menu {
+        display: block;
+      }
 
-/* Group 7 */
+      .hero-inner,
+      .experience-inner,
+      .people-inner,
+      .services-inner,
+      .support-inner,
+      .areas-inner,
+      .listing-content,
+      .footer-inner {
+        width: calc(100% - 40px);
+      }
 
-position: absolute;
-width: 260px;
-height: 82px;
-left: 916.73px;
-top: 3416.5px;
+      .people-inner,
+      .support-inner {
+        grid-template-columns: 1fr;
+      }
 
+      .people-copy {
+        padding-right: 0;
+      }
 
+      .support-copy {
+        padding-right: 0;
+        order: 1;
+      }
 
-/* Link */
+      .support-image {
+        order: 2;
+      }
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16.2px 28px 17.8px;
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
 
-position: absolute;
-width: 260px;
-height: 82px;
-min-height: 52px;
-left: 916.73px;
-top: 3416.5px;
+      .service-card + .service-card {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+    }
 
-background: #4A0D10;
 
+    @media (max-width: 600px) {
 
-/* Learn More */
+      .hero {
+        min-height: 700px;
+      }
 
-width: 257px;
-height: 18px;
+      .hero h1 {
+        font-size: 55px;
+      }
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 18px;
-/* identical to box height, or 73% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
+      .hero-copy {
+        font-size: 13px;
+      }
 
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
+      .experience h2,
+      .services h2,
+      .support-copy h2,
+      .areas h2,
+      .listing-content h2 {
+        font-size: 50px;
+      }
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
 
+      .experience-card,
+      .experience-card:nth-child(even),
+      .experience-card:nth-child(odd) {
+        padding: 20px 0;
+        border-right: 0;
+      }
 
-/* Container */
+      .people-image {
+        height: 380px;
+      }
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      .support-image {
+        height: 300px;
+      }
 
-position: absolute;
-height: 17px;
-left: 132.73px;
-right: 387.27px;
-top: 3561.5px;
+      .areas-table {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
+      .listing-hero {
+        min-height: 420px;
+      }
 
+      .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
 
-/* HOW EMILY HELPS */
+    }
 
-width: 1400px;
-height: 17px;
+  </style>
+</head>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 36px;
-line-height: 17px;
-/* identical to box height, or 47% */
-display: flex;
-align-items: center;
-letter-spacing: 3.08px;
-text-transform: uppercase;
 
-color: #4A0D10;
-font-variation-settings: 'slnt' 0;
+<body>
 
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+  <!-- =========================================================
+       HEADER
+       MENU MATCHES FIGMA
+  ========================================================= -->
 
+  <header>
 
-/* Heading 2 */
+    <div class="nav">
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 35.34px;
+      <a
+        href="index.html"
+        class="logo-link"
+        aria-label="Emily Taylor Home"
+      >
+        <img
+          src="images/emily-logo.png"
+          alt="Emily Taylor"
+        >
+      </a>
 
-position: absolute;
-max-width: 1050px;
-height: 234.34px;
-left: 132.73px;
-right: 737.27px;
-top: 3648.5px;
 
+      <nav id="mainNav">
 
+        <a href="index.html">
+          Home
+        </a>
 
-/* Real estate, thoughtfully handled. */
+        <a href="about.html">
+          About
+        </a>
 
-width: 948px;
-height: 199px;
+        <a href="#services">
+          Services
+        </a>
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 108px;
-line-height: 99px;
-/* or 92% */
-display: flex;
-align-items: center;
-letter-spacing: -4.86px;
+        <a href="#areas">
+          Areas
+        </a>
 
-color: #292725;
-font-variation-settings: 'opsz' 108;
+        <a href="contact.html">
+          Contact
+        </a>
 
+        <a
+          href="https://emilytaylor.remaxhallmarkeastern.com"
+          target="_blank"
+          rel="noopener"
+        >
+          View Listings
+        </a>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+      </nav>
 
 
-/* Border */
+      <button
+        class="mobile-menu"
+        id="menuButton"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
-box-sizing: border-box;
+    </div>
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
+  </header>
 
-position: absolute;
-height: 363px;
-left: 132.73px;
-right: 387.27px;
-top: 3922.5px;
 
-border-width: 1px 0px 0px 1px;
-border-style: solid;
-border-color: rgba(41, 39, 37, 0.15);
 
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
 
-/* Border */
+  <section class="hero">
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 42px 42px 79.33px;
-gap: 26.89px;
+    <img
+      class="hero-image"
+      src="images/new-hero-image.png"
+      alt=""
+      aria-hidden="true"
+    >
 
-width: 466.33px;
-height: 362px;
-min-height: 275px;
+    <div class="hero-inner">
 
+      <h1>
+        It’s more than<br>
+        an <em>investment,</em><br>
+        it’s your <em>life.</em>
+      </h1>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 1;
+      <p class="hero-copy">
+        Buying or selling a home is about more than the
+        transaction. It's about the people, the timing,
+        the decisions and the life that comes next.
+      </p>
 
+      <div class="hero-buttons">
 
-/* Heading 3 */
+        <a
+          href="about.html"
+          class="button button-light"
+        >
+          Meet Emily
+        </a>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+        <a
+          href="https://emilytaylor.remaxhallmarkeastern.com"
+          target="_blank"
+          rel="noopener"
+          class="button button-light"
+        >
+          View Listings
+        </a>
 
-width: 381.33px;
-height: 38px;
+      </div>
 
+    </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+  </section>
 
 
-/* Buying */
 
-width: 381.33px;
-height: 38px;
+  <!-- =========================================================
+       EXPERIENCE AND RECOGNITION
+  ========================================================= -->
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 700;
-font-size: 38px;
-line-height: 38px;
-/* identical to box height, or 100% */
-display: flex;
-align-items: center;
+  <section class="experience">
 
-color: #292725;
-font-variation-settings: 'opsz' 38;
+    <div class="experience-inner">
 
+      <div class="eyebrow">
+        Experience and Recognition
+      </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+      <h2>
+        Experience matters.<br>
+        So does how you’re<br>
+        represented.
+      </h2>
 
 
-/* Container */
+      <div class="experience-grid">
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.78px;
 
-width: 381.33px;
-height: 174.78px;
+        <div class="experience-card">
 
+          <h3>
+            RE/MAX Hall of Fame Award
+          </h3>
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+          <p>
+            Recognition earned through a commitment to
+            clients, service and results.
+          </p>
 
+        </div>
 
-/* From first-time buyers to those looking for their next chapter, Emily provides thoughtful guidance through every stage of the buying process. */
 
-width: 381.33px;
-height: 174px;
+        <div class="experience-card">
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-/* or 120% */
-display: flex;
-align-items: center;
+          <h3>
+            RE/MAX Platinum Club
+          </h3>
 
-color: #756E64;
+          <p>
+            Recognition for performance, professionalism
+            and consistent dedication to clients.
+          </p>
 
+        </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
+        <div class="experience-card">
 
-/* Border */
+          <h3>
+            Seniors Real Estate Specialist — SRES®
+          </h3>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 42px 42px 79.33px;
-gap: 26.89px;
+          <p>
+            Specialized training focused on the unique real
+            estate needs of seniors and the families helping
+            them navigate important housing and life transitions.
+          </p>
 
-width: 466.33px;
-height: 362px;
-min-height: 275px;
+        </div>
 
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 1;
+        <div class="experience-card">
 
+          <h3>
+            Certified Negotiation Expert®
+          </h3>
 
-/* Heading 3 */
+          <p>
+            A focus on strategic negotiation, communication
+            and creating strong outcomes while keeping each
+            client's priorities at the forefront.
+          </p>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+        </div>
 
-width: 381.33px;
-height: 38px;
 
+      </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    </div>
 
+  </section>
 
-/* Selling */
 
-width: 381.33px;
-height: 38px;
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 700;
-font-size: 38px;
-line-height: 38px;
-/* identical to box height, or 100% */
-display: flex;
-align-items: center;
+  <!-- =========================================================
+       PEOPLE FIRST
+  ========================================================= -->
 
-color: #292725;
-font-variation-settings: 'opsz' 38;
+  <section class="people">
 
+    <div class="people-inner">
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
+      <div>
 
-/* Container */
+        <img
+          class="people-image"
+          src="images/emily-with-clients.jpg"
+          alt="Emily Taylor speaking with clients"
+        >
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.78px;
+      </div>
 
-width: 381.33px;
-height: 174.78px;
 
+      <div class="people-copy">
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+        <div class="eyebrow">
+          People First.
+        </div>
 
+        <h2>
+          Because behind every move is a person, a family, and a story worth understanding.
+        </h2>
 
-/* Strategic preparation, thoughtful marketing and strong negotiation come together to position your property for the best possible result. */
+        <p>
+          Emily believes real estate should never feel like
+          a one-size-fits-all experience.
+        </p>
 
-width: 381.33px;
-height: 174px;
+        <p>
+          She takes the time to listen, understand what matters,
+          uncover the details that others might miss, and guide
+          clients through each decision with care.
+        </p>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-/* or 120% */
-display: flex;
-align-items: center;
+        <p>
+          Whether you're buying your first home, selling a family
+          property, downsizing, relocating or helping manage a
+          loved one's estate, the goal is the same: to make you
+          feel informed, supported and confident.
+        </p>
 
-color: #756E64;
+        <a
+          href="about.html"
+          class="button button-burgundy"
+        >
+          Learn More
+        </a>
 
+      </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
+    </div>
 
-/* Border */
+  </section>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 42px 42px 79.33px;
-gap: 26.89px;
 
-width: 466.33px;
-height: 362px;
-min-height: 275px;
 
+  <!-- =========================================================
+       HOW EMILY HELPS
+  ========================================================= -->
 
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 1;
+  <section
+    class="services"
+    id="services"
+  >
 
+    <div class="services-inner">
 
-/* Heading 3 */
+      <div class="eyebrow">
+        How Emily Helps
+      </div>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+      <h2>
+        Real estate,<br>
+        thoughtfully handled.
+      </h2>
 
-width: 381.33px;
-height: 38px;
 
+      <div class="services-grid">
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
+        <div class="service-card">
 
-/* Life Transitions */
+          <h3>
+            Buying
+          </h3>
 
-width: 381.33px;
-height: 38px;
+          <p>
+            From first-time buyers to those looking for their
+            next chapter, Emily provides thoughtful guidance
+            through every stage of the buying process.
+          </p>
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 700;
-font-size: 38px;
-line-height: 38px;
-/* identical to box height, or 100% */
-display: flex;
-align-items: center;
+        </div>
 
-color: #292725;
-font-variation-settings: 'opsz' 38;
 
+        <div class="service-card">
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+          <h3>
+            Selling
+          </h3>
 
+          <p>
+            Strategic marketing and thoughtful preparation
+            come together to position your property for the
+            best possible result.
+          </p>
 
-/* Container */
+        </div>
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 0.78px;
 
-width: 381.33px;
-height: 145.78px;
+        <div class="service-card">
 
+          <h3>
+            Life Transitions
+          </h3>
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+          <p>
+            Downsizing, relocating, estate sales and major
+            life changes often require more than a traditional
+            real estate transaction.
+          </p>
 
+        </div>
 
-/* Downsizing, relocating, estate sales and major life changes often require more than a traditional real estate transaction. */
 
-width: 381.33px;
-height: 145px;
+      </div>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-/* or 120% */
-display: flex;
-align-items: center;
+    </div>
 
-color: #756E64;
+  </section>
 
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
+  <!-- =========================================================
+       A LITTLE MORE SUPPORT
+       ONESOURCE IS NOT IN THE MENU
+  ========================================================= -->
 
-/* Screenshot 2026-10-21 at 1.15.14 PM 1 */
+  <section class="support">
 
-position: absolute;
-width: 841px;
-height: 624px;
-left: 92.73px;
-top: 4490.5px;
+    <div class="support-inner">
 
-background: url(Screenshot 2026-10-21 at 1.15.14 PM.png);
 
+      <div>
 
-/*  1921 */
+        <img
+          class="support-image"
+          src="images/emily-with-seniors.jpg"
+          alt="Emily Taylor with clients"
+        >
 
-position: absolute;
-width: 710px;
-height: 940px;
-left: 85px;
-top: 2417px;
+      </div>
 
-background: url(.jpg);
 
+      <div class="support-copy">
 
-/* A little more support. */
+        <h2>
+          A little more<br>
+          support.
+        </h2>
 
-position: absolute;
-width: 573px;
-height: 170px;
-left: 1053.73px;
-top: 4530.5px;
+        <p>
+          Real estate doesn't always end when the deal closes.
+        </p>
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 96px;
-line-height: 85px;
-/* or 88% */
-display: flex;
-align-items: center;
-letter-spacing: -4.14px;
+        <p>
+          Emily can connect clients with trusted moving support
+          to help make the transition into your next chapter
+          a little easier.
+        </p>
 
-color: #FFFFFF;
-font-variation-settings: 'opsz' 92;
+        <a
+          href="https://onesourcemoving.ca"
+          target="_blank"
+          rel="noopener"
+          class="button button-light"
+        >
+          Learn More
+        </a>
 
+      </div>
 
 
-/* Real estate doesn't always end when the deal closes. Emily can connect clients with trusted moving support to help make the transition into your next chapter a little easier. */
+    </div>
 
-position: absolute;
-width: 674px;
-height: 191px;
-left: 1058.73px;
-top: 4762.5px;
+  </section>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 31px;
-/* or 96% */
-display: flex;
-align-items: center;
 
-color: #FFFFFF;
 
+  <!-- =========================================================
+       AREAS SERVED
+  ========================================================= -->
 
+  <section
+    class="areas"
+    id="areas"
+  >
 
-/* Link */
+    <div class="areas-inner">
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16.21px 28px 17.79px;
+      <div class="eyebrow">
+        Areas Served
+      </div>
 
-position: absolute;
-width: 209px;
-height: 59px;
-min-height: 52px;
-left: 1053.73px;
-top: 5027.5px;
+      <h2>
+        Local knowledge.<br>
+        Wide reach.
+      </h2>
 
-background: #FFFFFF;
 
+      <div class="areas-table">
 
-/* Learn more */
+        <div class="area">Ajax</div>
+        <div class="area">Clarington</div>
+        <div class="area">Kawartha Lakes</div>
+        <div class="area">Oshawa</div>
 
-width: 145px;
-height: 18px;
+        <div class="area">Lakefield</div>
+        <div class="area">Lindsay</div>
+        <div class="area">Mississauga</div>
+        <div class="area">Vaughan</div>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
+        <div class="area">Peterborough</div>
+        <div class="area">Pickering</div>
+        <div class="area">Toronto</div>
+        <div class="area">Whitby</div>
 
-color: #4A0D10;
-font-variation-settings: 'slnt' 0;
+      </div>
 
+    </div>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+  </section>
 
 
-/* Container */
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+  <!-- =========================================================
+       FIND A PLACE TO CALL HOME
+  ========================================================= -->
 
-position: absolute;
-height: 17px;
-left: 164.73px;
-right: 355.27px;
-top: 5376.5px;
+  <section class="listing-hero">
 
+    <img
+      src="images/Transform Your Backyard with the Perfect Fire Pit.png"
+      alt="Beautiful home exterior"
+    >
 
+    <div class="listing-content">
 
-/* AREAS SERVED */
+      <div class="eyebrow">
+        Find a Place to Call Home
+      </div>
 
-width: 1400px;
-height: 17px;
+      <h2>
+        Where your next<br>
+        chapter begins.
+      </h2>
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 36px;
-line-height: 17px;
-/* identical to box height, or 47% */
-display: flex;
-align-items: center;
-letter-spacing: 3.08px;
-text-transform: uppercase;
+      <a
+        href="https://emilytaylor.remaxhallmarkeastern.com"
+        target="_blank"
+        rel="noopener"
+        class="button button-light"
+      >
+        View Listings
+      </a>
 
-color: #4A0D10;
-font-variation-settings: 'slnt' 0;
+    </div>
 
+  </section>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 
 
-/* Heading 2 */
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 0px 35.34px;
+  <footer>
 
-position: absolute;
-max-width: 950px;
-height: 234.34px;
-left: 164.73px;
-right: 805.27px;
-top: 5455.5px;
+    <div class="footer-inner">
 
+      <img
+        class="footer-logo"
+        src="images/emily-logo.png"
+        alt="Emily Taylor"
+      >
 
 
-/* Local knowledge. Wide reach. */
+      <div class="footer-contact">
 
-width: 872px;
-height: 199px;
+        <a
+          href="contact.html"
+          class="button button-light"
+        >
+          Contact Emily
+        </a>
 
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 108px;
-line-height: 99px;
-/* or 92% */
-display: flex;
-align-items: center;
-letter-spacing: -4.86px;
+      </div>
 
-color: #292725;
-font-variation-settings: 'opsz' 108;
+    </div>
 
+  </footer>
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
 
-/* Border */
+  <!-- =========================================================
+       MOBILE MENU
+  ========================================================= -->
 
-box-sizing: border-box;
+  <script>
 
-position: absolute;
-height: 241px;
-left: 164.73px;
-right: 246.27px;
-top: 5704.5px;
+    const menuButton = document.getElementById("menuButton");
+    const mainNav = document.getElementById("mainNav");
 
-border-width: 1px 0px 0px 1px;
-border-style: solid;
-border-color: rgba(41, 39, 37, 0.15);
+    if (menuButton && mainNav) {
 
+      menuButton.addEventListener("click", function () {
+        mainNav.classList.toggle("open");
+      });
 
-/* Border */
+      document.querySelectorAll("#mainNav a").forEach(function(link) {
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
+        link.addEventListener("click", function() {
+          mainNav.classList.remove("open");
+        });
 
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1px;
-right: 1131px;
-top: 1px;
+      });
 
+    }
 
+  </script>
 
-/* Ajax */
 
-width: 49px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 378px;
-right: 754px;
-top: 1px;
-
-
-
-/* Clarington */
-
-width: 117px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 755px;
-right: 377px;
-top: 1px;
-
-
-
-/* Kawartha Lakes */
-
-width: 170px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1px;
-right: 1131px;
-top: 81px;
-
-
-
-/* Lakefield */
-
-width: 99px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 378px;
-right: 754px;
-top: 81px;
-
-
-
-/* Lindsay */
-
-width: 85px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 755px;
-right: 377px;
-top: 81px;
-
-
-
-/* Mississauga */
-
-width: 126px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1px;
-right: 1131px;
-top: 161px;
-
-
-
-/* Peterborough */
-
-width: 147px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 378px;
-right: 754px;
-top: 161px;
-
-
-
-/* Pickering */
-
-width: 102px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 755px;
-right: 377px;
-top: 161px;
-
-
-
-/* Toronto */
-
-width: 87px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1132px;
-right: 0px;
-top: 81px;
-
-
-
-/* Vaughan */
-
-width: 94px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1132px;
-right: 0px;
-top: 161px;
-
-
-
-/* Whitby */
-
-width: 82px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Border */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 25px 28px;
-
-position: absolute;
-height: 80px;
-min-height: 80px;
-left: 1132px;
-right: 0px;
-top: 1px;
-
-
-
-/* Oshawa */
-
-width: 85px;
-height: 29px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-line-height: 29px;
-/* identical to box height, or 110% */
-display: flex;
-align-items: center;
-
-color: #292725;
-font-variation-settings: 'opsz' 26;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Group 6 */
-
-position: absolute;
-width: 1917px;
-height: 717.01px;
-left: 3px;
-top: 6072.37px;
-
-
-
-/* Group 2 */
-
-position: absolute;
-width: 1917px;
-height: 717.01px;
-left: 3px;
-top: 6072.37px;
-
-
-
-/* Transform Your Backyard with the Perfect Fire Pit 1 */
-
-position: absolute;
-width: 1917px;
-height: 717.01px;
-left: 3px;
-top: 6072.37px;
-
-background: url(Transform Your Backyard with the Perfect Fire Pit.png);
-
-
-/* Overlay */
-
-position: absolute;
-left: 6.98px;
-right: 1px;
-top: 6072.37px;
-bottom: 338.62px;
-
-background: rgba(0, 0, 0, 0.48);
-transform: matrix(1, 0, 0, -1, 0, 0);
-
-
-/* Group 3 */
-
-position: absolute;
-width: 892.28px;
-height: 194px;
-left: 209px;
-top: 6305px;
-
-
-
-/* Container */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-
-position: absolute;
-width: 892.28px;
-height: 194px;
-left: 209px;
-top: 6305px;
-
-
-
-/* Where your next chapter begins. */
-
-width: 836px;
-height: 194px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 400;
-font-size: 105px;
-line-height: 97px;
-/* or 92% */
-display: flex;
-align-items: center;
-letter-spacing: -4.725px;
-
-color: #FFFFFF;
-font-variation-settings: 'opsz' 105;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Group 4 */
-
-position: absolute;
-width: 560px;
-height: 17px;
-left: 209px;
-top: 6231px;
-
-
-
-/* FIND a place to call home */
-
-position: absolute;
-width: 560px;
-height: 17px;
-left: 209px;
-top: 6231px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 17px;
-/* identical to box height, or 52% */
-display: flex;
-align-items: center;
-letter-spacing: 3.08px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Group 5 */
-
-position: absolute;
-width: 227px;
-height: 52px;
-left: 222.09px;
-top: 6531.46px;
-
-
-
-/* Link */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16.2px 28px 17.8px;
-
-position: absolute;
-width: 227px;
-height: 52px;
-min-height: 52px;
-left: 222.09px;
-top: 6531.46px;
-
-background: #FFFFFF;
-
-
-/* View Listings */
-
-width: 171px;
-height: 18px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #292725;
-font-variation-settings: 'slnt' 0;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Footer */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 75px 0px 35px;
-
-position: absolute;
-height: 290px;
-left: 5px;
-right: 0px;
-top: 6780.5px;
-
-background: #4A0D10;
-
-
-/* emily-logo 1 */
-
-position: absolute;
-width: 362px;
-height: 229px;
-left: 58px;
-top: 6813.5px;
-
-background: url(emily-logo.png);
-
-
-/* Link */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16.21px 28px 17.79px;
-
-position: absolute;
-width: 257px;
-height: 59px;
-min-height: 52px;
-left: 1562px;
-top: 6899.5px;
-
-background: #FFFFFF;
-
-
-/* CONTACT EMILY */
-
-width: 201px;
-height: 18px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #4A0D10;
-font-variation-settings: 'slnt' 0;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Untitled Design-2 1 */
-
-position: absolute;
-width: 1920px;
-height: 1157px;
-left: 0px;
-top: -17px;
-
-background: url(Untitled Design-2.png);
-
-
-/* Header */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-
-position: absolute;
-width: 864px;
-height: 220px;
-left: -162px;
-top: 28.5px;
-
-
-
-/* emily-logo 2 */
-
-width: 364px;
-height: 213px;
-
-background: url(emily-logo.png);
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Nav */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 28px;
-
-position: absolute;
-width: 952px;
-height: 26px;
-right: 107px;
-top: 110.5px;
-
-
-
-/* Link */
-
-width: 120px;
-height: 18px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Home */
-
-position: absolute;
-width: 67px;
-height: 18px;
-left: 0px;
-top: -1px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Link */
-
-width: 131px;
-height: 18px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* About */
-
-position: absolute;
-width: 79px;
-height: 18px;
-left: 0px;
-top: -1px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Link */
-
-width: 148px;
-height: 18px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
-
-
-/* Services */
-
-position: absolute;
-width: 112px;
-height: 23px;
-left: 0.02px;
-top: -1.2px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Link */
-
-width: 46.22px;
-height: 17.59px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 3;
-flex-grow: 0;
-
-
-/* Areas */
-
-position: absolute;
-width: 76px;
-height: 18px;
-left: 0px;
-top: 1px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Link */
-
-width: 179px;
-height: 26px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 4;
-flex-grow: 0;
-
-
-/* Contact */
-
-position: absolute;
-width: 111px;
-height: 18px;
-left: 54.05px;
-top: 5px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Link */
-
-width: 171px;
-height: 18px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 5;
-flex-grow: 0;
-
-
-/* View Listings */
-
-position: absolute;
-width: 171px;
-height: 18px;
-left: 7px;
-top: 2px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-
-/* Emily believes real estate should never feel like a one-size-fits-all experience. She takes the time to listen, understand what matters, uncover the details that others might miss, and guide clients through each decision with care. Whether you're buying your first home, selling a family property, downsizing, relocating or helping manage a loved one's estate, the goal is the same; to make you feel informed, supported and confident. */
-
-position: absolute;
-width: 949px;
-height: 523px;
-left: 926.73px;
-top: 2828.5px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 41px;
-/* or 102% */
-display: flex;
-align-items: center;
-
-color: #756E64;
-
-
-
-/* It’s more than an investment, it’s your life. */
-
-position: absolute;
-width: 1710px;
-height: 580px;
-left: 131px;
-top: 296px;
-
-font-family: 'Newsreader';
-font-style: normal;
-font-weight: 600;
-font-size: 170px;
-line-height: 147px;
-/* or 86% */
-display: flex;
-align-items: center;
-letter-spacing: -5.31px;
-
-color: #FFFFFF;
-
-
-
-/* Buying or selling a home is about more than the transaction. It’s about the people, the timing, the decisions and the life that comes next. */
-
-position: absolute;
-width: 1582px;
-height: 152px;
-left: 154px;
-top: 839px;
-
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 48px;
-line-height: 46px;
-/* or 95% */
-display: flex;
-align-items: center;
-letter-spacing: -0.09em;
-
-color: rgba(255, 255, 255, 0.9);
-
-
-
-/* Link */
-
-box-sizing: border-box;
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 15.2px 28px 16.8px;
-
-position: absolute;
-width: 190px;
-height: 64px;
-min-height: 52px;
-left: 394px;
-top: 1022px;
-
-border: 1px solid rgba(255, 255, 255, 0.75);
-
-
-/* View Listings */
-
-width: 171px;
-height: 18px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #FFFFFF;
-font-variation-settings: 'slnt' 0;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Link */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 16.2px 28px 17.8px;
-
-position: absolute;
-width: 189px;
-height: 64px;
-min-height: 52px;
-left: 176px;
-top: 1023px;
-
-background: #FFFFFF;
-
-
-/* Meet Emily */
-
-width: 136px;
-height: 18px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 18px;
-/* identical to box height, or 88% */
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 1.54px;
-text-transform: uppercase;
-
-color: #292725;
-font-variation-settings: 'slnt' 0;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+</body>
+</html>
