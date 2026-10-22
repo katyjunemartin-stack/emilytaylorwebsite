@@ -21,10 +21,6 @@
 
   <style>
 
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
     :root {
       --cream: #f4f0e8;
       --cream-light: #f8f5ef;
@@ -38,11 +34,6 @@
       --serif: "Newsreader", Georgia, serif;
       --sans: "Inter", Arial, Helvetica, sans-serif;
     }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -339,7 +330,7 @@
 
 
     /* =========================================================
-       SPECIALTIES
+       WHO EMILY SERVES
     ========================================================= */
 
     .specialties {
@@ -556,7 +547,7 @@
 
     .lizard-skin {
       margin-top: 40px;
-      padding: 35px 35px;
+      padding: 35px;
 
       background: var(--burgundy);
       color: var(--white);
@@ -580,6 +571,90 @@
       color: rgba(255,255,255,.76);
       font-size: 20px;
       line-height: 23.25px;
+    }
+
+
+    /* =========================================================
+       ONESOURCE / A LITTLE MORE SUPPORT
+    ========================================================= */
+
+    .onesource {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 120px 0;
+    }
+
+    .onesource-inner {
+      width: min(1550px, calc(100% - 160px));
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+
+      align-items: center;
+    }
+
+    .onesource-image {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .onesource-content h2 {
+      font-family: var(--serif);
+      font-size: 72px;
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -3.96px;
+
+      margin-bottom: 55px;
+    }
+
+    .onesource-copy {
+      max-width: 650px;
+    }
+
+    .onesource-copy p {
+      color: rgba(255,255,255,.95);
+      margin-bottom: 28px;
+    }
+
+    .onesource-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .onesource-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 170px;
+      height: 58px;
+
+      margin-top: 50px;
+      padding: 0 30px;
+
+      background: var(--white);
+      border: 1px solid var(--white);
+
+      color: var(--burgundy);
+
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .onesource-button:hover {
+      background: transparent;
+      color: var(--white);
     }
 
 
@@ -753,6 +828,7 @@
       .specialties-inner,
       .why-inner,
       .origin-inner,
+      .onesource-inner,
       .awards-inner,
       .footer-inner {
         width: calc(100% - 80px);
@@ -764,13 +840,15 @@
       .specialties-intro h2,
       .why-heading,
       .origin-copy h2,
+      .onesource-content h2,
       .awards h2 {
         font-size: 64px;
       }
 
       .intro-inner,
       .story-inner,
-      .origin-inner {
+      .origin-inner,
+      .onesource-inner {
         gap: 55px;
       }
 
@@ -793,6 +871,7 @@
       .specialties-inner,
       .why-inner,
       .origin-inner,
+      .onesource-inner,
       .awards-inner,
       .footer-inner {
         width: calc(100% - 40px);
@@ -852,6 +931,7 @@
       .specialties,
       .why,
       .origin,
+      .onesource,
       .awards {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -863,6 +943,7 @@
       .specialties-intro h2,
       .why-heading,
       .origin-copy h2,
+      .onesource-content h2,
       .awards h2 {
         font-size: 58px;
         letter-spacing: -3px;
@@ -884,7 +965,8 @@
 
       .intro-inner,
       .story-inner,
-      .origin-inner {
+      .origin-inner,
+      .onesource-inner {
         grid-template-columns: 1fr;
         gap: 50px;
       }
@@ -915,6 +997,10 @@
       }
 
       .origin-image {
+        height: 500px;
+      }
+
+      .onesource-image {
         height: 500px;
       }
 
@@ -955,6 +1041,7 @@
       .specialties-inner,
       .why-inner,
       .origin-inner,
+      .onesource-inner,
       .awards-inner,
       .footer-inner {
         width: calc(100% - 30px);
@@ -971,6 +1058,7 @@
       .specialties,
       .why,
       .origin,
+      .onesource,
       .awards {
         padding-top: 65px;
         padding-bottom: 65px;
@@ -982,6 +1070,7 @@
       .specialties-intro h2,
       .why-heading,
       .origin-copy h2,
+      .onesource-content h2,
       .awards h2 {
         font-size: 47px;
         letter-spacing: -2.5px;
@@ -990,7 +1079,8 @@
       .intro-photo,
       .story-image,
       .why-photo,
-      .origin-image {
+      .origin-image,
+      .onesource-image {
         height: 380px;
       }
 
@@ -1498,6 +1588,62 @@
 
 
     <!-- =======================================================
+         ONESOURCE
+    ======================================================= -->
+
+    <section class="onesource">
+
+      <div class="onesource-inner">
+
+        <div>
+
+          <img
+            class="onesource-image"
+            src="images/support.jpg"
+            alt="Emily Taylor with clients"
+          >
+
+        </div>
+
+
+        <div class="onesource-content">
+
+          <h2>
+            A little more<br>
+            support.
+          </h2>
+
+          <div class="onesource-copy">
+
+            <p>
+              Real estate doesn't always end when the deal closes.
+            </p>
+
+            <p>
+              Emily can connect clients with trusted moving support
+              to help make the transition into your next chapter a
+              little easier.
+            </p>
+
+          </div>
+
+          <a
+            class="onesource-button"
+            href="https://onesourcemoving.ca"
+            target="_blank"
+            rel="noopener"
+          >
+            LEARN MORE
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
          AWARDS
     ======================================================= -->
 
@@ -1626,7 +1772,6 @@
     <div class="footer-inner">
 
       <div class="footer-top">
-
 
         <div class="footer-brand">
 
