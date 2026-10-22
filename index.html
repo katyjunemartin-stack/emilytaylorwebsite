@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Emily Taylor | Realtor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     :root {
       --ivory: #f4f0e8;
       --cream: #eee8dc;
@@ -47,6 +52,7 @@
       text-decoration: none;
     }
 
+
     /* ========================================
        HEADER
     ======================================== */
@@ -58,20 +64,25 @@
       width: 100%;
       height: 150px;
       z-index: 100;
+
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
       padding: 0 5vw;
     }
 
     .header-logo {
       width: 220px;
       height: 220px;
+
       background-image: url("images/emily-logo.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+
       transform: translateY(-20px);
+
       flex-shrink: 0;
     }
 
@@ -79,17 +90,21 @@
       display: flex;
       align-items: center;
       gap: 28px;
+
       padding-top: 70px;
     }
 
     .main-nav a {
       font-family: "Inter", Arial, sans-serif;
+
       font-size: 20px;
       line-height: 18px;
       font-weight: 800;
       letter-spacing: 1.54px;
+
       text-transform: uppercase;
       color: var(--white);
+
       transition: opacity 0.25s ease;
     }
 
@@ -97,17 +112,22 @@
       opacity: 0.7;
     }
 
+
     /* ========================================
        HERO
     ======================================== */
 
     .hero {
       position: relative;
+
       min-height: 100vh;
       height: 100vh;
+
       overflow: hidden;
+
       display: flex;
       align-items: center;
+
       background:
         linear-gradient(
           90deg,
@@ -121,30 +141,44 @@
     .hero-content {
       position: relative;
       z-index: 2;
+
       width: min(900px, 88%);
       margin-left: 7vw;
+
       padding-top: 80px;
+
       color: var(--white);
     }
 
     .hero h1 {
       font-family: "Newsreader", Georgia, serif;
-      font-size: 128px;
+
+      font-size: 72px;
       line-height: 0.9;
-      font-weight: 600;
-      letter-spacing: -0.055em;
-      max-width: 1100px;
+      font-weight: 400;
+      letter-spacing: -3.96px;
+
+      max-width: 900px;
+
       margin-bottom: 34px;
     }
 
     .hero p {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 25px;
-      line-height: 1.35;
-      font-weight: 500;
+
+      font-size: 20px;
+      line-height: 23.25px;
+      font-weight: 400;
+
       max-width: 760px;
+
       margin-bottom: 42px;
     }
+
+
+    /* ========================================
+       BUTTONS
+    ======================================== */
 
     .hero-buttons {
       display: flex;
@@ -157,14 +191,19 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       min-height: 56px;
       padding: 15px 30px;
+
       font-family: "Inter", Arial, sans-serif;
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 1.3px;
+
       text-transform: uppercase;
+
       border: 1px solid var(--white);
+
       transition: all 0.25s ease;
     }
 
@@ -188,6 +227,7 @@
       color: var(--burgundy);
     }
 
+
     /* ========================================
        GENERAL SECTION STYLES
     ======================================== */
@@ -198,28 +238,34 @@
 
     .section-kicker {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 19px;
-      line-height: 1.2;
-      font-weight: 700;
-      letter-spacing: 2px;
+
+      font-size: 20px;
+      line-height: 17px;
+      font-weight: 800;
+      letter-spacing: 1.98px;
+
       text-transform: uppercase;
+
       margin-bottom: 25px;
     }
 
     .section-heading {
       font-family: "Newsreader", Georgia, serif;
-      font-size: 128px;
+
+      font-size: 72px;
       line-height: 0.9;
-      font-weight: 600;
-      letter-spacing: -0.055em;
+      font-weight: 400;
+      letter-spacing: -3.96px;
     }
 
     .section-copy {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 25px;
-      line-height: 1.45;
+
+      font-size: 20px;
+      line-height: 23.25px;
       font-weight: 400;
     }
+
 
     /* ========================================
        EXPERIENCE & RECOGNITION
@@ -227,42 +273,53 @@
 
     .experience {
       background: var(--ivory);
+
       padding: 120px 7vw;
     }
 
     .experience-intro {
       max-width: 1100px;
+
       margin-bottom: 90px;
     }
 
     .experience-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 70px 90px;
     }
 
     .award {
       border-top: 1px solid rgba(37, 32, 30, 0.35);
+
       padding-top: 25px;
     }
 
     .award h3 {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 19px;
-      line-height: 1.2;
+
+      font-size: 20px;
+      line-height: 17px;
       font-weight: 800;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.98px;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
     .award p {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 25px;
-      line-height: 1.45;
+
+      font-size: 20px;
+      line-height: 23.25px;
       font-weight: 400;
+
       max-width: 650px;
     }
+
 
     /* ========================================
        PEOPLE FIRST
@@ -270,13 +327,17 @@
 
     .people-first {
       min-height: 100vh;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       background: var(--cream);
     }
 
     .people-image {
       min-height: 700px;
+
       background:
         url("images/people-first.jpg")
         center center / cover no-repeat;
@@ -286,7 +347,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 90px 8vw;
+
+      padding: 120px 8vw;
     }
 
     .people-content .section-heading {
@@ -295,13 +357,16 @@
 
     .people-content .section-copy {
       max-width: 700px;
+
       margin-bottom: 40px;
     }
 
     .dark-button {
       align-self: flex-start;
+
       background: var(--burgundy);
       color: var(--white);
+
       border-color: var(--burgundy);
     }
 
@@ -310,45 +375,56 @@
       color: var(--burgundy);
     }
 
+
     /* ========================================
        HOW EMILY HELPS
     ======================================== */
 
     .services {
-      padding: 130px 7vw;
+      padding: 120px 7vw;
+
       background: var(--ivory);
     }
 
     .services-intro {
       max-width: 1100px;
+
       margin-bottom: 85px;
     }
 
     .services-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 45px;
     }
 
     .service-card {
       border-top: 1px solid rgba(37, 32, 30, 0.4);
+
       padding-top: 25px;
     }
 
     .service-card h3 {
       font-family: "Newsreader", Georgia, serif;
+
       font-size: 42px;
       line-height: 1;
-      font-weight: 600;
+      font-weight: 400;
+      letter-spacing: -1.5px;
+
       margin-bottom: 25px;
     }
 
     .service-card p {
       font-family: "Inter", Arial, sans-serif;
-      font-size: 25px;
-      line-height: 1.45;
+
+      font-size: 20px;
+      line-height: 23.25px;
       font-weight: 400;
     }
+
 
     /* ========================================
        ONESOURCE
@@ -356,8 +432,11 @@
 
     .support {
       min-height: 80vh;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       background: var(--burgundy);
       color: var(--white);
     }
@@ -366,6 +445,7 @@
       background:
         url("images/support.jpg")
         center center / cover no-repeat;
+
       min-height: 650px;
     }
 
@@ -373,7 +453,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 90px 8vw;
+
+      padding: 120px 8vw;
     }
 
     .support-content .section-heading {
@@ -382,42 +463,53 @@
 
     .support-content .section-copy {
       max-width: 680px;
+
       margin-bottom: 40px;
     }
+
 
     /* ========================================
        AREAS SERVED
     ======================================== */
 
     .areas {
-      padding: 130px 7vw;
+      padding: 120px 7vw;
+
       background: var(--cream);
     }
 
     .areas-intro {
       max-width: 1000px;
+
       margin-bottom: 80px;
     }
 
     .areas-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       border-top: 1px solid rgba(37, 32, 30, 0.4);
     }
 
     .area {
       padding: 28px 25px 28px 0;
+
       border-bottom: 1px solid rgba(37, 32, 30, 0.4);
     }
 
     .area h3 {
       font-family: "Inter", Arial, sans-serif;
+
       font-size: 26px;
       line-height: 1.2;
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
+
 
     /* ========================================
        FINAL CTA
@@ -425,13 +517,17 @@
 
     .listing-cta {
       min-height: 75vh;
+
       background: var(--burgundy);
       color: var(--white);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
-      padding: 100px 7vw;
+
+      padding: 120px 7vw;
     }
 
     .listing-inner {
@@ -445,6 +541,7 @@
     .listing-cta .section-heading {
       margin-bottom: 45px;
     }
+
 
     /* ========================================
        RESPONSIVE
@@ -463,21 +560,31 @@
 
       .hero h1,
       .section-heading {
-        font-size: 96px;
+        font-size: 72px;
+        letter-spacing: -3.96px;
       }
 
       .hero p,
       .section-copy,
       .award p,
       .service-card p {
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 23.25px;
+      }
+
+      .section-kicker,
+      .award h3 {
+        font-size: 20px;
+        letter-spacing: 1.98px;
       }
     }
+
 
     @media (max-width: 900px) {
 
       .site-header {
         height: 110px;
+
         padding: 0 5vw;
       }
 
@@ -488,6 +595,7 @@
 
       .main-nav {
         gap: 13px;
+
         padding-top: 45px;
       }
 
@@ -503,13 +611,15 @@
 
       .hero-content {
         margin-left: 7vw;
+
         padding-top: 180px;
         padding-bottom: 100px;
       }
 
       .hero h1,
       .section-heading {
-        font-size: 72px;
+        font-size: 60px;
+        letter-spacing: -3.3px;
       }
 
       .hero p,
@@ -517,14 +627,16 @@
       .award p,
       .service-card p {
         font-size: 20px;
+        line-height: 23.25px;
       }
 
       .experience {
-        padding: 90px 7vw;
+        padding: 100px 7vw;
       }
 
       .experience-grid {
         grid-template-columns: 1fr;
+
         gap: 50px;
       }
 
@@ -538,12 +650,18 @@
         min-height: 550px;
       }
 
+      .people-content,
+      .support-content {
+        padding: 100px 7vw;
+      }
+
       .services {
         padding: 100px 7vw;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
+
         gap: 55px;
       }
 
@@ -554,23 +672,31 @@
       .areas-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .listing-cta {
+        padding: 100px 7vw;
+      }
     }
+
 
     @media (max-width: 550px) {
 
       .site-header {
         height: 90px;
+
         padding: 0 20px;
       }
 
       .header-logo {
         width: 115px;
         height: 115px;
+
         transform: translateY(-10px);
       }
 
       .main-nav {
         gap: 8px;
+
         padding-top: 35px;
       }
 
@@ -581,15 +707,19 @@
 
       .hero-content {
         width: 88%;
+
         margin-left: 6vw;
+
         padding-top: 150px;
         padding-bottom: 80px;
       }
 
       .hero h1,
       .section-heading {
-        font-size: 52px;
+        font-size: 48px;
+
         line-height: 0.94;
+        letter-spacing: -2.64px;
       }
 
       .hero p,
@@ -597,11 +727,13 @@
       .award p,
       .service-card p {
         font-size: 18px;
+        line-height: 23.25px;
       }
 
-      .section-kicker {
-        font-size: 15px;
-        letter-spacing: 1.5px;
+      .section-kicker,
+      .award h3 {
+        font-size: 17px;
+        letter-spacing: 1.7px;
       }
 
       .hero-buttons {
@@ -611,7 +743,9 @@
 
       .button {
         width: auto;
+
         font-size: 12px;
+
         min-height: 50px;
       }
 
@@ -623,7 +757,7 @@
 
       .people-content,
       .support-content {
-        padding: 75px 6vw;
+        padding: 80px 6vw;
       }
 
       .people-image,
@@ -637,24 +771,51 @@
 
       .listing-cta {
         min-height: 65vh;
+
         padding: 80px 6vw;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
   <header class="site-header">
-    <a href="index.html" class="header-logo" aria-label="Emily Taylor Home"></a>
+
+    <a
+      href="index.html"
+      class="header-logo"
+      aria-label="Emily Taylor Home"
+    ></a>
 
     <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="#services">Services</a>
-      <a href="#areas">Areas</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#areas">
+        Areas
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
 
       <a
         href="https://www.remaxhallmarkeastern.com"
@@ -663,11 +824,22 @@
       >
         View Listings
       </a>
+
     </nav>
+
   </header>
 
-  <!-- HERO -->
+
+  <!-- ========================================
+       MAIN
+  ======================================== -->
+
   <main>
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
 
     <section class="hero">
 
@@ -685,7 +857,10 @@
 
         <div class="hero-buttons">
 
-          <a href="about.html" class="button button-light">
+          <a
+            href="about.html"
+            class="button button-light"
+          >
             Meet Emily
           </a>
 
@@ -705,7 +880,10 @@
     </section>
 
 
-    <!-- EXPERIENCE AND RECOGNITION -->
+    <!-- ========================================
+         EXPERIENCE AND RECOGNITION
+    ======================================== -->
+
     <section class="experience">
 
       <div class="experience-intro">
@@ -721,55 +899,81 @@
 
       </div>
 
+
       <div class="experience-grid">
 
+
         <div class="award">
-          <h3>RE/MAX Hall of Fame</h3>
+
+          <h3>
+            RE/MAX Hall of Fame
+          </h3>
 
           <p>
             Recognition for performance, professionalism and consistent
             dedication to clients.
           </p>
+
         </div>
 
+
         <div class="award">
-          <h3>RE/MAX Platinum Club</h3>
+
+          <h3>
+            RE/MAX Platinum Club
+          </h3>
 
           <p>
             Recognition earned through a commitment to clients, service
             and results.
           </p>
+
         </div>
 
+
         <div class="award">
-          <h3>SRES®</h3>
+
+          <h3>
+            SRES®
+          </h3>
 
           <p>
             Specialized training focused on the unique real estate needs
             of seniors and the families helping them navigate important
             housing and life transitions.
           </p>
+
         </div>
 
+
         <div class="award">
-          <h3>Certified Negotiation Expert®</h3>
+
+          <h3>
+            Certified Negotiation Expert®
+          </h3>
 
           <p>
             A focus on strategic negotiation, communication and creating
             strong outcomes while keeping each client's priorities at
             the forefront.
           </p>
+
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- PEOPLE FIRST -->
+    <!-- ========================================
+         PEOPLE FIRST
+    ======================================== -->
+
     <section class="people-first">
 
       <div class="people-image"></div>
+
 
       <div class="people-content">
 
@@ -793,7 +997,10 @@
           supported and confident.
         </p>
 
-        <a href="about.html" class="button dark-button">
+        <a
+          href="about.html"
+          class="button dark-button"
+        >
           Learn More
         </a>
 
@@ -802,8 +1009,14 @@
     </section>
 
 
-    <!-- HOW EMILY HELPS -->
-    <section class="services" id="services">
+    <!-- ========================================
+         HOW EMILY HELPS
+    ======================================== -->
+
+    <section
+      class="services"
+      id="services"
+    >
 
       <div class="services-intro">
 
@@ -818,11 +1031,15 @@
 
       </div>
 
+
       <div class="services-grid">
+
 
         <article class="service-card">
 
-          <h3>Buying</h3>
+          <h3>
+            Buying
+          </h3>
 
           <p>
             From first-time buyers to those looking for their next chapter,
@@ -832,9 +1049,12 @@
 
         </article>
 
+
         <article class="service-card">
 
-          <h3>Selling</h3>
+          <h3>
+            Selling
+          </h3>
 
           <p>
             Strategic preparation, thoughtful marketing and strong negotiation
@@ -844,9 +1064,12 @@
 
         </article>
 
+
         <article class="service-card">
 
-          <h3>Life Transitions</h3>
+          <h3>
+            Life Transitions
+          </h3>
 
           <p>
             Downsizing, relocating, estate sales and major life changes often
@@ -855,15 +1078,20 @@
 
         </article>
 
+
       </div>
 
     </section>
 
 
-    <!-- ONESOURCE -->
+    <!-- ========================================
+         ONESOURCE
+    ======================================== -->
+
     <section class="support">
 
       <div class="support-image"></div>
+
 
       <div class="support-content">
 
@@ -896,8 +1124,14 @@
     </section>
 
 
-    <!-- AREAS -->
-    <section class="areas" id="areas">
+    <!-- ========================================
+         AREAS
+    ======================================== -->
+
+    <section
+      class="areas"
+      id="areas"
+    >
 
       <div class="areas-intro">
 
@@ -912,38 +1146,61 @@
 
       </div>
 
+
       <div class="areas-grid">
 
-        <div class="area">
-          <h3>Peterborough</h3>
-        </div>
 
         <div class="area">
-          <h3>Kawartha Lakes</h3>
+          <h3>
+            Peterborough
+          </h3>
         </div>
 
-        <div class="area">
-          <h3>Durham Region</h3>
-        </div>
 
         <div class="area">
-          <h3>Greater Toronto Area</h3>
+          <h3>
+            Kawartha Lakes
+          </h3>
         </div>
 
-        <div class="area">
-          <h3>Northumberland County</h3>
-        </div>
 
         <div class="area">
-          <h3>Surrounding Communities</h3>
+          <h3>
+            Durham Region
+          </h3>
         </div>
+
+
+        <div class="area">
+          <h3>
+            Greater Toronto Area
+          </h3>
+        </div>
+
+
+        <div class="area">
+          <h3>
+            Northumberland County
+          </h3>
+        </div>
+
+
+        <div class="area">
+          <h3>
+            Surrounding Communities
+          </h3>
+        </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- FINAL CTA -->
+    <!-- ========================================
+         FINAL CTA
+    ======================================== -->
+
     <section class="listing-cta">
 
       <div class="listing-inner">
@@ -970,7 +1227,9 @@
 
     </section>
 
+
   </main>
+
 
 </body>
 </html>
