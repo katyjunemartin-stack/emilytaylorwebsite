@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
 
   <title>Emily Taylor | Real Estate</title>
 
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,11 +16,6 @@
   >
 
   <style>
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -48,11 +43,6 @@
       text-decoration: none;
     }
 
-
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
     :root {
       --ivory: #F7F4EE;
       --cream: #EEE9DF;
@@ -61,17 +51,11 @@
       --burgundy: #4A0D10;
       --burgundy-dark: #39090C;
       --white: #FFFFFF;
-      --line: rgba(41, 39, 37, 0.16);
-
-      --inter: "Inter", Arial, Helvetica, sans-serif;
-      --newsreader: "Newsreader", Georgia, serif;
-      --dm-sans: "DM Sans", Arial, Helvetica, sans-serif;
     }
 
-
-    /* =========================================================
+    /* =========================
        HEADER
-    ========================================================= */
+    ========================= */
 
     header {
       position: absolute;
@@ -86,27 +70,22 @@
       width: min(1700px, calc(100% - 90px));
       min-height: 170px;
       margin: 0 auto;
-
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-
       gap: 40px;
     }
 
     .logo-link {
       display: block;
-
       width: 364px;
       height: 213px;
-
       flex-shrink: 0;
     }
 
     .logo-link img {
       width: 364px;
       height: 213px;
-
       object-fit: contain;
       object-position: left top;
     }
@@ -114,26 +93,19 @@
     nav {
       display: flex;
       align-items: center;
-
       gap: 28px;
       padding-top: 65px;
-
       white-space: nowrap;
     }
 
     nav a {
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 800;
-
       font-size: 20px;
       line-height: 18px;
-
       letter-spacing: 1.54px;
       text-transform: uppercase;
-
       color: #FFFFFF;
-
       transition: opacity 0.2s ease;
     }
 
@@ -143,55 +115,35 @@
 
     .mobile-menu {
       display: none;
-
       border: none;
       background: transparent;
-
       color: #FFFFFF;
-
-      font-family: "Inter", Arial, sans-serif;
       font-size: 28px;
-
       cursor: pointer;
-
       padding-top: 40px;
     }
 
-
-    /* =========================================================
-       SHARED CONTAINER
-    ========================================================= */
+    /* =========================
+       GENERAL
+    ========================= */
 
     .container {
       width: min(1540px, calc(100% - 120px));
       margin: 0 auto;
     }
 
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-
     .button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       min-height: 60px;
-
       padding: 20px 30px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 800;
-
       font-size: 20px;
       line-height: 18px;
-
       letter-spacing: 1.54px;
       text-transform: uppercase;
-
       transition: all 0.2s ease;
     }
 
@@ -223,63 +175,44 @@
       background: #39090C;
     }
 
-
-    /* =========================================================
-       SECTION LABELS
-    ========================================================= */
+    /* ALL-CAPS SECTION HEADERS = 24PX */
 
     .kicker {
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 800;
-
-      font-size: 36px;
+      font-size: 24px;
       line-height: 17px;
-
       letter-spacing: 3.08px;
       text-transform: uppercase;
     }
 
-
-    /* =========================================================
+    /* =========================
        HERO
-    ========================================================= */
+    ========================= */
 
     .hero {
       position: relative;
-
       min-height: 1080px;
-
       display: flex;
       align-items: flex-end;
-
       overflow: hidden;
-
       color: #FFFFFF;
     }
 
     .hero-image {
       position: absolute;
-
-      top: 0;
-      left: 0;
-
+      inset: 0;
       width: 100%;
       height: 100%;
-
       object-fit: cover;
       object-position: center center;
-
       z-index: 0;
     }
 
     .hero-overlay {
       position: absolute;
-
       inset: 0;
-
       z-index: 1;
-
       background:
         linear-gradient(
           to bottom,
@@ -291,117 +224,84 @@
 
     .hero-inner {
       position: relative;
-
       z-index: 2;
-
       width: min(1540px, calc(100% - 120px));
-
       margin: 0 auto;
-
       padding-bottom: 105px;
     }
 
+    /* LARGE HEADINGS = 128PX */
+
     .hero h1 {
       max-width: 1250px;
-
       margin-bottom: 42px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 600;
-
-      font-size: 170px;
-      line-height: 147px;
-
+      font-size: 128px;
+      line-height: 112px;
       letter-spacing: -5.31px;
-
       color: #FFFFFF;
-
-      font-variation-settings: "opsz" 72;
     }
+
+    /* SENTENCE TEXT = 36PX */
 
     .hero-copy {
       max-width: 1000px;
-
       margin-bottom: 40px;
-
       font-family: "DM Sans", Arial, sans-serif;
-      font-style: normal;
       font-weight: 700;
-
-      font-size: 48px;
-      line-height: 46px;
-
-      letter-spacing: -0.09em;
-
+      font-size: 36px;
+      line-height: 38px;
+      letter-spacing: -0.06em;
       color: rgba(255,255,255,0.9);
     }
 
     .hero-buttons {
       display: flex;
-
       gap: 16px;
-
       flex-wrap: wrap;
     }
 
-
-    /* =========================================================
-       EXPERIENCE + RECOGNITION
-    ========================================================= */
+    /* =========================
+       EXPERIENCE
+    ========================= */
 
     .experience {
       background: #4A0D10;
-
       color: #FFFFFF;
-
       padding: 145px 0 135px;
     }
 
     .experience .kicker {
       margin-bottom: 70px;
-
       color: #FFFFFF;
     }
 
     .experience h2 {
       max-width: 1250px;
-
       margin-bottom: 110px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 96px;
-      line-height: 99px;
-
+      font-size: 128px;
+      line-height: 120px;
       letter-spacing: -4.86px;
-
       color: #FFFFFF;
-
-      font-variation-settings: "opsz" 108;
     }
 
     .awards {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       border-top: 1px solid rgba(255,255,255,0.22);
     }
 
     .award {
       min-height: 270px;
-
       padding: 45px 50px 45px 0;
-
       border-bottom: 1px solid rgba(255,255,255,0.22);
     }
 
     .award:nth-child(odd) {
       border-right: 1px solid rgba(255,255,255,0.22);
-
       padding-right: 60px;
     }
 
@@ -416,362 +316,254 @@
 
     .award h3 {
       margin-bottom: 25px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 800;
-
-      font-size: 32px;
-      line-height: 38px;
-
+      font-size: 24px;
+      line-height: 30px;
       letter-spacing: 2.24px;
-
       text-transform: uppercase;
-
       color: #FFFFFF;
     }
 
     .award p {
       max-width: 650px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 32px;
-      line-height: 30px;
-
+      font-size: 36px;
+      line-height: 36px;
       color: rgba(255,255,255,0.82);
     }
 
-
-    /* =========================================================
+    /* =========================
        PEOPLE FIRST
-    ========================================================= */
+    ========================= */
 
     .people-first {
       background: #F7F4EE;
-
       padding: 145px 0;
     }
 
     .people-grid {
       display: grid;
-
       grid-template-columns: minmax(0,0.93fr) minmax(0,1.07fr);
-
       gap: 100px;
-
       align-items: center;
     }
 
     .people-image {
       width: 100%;
       height: 780px;
-
       object-fit: cover;
       object-position: center;
     }
 
     .people-copy .kicker {
       color: #4A0D10;
-
       margin-bottom: 45px;
     }
 
     .people-copy h2 {
       max-width: 800px;
-
       margin-bottom: 45px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 96px;
-      line-height: 78px;
-
+      font-size: 128px;
+      line-height: 105px;
       letter-spacing: -2.17px;
-
       color: #292725;
-
-      font-variation-settings: "opsz" 62;
     }
 
     .people-copy p {
       max-width: 850px;
-
       margin-bottom: 38px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 40px;
-      line-height: 41px;
-
+      font-size: 36px;
+      line-height: 38px;
       color: #756E64;
     }
 
-
-    /* =========================================================
-       HOW EMILY HELPS
-    ========================================================= */
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services {
       background: #EEE9DF;
-
       padding: 145px 0;
     }
 
     .services .kicker {
       color: #4A0D10;
-
       margin-bottom: 50px;
     }
 
     .services h2 {
       max-width: 1200px;
-
       margin-bottom: 100px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 108px;
-      line-height: 99px;
-
+      font-size: 128px;
+      line-height: 120px;
       letter-spacing: -4.86px;
-
       color: #292725;
-
-      font-variation-settings: "opsz" 108;
     }
 
     .service-grid {
       display: grid;
-
       grid-template-columns: repeat(3,1fr);
-
       border-top: 1px solid rgba(41,39,37,0.16);
       border-bottom: 1px solid rgba(41,39,37,0.16);
     }
 
     .service {
       min-height: 420px;
-
       padding: 50px 45px 55px 0;
     }
 
     .service + .service {
       border-left: 1px solid rgba(41,39,37,0.16);
-
       padding-left: 45px;
     }
 
     .service h3 {
       margin-bottom: 28px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 700;
-
       font-size: 38px;
       line-height: 38px;
-
       color: #292725;
-
-      font-variation-settings: "opsz" 38;
     }
 
     .service p {
       max-width: 430px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 24px;
-      line-height: 29px;
-
+      font-size: 36px;
+      line-height: 38px;
       color: #756E64;
     }
 
-
-    /* =========================================================
-       ONESOURCE / SUPPORT
-    ========================================================= */
+    /* =========================
+       ONESOURCE
+    ========================= */
 
     .support {
       background: #4A0D10;
-
       color: #FFFFFF;
-
       padding: 145px 0;
     }
 
     .support-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 100px;
-
       align-items: center;
     }
 
     .support-image {
       width: 100%;
       height: 720px;
-
       object-fit: cover;
       object-position: center;
     }
 
     .support-copy .kicker {
       color: #FFFFFF;
-
       margin-bottom: 40px;
     }
 
     .support-copy h2 {
       max-width: 800px;
-
       margin-bottom: 40px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 96px;
-      line-height: 85px;
-
+      font-size: 128px;
+      line-height: 110px;
       letter-spacing: -4.14px;
-
       color: #FFFFFF;
-
-      font-variation-settings: "opsz" 92;
     }
 
     .support-copy p {
       max-width: 680px;
-
       margin-bottom: 42px;
-
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 32px;
-      line-height: 31px;
-
+      font-size: 36px;
+      line-height: 38px;
       color: #FFFFFF;
     }
 
-
-    /* =========================================================
-       AREAS SERVED
-    ========================================================= */
+    /* =========================
+       AREAS
+    ========================= */
 
     .areas {
       background: #F7F4EE;
-
       padding: 145px 0;
     }
 
     .areas .kicker {
       color: #4A0D10;
-
       margin-bottom: 50px;
     }
 
     .areas h2 {
       max-width: 1200px;
-
       margin-bottom: 90px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 108px;
-      line-height: 99px;
-
+      font-size: 128px;
+      line-height: 120px;
       letter-spacing: -4.86px;
-
       color: #292725;
-
-      font-variation-settings: "opsz" 108;
     }
 
     .areas-list {
       display: grid;
-
       grid-template-columns: repeat(4,1fr);
-
       border-top: 1px solid rgba(41,39,37,0.16);
       border-left: 1px solid rgba(41,39,37,0.16);
     }
 
     .area {
       min-height: 90px;
-
       display: flex;
       align-items: center;
-
       padding: 20px 25px;
-
       border-right: 1px solid rgba(41,39,37,0.16);
       border-bottom: 1px solid rgba(41,39,37,0.16);
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
       font-size: 26px;
       line-height: 29px;
-
       color: #292725;
-
-      font-variation-settings: "opsz" 26;
     }
 
-
-    /* =========================================================
-       LISTINGS
-    ========================================================= */
+    /* =========================
+       FINAL CTA
+    ========================= */
 
     .listings {
       position: relative;
-
       min-height: 850px;
-
       display: flex;
       align-items: flex-end;
-
       overflow: hidden;
-
       color: #FFFFFF;
     }
 
     .listings-image {
       position: absolute;
-
       inset: 0;
-
       width: 100%;
       height: 100%;
-
       object-fit: cover;
       object-position: center;
     }
 
     .listings-overlay {
       position: absolute;
-
       inset: 0;
-
       background:
         linear-gradient(
           to bottom,
@@ -782,102 +574,73 @@
 
     .listings-inner {
       position: relative;
-
       z-index: 2;
-
       width: min(1540px, calc(100% - 120px));
-
       margin: 0 auto;
-
       padding-bottom: 105px;
     }
 
     .listings .kicker {
       color: #FFFFFF;
-
       margin-bottom: 50px;
     }
 
     .listings h2 {
       max-width: 1200px;
-
       margin-bottom: 50px;
-
       font-family: "Newsreader", Georgia, serif;
-      font-style: normal;
       font-weight: 400;
-
-      font-size: 105px;
-      line-height: 97px;
-
+      font-size: 128px;
+      line-height: 120px;
       letter-spacing: -4.725px;
-
       color: #FFFFFF;
-
-      font-variation-settings: "opsz" 105;
     }
 
-
-    /* =========================================================
+    /* =========================
        FOOTER
-    ========================================================= */
+    ========================= */
 
     footer {
       background: #EEE9DF;
-
       padding: 75px 0 35px;
-
       color: #292725;
     }
 
     .footer-top {
       display: flex;
-
       justify-content: space-between;
       align-items: flex-start;
-
       gap: 70px;
-
       padding-bottom: 60px;
     }
 
     .footer-logo {
       width: 362px;
       height: 229px;
-
       object-fit: contain;
       object-position: left center;
     }
 
     .footer-right {
       display: flex;
-
       flex-direction: column;
       align-items: flex-end;
-
       gap: 35px;
     }
 
     .footer-nav {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: flex-end;
-
       gap: 20px 28px;
     }
 
     .footer-nav a {
       font-family: "Inter", Arial, sans-serif;
-      font-style: normal;
       font-weight: 800;
-
       font-size: 15px;
       line-height: 18px;
-
       letter-spacing: 1.54px;
-
       text-transform: uppercase;
     }
 
@@ -887,33 +650,24 @@
 
     .footer-contact {
       background: #FFFFFF;
-
       color: #4A0D10;
     }
 
     .footer-bottom {
       border-top: 1px solid rgba(41,39,37,0.16);
-
       padding-top: 25px;
-
       display: flex;
-
       justify-content: space-between;
-
       gap: 30px;
-
       color: #756E64;
-
       font-size: 12px;
       line-height: 18px;
-
       letter-spacing: .04em;
     }
 
-
-    /* =========================================================
+    /* =========================
        TABLET
-    ========================================================= */
+    ========================= */
 
     @media (max-width: 1200px) {
 
@@ -939,43 +693,30 @@
         letter-spacing: 1.1px;
       }
 
-      .hero h1 {
-        font-size: 120px;
-        line-height: 108px;
-      }
-
-      .hero-copy {
-        font-size: 38px;
-        line-height: 38px;
-      }
-
+      .hero h1,
+      .experience h2,
       .people-copy h2,
-      .support-copy h2 {
-        font-size: 75px;
-        line-height: 68px;
+      .services h2,
+      .support-copy h2,
+      .areas h2,
+      .listings h2 {
+        font-size: 90px;
+        line-height: 85px;
       }
 
-      .people-copy p {
+      .hero-copy,
+      .people-copy p,
+      .support-copy p,
+      .award p,
+      .service p {
         font-size: 30px;
         line-height: 32px;
       }
-
-      .services h2,
-      .areas h2 {
-        font-size: 85px;
-        line-height: 82px;
-      }
-
-      .service p {
-        font-size: 20px;
-        line-height: 25px;
-      }
     }
 
-
-    /* =========================================================
-       MOBILE / TABLET
-    ========================================================= */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
 
@@ -992,20 +733,14 @@
 
       nav {
         display: none;
-
         position: absolute;
-
         top: 100px;
         left: 20px;
         right: 20px;
-
         padding: 28px;
-
         background: #4A0D10;
-
         flex-direction: column;
         align-items: flex-start;
-
         gap: 22px;
       }
 
@@ -1031,28 +766,29 @@
         min-height: 800px;
       }
 
-      .hero h1 {
-        font-size: clamp(60px, 12vw, 92px);
-
-        line-height: .9;
-
-        letter-spacing: -2.5px;
+      .hero h1,
+      .experience h2,
+      .people-copy h2,
+      .services h2,
+      .support-copy h2,
+      .areas h2,
+      .listings h2 {
+        font-size: clamp(55px, 11vw, 80px);
+        line-height: .92;
+        letter-spacing: -3px;
       }
 
-      .hero-copy {
+      .hero-copy,
+      .people-copy p,
+      .support-copy p,
+      .award p,
+      .service p {
         font-size: 25px;
-
-        line-height: 26px;
-
-        letter-spacing: -0.05em;
+        line-height: 28px;
       }
 
       .kicker {
-        font-size: 20px;
-
-        line-height: 17px;
-
-        letter-spacing: 2px;
+        font-size: 24px;
       }
 
       .experience,
@@ -1061,20 +797,6 @@
       .support,
       .areas {
         padding: 90px 0;
-      }
-
-      .experience h2,
-      .services h2,
-      .areas h2 {
-        font-size: clamp(55px, 11vw, 80px);
-
-        line-height: .92;
-
-        letter-spacing: -3px;
-      }
-
-      .experience h2 {
-        margin-bottom: 65px;
       }
 
       .awards,
@@ -1090,9 +812,7 @@
       .award:nth-child(3),
       .award:nth-child(4) {
         padding: 35px 0;
-
         border-right: 0;
-
         border-bottom: 1px solid rgba(255,255,255,0.22);
       }
 
@@ -1105,11 +825,6 @@
         line-height: 29px;
       }
 
-      .award p {
-        font-size: 22px;
-        line-height: 24px;
-      }
-
       .people-grid,
       .support-grid {
         gap: 55px;
@@ -1120,35 +835,11 @@
         height: 560px;
       }
 
-      .people-copy h2,
-      .support-copy h2 {
-        font-size: clamp(55px, 10vw, 78px);
-
-        line-height: .88;
-
-        letter-spacing: -2.5px;
-      }
-
-      .people-copy p,
-      .support-copy p {
-        font-size: 25px;
-
-        line-height: 28px;
-      }
-
-      .services h2,
-      .areas h2 {
-        margin-bottom: 60px;
-      }
-
       .service,
       .service + .service {
         min-height: auto;
-
         padding: 38px 0;
-
         border-left: 0;
-
         border-bottom: 1px solid rgba(41,39,37,0.16);
       }
 
@@ -1158,7 +849,6 @@
 
       .service h3 {
         font-size: 34px;
-
         line-height: 34px;
       }
 
@@ -1174,12 +864,6 @@
         min-height: 650px;
       }
 
-      .listings h2 {
-        font-size: clamp(58px, 11vw, 85px);
-
-        line-height: .92;
-      }
-
       .footer-top {
         flex-direction: column;
       }
@@ -1193,11 +877,6 @@
       }
     }
 
-
-    /* =========================================================
-       SMALL MOBILE
-    ========================================================= */
-
     @media (max-width: 600px) {
 
       .hero {
@@ -1206,25 +885,21 @@
 
       .hero h1 {
         font-size: 55px;
-
         line-height: .92;
       }
 
       .hero-copy {
         font-size: 20px;
-
         line-height: 22px;
       }
 
       .hero-buttons {
         flex-direction: column;
-
         align-items: stretch;
       }
 
       .button {
         width: 100%;
-
         text-align: center;
       }
 
@@ -1244,7 +919,6 @@
 
       .footer-bottom {
         flex-direction: column;
-
         gap: 10px;
       }
     }
@@ -1252,54 +926,27 @@
   </style>
 </head>
 
-
 <body>
-
-
-  <!-- =========================================================
-       HEADER
-  ========================================================= -->
 
   <header>
 
     <div class="nav-wrap">
 
-      <a
-        href="index.html"
-        class="logo-link"
-        aria-label="Emily Taylor home"
-      >
-        <img
-          src="images/emily-logo.png"
-          alt="Emily Taylor"
-        >
+      <a href="index.html" class="logo-link" aria-label="Emily Taylor home">
+        <img src="images/emily-logo.png" alt="Emily Taylor">
       </a>
 
+      <nav id="mainNav" aria-label="Main navigation">
 
-      <nav
-        id="mainNav"
-        aria-label="Main navigation"
-      >
+        <a href="index.html">Home</a>
 
-        <a href="index.html">
-          Home
-        </a>
+        <a href="about.html">About</a>
 
-        <a href="about.html">
-          About
-        </a>
+        <a href="#services">Services</a>
 
-        <a href="#services">
-          Services
-        </a>
+        <a href="#areas">Areas</a>
 
-        <a href="#areas">
-          Areas
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
+        <a href="contact.html">Contact</a>
 
         <a
           href="https://www.remaxhallmarkeastern.com"
@@ -1310,7 +957,6 @@
         </a>
 
       </nav>
-
 
       <button
         class="mobile-menu"
@@ -1325,10 +971,7 @@
   </header>
 
 
-
-  <!-- =========================================================
-       HERO
-  ========================================================= -->
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -1340,13 +983,11 @@
 
     <div class="hero-overlay"></div>
 
-
     <div class="hero-inner">
 
       <h1>
         It’s more than an investment, it’s your life.
       </h1>
-
 
       <p class="hero-copy">
         Buying or selling a home is about more than the transaction.
@@ -1354,16 +995,11 @@
         that comes next.
       </p>
 
-
       <div class="hero-buttons">
 
-        <a
-          href="#people-first"
-          class="button button-white"
-        >
+        <a href="#people-first" class="button button-white">
           Meet Emily
         </a>
-
 
         <a
           href="https://www.remaxhallmarkeastern.com"
@@ -1381,10 +1017,7 @@
   </section>
 
 
-
-  <!-- =========================================================
-       EXPERIENCE AND RECOGNITION
-  ========================================================= -->
+  <!-- EXPERIENCE -->
 
   <section class="experience">
 
@@ -1394,14 +1027,11 @@
         Experience and Recognition
       </div>
 
-
       <h2>
         Experience matters. So does how you’re represented.
       </h2>
 
-
       <div class="awards">
-
 
         <div class="award">
 
@@ -1416,7 +1046,6 @@
 
         </div>
 
-
         <div class="award">
 
           <h3>
@@ -1429,7 +1058,6 @@
           </p>
 
         </div>
-
 
         <div class="award">
 
@@ -1445,7 +1073,6 @@
 
         </div>
 
-
         <div class="award">
 
           <h3>
@@ -1460,7 +1087,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -1468,20 +1094,13 @@
   </section>
 
 
+  <!-- PEOPLE FIRST -->
 
-  <!-- =========================================================
-       PEOPLE FIRST
-  ========================================================= -->
-
-  <section
-    class="people-first"
-    id="people-first"
-  >
+  <section class="people-first" id="people-first">
 
     <div class="container">
 
       <div class="people-grid">
-
 
         <div>
 
@@ -1493,19 +1112,16 @@
 
         </div>
 
-
         <div class="people-copy">
 
           <div class="kicker">
             People First.
           </div>
 
-
           <h2>
             Because behind every move is a person, a family,
             and a story worth understanding.
           </h2>
-
 
           <p>
             Emily believes real estate should never feel like a
@@ -1518,16 +1134,11 @@
             feel informed, supported and confident.
           </p>
 
-
-          <a
-            href="about.html"
-            class="button button-burgundy"
-          >
+          <a href="about.html" class="button button-burgundy">
             Learn More
           </a>
 
         </div>
-
 
       </div>
 
@@ -1536,15 +1147,9 @@
   </section>
 
 
+  <!-- SERVICES -->
 
-  <!-- =========================================================
-       HOW EMILY HELPS
-  ========================================================= -->
-
-  <section
-    class="services"
-    id="services"
-  >
+  <section class="services" id="services">
 
     <div class="container">
 
@@ -1552,14 +1157,11 @@
         How Emily Helps
       </div>
 
-
       <h2>
         Real estate, thoughtfully handled.
       </h2>
 
-
       <div class="service-grid">
-
 
         <article class="service">
 
@@ -1575,7 +1177,6 @@
 
         </article>
 
-
         <article class="service">
 
           <h3>
@@ -1589,7 +1190,6 @@
           </p>
 
         </article>
-
 
         <article class="service">
 
@@ -1605,7 +1205,6 @@
 
         </article>
 
-
       </div>
 
     </div>
@@ -1613,20 +1212,13 @@
   </section>
 
 
+  <!-- ONESOURCE -->
 
-  <!-- =========================================================
-       ONESOURCE / SUPPORT
-  ========================================================= -->
-
-  <section
-    class="support"
-    id="onesource"
-  >
+  <section class="support" id="onesource">
 
     <div class="container">
 
       <div class="support-grid">
-
 
         <div>
 
@@ -1638,18 +1230,15 @@
 
         </div>
 
-
         <div class="support-copy">
 
           <div class="kicker">
             A Little More Support.
           </div>
 
-
           <h2>
             A little more support.
           </h2>
-
 
           <p>
             Real estate doesn't always end when the deal closes.
@@ -1657,7 +1246,6 @@
             to help make the transition into your next chapter
             a little easier.
           </p>
-
 
           <a
             href="https://onesourcemoving.ca"
@@ -1670,7 +1258,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -1678,15 +1265,9 @@
   </section>
 
 
+  <!-- AREAS -->
 
-  <!-- =========================================================
-       AREAS SERVED
-  ========================================================= -->
-
-  <section
-    class="areas"
-    id="areas"
-  >
+  <section class="areas" id="areas">
 
     <div class="container">
 
@@ -1694,61 +1275,24 @@
         Areas Served
       </div>
 
-
       <h2>
         Local knowledge. Wide reach.
       </h2>
 
-
       <div class="areas-list">
 
-        <div class="area">
-          Ajax
-        </div>
-
-        <div class="area">
-          Clarington
-        </div>
-
-        <div class="area">
-          Kawartha Lakes
-        </div>
-
-        <div class="area">
-          Lakefield
-        </div>
-
-        <div class="area">
-          Lindsay
-        </div>
-
-        <div class="area">
-          Mississauga
-        </div>
-
-        <div class="area">
-          Peterborough
-        </div>
-
-        <div class="area">
-          Pickering
-        </div>
-
-        <div class="area">
-          Toronto
-        </div>
-
-        <div class="area">
-          Vaughan
-        </div>
-
-        <div class="area">
-          Whitby
-        </div>
-
-        <div class="area">
-          Oshawa
-        </div>
+        <div class="area">Ajax</div>
+        <div class="area">Clarington</div>
+        <div class="area">Kawartha Lakes</div>
+        <div class="area">Lakefield</div>
+        <div class="area">Lindsay</div>
+        <div class="area">Mississauga</div>
+        <div class="area">Peterborough</div>
+        <div class="area">Pickering</div>
+        <div class="area">Toronto</div>
+        <div class="area">Vaughan</div>
+        <div class="area">Whitby</div>
+        <div class="area">Oshawa</div>
 
       </div>
 
@@ -1757,14 +1301,10 @@
   </section>
 
 
-
-  <!-- =========================================================
-       LISTINGS
-  ========================================================= -->
+  <!-- FINAL LISTINGS -->
 
   <section class="listings">
 
-    <!-- Using the confirmed GitHub image instead of an external image -->
     <img
       class="listings-image"
       src="images/home-hero.png"
@@ -1773,18 +1313,15 @@
 
     <div class="listings-overlay"></div>
 
-
     <div class="listings-inner">
 
       <div class="kicker">
         Find a place to call home
       </div>
 
-
       <h2>
         Where your next chapter begins.
       </h2>
-
 
       <a
         href="https://www.remaxhallmarkeastern.com"
@@ -1800,17 +1337,13 @@
   </section>
 
 
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="container">
 
       <div class="footer-top">
-
 
         <div>
 
@@ -1822,31 +1355,19 @@
 
         </div>
 
-
         <div class="footer-right">
-
 
           <div class="footer-nav">
 
-            <a href="index.html">
-              Home
-            </a>
+            <a href="index.html">Home</a>
 
-            <a href="about.html">
-              About
-            </a>
+            <a href="about.html">About</a>
 
-            <a href="#services">
-              Services
-            </a>
+            <a href="#services">Services</a>
 
-            <a href="#areas">
-              Areas
-            </a>
+            <a href="#areas">Areas</a>
 
-            <a href="contact.html">
-              Contact
-            </a>
+            <a href="contact.html">Contact</a>
 
             <a
               href="https://www.remaxhallmarkeastern.com"
@@ -1858,19 +1379,13 @@
 
           </div>
 
-
-          <a
-            href="contact.html"
-            class="button footer-contact"
-          >
+          <a href="contact.html" class="button footer-contact">
             Contact Emily
           </a>
-
 
         </div>
 
       </div>
-
 
       <div class="footer-bottom">
 
@@ -1889,11 +1404,6 @@
   </footer>
 
 
-
-  <!-- =========================================================
-       MOBILE MENU
-  ========================================================= -->
-
   <script>
 
     const menuButton =
@@ -1902,28 +1412,12 @@
     const mainNav =
       document.getElementById("mainNav");
 
-
     menuButton.addEventListener("click", () => {
-
       mainNav.classList.toggle("open");
-
     });
-
 
     document
       .querySelectorAll("#mainNav a")
       .forEach(link => {
 
-        link.addEventListener("click", () => {
-
-          mainNav.classList.remove("open");
-
-        });
-
-      });
-
-  </script>
-
-
-</body>
-</html>
+        link
